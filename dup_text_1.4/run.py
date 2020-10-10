@@ -363,7 +363,8 @@ def testHtml():
 
         return render_template('testHtml.html', name1=f1.filename, name2=f2.filename, time=time_, dup_check=dp_c,
                                dup_text=dup_text, dup_dic=dup_dic,doc1_str=doc1_str,doc2_str=doc2_str,doc1_wrap=doc1_wrap,doc2_group_=doc2_group_)  # , name=f1.filename  这些变量发送到这个页面之后，这个页面不用特意接收，直接用就行，就像全局变量一样
-
+        # 返回参数
+        return dup_text,doc1_str,doc2_str,doc1_wrap,doc2_group_
 
 
 if __name__ == '__main__':

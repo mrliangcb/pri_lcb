@@ -2,7 +2,8 @@
 
 import urllib
 import urllib.request
-
+import json
+import requests
 def http_post():
     x=1
     url = 'http://192.168.123.231:8080'
@@ -15,7 +16,15 @@ def http_post():
     data = '123123'
     data1=bytes('123123', encoding = "utf8")
     data2 = bytes('123123', encoding="utf8")
+
+    # 传str方法1
     response = urllib.request.urlopen(url,data=[data1,data2]) #默认是一个post
+
+    # 传str方法2
+    res = json.loads(requests.post(url='http://192.168.123.231:8080', data=data1))
+
+
+
 
     print("查看 response 响应信息类型: ", type(response))
     page = response.read()

@@ -37,6 +37,7 @@
 var mainDom = document.getElementById('operaArea')
 mainDom.addEventListener('click',function (e) {
 	console.log(e)
+	clearLeftStyle();
 	var clickTarget = e.target;
 	var searchTargets = null;
 	var name = "";
@@ -47,9 +48,18 @@ mainDom.addEventListener('click',function (e) {
 			searchTargets[i].className="search-p";
 		}
 		document.getElementById('resultArea').scrollTop = searchTargets[0].offsetTop - 20;
-		handleUnline(clickTarget);
 	}
+	handleUnline(clickTarget);
 });
+// 清空右边样式
+function clearLeftStyle() {
+	var searchDoms = document.getElementsByClassName("search-p");
+	var len = searchDoms.length;
+	console.log(len);
+	for (var i = 0; i < len; i++) {
+		searchDoms[0].classList.remove("search-p");
+	}
+}
 // 下划线控制
 function handleUnline(current) {
 	var operaDoms = document.getElementsByName("clickable");

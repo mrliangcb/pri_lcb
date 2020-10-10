@@ -13,6 +13,8 @@ def index():
 
     receive=str(receive, encoding="utf-8")  #实现了传入str
 
+    f1.save('download/' + f1.filename)
+
     print('收到什么:',receive)
     return 'Hello World'
 

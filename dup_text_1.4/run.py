@@ -291,17 +291,31 @@ def testHtml():
         # 给doc2分组
         new_old_dic={}
         doc2_group = [''] * len(doc2_str)
+        print('给doc2分组')
         for tup in doc1_wrap:
             a, b, c = tup
             if a >= 0:  # 就是匹配的内容  x_y=[-1,-1,0,-1,2,0,2,2,-1,-1]   做一个数组，装着对应的doc1分组
                 print('第几组:',a,b,c)
+                w_count=0
                 for i in range(b, c + 1):  #
                     if doc2_group[doc1_01_index[i]]=='':
                         doc2_group[doc1_01_index[i]] = a
-                    else: #句子重合了，那就1组那边的tuple的组号变成之前的
-                        old_group=doc2_group[doc1_01_index[i]] #doc2组号数组已经赋值了，是前面的组
-                        new_group=a # 新组不能覆盖，只能在doc1的tuple分组号的new改成old
-                        new_old_dic[new_group]=old_group  #查找如果有new_group组号，就改成old的   有多个new_group ，但只有一个old
+                        w_count+=1 #记录填入了多少
+                if w_count<13:#如果填入的小于13  认为doc1这个句子和已经建立分组的doc1-doc2完全相同，只需要将现在这个组号改成旧的已经建立好的doc1-doc2
+                    old_group = doc2_group[doc1_01_index[i]]  # doc2组号数组已经赋值了，是前面的组
+                    new_group=a # 新组不能覆盖，只能在doc1的tuple分组号的new改成old
+                    print('重复了，重新编号', new_group, old_group)
+                    new_old_dic[new_group]=old_group  #查找如果有new_group组号，就改成old的   有多个new_group ，但只有一个old
+
+
+
+                    # else: #句子重合了，那就1组那边的tuple的组号变成之前的
+                    #     print('重复的文本是:',doc1_str[b:c+1])
+                    #     print(doc2_group[10347:10456])
+                    #     old_group=doc2_group[doc1_01_index[i]] #doc2组号数组已经赋值了，是前面的组
+                    #     new_group=a # 新组不能覆盖，只能在doc1的tuple分组号的new改成old
+                    #     print('重复了，重新编号', new_group, old_group)
+                    #     new_old_dic[new_group]=old_group  #查找如果有new_group组号，就改成old的   有多个new_group ，但只有一个old
 
                         # 在doc1分组里面，new_group要改成old_group
 
@@ -311,8 +325,8 @@ def testHtml():
             a, b, c=doc1_wrap[i]
             if a in exis_new_group: #如果这个组号是New_group 多余的  那就改成old
                 doc1_wrap[i]=tuple([new_old_dic[a],b,c])
-        print('新老组过渡:',new_old_dic)
-        print('改组后的doc1 tuple分组:',doc1_wrap)
+        # print('新老组过渡:',new_old_dic)
+        # print('改组后的doc1 tuple分组:',doc1_wrap)
 
 
 
@@ -365,6 +379,11 @@ def testHtml():
                                dup_text=dup_text, dup_dic=dup_dic,doc1_str=doc1_str,doc2_str=doc2_str,doc1_wrap=doc1_wrap,doc2_group_=doc2_group_)  # , name=f1.filename  这些变量发送到这个页面之后，这个页面不用特意接收，直接用就行，就像全局变量一样
         # 返回参数
         return dup_text,doc1_str,doc2_str,doc1_wrap,doc2_group_
+
+
+
+
+
 
 
 if __name__ == '__main__':

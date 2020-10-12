@@ -189,7 +189,7 @@ class win_check():
 
 
 @cal_time('all')    #相当于@ out_wrape    return in相当于普通情况的return
-def main(path1,path2,k):  #main=out_wrape    main给out_wrape   ()给in_wrape
+def main(path1,path2,k=13):  #main=out_wrape    main给out_wrape   ()给in_wrape
     # path1 = r'D:\lcb_note\code\NLP\doc_sim\ZhiHu_Code\大唐数据\长三热高压开关柜\北京科锐配电自动化股份有限公司\20170721___长春第三热电厂背压机___KYN28-12___2500-31.5___投标文件\20170721   长春第三热电厂背压机   KYN28-12   2500-31.5   投标文件商务部分.docx'
     # path2 = r'D:\lcb_note\code\NLP\doc_sim\ZhiHu_Code\大唐数据\长三热高压开关柜\华仪电气股份有限公司\投标文件商务部分.docx'
 

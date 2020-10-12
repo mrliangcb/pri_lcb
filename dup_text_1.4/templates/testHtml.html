@@ -6,19 +6,9 @@
 </head>
 
 <body>
-
-
-
-
-
-
-    <input type="button" id="modifytip" name="modifytip" value="返回" onclick='location.href=("/")'/>
-
 <div class="layout-main">
 	<div id="operaArea" class="layout-content content-left">
 		<div>
-<!--			{{doc1_str[0:]}}-->
-<!--		<a href="#gaga" name="clickable">多年研发开发立项项目40余项</a>-->
 		{% for g_id,s,e in doc1_wrap %}
 			{% if g_id==-1 %}
 <!--			这个是没有分组的-->
@@ -33,8 +23,6 @@
 
 		</div>
 	</div>
-
-<!--	下面是右边的-->
 	<div id="resultArea" class="layout-content">
 		{% for g_id,s,e in doc2_group_ %}
 			{% if g_id==-1 %}
@@ -47,9 +35,7 @@
 
 			{% endif %}
 		{% endfor %}
-
-<!--		　　　<span name="meng">小型化、集成化</span>-->
-		　　　
+		
 	</div>
 </div>
 
@@ -57,6 +43,7 @@
 var mainDom = document.getElementById('operaArea')
 mainDom.addEventListener('click',function (e) {
 	console.log(e)
+	clearLeftStyle();
 	var clickTarget = e.target;
 	var searchTargets = null;
 	var name = "";
@@ -67,9 +54,18 @@ mainDom.addEventListener('click',function (e) {
 			searchTargets[i].className="search-p";
 		}
 		document.getElementById('resultArea').scrollTop = searchTargets[0].offsetTop - 20;
-		handleUnline(clickTarget);
 	}
+	handleUnline(clickTarget);
 });
+// 清空右边样式
+function clearLeftStyle() {
+	var searchDoms = document.getElementsByClassName("search-p");
+	var len = searchDoms.length;
+	console.log(len);
+	for (var i = 0; i < len; i++) {
+		searchDoms[0].classList.remove("search-p");
+	}
+}
 // 下划线控制
 function handleUnline(current) {
 	var operaDoms = document.getElementsByName("clickable");
@@ -98,7 +94,7 @@ function handleUnline(current) {
 	text-decoration: underline;
 }
 .layout-main a{
-	color: #ff0000;
+	color: red;
 }
 .search-p {
 	color: red;
@@ -110,6 +106,7 @@ function handleUnline(current) {
     <p>文件2: <b> {{name2}} </b></p>
     <p>运行时间: <b> {{time}} </b></p>
     <p>查重率: <b> {{dup_check}} </b></p>
+
 
 </body>
 

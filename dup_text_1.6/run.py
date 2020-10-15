@@ -25,6 +25,9 @@ def check_str(doc1_str,doc2_str,k=13):
         return None
 
     similiarize, dup_text, doc1_01_index, doc1_flag_list = winnowing.get_sim(doc1_str, doc2_str, n, t)
+    # print('doc1_01_index是什么?',doc1_01_index) # ['' , 在doc2出现的位置]
+
+    # doc1_flag_list 是[0,1]
 
 
     print('两篇文章的相似度为{:5f}'.format(similiarize))
@@ -49,23 +52,27 @@ def check_str(doc1_str,doc2_str,k=13):
             e = i
         else:
             e = i  # 没遇到转折点 只更新e 不管s
-
-    if doc1_flag_list[i - 1] != 0:
+    if doc1_flag_list[i] != 0:
         doc1_wrap.append(tuple([group_count, s, e]))
         group_count += 1
     else:
         doc1_wrap.append(tuple([-1, s, e]))
 
+    print('doc1_wrap:',doc1_wrap)
+    print('doc1_flag_list:',doc1_flag_list)
+    print('doc1_01_index:',doc1_01_index)
+
     # 给doc2分组
     new_old_dic = {}
     doc2_group = [''] * len(doc2_str)
-
     for tup in doc1_wrap:
         a, b, c = tup
         if a >= 0:  # 就是匹配的内容  x_y=[-1,-1,0,-1,2,0,2,2,-1,-1]   做一个数组，装着对应的doc1分组
             print('第几组:', a, b, c)
             w_count = 0
             for i in range(b, c + 1):  #
+                print(type(i),type(b),type(c))
+                print('doc1_01_index[i]是什么',doc1_01_index[i])
                 if doc2_group[doc1_01_index[i]] == '':
                     doc2_group[doc1_01_index[i]] = a
                     w_count += 1  # 记录填入了多少
@@ -110,7 +117,12 @@ app = Flask(__name__)
 def dup_check():
     args_dic = request.args
     print('收到的参数字典:',args_dic)
-    time_,result = check_str(args_dic['doc1'], args_dic['doc2'],k=13)
+
+    print('文本1长度:',len(args_dic['doc1'])) # 26
+    print('文本2长度:', len(args_dic['doc2'])) #24
+    time_,result = check_str(str(args_dic['doc1']), str(args_dic['doc2']),k=13)
+
+
     # 文本长度小于k
     print('args_dicdoc1:',args_dic['doc1'])
     if len(args_dic['doc1'])<13 or len(args_dic['doc2']) <13:
@@ -130,4 +142,4 @@ def dup_check():
     #                            dup_text=dup_text, dup_dic=dup_dic,doc1_str=doc1_str,doc2_str=doc2_str,doc1_wrap=doc1_wrap,doc2_group_=doc2_group_))
 
 if __name__ == '__main__':
-    app.run("0.0.0.0",debug=True,port=5002)
+    app.run("0.0.0.0",debug=False,port=5002)

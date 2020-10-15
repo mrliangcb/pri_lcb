@@ -100,8 +100,8 @@ class win_check():
         # print('参考字典:',refer_dic)
 
 
-        doc1_flag_list = [0] * path1_len
-        doc1_ref_index=[''] * path1_len
+        doc1_flag_list = [0] * path1_len  # 0和1
+        doc1_ref_index=[''] * path1_len   # '' 和在doc2出现的位置
 
         count = 0
         size = len(fingerprint_1)
@@ -111,10 +111,8 @@ class win_check():
         last_doc2_id=0
 
         for indexi, i in enumerate(fingerprint_1.values()):
-
             if contin_flag==1:
                 # print('当前的index和i',i,last_doc2_id+1,len(fingerprint_2))
-
                 if last_doc2_id+1<len(fingerprint_2) and i== fingerprint_2[last_doc2_id+1]: #如果当前和doc2的下一个位置匹配到了，就修改flag向量
                     # print('进来==1连续的:',indexi)
                     # print('上一个相同，本次相同',indexi,last_doc2_id+1)

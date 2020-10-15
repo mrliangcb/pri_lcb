@@ -130,4 +130,4 @@ def dup_check():
     #                            dup_text=dup_text, dup_dic=dup_dic,doc1_str=doc1_str,doc2_str=doc2_str,doc1_wrap=doc1_wrap,doc2_group_=doc2_group_))
 
 if __name__ == '__main__':
-    app.run("127.0.0.1",debug=True,port=5002)
+    app.run("0.0.0.0",debug=True,port=5002)

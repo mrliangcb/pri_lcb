@@ -122,7 +122,10 @@ def dup_check():
     similiarize, dup_text, dup_dic, doc1_str, doc2_str, doc1_wrap, doc2_group_=result
 
     # return jsonify(json.dumps(result))
-    return jsonify(str(similiarize))
+    result1=str(similiarize)
+    result2=render_template('testHtml.html', name1='doc1', name2='doc2', time=time_, dup_check=similiarize,
+                               dup_text=dup_text, dup_dic=dup_dic,doc1_str=doc1_str,doc2_str=doc2_str,doc1_wrap=doc1_wrap,doc2_group_=doc2_group_)
+    return jsonify([result1,result2])
     # return jsonify(render_template('testHtml.html', name1='doc1', name2='doc2', time=time_, dup_check=similiarize,
     #                            dup_text=dup_text, dup_dic=dup_dic,doc1_str=doc1_str,doc2_str=doc2_str,doc1_wrap=doc1_wrap,doc2_group_=doc2_group_))
 

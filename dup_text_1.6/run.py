@@ -111,6 +111,11 @@ def dup_check():
     args_dic = request.args
     print('收到的参数字典:',args_dic)
     time_,result = check_str(args_dic['doc1'], args_dic['doc2'],k=13)
+    # 文本长度小于k
+    if len(args_dic['doc1'])<13 or args_dic['doc2'] <13:
+        return jsonify(str('文本长度太短'))
+
+
     print('时间',time_)
     print('结果', result)
     similiarize, dup_text, dup_dic, doc1_str, doc2_str, doc1_wrap, doc2_group_=result

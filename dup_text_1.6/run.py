@@ -92,7 +92,7 @@ def check_str(doc1_str,doc2_str,k=13):
         e = 0
         doc2_group_ = []
     for i in range(1, len(doc2_group)):
-        if doc2_group[i - 1] != doc2_group[i]:
+        if doc2_group[i - 1] != doc2_group[i]: #
             if doc2_group[i - 1] == '':
                 doc2_group_.append(tuple([-1, s, e]))  # 分组号  起点  终点
             else:

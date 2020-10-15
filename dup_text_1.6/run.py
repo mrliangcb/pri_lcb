@@ -112,8 +112,9 @@ def dup_check():
     print('收到的参数字典:',args_dic)
     time_,result = check_str(args_dic['doc1'], args_dic['doc2'],k=13)
     # 文本长度小于k
-    if len(args_dic['doc1'])<13 or args_dic['doc2'] <13:
-        return jsonify(str('文本长度太短'))
+    print('args_dicdoc1:',args_dic['doc1'])
+    if len(args_dic['doc1'])<13 or len(args_dic['doc2']) <13:
+        return jsonify(str('错误 : 文本长度太短'))
 
 
     print('时间',time_)

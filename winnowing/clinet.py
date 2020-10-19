@@ -3,8 +3,8 @@
 
 import json
 import requests
-doc1='中双方均希望对本协议所述保密资料及信息予以有效保护梁成波1231231231231231231231231231231国'
-doc2='双方均希望对本协议所述保密资料及信息予以有效保护两梁成波1231231231231231231231231231231'
+doc1=r'中双方均希望对本协议所述保密资料及信息予以有效保护\n梁成波'
+doc2='双方均希望对本协议所述保密资料及信息予以有效保护两梁成波'
 
 
 doc1=doc1.replace(' ','')
@@ -15,17 +15,38 @@ print('doc2是什么',doc2,len(doc2))
 
 
 # base = 'http://127.0.0.1:5003/?doc1={}&doc2={}'.format(doc1,doc2)
-url='http://127.0.0.1:5002/dup_check'
+url='http://127.0.0.1:5002/NLP/Algorithm/base/dup_check/winnowing'
 base='{}?doc1={}&doc2={}'.format(url,doc1,doc2)
 # base='http://127.0.0.1:5002/dup_check?doc1=中双方均希望对本协议所述保密资料及信息予以有效保护国&doc2=双方均希望对本协议所述保密资料及信息予以有效保护'
 response = requests.post(base)  #get传递字符串长度是有限制的
 # answer = response.json()
-print(response.json())
-re_list=response.json()
 
-print('看逐个')
-print(re_list[4])
+re_list=response.json()
+print(re_list)
+# print('看逐个')
+print(re_list[3])
 # answer=json.loads(response.json())
 # #
 # print('预测结果',answer)
 # print(answer[1])
+
+
+
+# http://127.0.0.1:5002/NLP/Algorithm/base/dup_check/winnowing?doc1=中双方均希望对本协议所述保密资料及信息予以有效保护梁成波&doc2=双方均希望对本协议所述保密资料及信息予以有效保护两梁成波
+
+
+
+# 中双方均希望对本协议所述保密资料及信息予以有效保护
+# 双方均希望对本协议所述保密资料及信息予以有效保护两
+# 0.9230769230769231
+
+
+
+
+
+
+
+
+
+
+

@@ -1,9 +1,14 @@
 
 
 
-class win_check():
-    def get_sim(self,str1,str2,n,t):
 
+
+
+
+
+
+class win_check():
+    def get_sim(self,str1,str2,n=13,t=9):
         Base = 17
         str1_ngram = self.gengerate_n_gram(str1, n)
         str2_ngram = self.gengerate_n_gram(str2, n)
@@ -11,22 +16,22 @@ class win_check():
         hash_list2 = self.calculate_hashing_set(str2_ngram, Base, n)
         fingerprint_1 = self.winnowing(hash_list1, t, n)
         fingerprint_2 = self.winnowing(hash_list2, t, n)
-        similiarize,doc1_flag_list,doc1_ref_index = self.comparison(fingerprint_1, fingerprint_2,len(str1),n)  # 查重率
+        similiarize,doc1_01_list,doc1_from_doc2 = self.comparison(fingerprint_1, fingerprint_2,len(str1),n)  # 查重率
         # print('返回什么',similiarize)
         # print(doc1_ref_index)
         result_doc1_ref=[]
-        for i in range(len(doc1_ref_index)):
-            if doc1_ref_index[i]=='':
+        for i in range(len(doc1_from_doc2)):
+            if doc1_from_doc2[i]=='':
                 result_doc1_ref.append('')
             else:
-                result_doc1_ref.append(str2[doc1_ref_index[i]])
+                result_doc1_ref.append(str2[doc1_from_doc2[i]])
         # print('doc1_ref_index是什么:',doc1_ref_index) # ''和doc2的index
         # print('join之后的',''.join(result_doc1_ref))
         # print('doc1_flag_list是什么?',doc1_flag_list)
         duplicate= []
         temp=''
-        for i in range(len(doc1_flag_list)):
-            if doc1_flag_list[i] == 1:
+        for i in range(len(doc1_01_list)):
+            if doc1_01_list[i] == 1:
                 temp+=str1[i]
             else:
                 if temp:
@@ -37,7 +42,7 @@ class win_check():
             duplicate.append(temp)
         # print('重复的内容:',duplicate)
 
-        return similiarize,duplicate,doc1_ref_index,doc1_flag_list
+        return similiarize,duplicate,doc1_from_doc2,doc1_01_list
 
     def gengerate_n_gram(self,string, n):
         n_gram = []
@@ -50,7 +55,7 @@ class win_check():
     #     return
 
     # @cal_time('计算hash集合')
-    def calculate_hashing_set(self,n_gram, Base, n):
+    def calculate_hashing_set(self,n_gram, Base=17, n=13):
         hashinglist = []
         hash = 0
         first_gram = n_gram[0]
@@ -100,8 +105,8 @@ class win_check():
         # print('参考字典:',refer_dic)
 
 
-        doc1_flag_list = [0] * path1_len  # 0和1
-        doc1_ref_index=[''] * path1_len   # '' 和在doc2出现的位置
+        doc1_01_list = [0] * path1_len  # 0和1
+        doc1_from_doc2=[''] * path1_len   # '' 和在doc2出现的位置
 
         count = 0
         size = len(fingerprint_1)
@@ -118,8 +123,8 @@ class win_check():
                     # print('上一个相同，本次相同',indexi,last_doc2_id+1)
                     count += 1
                     for p in range(indexi, indexi + n):
-                        doc1_flag_list[p] = 1
-                        doc1_ref_index[p]=last_doc2_id+1+(p-indexi)
+                        doc1_01_list[p] = 1
+                        doc1_from_doc2[p]=last_doc2_id+1+(p-indexi)
                         # print('连续状态:', contin_flag, '文章1的id:', indexi,'文章2的:',last_doc2_id+1+(p-indexi))
                     last_doc2_id+=1  #之前这个忘记加了
                 else:#按照非连续处理
@@ -132,8 +137,8 @@ class win_check():
                         count += 1
                         last_doc2_id = refer_dic[i]
                         for p in range(indexi, indexi + n):
-                            doc1_flag_list[p] = 1
-                            doc1_ref_index[p] = ref_index + (p - indexi)
+                            doc1_01_list[p] = 1
+                            doc1_from_doc2[p] = ref_index + (p - indexi)
                             # print('连续状态:', contin_flag, '文章1的id:', indexi, '文章2的:', ref_index + (p - indexi))
             else:
                 if i in fpg2_set:
@@ -142,10 +147,55 @@ class win_check():
                     count += 1
                     last_doc2_id=refer_dic[i]
                     for p in range(indexi, indexi + n):
-                        doc1_flag_list[p] = 1
-                        doc1_ref_index[p]=ref_index+(p-indexi)
+                        doc1_01_list[p] = 1
+                        doc1_from_doc2[p]=ref_index+(p-indexi)
                         # print('连续状态:', contin_flag, '文章1的id:', indexi, '文章2的:', ref_index + (p - indexi))
 
         print('count是多少?', count, size, count/size)
 
-        return count/size,doc1_flag_list,doc1_ref_index
+        return count/size,doc1_01_list,doc1_from_doc2
+
+if __name__ == '__main__':
+    example1=win_check()
+    str1='1231231231232345234523452345'
+    str2='1231231231232345234523452345'
+    result=example1.get_sim(str1,str2,n=13,t=9)
+    print(result)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

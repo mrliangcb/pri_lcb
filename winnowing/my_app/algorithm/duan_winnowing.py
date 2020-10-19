@@ -97,7 +97,7 @@ class paragraph_winnowing():
         result_posi = []
         result_01 = []
         conti_condi = 0
-        count = 0
+
         size=0
         for i in range(len(doc1)):
             size+=len(doc1[i])
@@ -112,7 +112,6 @@ class paragraph_winnowing():
                 #     pass
                 # else:  # 非连续状态
                 if x1_hash[i][j] in doc2_key_set:
-                    count += 1
                     duan, num = hash2posi_dic[x1_hash[i][j]]
                     for k in range(13):
                         temp[j + k] = doc2[duan][num + k] #只收集文字
@@ -123,8 +122,12 @@ class paragraph_winnowing():
             result_str.append(''.join(temp))  # temp段 装进文章
             result_posi.append(temp2)
             result_01.append(temp_01)
-            similarity=count/size
 
+        print('temp_01是什么呢',result_01)
+        count=0
+        for i in range(len(result_01)):
+            count+=sum(result_01[i])
+        similarity=count/size
         return similarity,result_str,result_posi,result_01
 
     def x1_group( #给x1分组

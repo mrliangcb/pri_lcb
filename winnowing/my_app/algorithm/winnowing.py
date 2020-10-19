@@ -105,10 +105,10 @@ class win_check():
         # print('参考字典:',refer_dic)
 
 
-        doc1_01_list = [0] * path1_len  # 0和1
+        doc1_01_list = [0] * path1_len  # 0和1 0:没有重复  1:有重复
         doc1_from_doc2=[''] * path1_len   # '' 和在doc2出现的位置
 
-        count = 0
+
         size = len(fingerprint_1)
         fpg2_set = set(fingerprint_2.values())
         contin_flag=0
@@ -121,7 +121,7 @@ class win_check():
                 if last_doc2_id+1<len(fingerprint_2) and i== fingerprint_2[last_doc2_id+1]: #如果当前和doc2的下一个位置匹配到了，就修改flag向量
                     # print('进来==1连续的:',indexi)
                     # print('上一个相同，本次相同',indexi,last_doc2_id+1)
-                    count += 1
+
                     for p in range(indexi, indexi + n):
                         doc1_01_list[p] = 1
                         doc1_from_doc2[p]=last_doc2_id+1+(p-indexi)
@@ -134,7 +134,7 @@ class win_check():
                     if i in fpg2_set:
                         contin_flag = 1
                         ref_index = refer_dic[i]  # 这个编码在doc2首次出现的index
-                        count += 1
+
                         last_doc2_id = refer_dic[i]
                         for p in range(indexi, indexi + n):
                             doc1_01_list[p] = 1
@@ -144,16 +144,18 @@ class win_check():
                 if i in fpg2_set:
                     contin_flag=1
                     ref_index=refer_dic[i]  # 这个编码在doc2首次出现的index
-                    count += 1
+
                     last_doc2_id=refer_dic[i]
                     for p in range(indexi, indexi + n):
                         doc1_01_list[p] = 1
                         doc1_from_doc2[p]=ref_index+(p-indexi)
                         # print('连续状态:', contin_flag, '文章1的id:', indexi, '文章2的:', ref_index + (p - indexi))
+        # print('doc1_01_list长度:',len(doc1_01_list))
+        # print(doc1_01_list)
 
-        print('count是多少?', count, size, count/size)
+        # print('count是多少?', count, size, count/size)
 
-        return count/size,doc1_01_list,doc1_from_doc2
+        return sum(doc1_01_list)/len(doc1_01_list),doc1_01_list,doc1_from_doc2
 
 if __name__ == '__main__':
     example1=win_check()

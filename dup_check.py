@@ -61,9 +61,9 @@ import time
 @web.route('/NLP/Algorithm/base/dup_check/winnowing', methods=['POST','GET'])
 def dup_check2():
     # args_dic = request.args  # 这个是不可变字典，如果转成普通字典
-    print('当前路由winnowing')
+    print('now route winnowing')
     args_dic=request.form.to_dict()
-    print('当前时间:',time.localtime(time.time()))
+    print('now time:',time.localtime(time.time()))
 
     try:
         dic=request.args.to_dict()

@@ -1,5 +1,5 @@
 
-
+# -*- coding: utf-8 -*-
 from flask import Flask
 from my_app.web import create_app
 

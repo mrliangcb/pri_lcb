@@ -4,9 +4,7 @@ from . import web
 from my_app.algorithm.dup_check_algo import check_str
 from my_app.algorithm.duan_winnowing import paragraph_winnowing
 
-import io
-import sys
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='utf8')
+
 # -*- coding: utf-8 -*-
  #把注册好的蓝图拿来用
 
@@ -84,8 +82,8 @@ def dup_check2():
 
     doc1=doc1.split(r'\n')
     doc2 = doc2.split(r'\n')
-    print('split_doc1:',doc1)
-    print('split_doc2:', doc2)
+    # print('split_doc1:',doc1)
+    # print('split_doc2:',doc2)
 
     all_doc1=[]
     for i in range(len(doc1)):
@@ -113,7 +111,7 @@ def dup_check2():
             a,b,c=doc2_wrap[duan][num]
             doc2_wrap[duan][num]=tuple([duan,a,b,c])
 
-    print('similarity:',similarity)
+    # print('similarity:',similarity)
     result1=similarity
     result3 = render_template('testHtml2.html', name1='doc1', name2='doc2', time=time_, dup_check=similarity,doc1_str=doc1, doc2_str=doc2,
                     doc1_wrap=doc1_wrap, doc2_group_=doc2_wrap)
@@ -124,8 +122,8 @@ def dup_check2():
                   'doc1_label': result4,
                   'doc2_label': result5}
 
-    print('doc1_wrap:',doc1_wrap)
-    print('doc2_wrap:', doc2_wrap)
+    # print('doc1_wrap:',doc1_wrap)
+    # print('doc2_wrap:', doc2_wrap)
 
     return jsonify(result_dic)
 

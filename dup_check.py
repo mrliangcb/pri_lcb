@@ -3,6 +3,10 @@ from my_app.forms import check_args_validation
 from . import web
 from my_app.algorithm.dup_check_algo import check_str
 from my_app.algorithm.duan_winnowing import paragraph_winnowing
+
+import io
+import sys
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='utf8')
 # -*- coding: utf-8 -*-
  #把注册好的蓝图拿来用
 
@@ -11,7 +15,7 @@ from my_app.algorithm.duan_winnowing import paragraph_winnowing
 @web.route('/NLP/Algorithm/base/dup_check/winnowing2', methods=['POST','GET'])
 def dup_check():
     # args_dic = request.args  # 这个是不可变字典，如果转成普通字典
-    print('当前路由winnowing2')
+    print('now winnowing2')
     args_dic=request.form.to_dict()
 
     try:
@@ -38,7 +42,7 @@ def dup_check():
     result4 = render_template('add_href_doc1.html', doc1_wrap=doc1_wrap, doc1_str=doc1_str)
     result5 = render_template('add_href_doc2.html', doc2_group_=doc2_wrap, doc2_str=doc2_str)
 
-    print('重复文本字典：',result2)
+    print('dup_text：',result2)
     result6 = time_
     result7 = doc1_str
     result = doc2_str
@@ -80,8 +84,8 @@ def dup_check2():
 
     doc1=doc1.split(r'\n')
     doc2 = doc2.split(r'\n')
-    print('split之后doc1:',doc1)
-    print('split之后doc2:', doc2)
+    print('split_doc1:',doc1)
+    print('split_doc2:', doc2)
 
     all_doc1=[]
     for i in range(len(doc1)):

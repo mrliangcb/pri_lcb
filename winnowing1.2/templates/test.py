@@ -1,0 +1,10 @@
+{ %
+for g_id, s, e in doc1_wrap %}
+{ % if g_id == -1 %}
+{{doc1_str[s:e + 1]}}
+{ % else %}
+< a
+href = "#{{g_id}}"
+name = "clickable" > {{doc1_str[s:e + 1]}} < / a >
+{ % endif %}
+{ % endfor %}

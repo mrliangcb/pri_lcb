@@ -85,6 +85,7 @@ def dup_check2():
             doc1=dic['doc1']
             doc2=dic['doc2']
     except:
+        print('参数缺失')
         return jsonify('参数缺失')
 
         # a, b = check_args_validation(dic)

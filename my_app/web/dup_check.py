@@ -141,7 +141,7 @@ def dup_check2():
     similarity,result_str,doc1_wrap,doc2_wrap=example.get_sim(doc1,doc2)
     time_=time.time()-s_time
     print('运行时间:',time_)
-    logging.info('run success!! time cost :' + str(time_),'length:',doc1_length,doc2_length)
+    logging.info('run success!! time cost      :     ' + str(time_)+'   '+'length  :       '+str(doc1_length)+str(doc2_length))
 
     for duan in range(len(doc1_wrap)):
         for num in range(len(doc1_wrap[duan])):

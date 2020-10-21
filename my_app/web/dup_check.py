@@ -6,8 +6,12 @@ from my_app.algorithm.duan_winnowing import paragraph_winnowing
 
 
 # -*- coding: utf-8 -*-
+import codecs,sys
+# sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
+# sys.stdout.write("Your content....")
  #把注册好的蓝图拿来用
-
+# if sys.stdout.encoding != 'UTF-8':
+#     sys.stdout = codecs.getwriter('utf-8')(sys.stdout, 'strict')
 
 
 @web.route('/NLP/Algorithm/base/dup_check/winnowing2', methods=['POST','GET'])
@@ -16,12 +20,12 @@ def dup_check():
     print('now winnowing2')
     args_dic=request.form.to_dict()
 
-    try:
+    try:#网页传参模式
         dic=request.args.to_dict()
         doc1=dic['doc1']
         doc2=dic['doc2']
         a, b = check_args_validation(dic)
-    except:
+    except:# postman   form-data或者www-form模式
         dic=request.form.to_dict()
         doc1=dic['doc1']
         doc2=dic['doc2']
@@ -58,32 +62,39 @@ def dup_check():
 
 # http://127.0.0.1:5002/NLP/Algorithm/base/dup_check/winnowing?doc1=中双方均希望对本协议所述保密资料及信息予以有效保护&doc2=双方均希望对本协议所述保密资料及信息予以有效保护两
 # 0.96
+
+# http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing?doc1=%E6%9C%80%E8%BF%91%E7%9A%84NBA%EF%BC%8C%E6%B2%A1%E6%9C%89%E6%AF%94%E8%B5%9B%EF%BC%8C%E4%BD%86%E4%BA%8B%E6%83%85%E8%BF%98%E6%98%AF%E4%B8%8D%E5%B0%91%E7%9A%84%E3%80%82%E6%AF%94%E5%A6%82%EF%BC%8C%E6%A0%B9%E6%8D%AE%E4%B8%80%E4%BA%9B%E5%AA%92%E4%BD%93%E7%9A%84%E6%8A%A5%E9%81%93%EF%BC%8C%E6%9F%90%E7%9F%A5%E5%90%8D%E7%9A%84%E5%80%92%E9%9C%89%E6%80%BB%E7%BB%8F%E7%90%86%EF%BC%8C%E6%9C%80%E7%BB%88%E8%BF%98%E6%98%AF%E9%80%89%E6%8B%A9%E4%BA%86%E8%BE%9E%E8%81%8C%E3%80%82\n%E8%BF%99%E6%A0%B7%E7%9A%84%E6%80%BB%E7%BB%8F%E7%90%86%EF%BC%8C%E6%9D%A5%E8%87%AA%E4%BA%8E%E9%A9%AC%E8%B5%9B%E5%85%8B%E9%98%9F%EF%BC%8C%E5%A6%82%E4%BB%8A%EF%BC%8C%E6%88%96%E8%AE%B8%E5%8F%AF%E4%BB%A5%E5%8F%AB%E7%81%AB%E7%AE%AD%E9%98%9F%E4%BA%86%E3%80%82&doc2=
+#
 import time
 
 @web.route('/NLP/Algorithm/base/dup_check/winnowing', methods=['POST','GET'])
 def dup_check2():
-    # args_dic = request.args  # 这个是不可变字典，如果转成普通字典
+    # args_dic = request.args
     print('now route winnowing')
     args_dic=request.form.to_dict()
     print('now time:',time.localtime(time.time()))
 
     try:
-        dic=request.args.to_dict()
-        doc1=dic['doc1']
-        doc2=dic['doc2']
-        # a, b = check_args_validation(dic)
+        try:
+            dic=request.args.to_dict()
+            doc1=dic['doc1']
+            doc2=dic['doc2']
+            # a, b = check_args_validation(dic)
+        except:
+            dic=request.form.to_dict()
+            doc1=dic['doc1']
+            doc2=dic['doc2']
     except:
-        dic=request.form.to_dict()
-        doc1=dic['doc1']
-        doc2=dic['doc2']
+        return jsonify('参数缺失')
+
         # a, b = check_args_validation(dic)
     # if not a:
     #     return b
-
+    print('长度：',len(doc1),len(doc2))
     doc1=doc1.split(r'\n')
     doc2 = doc2.split(r'\n')
-    # print('split_doc1:',doc1)
-    # print('split_doc2:',doc2)
+    print('split_doc1:',doc1)
+    print('split_doc2:',doc2)
 
     all_doc1=[]
     for i in range(len(doc1)):
@@ -102,6 +113,8 @@ def dup_check2():
     s_time=time.time()
     similarity,result_str,doc1_wrap,doc2_wrap=example.get_sim(doc1,doc2)
     time_=time.time()-s_time
+    print('运行时间:',time_)
+
     for duan in range(len(doc1_wrap)):
         for num in range(len(doc1_wrap[duan])):
             a,b,c=doc1_wrap[duan][num]
@@ -117,6 +130,8 @@ def dup_check2():
                     doc1_wrap=doc1_wrap, doc2_group_=doc2_wrap)
     result4 = render_template('add_href_doc1_2.html', doc1_wrap=doc1_wrap, doc1_str=doc1)
     result5 = render_template('add_href_doc2_2.html', doc2_group_=doc2_wrap, doc2_str=doc2)
+
+    # return result3
 
     result_dic = {'dup_rate': result1,
                   'doc1_label': result4,

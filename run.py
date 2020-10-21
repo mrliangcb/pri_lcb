@@ -1,10 +1,20 @@
 
-import io
-import sys
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='utf8')
-# -*- coding: utf-8 -*-
+
+
 from flask import Flask
+
 from my_app.web import create_app
+# -*- coding: utf-8 -*-
+
+import codecs,sys
+# sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
+# sys.stdout.write("Your content....")
+
+# if sys.stdout.encoding != 'UTF-8':
+#     sys.stdout = codecs.getwriter('utf-8')(sys.stdout, 'strict')
+
+
+# sys.stdout.reconfigure(encoding='utf-8')  #py3.7开始
 
 
 app=create_app()

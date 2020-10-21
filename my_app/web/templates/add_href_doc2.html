@@ -1,0 +1,9 @@
+
+		{% for g_id,s,e in doc2_group_ %}
+			{% if g_id==-1 %}
+		{{doc2_str[s:e+1]}}
+			{% else %}
+			<span name="{{g_id}}">{{doc2_str[s:e+1]}}</span>
+
+			{% endif %}
+		{% endfor %}

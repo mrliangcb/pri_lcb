@@ -34,7 +34,7 @@ class paragraph_winnowing():
 
         doc2_group_index, doc1_wrap = self.doc2_label_group1(x2,doc1_wrap, doc1_posi) #返回doc2的组编号，改写后的doc1组
         # 正常
-        print('doc2_group_index在这里',doc2_group_index)
+        # print('doc2_group_index在这里',doc2_group_index)
         doc2_wrap = self.doc2_tuple(doc2_group_index)
         return similarity,result_str,doc1_wrap,doc2_wrap
 
@@ -250,7 +250,7 @@ class paragraph_winnowing():
         return doc2_group_index,doc1_tuple
 
     def doc2_tuple(self,doc2_group_index):
-        print('doc2_group_index是什么?',doc2_group_index)
+        # print('doc2_group_index是什么?',doc2_group_index)
         doc2_tuple = []
         for i in range(len(doc2_group_index)):
             s = 0

@@ -71,10 +71,12 @@ import time
 def dup_check2():
     # args_dic = request.args
     print('now route winnowing')
+
     args_dic=request.form.to_dict()
+    print('接收到request:',request)
     print('now time:',time.localtime(time.time()))
 
-    try:
+    try:#尝试挖出参数
         try:
             dic=request.args.to_dict()
             doc1=dic['doc1']

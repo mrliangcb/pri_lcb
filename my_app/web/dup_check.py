@@ -3,6 +3,13 @@ from my_app.forms import check_args_validation
 from . import web
 from my_app.algorithm.dup_check_algo import check_str
 from my_app.algorithm.duan_winnowing import paragraph_winnowing
+import logging
+# https://blog.csdn.net/weixin_30773135/article/details/97342082
+# file = open("demo.log", encoding="utf-8", mode="a")
+logging.basicConfig(format='%(asctime)s %(filename)s %(levelname)s %(message)s',datefmt='%a %d %b %Y %H:%M:%S',filename='demo.log',level=logging.DEBUG)# stream=file,
+logging.warning("warning")
+
+
 
 
 # -*- coding: utf-8 -*-
@@ -32,6 +39,8 @@ def dup_check():
         a, b = check_args_validation(dic)
     if not a:
         return b
+
+
 
     time_, result = check_str(str(doc1), str(doc2), k=13)
     similiarize, dup_text, dup_dic, doc1_str, doc2_str, doc1_wrap, doc2_wrap = result
@@ -77,6 +86,9 @@ def dup_check2():
     print('now time:',time.localtime(time.time()))
     doc1_ok=0
     doc2_ok=0
+
+    logging.info('foreign request : '+str(request))
+
     try:#尝试挖出参数
         try:
             dic=request.args.to_dict()
@@ -93,11 +105,13 @@ def dup_check2():
             doc2_ok = 1
     except:
         if doc1_ok==0:
-            print('参数缺失:doc1')
-            return jsonify('参数缺失:doc1')
+            print("can't get doc1")
+            logging.info("can't get doc1")
+            return jsonify("can't get doc1")
         if doc2_ok==0:
-            print('参数缺失:doc2')
-            return jsonify('参数缺失:doc2')
+            print("can't get doc2")
+            logging.info("can't get doc2")
+            return jsonify("can't get doc2")
         # a, b = check_args_validation(dic)
     # if not a:
     #     return b

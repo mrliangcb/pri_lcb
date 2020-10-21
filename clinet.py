@@ -16,7 +16,7 @@ print('doc2是什么',doc2,len(doc2))
 
 # base = 'http://127.0.0.1:5003/?doc1={}&doc2={}'.format(doc1,doc2)
 url='http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing'
-base='{}?doc1={}&doc22={}'.format(url,doc1,doc2)
+base='{}?doc1={}&doc2={}'.format(url,doc1,doc2)
 # base='{}'.format(url)
 # base='http://127.0.0.1:5002/dup_check?doc1=中双方均希望对本协议所述保密资料及信息予以有效保护国&doc2=双方均希望对本协议所述保密资料及信息予以有效保护'
 response = requests.post(base)  #get传递字符串长度是有限制的

@@ -120,8 +120,8 @@ def dup_check2():
     doc2_length = len(doc2)
     doc1=doc1.split(r'\n')
     doc2 = doc2.split(r'\n')
-    print('split_doc1:',doc1)
-    print('split_doc2:',doc2)
+    # print('split_doc1:',doc1)
+    # print('split_doc2:',doc2)
 
     all_doc1=[]
     for i in range(len(doc1)):
@@ -140,8 +140,9 @@ def dup_check2():
     s_time=time.time()
     similarity,result_str,doc1_wrap,doc2_wrap=example.get_sim(doc1,doc2)
     time_=time.time()-s_time
-    print('运行时间:',time_)
-    logging.info('run success!! time cost      :    {}      |length : {}  |  {}  '.format(time_,doc1_length,doc2_length))
+    print('run time :',time_)
+    print('similarity:', similarity)
+    logging.info('run success!! time cost      :    {}      |length : {}  |  {}  |dup_rate:{}'.format(time_,doc1_length,doc2_length,similarity))
 
     for duan in range(len(doc1_wrap)):
         for num in range(len(doc1_wrap[duan])):
@@ -152,7 +153,7 @@ def dup_check2():
             a,b,c=doc2_wrap[duan][num]
             doc2_wrap[duan][num]=tuple([duan,a,b,c])
 
-    # print('similarity:',similarity)
+
     result1=similarity
     result3 = render_template('testHtml2.html', name1='doc1', name2='doc2', time=time_, dup_check=similarity,doc1_str=doc1, doc2_str=doc2,
                     doc1_wrap=doc1_wrap, doc2_group_=doc2_wrap)

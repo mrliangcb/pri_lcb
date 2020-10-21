@@ -75,21 +75,29 @@ def dup_check2():
     args_dic=request.form.to_dict()
     print('接收到request:',request)
     print('now time:',time.localtime(time.time()))
-
+    doc1_ok=0
+    doc2_ok=0
     try:#尝试挖出参数
         try:
             dic=request.args.to_dict()
             doc1=dic['doc1']
+            doc1_ok=1
             doc2=dic['doc2']
+            doc2_ok = 1
             # a, b = check_args_validation(dic)
         except:
             dic=request.form.to_dict()
             doc1=dic['doc1']
+            doc1_ok = 1
             doc2=dic['doc2']
+            doc2_ok = 1
     except:
-        print('参数缺失')
-        return jsonify('参数缺失')
-
+        if doc1_ok==0:
+            print('参数缺失:doc1')
+            return jsonify('参数缺失:doc1')
+        if doc2_ok==0:
+            print('参数缺失:doc2')
+            return jsonify('参数缺失:doc2')
         # a, b = check_args_validation(dic)
     # if not a:
     #     return b

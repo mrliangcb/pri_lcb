@@ -9,12 +9,24 @@
 <div class="layout-main">
 	<div id="operaArea" class="layout-content content-left">
 		<div>
-			{% for duan in doc1_wrap %}<p>{% for duan_,g_id,s,e in duan %}{% if g_id==-1 %}{{doc1_str[duan_][s:e+1]}}{% else %}<a href="#{{g_id}}" name="clickable">{{doc1_str[duan_][s:e+1]}}</a>{% endif %}{% endfor %}</p>{% endfor %}
+		{% for g_id,s,e in doc1_wrap %}
+			{% if g_id==-1 %}
+		{{doc1_str[s:e+1]}}
+			{% else %}
+			<a href="#{{g_id}}" name="clickable">{{doc1_str[s:e+1]}}</a>
+			{% endif %}
+		{% endfor %}
 		</div>
 	</div>
-
 	<div id="resultArea" class="layout-content">
-		{% for duan in doc2_group_ %}<p>{% for duan_,g_id,s,e in duan %}{% if g_id==-1 %}{{doc2_str[duan_][s:e+1]}}{% else %}<span name="{{g_id}}">{{doc2_str[duan_][s:e+1]}}</span>{% endif %}{% endfor %}</p>{% endfor %}
+		{% for g_id,s,e in doc2_group_ %}
+			{% if g_id==-1 %}
+		{{doc2_str[s:e+1]}}
+			{% else %}
+			<span name="{{g_id}}">{{doc2_str[s:e+1]}}</span>
+			{% endif %}
+		{% endfor %}
+		
 	</div>
 </div>
 
@@ -80,6 +92,9 @@ function handleUnline(current) {
 }
 </style>
 
+    <p>文件上传成功!</p>
+    <p>文件1: <b> {{name1}} </b></p>
+    <p>文件2: <b> {{name2}} </b></p>
     <p>运行时间: <b> {{time}} </b></p>
     <p>查重率: <b> {{dup_check}} </b></p>
 

@@ -14,8 +14,8 @@ target=r'朝鲜最高领导人金正恩参谒位于朝鲜平安南道桧仓郡�
 # target=r''
 
 # template=r'双方均希望对本协议所述保密资料\n梁成波梁成波梁成波梁成波梁成波梁成波梁成波梁成波'
-template='双方均希望对本协议所述保密资料'
-template='1'
+template='双方均希望对本协议所述保密资料123412341234123412341234123412341234'
+template=''
 
 doc1=doc1.replace(' ','')
 doc2=doc2.replace(' ','')
@@ -25,8 +25,8 @@ print('doc2是什么',doc2,len(doc2))
 
 
 # base = 'http://127.0.0.1:5003/?doc1={}&doc2={}'.format(doc1,doc2)
-url='http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing1.3'
-base='{}?source={}&target={}&template={}'.format(url,source,target,template)
+url='http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing'
+base='{}?source={}&target={}&template={}'.format(url,source,target,template)# &template={}
 print('base:',base)
 # base='{}?source={}&target={}'.format(url,source,target)
 # base='{}'.format(url)

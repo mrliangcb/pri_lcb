@@ -99,7 +99,7 @@ def clear(x):
 
 import time
 
-@web.route('/NLP/Algorithm/base/dup_check/winnowing1.3', methods=['POST','GET'])
+@web.route('/NLP/Algorithm/base/dup_check/winnowing', methods=['POST','GET'])
 def dup_check2():
     # args_dic = request.args
     print('now route winnowing')
@@ -138,8 +138,6 @@ def dup_check2():
         # a, b = check_args_validation(dic)
 
 
-
-
     #尝试提取模板template
     template_target=None
     template_target=dic.get('template')
@@ -148,8 +146,8 @@ def dup_check2():
         template_target = template_target.split(r'\n')
         template_target = clear(template_target)
         print('split之后的template_target', template_target)
-    # if not a:
-    #     return b
+    else:
+        template_target=['']
     print('长度：',len(source),len(target))
     source_length=len(source)
     target_length = len(target)
@@ -167,8 +165,6 @@ def dup_check2():
 
     print('split之后的source',source) # [] 就是source=''的情况
 
-
-
     example=paragraph_winnowing()
     s_time=time.time()
     similarity,result_str,doc1_wrap,doc2_wrap=example.get_sim(source,target,template=template_target)
@@ -182,11 +178,13 @@ def dup_check2():
                 temp.append(result_str[i][j])
                 if j==len(result_str[i])-1:
                     if temp:
-                        result_str_plus.append(''.join(temp))
+                        if len(temp)>=13:
+                            result_str_plus.append(''.join(temp))
                         temp = []
             else:
                 if temp:
-                    result_str_plus.append(''.join(temp))
+                    if len(temp) >= 13:
+                        result_str_plus.append(''.join(temp))
                     temp=[]
     if not result_str_plus:result_str_plus.append('')
     source_dup_dic={}

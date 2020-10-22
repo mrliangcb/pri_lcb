@@ -283,26 +283,43 @@ class paragraph_winnowing():
                 a, b, c = doc1_tuple[i][j] #取出doc1_wrap 组号，s,e
                 if (a == -1):
                     pass
-                else:
+                else:#找到一组!=-1的
                     # print('非-1') 非-1的组，填入到doc2
-                    w_count = 0
-                    for k in range(b, c + 1):  # 找s到e之间，去doc2的信息
-                        # print('k值',i,k)
-                        d, e, f = doc1_2_doc2_index[i][k]  # d是段号  e是第几个   f是字
-                        if doc2_group_index[d][e] == -1:
-                            # print('doc2可以填入',a,d,e,f)
-                            doc2_group_index[d][e] = a  # 给分组标号
-                            w_count += 1
-                        else:
-                            latest_group = doc2_group_index[d][e]
-                    if w_count < 13:  # 单独属于这个句子的太少了，那就整组转换
-                        # 有问题，当没有模板去除的时候，单次填入的字符肯定>=13
-                        # 当有模板去除的时候，连续的字符可能<13
-                        # 当然，<13其实就可以不算重复了 所以换成-1组号
 
+                    if (c - b + 1) >= 13:#检查doc1连续13个
+                        test_count=0
+                        for k in range(b, c + 1):#检查doc2连续13个
+                            d, e, f = doc1_2_doc2_index[i][k]
+                            if doc2_group_index[d][e] == -1:
+                                test_count+=1
+
+                        if test_count>=13:#检查doc2那边能否填超过13个
+                            w_count = 0
+                            for k in range(b, c + 1):  # 找s到e之间，去doc2的信息
+                            # print('k值',i,k)
+                             #doc1中，超过13个字的连续才填入到doc2
+                                d, e, f = doc1_2_doc2_index[i][k]  # d是段号  e是第几个   f是字
+                                if doc2_group_index[d][e] == -1:
+                                    # print('doc2可以填入',a,d,e,f)
+                                    doc2_group_index[d][e] = a  # 给分组标号
+                                    w_count += 1
+                                else:
+                                    latest_group = doc2_group_index[d][e]
+                            #填完doc2之后，有可能doc1本来超过13，但doc2有部分满了写不进去
+                              # 单独属于这个句子的太少了，那就整组转换
+                                # 有问题，当没有模板去除的时候，单次填入的字符肯定>=13
+                                # 当有模板去除的时候，连续的字符可能<13
+                                # 当然，<13其实就可以不算重复了 所以换成-1组号
+                        else:#doc2那边小于13个
+                            old_group = latest_group  # 设置阈值，然后做整个组号转化
+                            new_group = a
+                            new_group_old[new_group] = old_group
+                    else:
+                        # 找到一个组长度不够13，直接换组号 换成-1
                         old_group = latest_group  # 设置阈值，然后做整个组号转化
                         new_group = a
                         new_group_old[new_group] = old_group
+
         print('new_group_old:',new_group_old)
         #改写doc1_group
         exis_new_group = set(new_group_old.keys())

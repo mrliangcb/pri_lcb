@@ -1,11 +1,1 @@
-		{% for duan in doc1_wrap %}
-			<p>
-			{% for duan_,g_id,s,e in duan %}
-				{% if g_id==-1 %}
-					{{doc1_str[duan_][s:e+1]}}
-				{% else %}
-					<a href="#{{g_id}}" name="clickable">{{doc1_str[duan_][s:e+1]}}</a>
-				{% endif %}
-			{% endfor %}
-			</p>
-		{% endfor %}
+{% for duan in doc1_wrap %}<p>{% for duan_,g_id,s,e in duan %}{% if g_id==-1 %}{{doc1_str[duan_][s:e+1]}}{% else %}<a href="#{{g_id}}" name="clickable">{{doc1_str[duan_][s:e+1]}}</a>{% endif %}{% endfor %}{% endfor %}

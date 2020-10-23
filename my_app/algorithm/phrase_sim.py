@@ -1,5 +1,7 @@
+# https://blog.csdn.net/weiyudang11/article/details/52684495
 
 # -*- coding: utf-8 -*-
+
 import hashlib
 from unittest import main, TestCase
 

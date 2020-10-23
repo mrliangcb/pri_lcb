@@ -1,5 +1,8 @@
 #!/usr/bin/python
 # coding=utf-8
+# https://github.com/1e0ng/simhash
+
+
 class simhash:
 
     # 构造函数
@@ -63,20 +66,28 @@ class simhash:
             x = - 2
         return x
 
-
+import jieba
 if __name__ == '__main__':
     s = 'This is a test string for testing'
     s='巴西卫生部长帕祖洛当地时间20日与各州州长会晤后，宣布将购买北京科兴中维生物技术有限公司研发的新冠疫苗，并将其纳入国家免疫计划。'
-    hash1 = simhash(s.split())
-
+    s=list(jieba.cut(s))
+    print(s)
+    hash1 = simhash(s)
+    print('hash1完成')
 
     s = 'This is a test string for testing also'
     s='巴西卫生部长张三里斯当地时间20日与各州州长会晤后，宣布将购买北京科兴中维生物技术有限公司研发的新冠疫苗，并将其纳入国家免疫计划。'
-    hash2 = simhash(s.split())
+    s=list(jieba.cut(s))
+    print(s)
+    hash2 = simhash(s)
 
     s = '张三里斯12394876'
-    hash3 = simhash(s.split())
+    s=list(jieba.cut(s))
+    print(s)
+    hash3 = simhash(s)
 
     print(hash1.hamming_distance(hash2), "   ", hash1.similarity(hash2))
+
     print(hash1.hamming_distance(hash3), "   ", hash1.similarity(hash3))
-    print(hash1.hamming_distance(hash1), "   ", hash1.similarity(hash1))
+
+    print(hash2.hamming_distance(hash2), "   ", hash2.similarity(hash2))

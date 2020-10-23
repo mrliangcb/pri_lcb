@@ -82,19 +82,40 @@ def uniform_(x):#不管输入是多少段，规整后每段至少有一个''   �
 
 
 
-def clear(x):
-    if x==None:
-        return ['']
+def clear(x):#至少是''
 
     temp = []
     for i in range(len(x)):
         if x[i]:  # 如果不为空
             temp.append(x[i])
-    x = temp
 
-    if x==[]:
-        return ['']
-    return x
+    if temp==[]:
+        return ['']  #至少是['']
+    return temp
+
+def source_dup_dic(result_str):#
+    result_str_plus=[]
+    temp=[]
+    for i in range(len(result_str)):
+        for j in range(0,len(result_str[i])):
+            if result_str[i][j]!='':
+                temp.append(result_str[i][j])
+                if j==len(result_str[i])-1:
+                    if temp:
+                        if len(temp)>=13:
+                            result_str_plus.append(''.join(temp))
+                        temp = []
+            else:
+                if temp:
+                    if len(temp) >= 13:
+                        result_str_plus.append(''.join(temp))
+                    temp=[]
+    if not result_str_plus:result_str_plus.append('')
+    source_dup_dic={}
+    for k,v in enumerate(result_str_plus):
+        source_dup_dic[str(k)]=v
+    return source_dup_dic
+
 
 
 import time
@@ -137,65 +158,29 @@ def dup_check2():
             return jsonify("can't get target")
         # a, b = check_args_validation(dic)
 
+    template_target = dic.get('template','') #有template 或者没有
+    # source , target template 的异常[]   [……[]]
+    # str阶段 ''或者无，'……'
 
-    #尝试提取模板template
-    template_target=None
-    template_target=dic.get('template')
-    print('template_target:',template_target)
-    if template_target:
-        template_target = template_target.split(r'\n')
-        template_target = clear(template_target)
-        print('split之后的template_target', template_target)
-    else:
-        template_target=['']
-    print('长度：',len(source),len(target))
-    source_length=len(source)
+
+    #分段并且去掉空段
+    template_target = template_target.split(r'\n')
+    template_target = clear(template_target)
+
+    source_length = len(source)
     target_length = len(target)
-    print('split之前_doc1:', source)
-    source=source.split(r'\n') #一维变二维
+    print('长度：  source: {} | target : {}'.format(source_length,target_length))
+
+    source=source.split(r'\n') # ['']  ['','','']
     target =target.split(r'\n')
-    print('split之后_doc1:', source)#['','']
-    if (not source) :source=['']
-    if (not target): target=['']
-    # print('split_doc1:',doc1)
-    # print('split_doc2:',doc2)
-    #去掉空段
     source=clear(source)#去掉空段之后，至少存在一个['']
     target = clear(target)
 
-    print('split之后的source',source) # [] 就是source=''的情况
-
     example=paragraph_winnowing()
     s_time=time.time()
-    similarity,result_str,doc1_wrap,doc2_wrap=example.get_sim(source,target,template=template_target)
-    print('最后result_str',result_str)
+    similarity,result_str,doc1_wrap,doc2_wrap=example.get_sim(source,target,template=template_target,n=13)
 
-    result_str_plus=[]
-    temp=[]
-    for i in range(len(result_str)):
-        for j in range(0,len(result_str[i])):
-            if result_str[i][j]!='':
-                temp.append(result_str[i][j])
-                if j==len(result_str[i])-1:
-                    if temp:
-                        if len(temp)>=13:
-                            result_str_plus.append(''.join(temp))
-                        temp = []
-            else:
-                if temp:
-                    if len(temp) >= 13:
-                        result_str_plus.append(''.join(temp))
-                    temp=[]
-    if not result_str_plus:result_str_plus.append('')
-    source_dup_dic={}
-    for k,v in enumerate(result_str_plus):
-        source_dup_dic[str(k)]=v
-    print('result_str_plus是什么?',result_str_plus)
-    print('source_dup_dic:',source_dup_dic)
-
-
-
-
+    source_dup_dict=source_dup_dic(result_str)
 
     time_=time.time()-s_time
     print('run time :',time_)
@@ -212,19 +197,12 @@ def dup_check2():
             doc2_wrap[duan][num]=tuple([duan,a,b,c])
 
     result1=similarity
-
-    print('最后结果doc1_wrap:',doc1_wrap)
-    print('最后结果doc2_wrap:', doc2_wrap)
-
     result3 = render_template('testHtml2.html', name1='doc1', name2='doc2', time=time_, dup_check=similarity,doc1_str=source, doc2_str=target,
                     doc1_wrap=doc1_wrap, doc2_group_=doc2_wrap)
     result4 = render_template('add_href_doc1.html', doc1_wrap=doc1_wrap, doc1_str=source)
     result5 = render_template('add_href_doc2.html', doc2_group_=doc2_wrap, doc2_str=target)
-
-    # source_dup={'0':'哈哈哈','1':'下一句','2':'还有一句'}
-
-    result6 = render_template('dup_list_source.html', source_dup=source_dup_dic)
-    result7 = render_template('dup_list_target.html', target_dup=source_dup_dic)
+    result6 = render_template('dup_list_source.html', source_dup=source_dup_dict)
+    result7 = render_template('dup_list_target.html', target_dup=source_dup_dict)
 
     # return result3
     # return result7

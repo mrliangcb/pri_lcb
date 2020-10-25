@@ -159,6 +159,7 @@ def dup_check2():
         # a, b = check_args_validation(dic)
 
     template_target = dic.get('template','') #有template 或者没有
+    template_length=len(template_target)
     # source , target template 的异常[]   [……[]]
     # str阶段 ''或者无，'……'
 
@@ -169,7 +170,7 @@ def dup_check2():
 
     source_length = len(source)
     target_length = len(target)
-    print('长度：  source: {} | target : {}'.format(source_length,target_length))
+    print('长度：  source: {} | target : {} | template: {}'.format(source_length,target_length,template_length))
 
     source=source.split(r'\n') # ['']  ['','','']
     target =target.split(r'\n')

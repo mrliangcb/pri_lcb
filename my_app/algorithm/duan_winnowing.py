@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import time
 
 class paragraph_winnowing():
 
@@ -8,7 +9,7 @@ class paragraph_winnowing():
         x1:[[第一段的str]，[第二段的str]]
         x2:同x1
         '''
-
+        s_time=time.time()
         x1_gram=self.build_gram(x1,n)
         x2_gram=self.build_gram(x2,n)
         template_gram=self.build_gram(template,n)
@@ -16,15 +17,21 @@ class paragraph_winnowing():
         template_hash = self.gram_hash(template_gram,n)
         x1_hash = self.gram_hash(x1_gram,n)
         x2_hash = self.gram_hash(x2_gram,n)
-
+        e_time=time.time()
+        print('gram和hash的时间:',e_time-s_time)
 
         # 上面没问题
+        s_time=time.time()
         doc1_str,doc1_posi,doc1_01=self.compare(x1_hash,x2_hash,x1,x2)
-
         # 查一下source_2_template
-
         source_tem_str, source_tem_posi, source_tem_01 = self.compare(x1_hash, template_hash, x1, template)
+        e_time=time.time()
+        print('两次compare的时间:',e_time-s_time)
+        s_time=time.time()
         doc1_str, doc1_posi, doc1_01=self.clear_template(doc1_str, doc1_posi, doc1_01, source_tem_str, source_tem_posi, source_tem_01)
+        e_time=time.time()
+        print('去除模板的时间:',e_time-s_time)
+
         print('去除模板后的doc1_str',doc1_str)
         print('去除模板后的doc1_01', doc1_01)
 

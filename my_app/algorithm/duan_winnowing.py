@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import time
-import docx
-import re
+# import docx
+# import re
 class paragraph_winnowing():
 
     def get_sim(self,x1,x2,n=13,template=['']):#外部调用
@@ -406,41 +406,41 @@ if __name__ == '__main__':
     # example1=paragraph_winnowing()
     # y=example1.get_sim(x1,x2)
     # print('输出结果:',y)
-    print('开始')
-    path1 = r'D:\lcb_note\code\NLP\doc_sim\ZhiHu_Code\大唐数据\长三热高压开关柜\北京科锐配电自动化股份有限公司\20170721___长春第三热电厂背压机___KYN28-12___2500-31.5___投标文件\20170721   长春第三热电厂背压机   KYN28-12   2500-31.5   投标文件商务部分.docx'
-    path2 = r'D:\lcb_note\code\NLP\doc_sim\ZhiHu_Code\大唐数据\长三热高压开关柜\华仪电气股份有限公司\投标文件商务部分.docx'
-    path3=r'D:\lcb_note\code\NLP\doc_sim\ZhiHu_Code\大唐数据\长三热高压开关柜\日新恒通电气有限公司\商务投标文件(（加盖电子签章）.docx'
-
-
-
-    s_time=time.time()
-    s_time2=time.time()
-    s_time4=time.time()
-    process_tool=preprocess()
-
-    str_1=process_tool.doc2str(path1)
-    str_2 = process_tool.doc2str(path2)
-    str_3 = process_tool.doc2str(path3)
-    print('preprocess时间',time.time()-s_time4)
-
-    str_1=str_1+str_1+str_1+str_1
-    print('长度1', len(str_1))
-    str_1=str_1.split('\n')
-
-    str_2=str_2+str_2+str_2+str_2+str_2+str_2+str_2+str_2+str_2
-    print('长度2', len(str_2))
-    str_2 = str_2.split('\n')
-
-    print('长度3', len(str_3))
-    str_3=str_3+str_3+str_3+str_3
-    str_3 = str_3.split('\n')
-
-    print('前面split的时间',time.time()-s_time2)
-    # print('str_1:',str_1)
-    example1 = paragraph_winnowing()
-    y = example1.get_sim(str_1, str_2,n=13,template=str_3)
-    # print('最终结果:',y)
-    print('整个过程时间L',time.time()-s_time)
+    # print('开始')
+    # path1 = r'D:\lcb_note\code\NLP\doc_sim\ZhiHu_Code\大唐数据\长三热高压开关柜\北京科锐配电自动化股份有限公司\20170721___长春第三热电厂背压机___KYN28-12___2500-31.5___投标文件\20170721   长春第三热电厂背压机   KYN28-12   2500-31.5   投标文件商务部分.docx'
+    # path2 = r'D:\lcb_note\code\NLP\doc_sim\ZhiHu_Code\大唐数据\长三热高压开关柜\华仪电气股份有限公司\投标文件商务部分.docx'
+    # path3=r'D:\lcb_note\code\NLP\doc_sim\ZhiHu_Code\大唐数据\长三热高压开关柜\日新恒通电气有限公司\商务投标文件(（加盖电子签章）.docx'
+    #
+    #
+    #
+    # s_time=time.time()
+    # s_time2=time.time()
+    # s_time4=time.time()
+    # process_tool=preprocess()
+    #
+    # str_1=process_tool.doc2str(path1)
+    # str_2 = process_tool.doc2str(path2)
+    # str_3 = process_tool.doc2str(path3)
+    # print('preprocess时间',time.time()-s_time4)
+    #
+    # str_1=str_1+str_1+str_1+str_1
+    # print('长度1', len(str_1))
+    # str_1=str_1.split('\n')
+    #
+    # str_2=str_2+str_2+str_2+str_2+str_2+str_2+str_2+str_2+str_2
+    # print('长度2', len(str_2))
+    # str_2 = str_2.split('\n')
+    #
+    # print('长度3', len(str_3))
+    # str_3=str_3+str_3+str_3+str_3
+    # str_3 = str_3.split('\n')
+    #
+    # print('前面split的时间',time.time()-s_time2)
+    # # print('str_1:',str_1)
+    # example1 = paragraph_winnowing()
+    # y = example1.get_sim(str_1, str_2,n=13,template=str_3)
+    # # print('最终结果:',y)
+    # print('整个过程时间L',time.time()-s_time)
 
 
 

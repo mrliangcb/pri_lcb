@@ -11063,3 +11063,11 @@ Mon 26 Oct 2020 02:12:36 dup_check.py WARNING warning
 Mon 26 Oct 2020 02:12:36 _internal.py WARNING  * Debugger is active!
 Mon 26 Oct 2020 02:12:36 _internal.py INFO  * Debugger PIN: 135-586-556
 Mon 26 Oct 2020 02:12:37 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Mon 26 Oct 2020 02:17:51 _internal.py INFO  * Detected change in 'E:\\coder\\github\\pri_lcb\\my_app\\algorithm\\duan_winnowing.py', reloading
+Mon 26 Oct 2020 02:17:51 _internal.py INFO  * Restarting with stat
+Mon 26 Oct 2020 02:17:52 dup_check.py WARNING warning
+Mon 26 Oct 2020 02:17:52 _internal.py WARNING  * Debugger is active!
+Mon 26 Oct 2020 02:17:52 _internal.py INFO  * Debugger PIN: 135-586-556
+Mon 26 Oct 2020 02:17:52 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Mon 26 Oct 2020 02:18:03 _internal.py INFO  * Detected change in 'E:\\coder\\github\\pri_lcb\\my_app\\algorithm\\duan_winnowing.py', reloading
+Mon 26 Oct 2020 02:18:04 _internal.py INFO  * Restarting with stat

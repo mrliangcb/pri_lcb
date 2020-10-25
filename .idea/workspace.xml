@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd0c8e45-0a1a-4d34-a858-791fa0151c6f" name="Default Changelist" comment="" />
+    <list default="true" id="fd0c8e45-0a1a-4d34-a858-791fa0151c6f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo.log" beforeDir="false" afterPath="$PROJECT_DIR$/demo.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_app/algorithm/duan_winnowing.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_app/algorithm/duan_winnowing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_app/web/dup_check.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_app/web/dup_check.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,12 +19,43 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="JupyterTrust" id="c234007a-d41d-4927-908c-cc134c3ebb34" />
+  <component name="ProjectId" id="1jNRvHtKPSRYP9X3lRQczk8QWAP" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="D:/lcb_note/code" />
+  </component>
   <component name="RunManager" selected="Python.run">
+    <configuration name="duan_winnowing" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="pri_lcb" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\software\anaconda\envs\python36_tf1_11\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/my_app/algorithm" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/my_app/algorithm/duan_winnowing.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="dup_check_algo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="winnowing" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -65,15 +101,15 @@
       <method v="2" />
     </configuration>
     <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="winnowing" />
+      <module name="pri_lcb" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\software\anaconda\envs\python36_tf1_11\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -102,6 +138,7 @@
       <option name="presentableId" value="Default" />
       <updated>1602835683784</updated>
       <workItem from="1602835684804" duration="4391000" />
+      <workItem from="1603642793080" duration="4277000" />
     </task>
     <servers />
   </component>
@@ -109,22 +146,30 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1602840106973">
-      <screen x="2560" y="388" width="1920" height="1040" />
+    <state x="1060" y="495" key="FileChooserDialogImpl" timestamp="1603642923523">
+      <screen x="0" y="40" width="2560" height="1400" />
+    </state>
+    <state x="1060" y="495" key="FileChooserDialogImpl/0.40.2560.1400/2560.388.1920.1040@0.40.2560.1400" timestamp="1603642923523" />
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom" timestamp="1603649126332">
+      <screen x="0" y="40" width="2560" height="1400" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.40.2048.1112/2560.388.1920.1040@2560.388.1920.1040" timestamp="1602840106973" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1602840106973">
-      <screen x="2560" y="388" width="1920" height="1040" />
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom/0.40.2560.1400/2560.388.1920.1040@0.40.2560.1400" timestamp="1603649126332" />
+    <state width="2517" height="401" key="GridCell.Tab.0.center" timestamp="1603649126332">
+      <screen x="0" y="40" width="2560" height="1400" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.40.2048.1112/2560.388.1920.1040@2560.388.1920.1040" timestamp="1602840106973" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1602840106973">
-      <screen x="2560" y="388" width="1920" height="1040" />
+    <state width="2517" height="401" key="GridCell.Tab.0.center/0.40.2560.1400/2560.388.1920.1040@0.40.2560.1400" timestamp="1603649126332" />
+    <state width="2517" height="401" key="GridCell.Tab.0.left" timestamp="1603649126332">
+      <screen x="0" y="40" width="2560" height="1400" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.40.2048.1112/2560.388.1920.1040@2560.388.1920.1040" timestamp="1602840106973" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1602840106973">
-      <screen x="2560" y="388" width="1920" height="1040" />
+    <state width="2517" height="401" key="GridCell.Tab.0.left/0.40.2560.1400/2560.388.1920.1040@0.40.2560.1400" timestamp="1603649126332" />
+    <state width="2517" height="401" key="GridCell.Tab.0.right" timestamp="1603649126332">
+      <screen x="0" y="40" width="2560" height="1400" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.40.2048.1112/2560.388.1920.1040@2560.388.1920.1040" timestamp="1602840106973" />
+    <state width="2517" height="401" key="GridCell.Tab.0.right/0.40.2560.1400/2560.388.1920.1040@0.40.2560.1400" timestamp="1603649126332" />
     <state x="3183" y="613" width="672" height="678" key="search.everywhere.popup" timestamp="1602839413199">
       <screen x="2560" y="388" width="1920" height="1040" />
     </state>
@@ -143,6 +188,8 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/winnowing$dup_check_algo.coverage" NAME="dup_check_algo Coverage Results" MODIFIED="1602838849143" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/my_app/algorithm" />
+    <SUITE FILE_PATH="coverage/pri_lcb$run.coverage" NAME="run Coverage Results" MODIFIED="1603649126327" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pri_lcb$duan_winnowing.coverage" NAME="duan_winnowing Coverage Results" MODIFIED="1603643986969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/my_app/algorithm" />
     <SUITE FILE_PATH="coverage/winnowing$run.coverage" NAME="run Coverage Results" MODIFIED="1602840099877" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

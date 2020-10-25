@@ -118,6 +118,31 @@ def source_dup_dic(result_str):#
 
 
 
+
+
+
+
+def search_dot_2dec(x,num1,num2):#根据两个位置寻找前后句号
+    s=-1
+    e=-1
+    print('num1和num2',x[num1],x[num2])
+    for i in range(num1,-1,-1):
+        if x[i]=='。':
+            s=i
+            print('找到s=句号',i,x[i])
+            break
+    for i in range(num2,len(x),+1):
+        if x[i]=='。':
+            e=i
+            break
+    return x[s+1:e+1]
+
+
+
+
+
+
+
 import time
 
 @web.route('/NLP/Algorithm/base/dup_check/winnowing', methods=['POST','GET'])
@@ -188,6 +213,39 @@ def dup_check2():
     print('similarity:', similarity)
     logging.info('run success!! time cost      :    {}      |length : {}  |  {}  |dup_rate:{}'.format(time_,source_length,target_length,similarity))
 
+    source_target_list=[]
+    for i in range(len(doc1_wrap)):
+        for j in range(len(doc1_wrap[i])):
+            group_,s,e=doc1_wrap[i][j]
+            if group_!=-1:
+                tem_group=group_
+                source_env=search_dot_2dec(source[i],s,e)
+                print('语境是:',source[i],s,e,source_env)
+                for i_ in range(len(doc2_wrap)):
+                    for j_ in range(len(doc2_wrap[i_])):
+                        g_,s_,e_=doc2_wrap[i_][j_]
+                        if g_==tem_group:
+                            target_env = search_dot_2dec(target[i_], s_, e_)#第i段
+                source_target_list.append([source_env,target_env])
+    print('source_target_list',source_target_list)
+
+
+    # make source target 字典
+    source_dic={}
+    target_dic={}
+    group__=0
+    for i in range(len(source_target_list)):
+        source_tem,target_tem=source_target_list[i]
+        source_dic[group__]=source_tem
+        target_dic[group__] = target_tem
+        group__+=1
+
+    print('source_dic::::',source_dic)
+    print('target_dic::::', target_dic)
+
+
+
+
     for duan in range(len(doc1_wrap)):
         for num in range(len(doc1_wrap[duan])):
             a,b,c=doc1_wrap[duan][num]
@@ -202,10 +260,12 @@ def dup_check2():
                     doc1_wrap=doc1_wrap, doc2_group_=doc2_wrap)
     result4 = render_template('add_href_doc1.html', doc1_wrap=doc1_wrap, doc1_str=source)
     result5 = render_template('add_href_doc2.html', doc2_group_=doc2_wrap, doc2_str=target)
-    result6 = render_template('dup_list_source.html', source_dup=source_dup_dict)
-    result7 = render_template('dup_list_target.html', target_dup=source_dup_dict)
+    result6 = render_template('dup_list_source.html', source_dup=source_dic)
 
-    # return result3
+    result7 = render_template('dup_list_target.html', target_dup=target_dic)
+
+
+    # return result6
     # return result7
 
     result_dic = {'dup_rate': result1,

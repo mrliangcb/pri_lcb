@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import time
-
+import docx
+import re
 class paragraph_winnowing():
 
     def get_sim(self,x1,x2,n=13,template=['']):#外部调用
@@ -32,8 +33,8 @@ class paragraph_winnowing():
         e_time=time.time()
         print('去除模板的时间:',e_time-s_time)
 
-        print('去除模板后的doc1_str',doc1_str)
-        print('去除模板后的doc1_01', doc1_01)
+        # print('去除模板后的doc1_str',doc1_str)
+        # print('去除模板后的doc1_01', doc1_01)
 
         for i in range(len(doc1_str)):
             print('result_str:',i,''.join(doc1_str[i]))
@@ -54,6 +55,8 @@ class paragraph_winnowing():
 
 
         #按句号截取，然后计算每部分的重复率，写入字典，并写入top k堆
+
+        print(doc1_wrap)
 
         return similarity,doc1_str,doc1_wrap,doc2_wrap
 
@@ -110,7 +113,7 @@ class paragraph_winnowing():
     def build_gram(self,x,n):# 至少['']
 
         result = []
-        print('x是什么？',x)
+        # print('x是什么？',x)
         for duan in range(len(x)):
             gram_temp = self.generate_n_gram(x[duan],n) #返回[1234,2345,3456]或者['']
             result.append(gram_temp)
@@ -172,7 +175,7 @@ class paragraph_winnowing():
     def compare(self,x1_hash,x2_hash,doc1,doc2,n=13):#hatsh至少[['']]
         hash2posi_dic=self.search_dict(x2_hash)#doc2是参考文章
 
-        print('hash2posi_dic:',hash2posi_dic)
+        # print('hash2posi_dic:',hash2posi_dic)
         # doc2_key_set = set(hash2posi_dic.keys())  #这种方法也不怎么节省时间，就是减少内存
         result_str = []
         result_posi = []
@@ -203,7 +206,7 @@ class paragraph_winnowing():
                             if (hash2posi_dic.get(x1_hash[i][j])!=None):
                                 duan, num = hash2posi_dic[x1_hash[i][j]]
                                 last_doc2_id = tuple([duan, num])
-                                print('for 里面的temp', temp)
+                                # print('for 里面的temp', temp)
                                 for k in range(n):  # 要遍历13个，容易出错
                                     if temp[j + k]=='':
                                         temp[j + k] = doc2[duan][num + k]  # 只收集文字
@@ -370,20 +373,74 @@ class paragraph_winnowing():
             doc2_tuple.append(temp_tuple)
         return doc2_tuple
 
+
+class preprocess():
+    def doc2str(self,path):
+        doc_list=self.get_docx(path)
+        str_=self.doc_process(doc_list)
+        return str_
+
+    def get_docx(self,path):
+        d = docx.opendocx(path)
+        doc = docx.getdocumenttext(d)
+        return doc
+    def doc_process(self,doc_list):  # 将list装着的一句一句话变成一个长文本str
+        x = [re.sub('\t([\d]*$)?', '', i) for i in doc_list]  # 去掉 \t \t386等格式
+        # for i in range(len(x)):
+        #     if '\t' in x[i]:
+        # print('第一个#############', repr(x[i]))
+        # print('第二个#############', repr(x_[i]))
+        x = [i.replace(' ', '') for i in x]  # 去掉空行
+        x = ''.join(x)
+        return x
+
 if __name__ == '__main__':
-    x=r'中双方均希界正经历百年未有之大变局，科技创新习近平在主持学习时发。表了讲话123412341234\n望对本协议所述保密资料及界正经历百年未有之大变局，科技创新习近平在。主持学习时发表了讲话liangcb\n信息予以有效保护界正经历百年未有之大变局，科技创新习近平在主持学习时发表了讲话。'
-    y=r'双方均希望对本协议所述界正经历百年未有之大变局。科技创新习近平在主持学习时发表了讲话liangcb\n界正经历百年未有之大变局，科技创新习近平在主持学习时发表了讲话。123412341234保密资料及信息予以有效保护两\nhelloh'
-    print('文档1长度',len(x))
-    print('文档2长度',len(y))
-    x1=x.split(r'\n')
-    x2=y.split(r'\n')
-    print(x1)
-    print(x2)
-    example1=paragraph_winnowing()
-    y=example1.get_sim(x1,x2)
-    print('输出结果:',y)
+    # x=r'中双方均希界正经历百年未有之大变局，科技创新习近平在主持学习时发。表了讲话123412341234\n望对本协议所述保密资料及界正经历百年未有之大变局，科技创新习近平在。主持学习时发表了讲话liangcb\n信息予以有效保护界正经历百年未有之大变局，科技创新习近平在主持学习时发表了讲话。'
+    # y=r'双方均希望对本协议所述界正经历百年未有之大变局。科技创新习近平在主持学习时发表了讲话liangcb\n界正经历百年未有之大变局，科技创新习近平在主持学习时发表了讲话。123412341234保密资料及信息予以有效保护两\nhelloh'
+    # print('文档1长度',len(x))
+    # print('文档2长度',len(y))
+    # x1=x.split(r'\n')
+    # x2=y.split(r'\n')
+    # print(x1)
+    # print(x2)
+    # example1=paragraph_winnowing()
+    # y=example1.get_sim(x1,x2)
+    # print('输出结果:',y)
+    print('开始')
+    path1 = r'D:\lcb_note\code\NLP\doc_sim\ZhiHu_Code\大唐数据\长三热高压开关柜\北京科锐配电自动化股份有限公司\20170721___长春第三热电厂背压机___KYN28-12___2500-31.5___投标文件\20170721   长春第三热电厂背压机   KYN28-12   2500-31.5   投标文件商务部分.docx'
+    path2 = r'D:\lcb_note\code\NLP\doc_sim\ZhiHu_Code\大唐数据\长三热高压开关柜\华仪电气股份有限公司\投标文件商务部分.docx'
+    path3=r'D:\lcb_note\code\NLP\doc_sim\ZhiHu_Code\大唐数据\长三热高压开关柜\日新恒通电气有限公司\商务投标文件(（加盖电子签章）.docx'
 
 
+
+    s_time=time.time()
+    s_time2=time.time()
+    s_time4=time.time()
+    process_tool=preprocess()
+
+    str_1=process_tool.doc2str(path1)
+    str_2 = process_tool.doc2str(path2)
+    str_3 = process_tool.doc2str(path3)
+    print('preprocess时间',time.time()-s_time4)
+
+    str_1=str_1+str_1+str_1+str_1
+    print('长度1', len(str_1))
+    str_1=str_1.split('\n')
+
+    str_2=str_2+str_2+str_2+str_2+str_2+str_2+str_2+str_2+str_2
+    print('长度2', len(str_2))
+    str_2 = str_2.split('\n')
+
+    print('长度3', len(str_3))
+    str_3=str_3+str_3+str_3+str_3
+    str_3 = str_3.split('\n')
+
+    print('前面split的时间',time.time()-s_time2)
+    # print('str_1:',str_1)
+    example1 = paragraph_winnowing()
+    y = example1.get_sim(str_1, str_2,n=13,template=str_3)
+    # print('最终结果:',y)
+    print('整个过程时间L',time.time()-s_time)
 
 
 

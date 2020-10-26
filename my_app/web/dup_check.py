@@ -129,7 +129,7 @@ def search_dot_2dec(x,num1,num2):#根据两个位置寻找前后句号
     for i in range(num1,-1,-1):
         if x[i]=='。' or (num1-i)>100:  #太长了认为没有句号，那就直接拿上写文语境
             s=i
-            print('找到s=句号',i,x[i])
+            # print('找到s=句号',i,x[i])
             break
     for i in range(num2,len(x),+1) or (i-num2)>100:
         if x[i]=='。':
@@ -186,7 +186,8 @@ def dup_check2():
 
 
     #分段并且去掉空段
-    template_target = template_target.split(r'\n')
+    # template_target = template_target.split(r'\n')
+    template_target=[template_target]
     template_target = clear(template_target)
 
     source_length = len(source)
@@ -231,7 +232,7 @@ def dup_check2():
                 except:
                     sim=0
                 sim=round(sim, 3)
-                print('语境是:',source[i],s,e,source_env)
+                # print('语境是:',source[i],s,e,source_env)
                 s_,e_=doc2_wrap_dic.get(tem_group)
                 target_env = search_dot_2dec(target[i_], s_, e_)
 
@@ -242,12 +243,12 @@ def dup_check2():
                 #         if g_==tem_group:
                 #             target_env = search_dot_2dec(target[i_], s_, e_)#第i段
                 source_target_list.append([sim,source_env,target_env])
-    print('source_target_list',source_target_list)
+    # print('source_target_list',source_target_list)
     source_target_list_sorted = sorted(source_target_list, key=lambda x: x[0], reverse=True)
 
     for i,j in enumerate(source_target_list_sorted):#加上编号
         source_target_list_sorted[i].insert(0,i)
-    print('加入编号后的list',source_target_list_sorted)
+    # print('加入编号后的list',source_target_list_sorted)
     # print('make output time:',time.time()-s_time)
 
 

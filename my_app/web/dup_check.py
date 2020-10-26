@@ -149,7 +149,7 @@ import time
 def dup_check2():
     # args_dic = request.args
     print('now route winnowing')
-
+    s_preprocess_time=time.time()
     args_dic=request.form.to_dict()
     print('接收到request:',request)
     print('now time:',time.localtime(time.time()))
@@ -203,15 +203,23 @@ def dup_check2():
     target = clear(target)
 
     example=paragraph_winnowing()
+    print('preprocess time:',time.time()-s_preprocess_time)
     s_time=time.time()
     similarity,result_str,doc1_wrap,doc2_wrap=example.get_sim(source,target,template=template_target,n=13)
-
-    source_dup_dict=source_dup_dic(result_str)
-
+    # source_dup_dict=source_dup_dic(result_str)
     time_=time.time()-s_time
-    print('run time :',time_)
+    print('get sim run time :',time_)
     print('similarity:', similarity)
     logging.info('run success!! time cost      :    {}      |length : {}  |  {}  |dup_rate:{}'.format(time_,source_length,target_length,similarity))
+
+    s_output_time=time.time()
+    doc2_wrap_dic={}
+    for i_ in range(len(doc2_wrap)):
+        for j_ in range(len(doc2_wrap[i_])):
+            g_, s_, e_ = doc2_wrap[i_][j_]
+            if g_ != -1 and not doc2_wrap_dic.get(g_):
+                doc2_wrap_dic[g_]=tuple([s_,e_])
+    print('doc2_wrap_dic:',doc2_wrap_dic)
 
     source_target_list=[]
     for i in range(len(doc1_wrap)):
@@ -220,28 +228,43 @@ def dup_check2():
             if group_!=-1:
                 tem_group=group_
                 source_env=search_dot_2dec(source[i],s,e)
+                try:
+                    sim=(e-s)/len(source_env)
+                except:
+                    sim=0
+                sim=round(sim, 3)
                 print('语境是:',source[i],s,e,source_env)
-                for i_ in range(len(doc2_wrap)):
-                    for j_ in range(len(doc2_wrap[i_])):
-                        g_,s_,e_=doc2_wrap[i_][j_]
-                        if g_==tem_group:
-                            target_env = search_dot_2dec(target[i_], s_, e_)#第i段
-                source_target_list.append([source_env,target_env])
+                s_,e_=doc2_wrap_dic.get(tem_group)
+                target_env = search_dot_2dec(target[i_], s_, e_)
+
+
+                # for i_ in range(len(doc2_wrap)):
+                #     for j_ in range(len(doc2_wrap[i_])):
+                #         g_,s_,e_=doc2_wrap[i_][j_]
+                #         if g_==tem_group:
+                #             target_env = search_dot_2dec(target[i_], s_, e_)#第i段
+                source_target_list.append([sim,source_env,target_env])
     print('source_target_list',source_target_list)
+    source_target_list_sorted = sorted(source_target_list, key=lambda x: x[0], reverse=True)
+
+    for i,j in enumerate(source_target_list_sorted):#加上编号
+        source_target_list_sorted[i].insert(0,i)
+    print('加入编号后的list',source_target_list_sorted)
+    # print('make output time:',time.time()-s_time)
 
 
     # make source target 字典
-    source_dic={}
-    target_dic={}
-    group__=0
-    for i in range(len(source_target_list)):
-        source_tem,target_tem=source_target_list[i]
-        source_dic[group__]=source_tem
-        target_dic[group__] = target_tem
-        group__+=1
-
-    print('source_dic::::',source_dic)
-    print('target_dic::::', target_dic)
+    # source_dic={}
+    # target_dic={}
+    # group__=0
+    # for i in range(len(source_target_list)):
+    #     source_tem,target_tem=source_target_list[i]
+    #     source_dic[group__]=source_tem
+    #     target_dic[group__] = target_tem
+    #     group__+=1
+    #
+    # print('source_dic::::',source_dic)
+    # print('target_dic::::', target_dic)
 
 
 
@@ -255,17 +278,17 @@ def dup_check2():
             a,b,c=doc2_wrap[duan][num]
             doc2_wrap[duan][num]=tuple([duan,a,b,c])
 
+    print('make output time:',time.time()-s_output_time)
     result1=similarity
     result3 = render_template('testHtml2.html', name1='doc1', name2='doc2', time=time_, dup_check=similarity,doc1_str=source, doc2_str=target,
                     doc1_wrap=doc1_wrap, doc2_group_=doc2_wrap)
     result4 = render_template('add_href_doc1.html', doc1_wrap=doc1_wrap, doc1_str=source)
     result5 = render_template('add_href_doc2.html', doc2_group_=doc2_wrap, doc2_str=target)
-    result6 = render_template('dup_list_source.html', source_dup=source_dic)
+    result6 = render_template('dup_list_source.html', source_dup=source_target_list_sorted)
 
-    result7 = render_template('dup_list_target.html', target_dup=target_dic)
+    result7 = render_template('dup_list_target.html', target_dup=source_target_list_sorted)
 
-
-    # return result6
+    # return result7
     # return result7
 
     result_dic = {'dup_rate': result1,

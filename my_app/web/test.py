@@ -16,8 +16,9 @@ x='\n'
 print(x.split('\n'))
 
 
-
-
+x=[[1,2,3],[3,2,3],[10,2,3]]
+y=sorted(x, key=lambda x:x[0],reverse=True)
+print(y)
 
 
 

@@ -5,9 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo.log" beforeDir="false" afterPath="$PROJECT_DIR$/demo.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my_app/web/dup_check.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_app/web/dup_check.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_app/web/templates/dup_list_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/my_app/web/templates/dup_list_source.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_app/web/templates/dup_list_target.html" beforeDir="false" afterPath="$PROJECT_DIR$/my_app/web/templates/dup_list_target.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_app/web/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_app/web/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +16,17 @@
       <list>
         <option value="Python Script" />
       </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
     </option>
   </component>
   <component name="Git.Settings">
@@ -33,7 +41,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="D:/lcb_note/code" />
+    <property name="last_opened_file_path" value="D:/lcb_note/code/Program/python_yuyue/test.py" />
   </component>
   <component name="RunManager" selected="Python.run">
     <configuration name="duan_winnowing" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
@@ -124,6 +132,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pri_lcb" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\software\anaconda\envs\python36_tf1_11\python.exe" />
+      <option name="WORKING_DIRECTORY" value="D:/lcb_note/code/Program/python_yuyue" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="D:/lcb_note/code/Program/python_yuyue/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pri_lcb" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -149,6 +179,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.run" />
+        <item itemvalue="Python.test (1)" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.dup_check_algo" />
       </list>
@@ -163,7 +194,8 @@
       <option name="presentableId" value="Default" />
       <updated>1602835683784</updated>
       <workItem from="1602835684804" duration="4391000" />
-      <workItem from="1603642793080" duration="7464000" />
+      <workItem from="1603642793080" duration="9694000" />
+      <workItem from="1603683459273" duration="2634000" />
     </task>
     <servers />
   </component>
@@ -171,34 +203,35 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1060" y="495" key="FileChooserDialogImpl" timestamp="1603642923523">
+    <state x="1060" y="495" key="FileChooserDialogImpl" timestamp="1603683476868">
       <screen x="0" y="40" width="2560" height="1400" />
     </state>
-    <state x="1060" y="495" key="FileChooserDialogImpl/0.40.2560.1400/2560.388.1920.1040@0.40.2560.1400" timestamp="1603642923523" />
-    <state width="2517" height="401" key="GridCell.Tab.0.bottom" timestamp="1603679322934">
+    <state x="1060" y="495" key="FileChooserDialogImpl/0.40.2560.1400/2560.388.1920.1040@0.40.2560.1400" timestamp="1603683476868" />
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom" timestamp="1603685762907">
       <screen x="0" y="40" width="2560" height="1400" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.40.2048.1112/2560.388.1920.1040@2560.388.1920.1040" timestamp="1602840106973" />
-    <state width="2517" height="401" key="GridCell.Tab.0.bottom/0.40.2560.1400/2560.388.1920.1040@0.40.2560.1400" timestamp="1603679322934" />
-    <state width="2517" height="401" key="GridCell.Tab.0.center" timestamp="1603679322934">
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom/0.40.2560.1400/2560.388.1920.1040@0.40.2560.1400" timestamp="1603685762907" />
+    <state width="2517" height="401" key="GridCell.Tab.0.center" timestamp="1603685762906">
       <screen x="0" y="40" width="2560" height="1400" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.40.2048.1112/2560.388.1920.1040@2560.388.1920.1040" timestamp="1602840106973" />
-    <state width="2517" height="401" key="GridCell.Tab.0.center/0.40.2560.1400/2560.388.1920.1040@0.40.2560.1400" timestamp="1603679322934" />
-    <state width="2517" height="401" key="GridCell.Tab.0.left" timestamp="1603679322934">
+    <state width="2517" height="401" key="GridCell.Tab.0.center/0.40.2560.1400/2560.388.1920.1040@0.40.2560.1400" timestamp="1603685762906" />
+    <state width="2517" height="401" key="GridCell.Tab.0.left" timestamp="1603685762906">
       <screen x="0" y="40" width="2560" height="1400" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.40.2048.1112/2560.388.1920.1040@2560.388.1920.1040" timestamp="1602840106973" />
-    <state width="2517" height="401" key="GridCell.Tab.0.left/0.40.2560.1400/2560.388.1920.1040@0.40.2560.1400" timestamp="1603679322934" />
-    <state width="2517" height="401" key="GridCell.Tab.0.right" timestamp="1603679322934">
+    <state width="2517" height="401" key="GridCell.Tab.0.left/0.40.2560.1400/2560.388.1920.1040@0.40.2560.1400" timestamp="1603685762906" />
+    <state width="2517" height="401" key="GridCell.Tab.0.right" timestamp="1603685762907">
       <screen x="0" y="40" width="2560" height="1400" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.40.2048.1112/2560.388.1920.1040@2560.388.1920.1040" timestamp="1602840106973" />
-    <state width="2517" height="401" key="GridCell.Tab.0.right/0.40.2560.1400/2560.388.1920.1040@0.40.2560.1400" timestamp="1603679322934" />
-    <state x="3183" y="613" width="672" height="678" key="search.everywhere.popup" timestamp="1602839413199">
-      <screen x="2560" y="388" width="1920" height="1040" />
+    <state width="2517" height="401" key="GridCell.Tab.0.right/0.40.2560.1400/2560.388.1920.1040@0.40.2560.1400" timestamp="1603685762907" />
+    <state x="831" y="343" width="896" height="913" key="search.everywhere.popup" timestamp="1603684106284">
+      <screen x="0" y="40" width="2560" height="1400" />
     </state>
     <state x="3183" y="613" width="672" height="678" key="search.everywhere.popup/0.40.2048.1112/2560.388.1920.1040@2560.388.1920.1040" timestamp="1602839413199" />
+    <state x="831" y="343" width="896" height="913" key="search.everywhere.popup/0.40.2560.1400/2560.388.1920.1040@0.40.2560.1400" timestamp="1603684106284" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -213,8 +246,9 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/pri_lcb$test.coverage" NAME="test Coverage Results" MODIFIED="1603678332271" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/my_app/web" />
+    <SUITE FILE_PATH="coverage/pri_lcb$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1603685753777" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/lcb_note/code/Program/python_yuyue" />
     <SUITE FILE_PATH="coverage/winnowing$dup_check_algo.coverage" NAME="dup_check_algo Coverage Results" MODIFIED="1602838849143" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/my_app/algorithm" />
-    <SUITE FILE_PATH="coverage/pri_lcb$run.coverage" NAME="run Coverage Results" MODIFIED="1603679322929" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pri_lcb$run.coverage" NAME="run Coverage Results" MODIFIED="1603685762901" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pri_lcb$duan_winnowing.coverage" NAME="duan_winnowing Coverage Results" MODIFIED="1603643986969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/my_app/algorithm" />
     <SUITE FILE_PATH="coverage/winnowing$run.coverage" NAME="run Coverage Results" MODIFIED="1602840099877" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

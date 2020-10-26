@@ -127,19 +127,15 @@ def search_dot_2dec(x,num1,num2):#根据两个位置寻找前后句号
     e=-1
     print('num1和num2',x[num1],x[num2])
     for i in range(num1,-1,-1):
-        if x[i]=='。':
+        if x[i]=='。' or (num1-i)>100:  #太长了认为没有句号，那就直接拿上写文语境
             s=i
             print('找到s=句号',i,x[i])
             break
-    for i in range(num2,len(x),+1):
+    for i in range(num2,len(x),+1) or (i-num2)>100:
         if x[i]=='。':
             e=i
             break
     return x[s+1:e+1]
-
-
-
-
 
 
 

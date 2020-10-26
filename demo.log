@@ -9,3 +9,17 @@ Mon 26 Oct 2020 12:16:18 _internal.py INFO 127.0.0.1 - - [26/Oct/2020 12:16:18] 
 Mon 26 Oct 2020 12:16:18 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing?source=ÎÒÒªÉÏÑ§¡£ÎÒÒª³ª¸è£¬ÎÒÒªÌøÉş¡£ÎÒÒªºÈ¿ÉÀÖ£¬ÎÒÒª´òÓÎÏ·£¬ÎÒÒª¿´µçÊÓ¡£1231231123131312312312¡£312312323123123Ò»¶şÈıËÄÎåÁùÆß°Ë¾ÍÊÇÊ®Ò»Ê®¶şÊ®Èı¡£&target=ÒªÌøÉş¡£ÎÒÒªºÈ¿ÉÀÖ£¬ÎÒÒª´òÓÎÏ·£¬ÎÒÒª¿´µç¡£½ñÌìÈ¥ÂÃÓÎÍæ£¬È¥ÁËÏã¸Û£¬È¥ÁË°ÄÃÅ£¬»¹È¥ÁËÖéº£¡£6786768678678786¡£786786786786786786786786¡£Ò»¶şÈıËÄÎåÁùÆß°Ë¾ÍÊÇÊ®Ò»Ê®¶şÊ®Èı85765756757657¡£6576576577587658765¡£' [GET]>
 Mon 26 Oct 2020 12:16:18 dup_check.py INFO run success!! time cost      :    0.0      |length : 88  |  137  |dup_rate:0.4090909090909091
 Mon 26 Oct 2020 12:16:18 _internal.py INFO 127.0.0.1 - - [26/Oct/2020 12:16:18] "[37mGET /NLP/Algorithm/base/dup_check/winnowing?source=ÎÒÒªÉÏÑ§¡£ÎÒÒª³ª¸è£¬ÎÒÒªÌøÉş¡£ÎÒÒªºÈ¿ÉÀÖ£¬ÎÒÒª´òÓÎÏ·£¬ÎÒÒª¿´µçÊÓ¡£1231231123131312312312¡£312312323123123Ò»¶şÈıËÄÎåÁùÆß°Ë¾ÍÊÇÊ®Ò»Ê®¶şÊ®Èı¡£&target=ÒªÌøÉş¡£ÎÒÒªºÈ¿ÉÀÖ£¬ÎÒÒª´òÓÎÏ·£¬ÎÒÒª¿´µç¡£½ñÌìÈ¥ÂÃÓÎÍæ£¬È¥ÁËÏã¸Û£¬È¥ÁË°ÄÃÅ£¬»¹È¥ÁËÖéº£¡£6786768678678786¡£786786786786786786786786¡£Ò»¶şÈıËÄÎåÁùÆß°Ë¾ÍÊÇÊ®Ò»Ê®¶şÊ®Èı85765756757657¡£6576576577587658765¡£ HTTP/1.1[0m" 200 -
+Mon 26 Oct 2020 12:33:12 _internal.py INFO  * Detected change in 'E:\\coder\\github\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Mon 26 Oct 2020 12:33:12 _internal.py INFO  * Restarting with stat
+Mon 26 Oct 2020 12:33:13 dup_check.py WARNING warning
+Mon 26 Oct 2020 12:33:13 _internal.py WARNING  * Debugger is active!
+Mon 26 Oct 2020 12:33:13 _internal.py INFO  * Debugger PIN: 135-586-556
+Mon 26 Oct 2020 12:33:13 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Mon 26 Oct 2020 12:33:40 _internal.py INFO  * Detected change in 'E:\\coder\\github\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Mon 26 Oct 2020 12:33:40 _internal.py INFO  * Restarting with stat
+Mon 26 Oct 2020 12:33:41 dup_check.py WARNING warning
+Mon 26 Oct 2020 12:33:41 _internal.py WARNING  * Debugger is active!
+Mon 26 Oct 2020 12:33:41 _internal.py INFO  * Debugger PIN: 135-586-556
+Mon 26 Oct 2020 12:33:41 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Mon 26 Oct 2020 12:34:35 _internal.py INFO  * Detected change in 'E:\\coder\\github\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Mon 26 Oct 2020 12:34:35 _internal.py INFO  * Restarting with stat

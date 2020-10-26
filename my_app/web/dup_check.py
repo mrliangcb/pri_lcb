@@ -200,6 +200,8 @@ def dup_check2():
 
     example=paragraph_winnowing()
     print('preprocess time:',time.time()-s_preprocess_time)
+    logging.info('preprocess time: {}'.format(time.time()-s_preprocess_time))
+
     s_time=time.time()
     similarity,result_str,doc1_wrap,doc2_wrap=example.get_sim(source,target,template=template_target,n=13)
     # source_dup_dict=source_dup_dic(result_str)
@@ -275,6 +277,7 @@ def dup_check2():
             doc2_wrap[duan][num]=tuple([duan,a,b,c])
 
     print('make output time:',time.time()-s_output_time)
+    logging.info('make output time: {}'.format(time.time()-s_output_time))
     result1=similarity
     result3 = render_template('testHtml2.html', name1='doc1', name2='doc2', time=time_, dup_check=similarity,doc1_str=source, doc2_str=target,
                     doc1_wrap=doc1_wrap, doc2_group_=doc2_wrap)

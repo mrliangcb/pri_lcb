@@ -218,7 +218,7 @@ def dup_check2():
             g_, s_, e_ = doc2_wrap[i_][j_]
             if g_ != -1 and not doc2_wrap_dic.get(g_):
                 doc2_wrap_dic[g_]=tuple([s_,e_])
-    print('doc2_wrap_dic:',doc2_wrap_dic)
+    # print('doc2_wrap_dic:',doc2_wrap_dic)
 
     source_target_list=[]
     for i in range(len(doc1_wrap)):

@@ -56,7 +56,7 @@ class paragraph_winnowing():
 
         #按句号截取，然后计算每部分的重复率，写入字典，并写入top k堆
 
-        print(doc1_wrap)
+        # print(doc1_wrap)
 
         return similarity,doc1_str,doc1_wrap,doc2_wrap
 

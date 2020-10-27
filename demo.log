@@ -23,3 +23,27 @@ Mon 26 Oct 2020 12:33:41 _internal.py INFO  * Debugger PIN: 135-586-556
 Mon 26 Oct 2020 12:33:41 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
 Mon 26 Oct 2020 12:34:35 _internal.py INFO  * Detected change in 'E:\\coder\\github\\pri_lcb\\my_app\\web\\dup_check.py', reloading
 Mon 26 Oct 2020 12:34:35 _internal.py INFO  * Restarting with stat
+Mon 26 Oct 2020 12:51:55 dup_check.py WARNING warning
+Mon 26 Oct 2020 12:51:55 _internal.py WARNING  * Debugger is active!
+Mon 26 Oct 2020 12:51:55 _internal.py INFO  * Debugger PIN: 494-125-640
+Mon 26 Oct 2020 12:52:23 dup_check.py WARNING warning
+Mon 26 Oct 2020 12:52:23 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Mon 26 Oct 2020 12:52:23 _internal.py INFO  * Restarting with stat
+Mon 26 Oct 2020 12:52:23 dup_check.py WARNING warning
+Mon 26 Oct 2020 12:52:23 _internal.py WARNING  * Debugger is active!
+Mon 26 Oct 2020 12:52:23 _internal.py INFO  * Debugger PIN: 494-125-640
+Mon 26 Oct 2020 12:52:29 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing?source=据朝中社10月22日报道，朝鲜最高领导人金正恩参谒位于朝鲜平安南道桧仓郡的中国人民志愿军烈士陵园，向烈士表示崇高敬意，纪念中国人民志愿军赴朝参战70周年。%5Cn朝鲜人民军仪仗队在中国人民志愿军烈士陵园整齐列队。金正恩同朝鲜党政军干部一起来到中国人民志愿军烈士塔前，中朝两国国歌庄重奏响。%5Cn双方均希望对本协议所述保密资料123123&target=朝鲜最高领导人金正恩参谒位于朝鲜平安南道桧仓郡的123123%5Cn军烈士塔前，中朝两国国歌庄重奏响。%5Cn123双方均希望对本协议所述保密资料87924365&template=双方均希望对本协议所述保密资料%5Cn梁成波梁成波梁成波梁成波梁成波梁成波梁成波梁成波%5Cn' [POST]>
+Mon 26 Oct 2020 12:52:29 dup_check.py INFO preprocess time: 0.0024726390838623047
+Mon 26 Oct 2020 12:52:29 dup_check.py INFO run success!! time cost      :    0.0006439685821533203      |length : 165  |  77  |dup_rate:0.2546583850931677
+Mon 26 Oct 2020 12:52:29 dup_check.py INFO make output time: 6.794929504394531e-05
+Mon 26 Oct 2020 12:52:29 _internal.py INFO 127.0.0.1 - - [26/Oct/2020 12:52:29] "[37mPOST /NLP/Algorithm/base/dup_check/winnowing?source=据朝中社10月22日报道，朝鲜最高领导人金正恩参谒位于朝鲜平安南道桧仓郡的中国人民志愿军烈士陵园，向烈士表示崇高敬意，纪念中国人民志愿军赴朝参战70周年。%5Cn朝鲜人民军仪仗队在中国人民志愿军烈士陵园整齐列队。金正恩同朝鲜党政军干部一起来到中国人民志愿军烈士塔前，中朝两国国歌庄重奏响。%5Cn双方均希望对本协议所述保密资料123123&target=朝鲜最高领导人金正恩参谒位于朝鲜平安南道桧仓郡的123123%5Cn军烈士塔前，中朝两国国歌庄重奏响。%5Cn123双方均希望对本协议所述保密资料87924365&template=双方均希望对本协议所述保密资料%5Cn梁成波梁成波梁成波梁成波梁成波梁成波梁成波梁成波%5Cn HTTP/1.1[0m" 200 -
+Mon 26 Oct 2020 17:48:19 dup_check.py INFO foreign request : <Request 'http://10.200.5.45:50000/NLP/Algorithm/base/dup_check/winnowing' [POST]>
+Mon 26 Oct 2020 17:48:19 dup_check.py INFO preprocess time: 0.17712116241455078
+Mon 26 Oct 2020 17:48:19 dup_check.py INFO run success!! time cost      :    0.3978760242462158      |length : 52803  |  85960  |dup_rate:0.7739143609264625
+Mon 26 Oct 2020 17:48:19 dup_check.py INFO make output time: 0.012115240097045898
+Mon 26 Oct 2020 17:48:19 _internal.py INFO 10.200.5.45 - - [26/Oct/2020 17:48:19] "[37mPOST /NLP/Algorithm/base/dup_check/winnowing HTTP/1.1[0m" 200 -
+Mon 26 Oct 2020 17:49:20 dup_check.py INFO foreign request : <Request 'http://10.200.5.45:50000/NLP/Algorithm/base/dup_check/winnowing' [POST]>
+Mon 26 Oct 2020 17:49:20 dup_check.py INFO preprocess time: 0.06446433067321777
+Mon 26 Oct 2020 17:49:20 dup_check.py INFO run success!! time cost      :    0.08837008476257324      |length : 52803  |  1859  |dup_rate:0.08192716322936197
+Mon 26 Oct 2020 17:49:20 dup_check.py INFO make output time: 0.002332448959350586
+Mon 26 Oct 2020 17:49:20 _internal.py INFO 10.200.5.45 - - [26/Oct/2020 17:49:20] "[37mPOST /NLP/Algorithm/base/dup_check/winnowing HTTP/1.1[0m" 200 -

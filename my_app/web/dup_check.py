@@ -123,10 +123,9 @@ def source_dup_dic(result_str):#
 
 
 def search_dot_2dec(x,num1,num2):#根据两个位置寻找前后句号
-    s=-1
-    e=-1
+    s = 0
+    e = len(x)
     # print('num1和num2',x[num1],x[num2])
-    print('input:',num1,num2,len(x))
     for i in range(num1,-1,-1):
         if x[i]=='。' or (num1-i)>50:
             s=i
@@ -196,17 +195,19 @@ def dup_check2():
     target_length = len(target)
     print('长度：  source: {} | target : {} | template: {}'.format(source_length,target_length,template_length))
 
-    print('clear后的内容:')
-    print('source:',source[:100] )
-    print('target:', target[:100])
-    print('tem:',template_target[:100])
+    # print('clear后的内容:')
+    # print('source:',source[:100] )
+    # print('target:', target[:100])
+    # print('tem:',template_target[:100])
 
-    source=source.split(r'\n') # ['']  ['','','']
-    target =target.split(r'\n')
+
+    source=source.split('\n') # ['']  ['','','']
+    print('source split:',source[0][:10])
+    target =target.split('\n')
+    print('target split:', target[0][:10])
+
     source=clear(source)#去掉空段之后，至少存在一个['']
     target = clear(target)
-
-
 
     example=paragraph_winnowing()
     print('preprocess time:',time.time()-s_preprocess_time)
@@ -227,7 +228,7 @@ def dup_check2():
             g_, s_, e_ = doc2_wrap[i_][j_]
             if g_ != -1 and not doc2_wrap_dic.get(g_):
                 doc2_wrap_dic[g_]=tuple([i_,s_,e_])
-    # print('doc2_wrap_dic:',doc2_wrap_dic)
+
 
     source_target_list=[]
     for i in range(len(doc1_wrap)):
@@ -238,16 +239,15 @@ def dup_check2():
                 # print('i是什么:',i)
                 # print('group_,s,e:',group_,s,e)
                 # print('source:',source)
-                # print('doc1_wrap:',doc1_wrap)
                 source_env=search_dot_2dec(source[i],s,e)
+
+
                 try:
                     sim=(e-s)/len(source_env)
                 except:
                     sim=0
                 sim=round(sim, 3)
-                # print('语境是:',source[i],s,e,source_env)
                 i_,s_,e_=doc2_wrap_dic.get(tem_group)
-                # print('doc2_wrap_dic是',doc2_wrap_dic)# {0: (0, 79), 1: (51, 73)}
 
                 target_env = search_dot_2dec(target[i_], s_, e_)
 
@@ -261,8 +261,15 @@ def dup_check2():
     # print('source_target_list',source_target_list)
     source_target_list_sorted = sorted(source_target_list, key=lambda x: x[0], reverse=True)
 
-    for i,j in enumerate(source_target_list_sorted):#加上编号
-        source_target_list_sorted[i].insert(0,i)
+
+    result_dup_list=[]
+    for i in source_target_list_sorted:
+        rate_,source_,target_=i
+        if rate_>0 and source_!='' and target_!='':
+            result_dup_list.append({'source':source_,'target':target_,'rate':rate_})
+
+    # for i,j in enumerate(source_target_list_sorted):#加上编号
+    #     source_target_list_sorted[i].insert(0,i)
     # print('加入编号后的list',source_target_list_sorted)
     # print('make output time:',time.time()-s_time)
 
@@ -282,7 +289,6 @@ def dup_check2():
 
 
 
-
     for duan in range(len(doc1_wrap)):
         for num in range(len(doc1_wrap[duan])):
             a,b,c=doc1_wrap[duan][num]
@@ -299,9 +305,9 @@ def dup_check2():
                     doc1_wrap=doc1_wrap, doc2_group_=doc2_wrap)
     result4 = render_template('add_href_doc1.html', doc1_wrap=doc1_wrap, doc1_str=source)
     result5 = render_template('add_href_doc2.html', doc2_group_=doc2_wrap, doc2_str=target)
-    result6 = render_template('dup_list_source.html', source_dup=source_target_list_sorted)
-
-    result7 = render_template('dup_list_target.html', target_dup=source_target_list_sorted)
+    # result6 = render_template('dup_list_source.html', source_dup=source_target_list_sorted)
+    #
+    # result7 = render_template('dup_list_target.html', target_dup=source_target_list_sorted)
 
     # return result7
     # return result7
@@ -309,8 +315,7 @@ def dup_check2():
     result_dic = {'dup_rate': result1,
                   'source_label': result4,
                   'target_label': result5,
-                 'source_dup': result6,
-                  'target_dup': result7
+                 'dup_list':result_dup_list
                   }
 
 

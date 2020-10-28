@@ -126,8 +126,9 @@ def search_dot_2dec(x,num1,num2):#根据两个位置寻找前后句号
     s=-1
     e=-1
     # print('num1和num2',x[num1],x[num2])
+    print('input:',num1,num2,len(x))
     for i in range(num1,-1,-1):
-        if x[i]=='。' or (num1-i)>100:  #太长了认为没有句号，那就直接拿上写文语境
+        if x[i]=='。' or (num1-i)>50:
             s=i
             # print('找到s=句号',i,x[i])
             break
@@ -225,7 +226,7 @@ def dup_check2():
         for j_ in range(len(doc2_wrap[i_])):
             g_, s_, e_ = doc2_wrap[i_][j_]
             if g_ != -1 and not doc2_wrap_dic.get(g_):
-                doc2_wrap_dic[g_]=tuple([s_,e_])
+                doc2_wrap_dic[g_]=tuple([i_,s_,e_])
     # print('doc2_wrap_dic:',doc2_wrap_dic)
 
     source_target_list=[]
@@ -234,6 +235,10 @@ def dup_check2():
             group_,s,e=doc1_wrap[i][j]
             if group_!=-1:
                 tem_group=group_
+                # print('i是什么:',i)
+                # print('group_,s,e:',group_,s,e)
+                # print('source:',source)
+                # print('doc1_wrap:',doc1_wrap)
                 source_env=search_dot_2dec(source[i],s,e)
                 try:
                     sim=(e-s)/len(source_env)
@@ -241,15 +246,17 @@ def dup_check2():
                     sim=0
                 sim=round(sim, 3)
                 # print('语境是:',source[i],s,e,source_env)
-                s_,e_=doc2_wrap_dic.get(tem_group)
-                target_env = search_dot_2dec(target[i_], s_, e_)
+                i_,s_,e_=doc2_wrap_dic.get(tem_group)
+                # print('doc2_wrap_dic是',doc2_wrap_dic)# {0: (0, 79), 1: (51, 73)}
 
+                target_env = search_dot_2dec(target[i_], s_, e_)
 
                 # for i_ in range(len(doc2_wrap)):
                 #     for j_ in range(len(doc2_wrap[i_])):
                 #         g_,s_,e_=doc2_wrap[i_][j_]
                 #         if g_==tem_group:
                 #             target_env = search_dot_2dec(target[i_], s_, e_)#第i段
+
                 source_target_list.append([sim,source_env,target_env])
     # print('source_target_list',source_target_list)
     source_target_list_sorted = sorted(source_target_list, key=lambda x: x[0], reverse=True)

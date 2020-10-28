@@ -197,7 +197,7 @@ def dup_check2():
     print('clear后的内容:')
     print('source:',source[:100] )
     print('target:', target[:100])
-    print('tem:',template[:100])
+    print('tem:',template_target[:100])
 
     source=source.split(r'\n') # ['']  ['','','']
     target =target.split(r'\n')

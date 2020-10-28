@@ -47,3 +47,178 @@ Mon 26 Oct 2020 17:49:20 dup_check.py INFO preprocess time: 0.06446433067321777
 Mon 26 Oct 2020 17:49:20 dup_check.py INFO run success!! time cost      :    0.08837008476257324      |length : 52803  |  1859  |dup_rate:0.08192716322936197
 Mon 26 Oct 2020 17:49:20 dup_check.py INFO make output time: 0.002332448959350586
 Mon 26 Oct 2020 17:49:20 _internal.py INFO 10.200.5.45 - - [26/Oct/2020 17:49:20] "[37mPOST /NLP/Algorithm/base/dup_check/winnowing HTTP/1.1[0m" 200 -
+Tue 27 Oct 2020 20:02:58 dup_check.py WARNING warning
+Tue 27 Oct 2020 20:02:58 _internal.py INFO  * Restarting with windowsapi reloader
+Tue 27 Oct 2020 20:03:01 dup_check.py WARNING warning
+Tue 27 Oct 2020 20:03:01 _internal.py WARNING  * Debugger is active!
+Tue 27 Oct 2020 20:03:01 _internal.py INFO  * Debugger PIN: 268-763-689
+Tue 27 Oct 2020 20:03:01 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Tue 27 Oct 2020 20:03:15 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:03:15 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:03:15 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:03:15 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:03:16 _internal.py INFO  * Restarting with windowsapi reloader
+Tue 27 Oct 2020 20:03:18 dup_check.py WARNING warning
+Tue 27 Oct 2020 20:03:18 _internal.py WARNING  * Debugger is active!
+Tue 27 Oct 2020 20:03:18 _internal.py INFO  * Debugger PIN: 268-763-689
+Tue 27 Oct 2020 20:03:18 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Tue 27 Oct 2020 20:03:21 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:03:21 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:03:21 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:03:21 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:03:23 _internal.py INFO  * Restarting with windowsapi reloader
+Tue 27 Oct 2020 20:03:25 dup_check.py WARNING warning
+Tue 27 Oct 2020 20:03:25 _internal.py WARNING  * Debugger is active!
+Tue 27 Oct 2020 20:03:25 _internal.py INFO  * Debugger PIN: 268-763-689
+Tue 27 Oct 2020 20:03:26 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:03:26 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:03:26 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:03:26 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:03:26 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Tue 27 Oct 2020 20:03:27 _internal.py INFO  * Restarting with windowsapi reloader
+Tue 27 Oct 2020 20:03:29 dup_check.py WARNING warning
+Tue 27 Oct 2020 20:03:29 _internal.py WARNING  * Debugger is active!
+Tue 27 Oct 2020 20:03:29 _internal.py INFO  * Debugger PIN: 268-763-689
+Tue 27 Oct 2020 20:03:29 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Tue 27 Oct 2020 20:03:34 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:03:34 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:03:36 _internal.py INFO  * Restarting with windowsapi reloader
+Tue 27 Oct 2020 20:03:38 dup_check.py WARNING warning
+Tue 27 Oct 2020 20:03:38 _internal.py WARNING  * Debugger is active!
+Tue 27 Oct 2020 20:03:38 _internal.py INFO  * Debugger PIN: 268-763-689
+Tue 27 Oct 2020 20:03:38 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Tue 27 Oct 2020 20:04:04 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:04:04 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:04:04 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:04:04 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:04:04 _internal.py INFO  * Restarting with windowsapi reloader
+Tue 27 Oct 2020 20:04:07 dup_check.py WARNING warning
+Tue 27 Oct 2020 20:04:07 _internal.py WARNING  * Debugger is active!
+Tue 27 Oct 2020 20:04:07 _internal.py INFO  * Debugger PIN: 268-763-689
+Tue 27 Oct 2020 20:04:07 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Tue 27 Oct 2020 20:04:24 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:04:24 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:04:24 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:04:24 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:04:25 _internal.py INFO  * Restarting with windowsapi reloader
+Tue 27 Oct 2020 20:04:27 dup_check.py WARNING warning
+Tue 27 Oct 2020 20:04:27 _internal.py WARNING  * Debugger is active!
+Tue 27 Oct 2020 20:04:27 _internal.py INFO  * Debugger PIN: 268-763-689
+Tue 27 Oct 2020 20:04:27 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Tue 27 Oct 2020 20:04:30 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:04:30 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:04:30 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:04:30 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:04:31 _internal.py INFO  * Restarting with windowsapi reloader
+Tue 27 Oct 2020 20:04:33 dup_check.py WARNING warning
+Tue 27 Oct 2020 20:04:33 _internal.py WARNING  * Debugger is active!
+Tue 27 Oct 2020 20:04:33 _internal.py INFO  * Debugger PIN: 268-763-689
+Tue 27 Oct 2020 20:04:33 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Tue 27 Oct 2020 20:04:37 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:04:37 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:04:37 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:04:37 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:04:38 _internal.py INFO  * Restarting with windowsapi reloader
+Tue 27 Oct 2020 20:04:40 dup_check.py WARNING warning
+Tue 27 Oct 2020 20:04:40 _internal.py WARNING  * Debugger is active!
+Tue 27 Oct 2020 20:04:40 _internal.py INFO  * Debugger PIN: 268-763-689
+Tue 27 Oct 2020 20:04:40 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Tue 27 Oct 2020 20:04:40 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:04:40 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:04:40 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:04:40 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:04:42 _internal.py INFO  * Restarting with windowsapi reloader
+Tue 27 Oct 2020 20:04:44 dup_check.py WARNING warning
+Tue 27 Oct 2020 20:04:44 _internal.py WARNING  * Debugger is active!
+Tue 27 Oct 2020 20:04:44 _internal.py INFO  * Debugger PIN: 268-763-689
+Tue 27 Oct 2020 20:04:44 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Tue 27 Oct 2020 20:04:51 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:04:51 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:04:51 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:04:51 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:04:52 _internal.py INFO  * Restarting with windowsapi reloader
+Tue 27 Oct 2020 20:04:54 dup_check.py WARNING warning
+Tue 27 Oct 2020 20:04:54 _internal.py WARNING  * Debugger is active!
+Tue 27 Oct 2020 20:04:54 _internal.py INFO  * Debugger PIN: 268-763-689
+Tue 27 Oct 2020 20:04:54 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Tue 27 Oct 2020 20:04:55 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing?source=¾İ³¯ÖĞÉç10ÔÂ22ÈÕ±¨µÀ£¬³¯ÏÊ×î¸ßÁìµ¼ÈË½ğÕı¶÷²ÎÚËÎ»ÓÚ³¯ÏÊÆ½°²ÄÏµÀèí²Ö¿¤µÄÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ÁêÔ°£¬ÏòÁÒÊ¿±íÊ¾³ç¸ß¾´Òâ£¬¼ÍÄîÖĞ¹úÈËÃñÖ¾Ô¸¾ü¸°³¯²ÎÕ½70ÖÜÄê¡£%5Cn³¯ÏÊÈËÃñ¾üÒÇÕÌ¶ÓÔÚÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ÁêÔ°ÕûÆëÁĞ¶Ó¡£½ğÕı¶÷Í¬³¯ÏÊµ³Õş¾ü¸É²¿Ò»ÆğÀ´µ½ÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ËşÇ°£¬ÖĞ³¯Á½¹ú¹ú¸è×¯ÖØ×àÏì¡£%5CnË«·½¾ùÏ£Íû¶Ô±¾Ğ­ÒéËùÊö±£ÃÜ×ÊÁÏ123123&target=³¯ÏÊ×î¸ßÁìµ¼ÈË½ğÕı¶÷²ÎÚËÎ»ÓÚ³¯ÏÊÆ½°²ÄÏµÀèí²Ö¿¤µÄ123123%5Cn¾üÁÒÊ¿ËşÇ°£¬ÖĞ³¯Á½¹ú¹ú¸è×¯ÖØ×àÏì¡£%5Cn123Ë«·½¾ùÏ£Íû¶Ô±¾Ğ­ÒéËùÊö±£ÃÜ×ÊÁÏ87924365&template=Ë«·½¾ùÏ£Íû¶Ô±¾Ğ­ÒéËùÊö±£ÃÜ×ÊÁÏ%5CnÁº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨%5Cn' [POST]>
+Tue 27 Oct 2020 20:04:55 dup_check.py INFO preprocess time: 0.019084692001342773
+Tue 27 Oct 2020 20:04:55 dup_check.py INFO run success!! time cost      :    0.000997781753540039      |length : 165  |  77  |dup_rate:0.2546583850931677
+Tue 27 Oct 2020 20:04:55 dup_check.py INFO make output time: 0.0011477470397949219
+Tue 27 Oct 2020 20:04:55 _internal.py INFO 127.0.0.1 - - [27/Oct/2020 20:04:55] "[37mPOST /NLP/Algorithm/base/dup_check/winnowing?source=¾İ³¯ÖĞÉç10ÔÂ22ÈÕ±¨µÀ£¬³¯ÏÊ×î¸ßÁìµ¼ÈË½ğÕı¶÷²ÎÚËÎ»ÓÚ³¯ÏÊÆ½°²ÄÏµÀèí²Ö¿¤µÄÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ÁêÔ°£¬ÏòÁÒÊ¿±íÊ¾³ç¸ß¾´Òâ£¬¼ÍÄîÖĞ¹úÈËÃñÖ¾Ô¸¾ü¸°³¯²ÎÕ½70ÖÜÄê¡£%5Cn³¯ÏÊÈËÃñ¾üÒÇÕÌ¶ÓÔÚÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ÁêÔ°ÕûÆëÁĞ¶Ó¡£½ğÕı¶÷Í¬³¯ÏÊµ³Õş¾ü¸É²¿Ò»ÆğÀ´µ½ÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ËşÇ°£¬ÖĞ³¯Á½¹ú¹ú¸è×¯ÖØ×àÏì¡£%5CnË«·½¾ùÏ£Íû¶Ô±¾Ğ­ÒéËùÊö±£ÃÜ×ÊÁÏ123123&target=³¯ÏÊ×î¸ßÁìµ¼ÈË½ğÕı¶÷²ÎÚËÎ»ÓÚ³¯ÏÊÆ½°²ÄÏµÀèí²Ö¿¤µÄ123123%5Cn¾üÁÒÊ¿ËşÇ°£¬ÖĞ³¯Á½¹ú¹ú¸è×¯ÖØ×àÏì¡£%5Cn123Ë«·½¾ùÏ£Íû¶Ô±¾Ğ­ÒéËùÊö±£ÃÜ×ÊÁÏ87924365&template=Ë«·½¾ùÏ£Íû¶Ô±¾Ğ­ÒéËùÊö±£ÃÜ×ÊÁÏ%5CnÁº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨%5Cn HTTP/1.1[0m" 200 -
+Tue 27 Oct 2020 20:04:55 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing' [POST]>
+Tue 27 Oct 2020 20:04:55 dup_check.py INFO preprocess time: 0.002040863037109375
+Tue 27 Oct 2020 20:04:55 dup_check.py INFO run success!! time cost      :    0.0009844303131103516      |length : 165  |  77  |dup_rate:0.34782608695652173
+Tue 27 Oct 2020 20:04:55 dup_check.py INFO make output time: 0.0
+Tue 27 Oct 2020 20:04:55 _internal.py INFO 127.0.0.1 - - [27/Oct/2020 20:04:55] "[37mPOST /NLP/Algorithm/base/dup_check/winnowing HTTP/1.1[0m" 200 -
+Tue 27 Oct 2020 20:05:02 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:05:02 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:05:04 _internal.py INFO  * Restarting with windowsapi reloader
+Tue 27 Oct 2020 20:05:06 dup_check.py WARNING warning
+Tue 27 Oct 2020 20:05:06 _internal.py WARNING  * Debugger is active!
+Tue 27 Oct 2020 20:05:06 _internal.py INFO  * Debugger PIN: 268-763-689
+Tue 27 Oct 2020 20:05:06 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Tue 27 Oct 2020 20:05:08 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing?source=¾İ³¯ÖĞÉç10ÔÂ22ÈÕ±¨µÀ£¬³¯ÏÊ×î¸ßÁìµ¼ÈË½ğÕı¶÷²ÎÚËÎ»ÓÚ³¯ÏÊÆ½°²ÄÏµÀèí²Ö¿¤µÄÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ÁêÔ°£¬ÏòÁÒÊ¿±íÊ¾³ç¸ß¾´Òâ£¬¼ÍÄîÖĞ¹úÈËÃñÖ¾Ô¸¾ü¸°³¯²ÎÕ½70ÖÜÄê¡£%5Cn³¯ÏÊÈËÃñ¾üÒÇÕÌ¶ÓÔÚÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ÁêÔ°ÕûÆëÁĞ¶Ó¡£½ğÕı¶÷Í¬³¯ÏÊµ³Õş¾ü¸É²¿Ò»ÆğÀ´µ½ÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ËşÇ°£¬ÖĞ³¯Á½¹ú¹ú¸è×¯ÖØ×àÏì¡£%5CnË«·½¾ùÏ£Íû¶Ô±¾Ğ­ÒéËùÊö±£ÃÜ×ÊÁÏ123123&target=³¯ÏÊ×î¸ßÁìµ¼ÈË½ğÕı¶÷²ÎÚËÎ»ÓÚ³¯ÏÊÆ½°²ÄÏµÀèí²Ö¿¤µÄ123123%5Cn¾üÁÒÊ¿ËşÇ°£¬ÖĞ³¯Á½¹ú¹ú¸è×¯ÖØ×àÏì¡£%5Cn123Ë«·½¾ùÏ£Íû¶Ô±¾Ğ­ÒéËùÊö±£ÃÜ×ÊÁÏ87924365&template=Ë«·½¾ùÏ£Íû¶Ô±¾Ğ­ÒéËùÊö±£ÃÜ×ÊÁÏ%5CnÁº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨%5Cn' [POST]>
+Tue 27 Oct 2020 20:05:08 dup_check.py INFO preprocess time: 0.003026247024536133
+Tue 27 Oct 2020 20:05:08 dup_check.py INFO run success!! time cost      :    0.0009953975677490234      |length : 165  |  77  |dup_rate:0.2546583850931677
+Tue 27 Oct 2020 20:05:08 dup_check.py INFO make output time: 0.0
+Tue 27 Oct 2020 20:05:08 _internal.py INFO 127.0.0.1 - - [27/Oct/2020 20:05:08] "[37mPOST /NLP/Algorithm/base/dup_check/winnowing?source=¾İ³¯ÖĞÉç10ÔÂ22ÈÕ±¨µÀ£¬³¯ÏÊ×î¸ßÁìµ¼ÈË½ğÕı¶÷²ÎÚËÎ»ÓÚ³¯ÏÊÆ½°²ÄÏµÀèí²Ö¿¤µÄÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ÁêÔ°£¬ÏòÁÒÊ¿±íÊ¾³ç¸ß¾´Òâ£¬¼ÍÄîÖĞ¹úÈËÃñÖ¾Ô¸¾ü¸°³¯²ÎÕ½70ÖÜÄê¡£%5Cn³¯ÏÊÈËÃñ¾üÒÇÕÌ¶ÓÔÚÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ÁêÔ°ÕûÆëÁĞ¶Ó¡£½ğÕı¶÷Í¬³¯ÏÊµ³Õş¾ü¸É²¿Ò»ÆğÀ´µ½ÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ËşÇ°£¬ÖĞ³¯Á½¹ú¹ú¸è×¯ÖØ×àÏì¡£%5CnË«·½¾ùÏ£Íû¶Ô±¾Ğ­ÒéËùÊö±£ÃÜ×ÊÁÏ123123&target=³¯ÏÊ×î¸ßÁìµ¼ÈË½ğÕı¶÷²ÎÚËÎ»ÓÚ³¯ÏÊÆ½°²ÄÏµÀèí²Ö¿¤µÄ123123%5Cn¾üÁÒÊ¿ËşÇ°£¬ÖĞ³¯Á½¹ú¹ú¸è×¯ÖØ×àÏì¡£%5Cn123Ë«·½¾ùÏ£Íû¶Ô±¾Ğ­ÒéËùÊö±£ÃÜ×ÊÁÏ87924365&template=Ë«·½¾ùÏ£Íû¶Ô±¾Ğ­ÒéËùÊö±£ÃÜ×ÊÁÏ%5CnÁº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨%5Cn HTTP/1.1[0m" 200 -
+Tue 27 Oct 2020 20:05:08 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing?source=¾İ³¯ÖĞÉç10ÔÂ22ÈÕ±¨µÀ£¬³¯ÏÊ×î¸ßÁìµ¼ÈË½ğÕı¶÷²ÎÚËÎ»ÓÚ³¯ÏÊÆ½°²ÄÏµÀèí²Ö¿¤µÄÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ÁêÔ°£¬ÏòÁÒÊ¿±íÊ¾³ç¸ß¾´Òâ£¬¼ÍÄîÖĞ¹úÈËÃñÖ¾Ô¸¾ü¸°³¯²ÎÕ½70ÖÜÄê¡£%5Cn³¯ÏÊÈËÃñ¾üÒÇÕÌ¶ÓÔÚÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ÁêÔ°ÕûÆëÁĞ¶Ó¡£½ğÕı¶÷Í¬³¯ÏÊµ³Õş¾ü¸É²¿Ò»ÆğÀ´µ½ÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ËşÇ°£¬ÖĞ³¯Á½¹ú¹ú¸è×¯ÖØ×àÏì¡£%5CnË«·½¾ùÏ£Íû¶Ô±¾Ğ­ÒéËùÊö±£ÃÜ×ÊÁÏ123123&target=³¯ÏÊ×î¸ßÁìµ¼ÈË½ğÕı¶÷²ÎÚËÎ»ÓÚ³¯ÏÊÆ½°²ÄÏµÀèí²Ö¿¤µÄ123123%5Cn¾üÁÒÊ¿ËşÇ°£¬ÖĞ³¯Á½¹ú¹ú¸è×¯ÖØ×àÏì¡£%5Cn123Ë«·½¾ùÏ£Íû¶Ô±¾Ğ­ÒéËùÊö±£ÃÜ×ÊÁÏ87924365' [POST]>
+Tue 27 Oct 2020 20:05:08 dup_check.py INFO preprocess time: 0.0009884834289550781
+Tue 27 Oct 2020 20:05:08 dup_check.py INFO run success!! time cost      :    0.0009598731994628906      |length : 165  |  77  |dup_rate:0.34782608695652173
+Tue 27 Oct 2020 20:05:08 dup_check.py INFO make output time: 0.0
+Tue 27 Oct 2020 20:05:08 _internal.py INFO 127.0.0.1 - - [27/Oct/2020 20:05:08] "[37mPOST /NLP/Algorithm/base/dup_check/winnowing?source=¾İ³¯ÖĞÉç10ÔÂ22ÈÕ±¨µÀ£¬³¯ÏÊ×î¸ßÁìµ¼ÈË½ğÕı¶÷²ÎÚËÎ»ÓÚ³¯ÏÊÆ½°²ÄÏµÀèí²Ö¿¤µÄÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ÁêÔ°£¬ÏòÁÒÊ¿±íÊ¾³ç¸ß¾´Òâ£¬¼ÍÄîÖĞ¹úÈËÃñÖ¾Ô¸¾ü¸°³¯²ÎÕ½70ÖÜÄê¡£%5Cn³¯ÏÊÈËÃñ¾üÒÇÕÌ¶ÓÔÚÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ÁêÔ°ÕûÆëÁĞ¶Ó¡£½ğÕı¶÷Í¬³¯ÏÊµ³Õş¾ü¸É²¿Ò»ÆğÀ´µ½ÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ËşÇ°£¬ÖĞ³¯Á½¹ú¹ú¸è×¯ÖØ×àÏì¡£%5CnË«·½¾ùÏ£Íû¶Ô±¾Ğ­ÒéËùÊö±£ÃÜ×ÊÁÏ123123&target=³¯ÏÊ×î¸ßÁìµ¼ÈË½ğÕı¶÷²ÎÚËÎ»ÓÚ³¯ÏÊÆ½°²ÄÏµÀèí²Ö¿¤µÄ123123%5Cn¾üÁÒÊ¿ËşÇ°£¬ÖĞ³¯Á½¹ú¹ú¸è×¯ÖØ×àÏì¡£%5Cn123Ë«·½¾ùÏ£Íû¶Ô±¾Ğ­ÒéËùÊö±£ÃÜ×ÊÁÏ87924365 HTTP/1.1[0m" 200 -
+Tue 27 Oct 2020 20:05:11 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:05:11 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:05:11 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:05:11 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:05:12 _internal.py INFO  * Restarting with windowsapi reloader
+Tue 27 Oct 2020 20:05:15 dup_check.py WARNING warning
+Tue 27 Oct 2020 20:05:15 _internal.py WARNING  * Debugger is active!
+Tue 27 Oct 2020 20:05:15 _internal.py INFO  * Debugger PIN: 268-763-689
+Tue 27 Oct 2020 20:05:15 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Tue 27 Oct 2020 20:05:15 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing?source=¾İ³¯ÖĞÉç10ÔÂ22ÈÕ±¨µÀ£¬³¯ÏÊ×î¸ßÁìµ¼ÈË½ğÕı¶÷²ÎÚËÎ»ÓÚ³¯ÏÊÆ½°²ÄÏµÀèí²Ö¿¤µÄÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ÁêÔ°£¬ÏòÁÒÊ¿±íÊ¾³ç¸ß¾´Òâ£¬¼ÍÄîÖĞ¹úÈËÃñÖ¾Ô¸¾ü¸°³¯²ÎÕ½70ÖÜÄê¡£%5Cn³¯ÏÊÈËÃñ¾üÒÇÕÌ¶ÓÔÚÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ÁêÔ°ÕûÆëÁĞ¶Ó¡£½ğÕı¶÷Í¬³¯ÏÊµ³Õş¾ü¸É²¿Ò»ÆğÀ´µ½ÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ËşÇ°£¬ÖĞ³¯Á½¹ú¹ú¸è×¯ÖØ×àÏì¡£%5CnË«·½¾ùÏ£Íû¶Ô±¾Ğ­ÒéËùÊö±£ÃÜ×ÊÁÏ123123&target=³¯ÏÊ×î¸ßÁìµ¼ÈË½ğÕı¶÷²ÎÚËÎ»ÓÚ³¯ÏÊÆ½°²ÄÏµÀèí²Ö¿¤µÄ123123%5Cn¾üÁÒÊ¿ËşÇ°£¬ÖĞ³¯Á½¹ú¹ú¸è×¯ÖØ×àÏì¡£%5Cn123Ë«·½¾ùÏ£Íû¶Ô±¾Ğ­ÒéËùÊö±£ÃÜ×ÊÁÏ87924365&template=Ë«·½¾ùÏ£Íû¶Ô±¾Ğ­ÒéËùÊö±£ÃÜ×ÊÁÏ%5CnÁº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨%5Cn' [POST]>
+Tue 27 Oct 2020 20:05:15 dup_check.py INFO preprocess time: 0.0029916763305664062
+Tue 27 Oct 2020 20:05:15 dup_check.py INFO run success!! time cost      :    0.0009980201721191406      |length : 165  |  77  |dup_rate:0.2546583850931677
+Tue 27 Oct 2020 20:05:15 dup_check.py INFO make output time: 0.0009970664978027344
+Tue 27 Oct 2020 20:05:15 _internal.py INFO 127.0.0.1 - - [27/Oct/2020 20:05:15] "[37mPOST /NLP/Algorithm/base/dup_check/winnowing?source=¾İ³¯ÖĞÉç10ÔÂ22ÈÕ±¨µÀ£¬³¯ÏÊ×î¸ßÁìµ¼ÈË½ğÕı¶÷²ÎÚËÎ»ÓÚ³¯ÏÊÆ½°²ÄÏµÀèí²Ö¿¤µÄÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ÁêÔ°£¬ÏòÁÒÊ¿±íÊ¾³ç¸ß¾´Òâ£¬¼ÍÄîÖĞ¹úÈËÃñÖ¾Ô¸¾ü¸°³¯²ÎÕ½70ÖÜÄê¡£%5Cn³¯ÏÊÈËÃñ¾üÒÇÕÌ¶ÓÔÚÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ÁêÔ°ÕûÆëÁĞ¶Ó¡£½ğÕı¶÷Í¬³¯ÏÊµ³Õş¾ü¸É²¿Ò»ÆğÀ´µ½ÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ËşÇ°£¬ÖĞ³¯Á½¹ú¹ú¸è×¯ÖØ×àÏì¡£%5CnË«·½¾ùÏ£Íû¶Ô±¾Ğ­ÒéËùÊö±£ÃÜ×ÊÁÏ123123&target=³¯ÏÊ×î¸ßÁìµ¼ÈË½ğÕı¶÷²ÎÚËÎ»ÓÚ³¯ÏÊÆ½°²ÄÏµÀèí²Ö¿¤µÄ123123%5Cn¾üÁÒÊ¿ËşÇ°£¬ÖĞ³¯Á½¹ú¹ú¸è×¯ÖØ×àÏì¡£%5Cn123Ë«·½¾ùÏ£Íû¶Ô±¾Ğ­ÒéËùÊö±£ÃÜ×ÊÁÏ87924365&template=Ë«·½¾ùÏ£Íû¶Ô±¾Ğ­ÒéËùÊö±£ÃÜ×ÊÁÏ%5CnÁº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨%5Cn HTTP/1.1[0m" 200 -
+Tue 27 Oct 2020 20:05:15 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing' [POST]>
+Tue 27 Oct 2020 20:05:15 dup_check.py INFO preprocess time: 0.0009987354278564453
+Tue 27 Oct 2020 20:05:15 dup_check.py INFO run success!! time cost      :    0.0009951591491699219      |length : 165  |  77  |dup_rate:0.34782608695652173
+Tue 27 Oct 2020 20:05:15 dup_check.py INFO make output time: 0.0
+Tue 27 Oct 2020 20:05:15 _internal.py INFO 127.0.0.1 - - [27/Oct/2020 20:05:15] "[37mPOST /NLP/Algorithm/base/dup_check/winnowing HTTP/1.1[0m" 200 -
+Tue 27 Oct 2020 20:05:30 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:05:30 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:05:30 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:05:30 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\clinet.py', reloading
+Tue 27 Oct 2020 20:05:32 _internal.py INFO  * Restarting with windowsapi reloader
+Tue 27 Oct 2020 20:05:34 dup_check.py WARNING warning
+Tue 27 Oct 2020 20:05:34 _internal.py WARNING  * Debugger is active!
+Tue 27 Oct 2020 20:05:34 _internal.py INFO  * Debugger PIN: 268-763-689
+Tue 27 Oct 2020 20:05:34 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 28 Oct 2020 09:03:32 dup_check.py WARNING warning
+Wed 28 Oct 2020 09:03:32 _internal.py INFO  * Restarting with windowsapi reloader
+Wed 28 Oct 2020 09:03:34 dup_check.py WARNING warning
+Wed 28 Oct 2020 09:03:34 _internal.py WARNING  * Debugger is active!
+Wed 28 Oct 2020 09:03:34 _internal.py INFO  * Debugger PIN: 268-763-689
+Wed 28 Oct 2020 09:03:34 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 28 Oct 2020 09:03:35 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing?source=¾İ³¯ÖĞÉç10ÔÂ22ÈÕ±¨µÀ£¬³¯ÏÊ×î¸ßÁìµ¼ÈË½ğÕı¶÷²ÎÚËÎ»ÓÚ³¯ÏÊÆ½°²ÄÏµÀèí²Ö¿¤µÄÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ÁêÔ°£¬ÏòÁÒÊ¿±íÊ¾³ç¸ß¾´Òâ£¬¼ÍÄîÖĞ¹úÈËÃñÖ¾Ô¸¾ü¸°³¯²ÎÕ½70ÖÜÄê¡£%5Cn³¯ÏÊÈËÃñ¾üÒÇÕÌ¶ÓÔÚÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ÁêÔ°ÕûÆëÁĞ¶Ó¡£½ğÕı¶÷Í¬³¯ÏÊµ³Õş¾ü¸É²¿Ò»ÆğÀ´µ½ÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ËşÇ°£¬ÖĞ³¯Á½¹ú¹ú¸è×¯ÖØ×àÏì¡£%5CnË«·½¾ùÏ£Íû¶Ô±¾Ğ­ÒéËùÊö±£ÃÜ×ÊÁÏ123123&target=³¯ÏÊ×î¸ßÁìµ¼ÈË½ğÕı¶÷²ÎÚËÎ»ÓÚ³¯ÏÊÆ½°²ÄÏµÀèí²Ö¿¤µÄ123123%5Cn¾üÁÒÊ¿ËşÇ°£¬ÖĞ³¯Á½¹ú¹ú¸è×¯ÖØ×àÏì¡£%5Cn123Ë«·½¾ùÏ£Íû¶Ô±¾Ğ­ÒéËùÊö±£ÃÜ×ÊÁÏ87924365&template=Ë«·½¾ùÏ£Íû¶Ô±¾Ğ­ÒéËùÊö±£ÃÜ×ÊÁÏ%5CnÁº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨%5Cn' [POST]>
+Wed 28 Oct 2020 09:03:35 dup_check.py INFO preprocess time: 0.004990816116333008
+Wed 28 Oct 2020 09:03:35 dup_check.py INFO run success!! time cost      :    0.0      |length : 165  |  77  |dup_rate:0.2546583850931677
+Wed 28 Oct 2020 09:03:35 dup_check.py INFO make output time: 0.0
+Wed 28 Oct 2020 09:03:35 _internal.py INFO 127.0.0.1 - - [28/Oct/2020 09:03:35] "[37mPOST /NLP/Algorithm/base/dup_check/winnowing?source=¾İ³¯ÖĞÉç10ÔÂ22ÈÕ±¨µÀ£¬³¯ÏÊ×î¸ßÁìµ¼ÈË½ğÕı¶÷²ÎÚËÎ»ÓÚ³¯ÏÊÆ½°²ÄÏµÀèí²Ö¿¤µÄÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ÁêÔ°£¬ÏòÁÒÊ¿±íÊ¾³ç¸ß¾´Òâ£¬¼ÍÄîÖĞ¹úÈËÃñÖ¾Ô¸¾ü¸°³¯²ÎÕ½70ÖÜÄê¡£%5Cn³¯ÏÊÈËÃñ¾üÒÇÕÌ¶ÓÔÚÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ÁêÔ°ÕûÆëÁĞ¶Ó¡£½ğÕı¶÷Í¬³¯ÏÊµ³Õş¾ü¸É²¿Ò»ÆğÀ´µ½ÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ËşÇ°£¬ÖĞ³¯Á½¹ú¹ú¸è×¯ÖØ×àÏì¡£%5CnË«·½¾ùÏ£Íû¶Ô±¾Ğ­ÒéËùÊö±£ÃÜ×ÊÁÏ123123&target=³¯ÏÊ×î¸ßÁìµ¼ÈË½ğÕı¶÷²ÎÚËÎ»ÓÚ³¯ÏÊÆ½°²ÄÏµÀèí²Ö¿¤µÄ123123%5Cn¾üÁÒÊ¿ËşÇ°£¬ÖĞ³¯Á½¹ú¹ú¸è×¯ÖØ×àÏì¡£%5Cn123Ë«·½¾ùÏ£Íû¶Ô±¾Ğ­ÒéËùÊö±£ÃÜ×ÊÁÏ87924365&template=Ë«·½¾ùÏ£Íû¶Ô±¾Ğ­ÒéËùÊö±£ÃÜ×ÊÁÏ%5CnÁº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨%5Cn HTTP/1.1[0m" 200 -
+Wed 28 Oct 2020 09:03:35 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing' [POST]>
+Wed 28 Oct 2020 09:03:35 dup_check.py INFO preprocess time: 0.0019605159759521484
+Wed 28 Oct 2020 09:03:35 dup_check.py INFO run success!! time cost      :    0.0009984970092773438      |length : 165  |  77  |dup_rate:0.34782608695652173
+Wed 28 Oct 2020 09:03:35 dup_check.py INFO make output time: 0.0
+Wed 28 Oct 2020 09:03:35 _internal.py INFO 127.0.0.1 - - [28/Oct/2020 09:03:35] "[37mPOST /NLP/Algorithm/base/dup_check/winnowing HTTP/1.1[0m" 200 -
+Wed 28 Oct 2020 09:03:45 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing?source=¾İ³¯ÖĞÉç10ÔÂ22ÈÕ±¨µÀ£¬³¯ÏÊ×î¸ßÁìµ¼ÈË½ğÕı¶÷²ÎÚËÎ»ÓÚ³¯ÏÊÆ½°²ÄÏµÀèí²Ö¿¤µÄÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ÁêÔ°£¬ÏòÁÒÊ¿±íÊ¾³ç¸ß¾´Òâ£¬¼ÍÄîÖĞ¹úÈËÃñÖ¾Ô¸¾ü¸°³¯²ÎÕ½70ÖÜÄê¡£%5Cn³¯ÏÊÈËÃñ¾üÒÇÕÌ¶ÓÔÚÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ÁêÔ°ÕûÆëÁĞ¶Ó¡£½ğÕı¶÷Í¬³¯ÏÊµ³Õş¾ü¸É²¿Ò»ÆğÀ´µ½ÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ËşÇ°£¬ÖĞ³¯Á½¹ú¹ú¸è×¯ÖØ×àÏì¡£%5CnË«·½¾ùÏ£Íû¶Ô±¾Ğ­ÒéËùÊö±£ÃÜ×ÊÁÏ123123&target=³¯ÏÊ×î¸ßÁìµ¼ÈË½ğÕı¶÷²ÎÚËÎ»ÓÚ³¯ÏÊÆ½°²ÄÏµÀèí²Ö¿¤µÄ123123%5Cn¾üÁÒÊ¿ËşÇ°£¬ÖĞ³¯Á½¹ú¹ú¸è×¯ÖØ×àÏì¡£%5Cn123Ë«·½¾ùÏ£Íû¶Ô±¾Ğ­ÒéËùÊö±£ÃÜ×ÊÁÏ87924365&template=Ë«·½¾ùÏ£Íû¶Ô±¾Ğ­ÒéËùÊö±£ÃÜ×ÊÁÏ%5CnÁº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨%5Cn' [POST]>
+Wed 28 Oct 2020 09:03:45 dup_check.py INFO preprocess time: 0.000997781753540039
+Wed 28 Oct 2020 09:03:45 dup_check.py INFO run success!! time cost      :    0.00099945068359375      |length : 165  |  77  |dup_rate:0.2546583850931677
+Wed 28 Oct 2020 09:03:45 dup_check.py INFO make output time: 0.0
+Wed 28 Oct 2020 09:03:45 _internal.py INFO 127.0.0.1 - - [28/Oct/2020 09:03:45] "[37mPOST /NLP/Algorithm/base/dup_check/winnowing?source=¾İ³¯ÖĞÉç10ÔÂ22ÈÕ±¨µÀ£¬³¯ÏÊ×î¸ßÁìµ¼ÈË½ğÕı¶÷²ÎÚËÎ»ÓÚ³¯ÏÊÆ½°²ÄÏµÀèí²Ö¿¤µÄÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ÁêÔ°£¬ÏòÁÒÊ¿±íÊ¾³ç¸ß¾´Òâ£¬¼ÍÄîÖĞ¹úÈËÃñÖ¾Ô¸¾ü¸°³¯²ÎÕ½70ÖÜÄê¡£%5Cn³¯ÏÊÈËÃñ¾üÒÇÕÌ¶ÓÔÚÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ÁêÔ°ÕûÆëÁĞ¶Ó¡£½ğÕı¶÷Í¬³¯ÏÊµ³Õş¾ü¸É²¿Ò»ÆğÀ´µ½ÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ËşÇ°£¬ÖĞ³¯Á½¹ú¹ú¸è×¯ÖØ×àÏì¡£%5CnË«·½¾ùÏ£Íû¶Ô±¾Ğ­ÒéËùÊö±£ÃÜ×ÊÁÏ123123&target=³¯ÏÊ×î¸ßÁìµ¼ÈË½ğÕı¶÷²ÎÚËÎ»ÓÚ³¯ÏÊÆ½°²ÄÏµÀèí²Ö¿¤µÄ123123%5Cn¾üÁÒÊ¿ËşÇ°£¬ÖĞ³¯Á½¹ú¹ú¸è×¯ÖØ×àÏì¡£%5Cn123Ë«·½¾ùÏ£Íû¶Ô±¾Ğ­ÒéËùÊö±£ÃÜ×ÊÁÏ87924365&template=Ë«·½¾ùÏ£Íû¶Ô±¾Ğ­ÒéËùÊö±£ÃÜ×ÊÁÏ%5CnÁº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨Áº³É²¨%5Cn HTTP/1.1[0m" 200 -
+Wed 28 Oct 2020 09:03:45 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing' [POST]>
+Wed 28 Oct 2020 09:03:45 dup_check.py INFO preprocess time: 0.0019652843475341797
+Wed 28 Oct 2020 09:03:45 dup_check.py INFO run success!! time cost      :    0.000997304916381836      |length : 165  |  77  |dup_rate:0.34782608695652173
+Wed 28 Oct 2020 09:03:45 dup_check.py INFO make output time: 0.0
+Wed 28 Oct 2020 09:03:45 _internal.py INFO 127.0.0.1 - - [28/Oct/2020 09:03:45] "[37mPOST /NLP/Algorithm/base/dup_check/winnowing HTTP/1.1[0m" 200 -

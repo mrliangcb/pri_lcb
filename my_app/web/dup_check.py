@@ -194,10 +194,17 @@ def dup_check2():
     target_length = len(target)
     print('长度：  source: {} | target : {} | template: {}'.format(source_length,target_length,template_length))
 
+    print('clear后的内容:')
+    print('source:',source[:100] )
+    print('target:', target[:100])
+    print('tem:',template[:100])
+
     source=source.split(r'\n') # ['']  ['','','']
     target =target.split(r'\n')
     source=clear(source)#去掉空段之后，至少存在一个['']
     target = clear(target)
+
+
 
     example=paragraph_winnowing()
     print('preprocess time:',time.time()-s_preprocess_time)

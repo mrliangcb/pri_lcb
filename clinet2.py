@@ -27,7 +27,7 @@ print('doc2是什么',doc2,len(doc2))
 
 # base = 'http://127.0.0.1:5003/?doc1={}&doc2={}'.format(doc1,doc2)
 url='http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing'
-base='{}?source={}&target={}&template={}'.format(url,source,target,template)# &template={}
+base='{}?source={}&target2={}'.format(url,source,target,template)# &template={}
 print('base:',base)
 
 # base='{}?source={}&target={}'.format(url,source,target)

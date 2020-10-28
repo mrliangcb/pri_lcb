@@ -138,7 +138,16 @@ def search_dot_2dec(x,num1,num2):#根据两个位置寻找前后句号
             break
     return x[s+1:e+1]
 
+def my_split(x):
+    # 先查看转义还是非转义
+    split_flag='\n'
+    if split_flag in x:
+        pass
+    else:
+        split_flag=r'\n'
 
+    x = x.split(split_flag)  # ['']  ['','','']
+    return x
 
 import time
 
@@ -201,9 +210,9 @@ def dup_check2():
     # print('tem:',template_target[:100])
 
 
-    source=source.split('\n') # ['']  ['','','']
+    source=my_split(source)
     print('source split:',source[0][:10])
-    target =target.split('\n')
+    target=my_split(target)
     print('target split:', target[0][:10])
 
     source=clear(source)#去掉空段之后，至少存在一个['']

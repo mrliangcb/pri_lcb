@@ -47,14 +47,16 @@ result=search_dot_2dec(x,num1,num2)
 
 print('最后查到',result)
 
-y='12'
+y='12\\n'  #\\n相当于 r'\n'
 print(y[:10])
+print(repr(y))
+print(repr(repr(y)))
+print(repr(repr(repr(y))))
 
-
-
-
-
-
+print('是否在：',r'\n' in y,'\n' in y)
+print(y.split(r'\n'))
+print(repr(y).split('\n'))
+print(repr(repr(y)).split('\n'))
 
 
 

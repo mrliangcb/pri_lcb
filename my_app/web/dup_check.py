@@ -275,7 +275,7 @@ def dup_check2():
     for i in source_target_list_sorted:
         rate_,source_,target_=i
         if rate_>0 and source_!='' and target_!='':
-            result_dup_list.append({'source':source_,'target':target_,'rate':rate_})
+            result_dup_list.append({'source':source_,'target':target_,'rate':rate_*100})
 
     # for i,j in enumerate(source_target_list_sorted):#加上编号
     #     source_target_list_sorted[i].insert(0,i)
@@ -312,7 +312,21 @@ def dup_check2():
     result1=similarity
     result3 = render_template('testHtml2.html', name1='doc1', name2='doc2', time=time_, dup_check=similarity,doc1_str=source, doc2_str=target,
                     doc1_wrap=doc1_wrap, doc2_group_=doc2_wrap)
+
+    print('输出一下结果')
+    for duan in doc1_wrap:
+        print('duan是什么',duan)
+        for duan_, g_id, s, e in duan:
+            if g_id == -1:
+                print(source[duan_][s:e + 1])
+            else:
+                print('有重复:',source[duan_][s:e+1])
+
+
+    # return result3
     result4 = render_template('add_href_doc1.html', doc1_wrap=doc1_wrap, doc1_str=source)
+
+
     result5 = render_template('add_href_doc2.html', doc2_group_=doc2_wrap, doc2_str=target)
     # result6 = render_template('dup_list_source.html', source_dup=source_target_list_sorted)
     #
@@ -330,7 +344,7 @@ def dup_check2():
 
     # print('doc1_wrap:',doc1_wrap)
     # print('doc2_wrap:', doc2_wrap)
-
+    print('返回字典:')
     return jsonify(result_dic)
 
 

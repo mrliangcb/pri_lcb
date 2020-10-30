@@ -74,7 +74,7 @@ data={'source':source,
 }
 resp = requests.post(URL, data=data)
 rece=resp.json()
-print('第二次获得结果:',rece['dup_list'][0])
+print('第二次获得结果:',rece)
 
 
 

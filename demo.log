@@ -3035,3 +3035,7 @@ Fri 30 Oct 2020 12:39:27 _internal.py INFO  * Detected change in 'C:\\Users\\466
 Fri 30 Oct 2020 12:39:27 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10月项目\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
 Fri 30 Oct 2020 12:39:27 _internal.py INFO  * Detected change in 'C:\\Users\\46631\\Desktop\\10月项目\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
 Fri 30 Oct 2020 12:39:29 _internal.py INFO  * Restarting with windowsapi reloader
+Fri 30 Oct 2020 12:39:39 dup_check.py WARNING warning
+Fri 30 Oct 2020 12:39:39 _internal.py WARNING  * Debugger is active!
+Fri 30 Oct 2020 12:39:39 _internal.py INFO  * Debugger PIN: 268-763-689
+Fri 30 Oct 2020 12:39:41 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)

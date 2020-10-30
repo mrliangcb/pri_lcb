@@ -1,4 +1,4 @@
-{% for duan in doc2_group_ %}<p>{% for duan_,g_id,s,e in duan %}{% if g_id==-1 %}{{doc2_str[duan_][s:e+1]}}{% else %}<span name="{{g_id}}">{{doc2_str[duan_][s:e+1]}}</span>{% endif %}{% endfor %}</p>{% endfor %}
+{% for duan in doc2_group_ %}<br>{% for duan_,g_id,s,e in duan %}{% if g_id==-1 %}{{doc2_str[duan_][s:e+1]}}{% else %}<span name="{{g_id}}">{{doc2_str[duan_][s:e+1]}}</span>{% endif %}{% endfor %}</br>{% endfor %}
 
 
 

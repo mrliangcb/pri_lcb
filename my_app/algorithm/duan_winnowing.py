@@ -258,7 +258,7 @@ class paragraph_winnowing():
                 for j in range(1, len(result_01[i])):
                     if (result_01[i][j] != result_01[i][j - 1]):  # 触发跳变
                         # print('段:',duan,j,result_01[i][j-1],result_01[i][j])
-                        if (result_01[i][j - 1] == 1) and (e-s+1)>=13: #上一个是1，表示是重复的
+                        if (result_01[i][j - 1] == 1) and (e-s+1)>=13: #上一个是1，表示是重复的 并且长度>13
                             duan1_group.append(tuple([group_num, s, e]))  # 取的时候 (s:e+1)
                             group_num += 1
                         else:#非重复的
@@ -302,40 +302,50 @@ class paragraph_winnowing():
                     pass
                 else:#找到一组!=-1的
                     # print('非-1') 非-1的组，填入到doc2
-
-                    if (c - b + 1) >= 13:#检查doc1连续13个
+                    if (c - b + 1) >= 13:#检查doc1连续13个  有些自重复的可能在这里符合条件
                         test_count=0
-                        for k in range(b, c + 1):#检查doc2连续13个
-                            d, e, f = doc1_2_doc2_index[i][k]
-                            if doc2_group_index[d][e] == -1:
-                                test_count+=1
+                        if_1=0
+                        for k in range(b, c + 1):# 把13个在doc2的地址找出来
+                            d, e, f = doc1_2_doc2_index[i][k]  #第一个重复字下表是tuple，d是在doc2的哪个段  e是doc2 d段的第几个字  f是文字
+                            if doc2_group_index[d][e] == -1:#如果doc2组编号中还没写入东西
+                                test_count+=1 #这13个字可以写入
 
-                        if test_count>=13:#检查doc2那边能否填超过13个
-                            w_count = 0
+                        if test_count>=13:# 如果doc2那边有13个以上-1   有可能前面出现过短句，现在是长句
                             for k in range(b, c + 1):  # 找s到e之间，去doc2的信息
                             # print('k值',i,k)
                              #doc1中，超过13个字的连续才填入到doc2
                                 d, e, f = doc1_2_doc2_index[i][k]  # d是段号  e是第几个   f是字
+
+
+
+                                #这里要不拆分doc1_tuple
+
+
+
                                 if doc2_group_index[d][e] == -1:
                                     # print('doc2可以填入',a,d,e,f)
                                     doc2_group_index[d][e] = a  # 给分组标号
-                                    w_count += 1
-                                else:
-                                    latest_group = doc2_group_index[d][e]
+                                else: #当然doc2中有一些部分是已经填写了的  要不先不处理了
+                                    a, b, c =doc1_tuple[i][j]
+                                    latest_group = doc2_group_index[d][e]  #这个latest_group主要是存后面的不是-1的部分，但这句话没有用的，后面都用不着latest_group
+
+
                             #填完doc2之后，有可能doc1本来超过13，但doc2有部分满了写不进去
                               # 单独属于这个句子的太少了，那就整组转换
                                 # 有问题，当没有模板去除的时候，单次填入的字符肯定>=13
                                 # 当有模板去除的时候，连续的字符可能<13
                                 # 当然，<13其实就可以不算重复了 所以换成-1组号
-                        else:#doc2那边小于13个
-                            old_group = latest_group  # 设置阈值，然后做整个组号转化
+                        else:#doc2那边小于13个-1  doc1这边有13个
+                            old_group = -1  # 这个 就转化为-1吧，不显示了
                             new_group = a
-                            new_group_old[new_group] = old_group
-                    else:
+                            new_group_old[new_group] = old_group  #a转化为-1组了
+                    else:#doc1直接就是<13个字
                         # 找到一个组长度不够13，直接换组号 换成-1
-                        old_group = latest_group  # 设置阈值，然后做整个组号转化
+                        old_group = -1  #
                         new_group = a
-                        new_group_old[new_group] = old_group
+                        new_group_old[new_gsroup] = old_group
+
+                    # 短句先出现，长句后出现，
 
         #改写doc1_group
         exis_new_group = set(new_group_old.keys())
@@ -358,7 +368,6 @@ class paragraph_winnowing():
     def doc2_tuple(self,doc2_group_index):
         # print('doc2_group_index是什么?',doc2_group_index)
         doc2_tuple = []
-
         for i in range(len(doc2_group_index)):
             s = 0
             e = 0

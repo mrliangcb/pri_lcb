@@ -246,23 +246,22 @@ class paragraph_winnowing():
 
     def x1_group( #给x1分组
             self,result_01):
-
-        all_group = []
+        all_group = [] #x1的全部段分组
         contin_flag = 0
         count = 0
         group_num = 0
-        for i in range(0, len(result_01)):
+        for i in range(0, len(result_01)): #段
             duan1_group = []
             s = 0
             e = 0
-            if len(result_01[i])>1:
+            if len(result_01[i])>1: #
                 for j in range(1, len(result_01[i])):
                     if (result_01[i][j] != result_01[i][j - 1]):  # 触发跳变
                         # print('段:',duan,j,result_01[i][j-1],result_01[i][j])
-                        if (result_01[i][j - 1] == 1) and (e-s+1)>=13:
+                        if (result_01[i][j - 1] == 1) and (e-s+1)>=13: #上一个是1，表示是重复的
                             duan1_group.append(tuple([group_num, s, e]))  # 取的时候 (s:e+1)
                             group_num += 1
-                        else:
+                        else:#非重复的
                             duan1_group.append(tuple([-1, s, e]))
                         s = j
                         e = j

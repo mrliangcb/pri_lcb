@@ -312,6 +312,7 @@ def dup_check2():
     result1=similarity
     result3 = render_template('testHtml2.html', name1='doc1', name2='doc2', time=time_, dup_check=similarity,doc1_str=source, doc2_str=target,
                     doc1_wrap=doc1_wrap, doc2_group_=doc2_wrap)
+    # return result3
 
     print('输出一下结果')
     for duan in doc1_wrap:

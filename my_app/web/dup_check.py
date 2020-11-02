@@ -85,12 +85,13 @@ def uniform_(x):#不管输入是多少段，规整后每段至少有一个''   �
 def clear(x):#至少是''
 
     temp = []
-    for i in range(len(x)):
-        if x[i]:  # 如果不为空
+    for i in range(len(x)):  #遍历段
+        if x[i] and x[i]!='\n':  # 如果不为空
             temp.append(x[i])
 
     if temp==[]:
         return ['']  #至少是['']
+
     return temp
 
 def source_dup_dic(result_str):#
@@ -228,7 +229,7 @@ def dup_check():
     time_=time.time()-s_time
     print('get sim run time :',time_)
     print('similarity:', similarity)
-    logging.info('run success!! time cost      :    {}      |length : {}  |  {}  |dup_rate:{}'.format(time_,source_length,target_length,similarity))
+    logging.info('run success!! time cost      :    {}      |length : {}  |  {}  |    {}  |dup_rate:{}'.format(time_,source_length,target_length,template_length,similarity))
 
     s_output_time=time.time()
     doc2_wrap_dic={}
@@ -274,7 +275,7 @@ def dup_check():
     result_dup_list=[]
     for i in source_target_list_sorted:
         rate_,source_,target_=i
-        if rate_>0 and source_!='' and target_!='':
+        if rate_>0 and source_!='' and target_!='' and source_!='\n' and target_!='\n':
             result_dup_list.append({'source':source_,'target':target_,'rate':rate_*100})
 
     # for i,j in enumerate(source_target_list_sorted):#加上编号
@@ -301,7 +302,10 @@ def dup_check():
     for duan in range(len(doc1_wrap)):
         for num in range(len(doc1_wrap[duan])):
             a,b,c=doc1_wrap[duan][num]
+
             doc1_wrap[duan][num]=tuple([duan,a,b,c])
+
+
     for duan in range(len(doc2_wrap)):
         for num in range(len(doc2_wrap[duan])):
             a,b,c=doc2_wrap[duan][num]
@@ -314,14 +318,13 @@ def dup_check():
                     doc1_wrap=doc1_wrap, doc2_group_=doc2_wrap)
     # return result3
 
-    print('输出一下结果')
-    for duan in doc1_wrap:
-        print('duan是什么',duan)
-        for duan_, g_id, s, e in duan:
-            if g_id == -1:
-                print(source[duan_][s:e + 1])
-            else:
-                print('有重复:',source[duan_][s:e+1])
+    # print('输出一下结果')
+    # for duan in doc1_wrap:
+    #     for duan_, g_id, s, e in duan:
+    #         if g_id == -1:
+    #             print(source[duan_][s:e + 1])
+    #         else:
+    #             print('有重复:',source[duan_][s:e+1])
 
 
     # return result3
@@ -412,6 +415,7 @@ def template_match():
 
 
     print('left_:',left_)
+    print('right:',right_)
     result_dic={
         'template':left_,
         'source':right_

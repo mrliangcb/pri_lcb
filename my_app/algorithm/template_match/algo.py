@@ -13,30 +13,34 @@ def extract_4para(doc_file):  #主要用于处理模板文章
 
     for i,paragraph in enumerate(doc_file.paragraphs):
         tem_obj=None
-        if paragraph.text.strip('\n').startswith('第四章'):
-            save_flag = 1
-        if paragraph.text.strip('\n').startswith('第五章'):
-            save_flag = 0
-
-        tem_obj = para_obj(type=paragraph.style.name, position=i, origin=paragraph.text,str_=paragraph.text.strip().split(' ')[-1])  # type=normal/Heading *
-        # print('是否保存:',paragraph.style.name,paragraph.text,save_flag)
-        if save_flag == 1:
-            if paragraph.style.name.startswith('Heading'):#这个para是heading
-                x=para_obj(type=paragraph.style.name, position=i, origin=paragraph.text,str_=paragraph.text.strip().split(' ')[-1]) #1.64s
-                # x = para_obj(type=paragraph.style.name, position=i) #ss1.5s
-                # x={'type':paragraph.style.name,'position':i,'obj':paragraph} # 1.67s
-                heading4_obj.append(x)
-        global_obj.append(tem_obj)#要存这个的话好久
+        if paragraph.text!='':
+            if paragraph.text.strip('\n').startswith('第四章'):
+                save_flag = 1
+            if paragraph.text.strip('\n').startswith('第五章'):
+                save_flag = 0
+            # print('模板的:',paragraph.style.name,paragraph.text)
+            # tem_obj = para_obj(type=paragraph.style.name, position=i, origin=paragraph.text,str_=paragraph.text.strip().split(' ')[-1])  # type=normal/Heading *
+            # print('是否保存:',paragraph.style.name,paragraph.text,save_flag)
+            # save_flag=1
+            if save_flag == 1:
+                if paragraph.style.name.startswith('Heading') or paragraph.style.name.startswith('List Paragraph'):#这个para是heading
+                        x=para_obj(type=paragraph.style.name, position=i, origin=paragraph.text,str_=paragraph.text.strip().split(' ')[-1]) #1.64s
+                    # x = para_obj(type=paragraph.style.name, position=i) #ss1.5s
+                    # x={'type':paragraph.style.name,'position':i,'obj':paragraph} # 1.67s
+                        heading4_obj.append(x)
+            # global_obj.append(tem_obj)#要存这个的话好久
     return global_obj,heading4_obj
 
 
 def exctract_heading(para_list):
     heading_list=[]
     for i,para in enumerate(para_list):
+        if para.text != '':
         # print(para.style.name)
-        if para.style.name.startswith('Heading'):
-            x=para_obj(type=para.style.name, position=i, origin=para.text,str_=para.text.strip().split(' ')[-1])
-            heading_list.append(x)
+        # print('第{}段:'.format(i),para.style.name,para.text)
+            if para.style.name.startswith('Heading') or para.style.name.startswith('List Paragraph'):
+                x=para_obj(type=para.style.name, position=i, origin=para.text,str_=para.text.strip().split(' ')[-1])
+                heading_list.append(x)
     return heading_list
 
 class processer():
@@ -48,7 +52,7 @@ class Solution:
     def lengthOfLIS(self, nums):
         print('nums是什么',nums)
         dp = [1 for i in range(len(nums))]  # 用于存储每一个元素处的最大序列的长度
-        dp2=[i for i in range(len(nums))] #存储序列   #大家默认只取自己
+        dp2=[[i] for i in range(len(nums))] #存储序列   #大家默认只取自己
         print('dp2是什么?',dp2)
         n = len(nums)
         max_len = 1
@@ -74,7 +78,7 @@ class Solution:
                     max_len=tmp
                     max_id =i
         print('最后dp2:',dp2)
-        return max_len,dp2[max_id] #dp2是下标
+        return max_len,dp2[max_id] #dp2是下标   如果喜test都是-2，那会返回0
 
 def make_seq(x,y):#x list  y dic   投标文档 参照字典，重做下标    有可能重复标题
     seq_=[-2 for i in range(len(x))]
@@ -96,6 +100,8 @@ def find_best_match(heading4_target_obj_list,source_heading_obj_list):
             all_heading1_dic[j.str_] = i
             all_heading1_list.append(j.str_)   #如果重复了，算是有但错位
 
+    print('source_heading_obj_list?',source_heading_obj_list)
+
     seq = make_seq(source_heading_obj_list, all_heading1_dic) #shape=source   元素为template的下标
     all_heading1_set = set(all_heading1_list) #template集合
 
@@ -105,15 +111,17 @@ def find_best_match(heading4_target_obj_list,source_heading_obj_list):
     source_heading_set_str = set(source_heading_list_str) #source集合
 
 
-
+    print('seq是什么:?',seq) # [paragraph(type='Heading 5', position=633, origin='', str_='', flag=None, test=-2)]
     exam = Solution()
     result = exam.lengthOfLIS(seq) #seq要求包含 tem下表，也要有type
-
+    print('最长公共结果result',result) # (1, 0)
 
     #左边
     # 解决序列对上的，级别是否对上
     flag_left = [-2 for i in range(len(all_heading1_list))]
     flag_right = [-2 for i, _ in enumerate(source_heading_list_str)]
+
+
     for i, j in enumerate(result[1]):  # seq的最长公共子序列下标
         template_index = seq[j].test #对应到template下标  seq是source的对象list
         if seq[j].type == heading4_target_obj_list[template_index].type:
@@ -157,10 +165,18 @@ def main(source,template):
     process_time=time.time()
     procer = processer()
     template_doc = procer.read_doc(template)
+    print('解析时间1.1:', time.time() - process_time)
+
+    process_time = time.time()
     global_obj_target_obj_list, heading4_target_obj_list = extract_4para(template_doc)
+    print('解析时间1.2:', time.time() - process_time)
+
+
+    process_time = time.time()
     source_file = procer.read_doc(source)
     source_heading_obj_list = exctract_heading(source_file.paragraphs)
-    print('解析时间:',time.time()-process_time)
+    print('解析时间2:', time.time() - process_time)
+
     mat_time=time.time()
     a,b=find_best_match(heading4_target_obj_list,source_heading_obj_list)
     print('匹配time:',time.time()-mat_time)
@@ -172,6 +188,7 @@ if __name__ == '__main__':
     path2 = base+r'\基于NLP的商务文本数据清洗关键技术研究项目合同+-+-打印版.docx'
     procer = processer()
     doc_1 = procer.read_doc(path1)
+
     global_obj_target_obj_list, heading4_target_obj_list = extract_4para(doc_1)
     doc2_file = procer.read_doc(path2)
     source_heading_obj_list = exctract_heading(doc2_file.paragraphs)

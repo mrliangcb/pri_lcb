@@ -86,7 +86,9 @@ def clear(x):#至少是''
 
     temp = []
     for i in range(len(x)):  #遍历段
-        if x[i]!='' and x[i]!='\n' and x[i]!=[] and x[i]!=' ' and x[i]!='\t':  # 如果不为空
+        if x[i]=='' or  x[i]=='\n' or x[i]==[] or  x[i]==' ' or x[i]=='\t':
+            pass
+        else:
             temp.append(x[i])
 
     if temp==[]:
@@ -214,9 +216,9 @@ def dup_check():
 
     source=my_split(source)
 
-    print('source split:',source[0][:10])
+    print('source split:',source[0][:100])
     target=my_split(target)
-    print('target split:', target[0][:10])
+    print('target split:', target[0][:100])
 
     source=clear(source)#去掉空段之后，至少存在一个['']
     target = clear(target)

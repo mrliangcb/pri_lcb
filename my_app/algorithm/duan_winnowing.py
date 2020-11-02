@@ -42,8 +42,8 @@ class paragraph_winnowing():
         # print('去除模板后的doc1_str',doc1_str)
         # print('去除模板后的doc1_01', doc1_01)
 
-        for i in range(len(doc1_str)):
-            print('result_str:',i,''.join(doc1_str[i]))
+        # for i in range(len(doc1_str)):
+        #     print('result_str:',i,''.join(doc1_str[i]))
 
         size = 0
         for i in range(len(x1)):

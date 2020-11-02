@@ -199,6 +199,7 @@ def dup_check():
     #分段并且去掉空段
     # template_target = template_target.split(r'\n')
     template_target=[template_target]
+
     template_target = clear(template_target)
 
     source_length = len(source)
@@ -212,13 +213,14 @@ def dup_check():
 
 
     source=my_split(source)
+
     print('source split:',source[0][:10])
     target=my_split(target)
     print('target split:', target[0][:10])
 
     source=clear(source)#去掉空段之后，至少存在一个['']
     target = clear(target)
-
+    print('clear之后的source:',source[:50])
 
 
 
@@ -307,7 +309,7 @@ def dup_check():
             a,b,c=doc1_wrap[duan][num]
 
             doc1_wrap[duan][num]=tuple([duan,a,b,c])
-
+    print('doc1_wrap最后',doc1_wrap[:50])
 
     for duan in range(len(doc2_wrap)):
         for num in range(len(doc2_wrap[duan])):

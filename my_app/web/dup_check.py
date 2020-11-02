@@ -222,7 +222,7 @@ def dup_check():
 
     source=clear(source)#去掉空段之后，至少存在一个['']
     target = clear(target)
-    print('clear之后的source:',source[:50])
+    print('clear之后的source:',source[:500])
 
 
 

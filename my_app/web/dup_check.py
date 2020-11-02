@@ -86,7 +86,7 @@ def clear(x):#至少是''
 
     temp = []
     for i in range(len(x)):  #遍历段
-        if x[i]!='' and x[i]!='\n' and x[i]!=[]:  # 如果不为空
+        if x[i]!='' and x[i]!='\n' and x[i]!=[] and x[i]!=' ' and x[i]!='\t':  # 如果不为空
             temp.append(x[i])
 
     if temp==[]:
@@ -303,13 +303,14 @@ def dup_check():
     # print('target_dic::::', target_dic)
 
 
-
     for duan in range(len(doc1_wrap)):
         for num in range(len(doc1_wrap[duan])):
             a,b,c=doc1_wrap[duan][num]
-
             doc1_wrap[duan][num]=tuple([duan,a,b,c])
     print('doc1_wrap最后',doc1_wrap[:50])
+
+
+
 
     for duan in range(len(doc2_wrap)):
         for num in range(len(doc2_wrap[duan])):

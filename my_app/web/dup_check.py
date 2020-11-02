@@ -86,7 +86,7 @@ def clear(x):#至少是''
 
     temp = []
     for i in range(len(x)):  #遍历段
-        if x[i] and x[i]!='\n':  # 如果不为空
+        if x[i]!='' and x[i]!='\n' and x[i]!=[]:  # 如果不为空
             temp.append(x[i])
 
     if temp==[]:
@@ -219,6 +219,9 @@ def dup_check():
     source=clear(source)#去掉空段之后，至少存在一个['']
     target = clear(target)
 
+
+
+
     example=paragraph_winnowing()
     print('preprocess time:',time.time()-s_preprocess_time)
     logging.info('preprocess time: {}'.format(time.time()-s_preprocess_time))
@@ -348,7 +351,6 @@ def dup_check():
 
     # print('doc1_wrap:',doc1_wrap)
     # print('doc2_wrap:', doc2_wrap)
-    print('返回字典:')
     return jsonify(result_dic)
 
 

@@ -9,27 +9,27 @@ doc2='双方均希望对本协议所述保密资料及信息予以有效保护�
 # source=r'中双方均希望对本协议所述保密资料及信息予以有效保护'
 # source=r'据朝中社10月22日报道，朝鲜最高领导人金正恩参谒位于朝鲜平安南道桧仓郡的中国人民志愿军烈士陵园，向烈士表示崇高敬意，纪念中国人民志愿军赴朝参战70周年。\n朝鲜人民军仪仗队在中国人民志愿军烈士陵园整齐列队。金正恩同朝鲜党政军干部一起来到中国人民志愿军烈士塔前，中朝两国国歌庄重奏响。\n双方均希望对本协议所述保密资料123123'
 source=r'李克强在讲话中首先代表党中央、国务院，向受命名的地方和受表彰的单位与个人表示热烈祝贺，向人民解放军指战员、武警官兵、民兵预备役人员、部队职工，向烈军属、伤残军人、转业复员退伍军人和军队离退休干部，\n向双拥工作战线的同志们致以诚挚问候，向所有关心支持国防和军队建设的社会各界人士表示衷心感谢。李克强说，党的十八大以来，在以习近平同志为核心的党中央坚强领导下，各地区各有关部门积极支持和服务保障军队建设改革，进一步加大优抚安置保障，军队支援经济社会发展积极有为，在参与重大自然灾害抢险救援和应对突发事件中当先锋。\n今年面对疫情，人民子弟兵闻令而动、敢打硬仗，广大军民携手同心、共克时艰，取得了抗击疫情斗争重大战略成果，向所有关心支持国防和军队建设的社会各界人士表彰显了军政军\n民团结的强大力量。'
-
+source=r'111111111111111111122222222222222222222222233333333333333333333333333'
 # target=r'朝鲜最高领导人金正恩参谒位于朝鲜平安南道桧仓郡的123123\n军烈士塔前，中朝两国国歌庄重奏响。\n123双方均希望对本协议所述保密资料87924365'
 target=r'李克强在讲话中首先代表党中央、国务院，向受命名的地方和受表彰的单位与个人表示热烈祝贺，向人民解放军指战员、武警官兵、民兵预备役人员、部队职工，向烈军属、伤残军人，党的十八大以来，在以习近平同志为核心的党中央坚强领导下，各地区各有关部门积极支持和服务保障军队建设改革，进一步加大优抚安置保障，军队支援经济社会发展积极有为，在参与重大自然灾害抢险救援和应对突发事件中当先锋。\n今年面对疫情，人民子弟兵闻令而动、敢打硬仗，广大军民携手同心、共克时艰，取得了抗击疫情斗争重大战略成果，向所有关心支持国防和军队建设的社会各界人士表彰显了军政军\n民团结的强大力量。'
 # target=r'43214'
-# target=r''
+target=r'1111111111111111111111111111111111111122222222222222222222222233333333333333333333333333'
 
 template=r'双方均希望对本协议所述保密资料\n梁成波梁成波梁成波梁成波梁成波梁成波梁成波梁成波\n'
 # template=''
 # template=''
 
-doc1=doc1.replace(' ','')
-doc2=doc2.replace(' ','')
-print('doc1是什么',doc1,len(doc1))
-print('doc2是什么',doc2,len(doc2))
+# doc1=doc1.replace(' ','')
+# doc2=doc2.replace(' ','')
+# print('doc1是什么',doc1,len(doc1))
+# print('doc2是什么',doc2,len(doc2))
 
 
 
 # base = 'http://127.0.0.1:5003/?doc1={}&doc2={}'.format(doc1,doc2)
-url='http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing'
-base='{}?source={}&target={}&template={}'.format(url,source,target,template)# &template={}
-print('base:',base)
+# url='http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing'
+# base='{}?source={}&target={}&template={}'.format(url,source,target,template)# &template={}
+# print('base:',base)
 
 # base='{}?source={}&target={}'.format(url,source,target)
 # base='{}'.format(url)
@@ -66,16 +66,18 @@ print('base:',base)
 
 # http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing?source=中双方均希望对本协议所述保密资料及信息予以有效保护&target=123123123双方均希望对本协议所述保密资料及信息予以有效保护两\n梁&template=1
 
-
+import time
 # from的形式 (好像更好)
 URL='http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing'
 data={'source':source,
       'target':target
-}
-resp = requests.post(URL, data=data)
+}#data或者para一样
+s=time.time()
+for i in range(1):
+      resp = requests.post(URL, data=data)
 rece=resp.json()
-print('第二次获得结果:',rece)
-
+print('第{}次获得结果:{}'.format(i,rece))
+print(time.time()-s)
 
 
 

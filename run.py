@@ -1,11 +1,12 @@
 
 
-
+import flask
 from flask import Flask
-
+print('flask版本:',flask.__version__)
 from my_app.web import create_app
 import logging
 # -*- coding: utf-8 -*-
+from werkzeug.local import Local
 
 import codecs,sys
 # sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
@@ -31,7 +32,7 @@ con_dic=app.config  #取得配置文件的字典，是在app.web 的init读入�
 
 
 if __name__ == '__main__':
-    app.run("0.0.0.0",debug=True,port=50000)
+    app.run("0.0.0.0",debug=True,port=50000,threaded=True)# ,,threaded=True, ,processes=True
 
 
 

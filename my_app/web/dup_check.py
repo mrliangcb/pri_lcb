@@ -21,8 +21,8 @@ import codecs,sys
 #     sys.stdout = codecs.getwriter('utf-8')(sys.stdout, 'strict')
 
 
-@web.route('/NLP/Algorithm/base/dup_check/winnowing2', methods=['POST','GET'])
-def dup_check():
+@web.route('/NLP/Algorithm/base/dup_check/winnowing3', methods=['POST','GET'])
+def dup_check3():
     # args_dic = request.args  # 这个是不可变字典，如果转成普通字典
     print('now winnowing2')
     args_dic=request.form.to_dict()
@@ -134,9 +134,9 @@ def search_dot_2dec(x,num1,num2):#根据两个位置寻找前后句号
 
     for i in range(num2,len(x)):
         if x[i]=='。'or (i-num2)>100:
-            e=i
+            e=i+1
             break
-    return x[s+1:e+1]
+    return x[s:e+1]
 
 def my_split(x):
     # 先查看转义还是非转义
@@ -152,7 +152,7 @@ def my_split(x):
 import time
 
 @web.route('/NLP/Algorithm/base/dup_check/winnowing', methods=['POST','GET'])
-def dup_check2():
+def dup_check():
     # args_dic = request.args
     print('now route winnowing')
     s_preprocess_time=time.time()
@@ -162,18 +162,18 @@ def dup_check2():
     source_ok=0
     target_ok=0
 
-    logging.info('foreign request : '+str(request))
+    logging.info('foreign request : {} to {}'.format(str(request),'dup_check'))
 
     try:#尝试挖出参数
         try:
-            dic=request.args.to_dict()
+            dic=request.args.to_dict() #
             source=dic['source']
             source_ok=1
             target=dic['target']
             target_ok = 1
             # a, b = check_args_validation(dic)
         except:
-            dic=request.form.to_dict()
+            dic=request.form.to_dict() #
             source=dic['source']
             source_ok = 1
             target=dic['target']
@@ -376,17 +376,51 @@ def dup_check2():
     #               'doc2_label': result5}
     # return jsonify(result_dic)
 
+from my_app.algorithm.template_match.algo import main
+@web.route('/NLP/Algorithm/base/dup_check/template_match', methods=['POST','GET'])
+def template_match():
+
+    #接收区
+    logging.info('foreign request : {} to {}'.format(str(request),'template_match'))
+    print('接收到request:', request)
+    print('now time:', time.localtime(time.time()))
+    source_ok=0
+    template_ok=0
+    # print('request.files是什么?',request.files)
+    # print('source是什么?',request.files['source'])
+    # print('template是什么?:',request.files['template'])
+    try:#尝试挖出参数
+        source=request.files['source']
+        source_ok=1
+        template=request.files['template']
+        template_ok = 1
+        # a, b = check_args_validation(dic)
+    except:
+        if source_ok==0:
+            print("can't get source")
+            logging.info("can't get source")
+            return jsonify("can't get source")
+        if template_ok==0:
+            print("can't get template")
+            logging.info("can't get template")
+            return jsonify("can't get template")
+    #     # a, b = check_args_validation(dic)
+    left,right=main(source,template)
+
+    left_=[dict(i._asdict()) for i in left]
+    right_ = [dict(i._asdict()) for i in right]
 
 
+    print('left_:',left_)
+    result_dic={
+        'template':left_,
+        'source':right_
+    }
+    return jsonify(result_dic)  #obj传不了
 
 
-
-
-
-
-
-
-
+# 'source_info': '1(正确),-2(多余),-3(位置不正确),-4(位置正确但级别不对)',
+# 'tem_info': '1(正确),-2(缺失),-3(位置不正确),-4(位置正确但级别不对)',
 
 
 

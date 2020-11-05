@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for dic in template %}
+    {{ dic['origin'] }}
+        {% if dic['flag']==1 %}
+            {{dic['origin']}}
+        {% else %}
+            <p style="color:red">{{dic['origin']}}</p>
+        {% endif %}
+{% endfor %}
+</body>
+</html>

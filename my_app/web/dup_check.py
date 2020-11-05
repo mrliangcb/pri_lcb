@@ -463,12 +463,14 @@ def template_match():
         'template':left_,
         'source':right_
     }
+    result0=render_template('html_for_match.html',template=left_ )
+    # return result0
     return jsonify(result_dic)  #obj传不了
 
 # 'source_info': '1(正确),-2(多余),-3(位置不正确),-4(位置正确但级别不对)',
 # 'tem_info': '1(正确),-2(缺失),-3(位置不正确),-4(位置正确但级别不对)',
 
-
+# <p style="color:red">红色的字</p>
 
 
 

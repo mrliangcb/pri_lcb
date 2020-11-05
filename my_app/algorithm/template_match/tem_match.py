@@ -3,10 +3,8 @@ import docx
 import collections
 from collections import namedtuple as nt
 
-para_obj =nt('paragraph', ['type', 'position', 'origin','str_','flag','test','para_num']) # flag和test怎么用
+para_obj =nt('paragraph', ['type', 'position', 'origin','str_','flag','test']) # flag和test怎么用
 para_obj.__new__.__defaults__ = ('para',None, None,None,None,None)
-
-
 
 def extract_4para(doc_file):  #主要用于处理模板文章
     save_flag = 0
@@ -20,7 +18,6 @@ def extract_4para(doc_file):  #主要用于处理模板文章
                 save_flag = 1
             if paragraph.text.strip('\n').startswith('第五章'):
                 save_flag = 0
-            # print('模板的:',paragraph.style.name,paragraph.text)
             # tem_obj = para_obj(type=paragraph.style.name, position=i, origin=paragraph.text,str_=paragraph.text.strip().split(' ')[-1])  # type=normal/Heading *
             # print('是否保存:',paragraph.style.name,paragraph.text,save_flag)
             # save_flag=1
@@ -30,41 +27,21 @@ def extract_4para(doc_file):  #主要用于处理模板文章
                     # x = para_obj(type=paragraph.style.name, position=i) #ss1.5s
                     # x={'type':paragraph.style.name,'position':i,'obj':paragraph} # 1.67s
                         heading4_obj.append(x)
-            # global_obj.append(tem_obj)#要存这个的话好久
+            # global_obj.append(tem_obj)#耗时
     return global_obj,heading4_obj
 
 
-
-
-import re
 def exctract_heading(para_list):
     heading_list=[]
-    para_num = -1
-    para_flag = []
     for i,para in enumerate(para_list):
         if para.text != '':
-        # print(para.style.name)
-        # print('第{}段:'.format(i),para.style.name,para.text)
-        #     if para.style.name.startswith('Heading') or para.style.name.startswith('List Paragraph'):
-        # 模板：有第几章
-        # 合同: 没有第几章
-            if para.style.name.startswith('Heading'):
-            # if (not para.style.name.startswith('Normal')) and (not para.style.name.startswith('normal')):
-                ptr = r'第(.*?)章'  # 非贪心
-                result = re.findall(ptr,para.text)
-                # print('result是什么',result)
-                if result and result[0] != '':
-                    para_num += 1
-                    # print('这个是一个第几章标题', result,para_num)
-                    # 这是一个章标题
-                    para_flag.append({'para_num':para_num,'position':i})
-                x=para_obj(type=para.style.name, position=i, origin=para.text,str_=para.text.strip().split(' ')[-1],para_num=para_num)
-
+            if para.style.name.startswith('Heading') or para.style.name.startswith('List Paragraph'):
+                x=para_obj(type=para.style.name, position=i, origin=para.text,str_=para.text.strip().split(' ')[-1])
                 heading_list.append(x)
     return heading_list
 
 class processer():
-    def read_doc(self,path):#path or io
+    def read_doc(self,path):# path or io
         x = docx.Document(path)
         return x
 
@@ -83,7 +60,7 @@ class Solution:
                 tmp2=[i] #首先取自己
                 for j in range(0,i):
                     if nums[j].test >= 0:
-                        if nums[j].test<nums[i].test:#表明i可以用自己的，也可以自己接上j的 now
+                        if nums[j].test<nums[i].test:
                             # tmp = max(tmp,1+dp[j])
                             now=1+dp[j]
                             if tmp>now:#tmp是最新i的
@@ -180,8 +157,9 @@ def find_best_match(heading4_target_obj_list,source_heading_obj_list):
     print('右边:', right_print)
 
     return heading4_target_obj_list,source_heading_obj_list
+
 import time
-def main(source,template):
+def main(source,template): # flask app调用
     process_time=time.time()
     procer = processer()
     template_doc = procer.read_doc(template)
@@ -202,68 +180,21 @@ def main(source,template):
     print('匹配time:',time.time()-mat_time)
     return a,b
 
-from collections import Counter
-def get_muban(doc1_global_para,source_heading_obj_list):
-    doc1_list=[]
-    doc1_dic={}
-    doc1_set=0
-    para_obj_dict={}
-    for i,j in enumerate(doc1_global_para):  #换一种数据结构，容易搜索
-        if not doc1_dic.get(j.str_,None):
-            doc1_dic[j.str_]=j.para_num
-        if para_obj_dict.get(j.para_num,None):#如果存在
-            para_obj_dict[j.para_num].append(j)
-        else:#不存在，就新建
-            para_obj_dict[j.para_num]=[j]
-    print('para_obj_dict这个是什么?',para_obj_dict)
-
-
-    doc2_para_num=[]
-    print('doc1_dic是什么?',doc1_dic)
-
-    for i,j in enumerate(source_heading_obj_list):
-
-
-        if doc1_dic.get(j.str_,None)!=None:
-            print('找到了，source的情况', j)
-            doc2_para_num.append(doc1_dic[j.str_])
-    print('组的情况:',Counter(doc2_para_num))
-    # para_num_list=list(dict(y).keys())
-    tem_para=Counter(doc2_para_num).most_common(1)[0][0]
-    print(tem_para)
-    result=para_obj_dict[tem_para]
-    print('识别哪一段？',result)
-    return result
-
 if __name__ == '__main__':
     base=r'D:\lcb_note\code\Program\10月项目\my_docx'
     path1 = base+r'\招标文件 CWEME-1911ZSWZ-2J039 基于NLP的商务文本数据清洗关键技术研究项目-2019年12月中国水利电力物资集团有限公司项目（第三版终版）.docx'
     path2 = base+r'\基于NLP的商务文本数据清洗关键技术研究项目合同+-+-打印版.docx'
     procer = processer()
+
+    # 读取模板文件
     doc_1 = procer.read_doc(path1)
+    global_obj_target_obj_list, heading4_target_obj_list = extract_4para(doc_1)
+
+    # 读取投标合同
     doc2_file = procer.read_doc(path2)
-    # global_obj_target_obj_list, heading4_target_obj_list = extract_4para(doc_1)
-    doc1_global_para=exctract_heading(doc_1.paragraphs)
     source_heading_obj_list = exctract_heading(doc2_file.paragraphs)
 
-    template_obj_list=get_muban(doc1_global_para,source_heading_obj_list)
-    # print('template_obj_list:',template_obj_list)
-    # print('heading4_target_obj_list:',heading4_target_obj_list)
-
-    a,b=find_best_match(template_obj_list,source_heading_obj_list)
+    # 标题匹配度计算
+    a,b=find_best_match(heading4_target_obj_list,source_heading_obj_list)
     print(a)
     print(b)
-
-
-
-
-
-
-
-
-
-
-
-
-
-

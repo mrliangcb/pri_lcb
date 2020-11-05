@@ -56,8 +56,9 @@ template=r'双方均希望对本协议所述保密资料\n梁成波梁成波梁�
 
 
 
-# http://127.0.0.1:5002/NLP/Algorithm/base/dup_check/winnowing?doc1=中双方均希望对本协议所述保密资料及信息予以有效保护梁成波&doc2=双方均希望对本协议所述保密资料及信息予以有效保护两梁成波
-
+# http://127.0.0.1:5002/NLP/Algorithm/base/dup_check/winnowing?source=中双方均希望对本协议所述保密资料及信息予以有效保护梁成波&target=双方均希望对本协议所述保密资料及信息予以有效保护两梁成波
+# 10.200.5.45
+# http://10.200.5.45:5002/NLP/Algorithm/base/dup_check/winnowing?doc1=中双方均希望对本协议所述保密资料及信息予以有效保护&doc2=双方均希望对本协议所述保密资料及信息予以有效保护两
 
 
 # 中双方均希望对本协议所述保密资料及信息予以有效保护    25

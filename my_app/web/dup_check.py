@@ -4,11 +4,12 @@ from . import web
 from my_app.algorithm.dup_check_algo import check_str
 from my_app.algorithm.duan_winnowing import paragraph_winnowing
 import logging
+import requests
 # https://blog.csdn.net/weixin_30773135/article/details/97342082
 # file = open("demo.log", encoding="utf-8", mode="a")
 logging.basicConfig(format='%(asctime)s %(filename)s %(levelname)s %(message)s',datefmt='%a %d %b %Y %H:%M:%S',filename='demo.log',level=logging.DEBUG)# stream=file,
 logging.warning("warning")
-
+from io import BytesIO
 
 
 
@@ -190,6 +191,8 @@ def dup_check():
             print("can't get target")
             logging.info("can't get target")
             return jsonify("can't get target")
+
+
         # a, b = check_args_validation(dic)
 
     template_target = dic.get('template','') #有template 或者没有
@@ -389,7 +392,6 @@ def dup_check():
 from my_app.algorithm.template_match.algo import main
 @web.route('/NLP/Algorithm/base/dup_check/template_match', methods=['POST','GET'])
 def template_match():
-
     #接收区
     logging.info('foreign request : {} to {}'.format(str(request),'template_match'))
     print('接收到request:', request)
@@ -415,11 +417,14 @@ def template_match():
             logging.info("can't get template")
             return jsonify("can't get template")
     #     # a, b = check_args_validation(dic)
-    left,right=main(source,template)
+    source_res=requests.post('http://10.0.2.120:58080/group1/default/20200928/18/38/3/招标文件 CWEME-1911ZSWZ-2J039 基于NLP的商务文本数据清洗关键技术研究项目-2019年12月中国水利电力物资集团有限公司项目（第三版终版）.docx')
+    target_res=requests.post('http://10.0.2.120:58080/group1/default/20200928/21/55/3/基于NLP的商务文本数据清洗关键技术研究项目合同+-+-打印版.docx')
+    source_Byio=BytesIO(source_res.content)
+    target_Byio = BytesIO(target_res.content)
 
+    left,right=main(source_Byio,target_Byio)
     left_=[dict(i._asdict()) for i in left]
     right_ = [dict(i._asdict()) for i in right]
-
 
     print('left_:',left_)
     print('right:',right_)
@@ -428,7 +433,6 @@ def template_match():
         'source':right_
     }
     return jsonify(result_dic)  #obj传不了
-
 
 # 'source_info': '1(正确),-2(多余),-3(位置不正确),-4(位置正确但级别不对)',
 # 'tem_info': '1(正确),-2(缺失),-3(位置不正确),-4(位置正确但级别不对)',

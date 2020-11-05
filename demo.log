@@ -9839,3 +9839,31 @@ Mon 02 Nov 2020 23:52:54 _internal.py INFO  * Debugger PIN: 304-402-708
 Mon 02 Nov 2020 23:52:54 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
 Mon 02 Nov 2020 23:55:39 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
 Mon 02 Nov 2020 23:55:39 _internal.py INFO  * Restarting with stat
+Mon 02 Nov 2020 23:55:40 dup_check.py WARNING warning
+Mon 02 Nov 2020 23:55:40 _internal.py WARNING  * Debugger is active!
+Mon 02 Nov 2020 23:55:40 _internal.py INFO  * Debugger PIN: 304-402-708
+Mon 02 Nov 2020 23:55:40 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Tue 03 Nov 2020 15:47:59 dup_check.py WARNING warning
+Tue 03 Nov 2020 15:47:59 _internal.py INFO  * Restarting with stat
+Tue 03 Nov 2020 15:48:00 dup_check.py WARNING warning
+Tue 03 Nov 2020 15:48:00 _internal.py WARNING  * Debugger is active!
+Tue 03 Nov 2020 15:48:00 _internal.py INFO  * Debugger PIN: 135-586-556
+Tue 03 Nov 2020 15:48:00 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Tue 03 Nov 2020 15:48:04 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing?source=¾İ³¯ÖĞÉç10ÔÂ22ÈÕ±¨µÀ£¬³¯ÏÊ×î¸ßÁìµ¼ÈË½ğÕı¶÷²ÎÚËÎ»ÓÚ³¯ÏÊÆ½°²ÄÏµÀèí²Ö¿¤µÄÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ÁêÔ°£¬ÏòÁÒÊ¿±íÊ¾³ç¸ß¾´Òâ£¬¼ÍÄîÖĞ¹úÈËÃñÖ¾Ô¸¾ü¸°³¯²ÎÕ½70ÖÜÄê¡£%5Cn³¯ÏÊÈËÃñ¾üÒÇÕÌ¶ÓÔÚÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ÁêÔ°ÕûÆëÁĞ¶Ó¡£½ğÕı¶÷Í¬³¯ÏÊµ³Õş¾ü¸É²¿Ò»ÆğÀ´µ½ÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ËşÇ°£¬ÖĞ³¯Á½¹ú¹ú¸è×¯ÖØ×àÏì¡£%5CnË«·½¾ùÏ£Íû¶Ô±¾Ğ­ÒéËùÊö±£ÃÜ×ÊÁÏ123123&target2=³¯ÏÊ×î¸ßÁìµ¼ÈË½ğÕı¶÷²ÎÚËÎ»ÓÚ³¯ÏÊÆ½°²ÄÏµÀèí²Ö¿¤µÄ123123%5Cn¾üÁÒÊ¿ËşÇ°£¬ÖĞ³¯Á½¹ú¹ú¸è×¯ÖØ×àÏì¡£%5Cn123Ë«·½¾ùÏ£Íû¶Ô±¾Ğ­ÒéËùÊö±£ÃÜ×ÊÁÏ87924365' [POST]> to dup_check
+Tue 03 Nov 2020 15:48:04 dup_check.py INFO can't get target
+Tue 03 Nov 2020 15:48:04 _internal.py INFO 127.0.0.1 - - [03/Nov/2020 15:48:04] "[37mPOST /NLP/Algorithm/base/dup_check/winnowing?source=¾İ³¯ÖĞÉç10ÔÂ22ÈÕ±¨µÀ£¬³¯ÏÊ×î¸ßÁìµ¼ÈË½ğÕı¶÷²ÎÚËÎ»ÓÚ³¯ÏÊÆ½°²ÄÏµÀèí²Ö¿¤µÄÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ÁêÔ°£¬ÏòÁÒÊ¿±íÊ¾³ç¸ß¾´Òâ£¬¼ÍÄîÖĞ¹úÈËÃñÖ¾Ô¸¾ü¸°³¯²ÎÕ½70ÖÜÄê¡£%5Cn³¯ÏÊÈËÃñ¾üÒÇÕÌ¶ÓÔÚÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ÁêÔ°ÕûÆëÁĞ¶Ó¡£½ğÕı¶÷Í¬³¯ÏÊµ³Õş¾ü¸É²¿Ò»ÆğÀ´µ½ÖĞ¹úÈËÃñÖ¾Ô¸¾üÁÒÊ¿ËşÇ°£¬ÖĞ³¯Á½¹ú¹ú¸è×¯ÖØ×àÏì¡£%5CnË«·½¾ùÏ£Íû¶Ô±¾Ğ­ÒéËùÊö±£ÃÜ×ÊÁÏ123123&target2=³¯ÏÊ×î¸ßÁìµ¼ÈË½ğÕı¶÷²ÎÚËÎ»ÓÚ³¯ÏÊÆ½°²ÄÏµÀèí²Ö¿¤µÄ123123%5Cn¾üÁÒÊ¿ËşÇ°£¬ÖĞ³¯Á½¹ú¹ú¸è×¯ÖØ×àÏì¡£%5Cn123Ë«·½¾ùÏ£Íû¶Ô±¾Ğ­ÒéËùÊö±£ÃÜ×ÊÁÏ87924365 HTTP/1.1[0m" 200 -
+Tue 03 Nov 2020 15:48:04 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing' [POST]> to dup_check
+Tue 03 Nov 2020 15:48:04 dup_check.py INFO preprocess time: 0.0009999275207519531
+Tue 03 Nov 2020 15:48:04 dup_check.py INFO run success!! time cost      :    0.0010013580322265625      |length : 165  |  77  |    0  |dup_rate:0.34782608695652173
+Tue 03 Nov 2020 15:48:04 dup_check.py INFO make output time: 0.0
+Tue 03 Nov 2020 15:48:04 _internal.py INFO 127.0.0.1 - - [03/Nov/2020 15:48:04] "[37mPOST /NLP/Algorithm/base/dup_check/winnowing HTTP/1.1[0m" 200 -
+Tue 03 Nov 2020 15:48:11 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match' [POST]> to template_match
+Tue 03 Nov 2020 15:48:12 _internal.py INFO 127.0.0.1 - - [03/Nov/2020 15:48:12] "[35m[1mPOST /NLP/Algorithm/base/dup_check/template_match HTTP/1.1[0m" 500 -
+Tue 03 Nov 2020 15:48:33 dup_check.py WARNING warning
+Tue 03 Nov 2020 15:48:33 _internal.py INFO  * Restarting with stat
+Tue 03 Nov 2020 15:48:34 dup_check.py WARNING warning
+Tue 03 Nov 2020 15:48:34 _internal.py WARNING  * Debugger is active!
+Tue 03 Nov 2020 15:48:34 _internal.py INFO  * Debugger PIN: 304-402-708
+Tue 03 Nov 2020 15:48:34 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Tue 03 Nov 2020 15:48:35 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match' [POST]> to template_match
+Tue 03 Nov 2020 15:48:37 _internal.py INFO 127.0.0.1 - - [03/Nov/2020 15:48:37] "[37mPOST /NLP/Algorithm/base/dup_check/template_match HTTP/1.1[0m" 200 -

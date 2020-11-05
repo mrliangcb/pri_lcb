@@ -401,34 +401,65 @@ def template_match():
     # print('request.files是什么?',request.files)
     # print('source是什么?',request.files['source'])
     # print('template是什么?:',request.files['template'])
-    try:#尝试挖出参数
-        source=request.files['source']
-        source_ok=1
-        template=request.files['template']
-        template_ok = 1
-        # a, b = check_args_validation(dic)
+    # try:#尝试挖出参数
+    #     source=request.files['source']
+    #     source_ok=1
+    #     template=request.files['template']
+    #     template_ok = 1
+    #     # a, b = check_args_validation(dic)
+    # except:
+    #     if source_ok==0:
+    #         print("can't get source")
+    #         logging.info("can't get source")
+    #         return jsonify("can't get source")
+    #     if template_ok==0:
+    #         print("can't get template")
+    #         logging.info("can't get template")
+    #         return jsonify("can't get template")
+    #     # a, b = check_args_validation(dic)
+    source_url='http://10.0.2.120:58080/group1/default/20200928/21/55/3/基于NLP的商务文本数据清洗关键技术研究项目合同+-+-打印版.docx'
+    template_url='http://10.0.2.120:58080/group1/default/20200928/18/38/3/招标文件 CWEME-1911ZSWZ-2J039 基于NLP的商务文本数据清洗关键技术研究项目-2019年12月中国水利电力物资集团有限公司项目（第三版终版）.docx'
+    try:  # 尝试挖出参数
+        try:
+            dic = request.args.to_dict()  #
+            source_url = dic['source']
+            source_ok = 1
+            template_url = dic['template']
+            template_ok = 1
+            # a, b = check_args_validation(dic)
+        except:
+            dic = request.form.to_dict()  #
+            source_url = dic['source']
+            source_ok = 1
+            template_url = dic['template']
+            template_ok = 1
     except:
-        if source_ok==0:
+        if source_ok == 0:
             print("can't get source")
             logging.info("can't get source")
-            return jsonify("can't get source")
-        if template_ok==0:
+            # return jsonify("can't get source")
+        if template_ok == 0:
             print("can't get template")
             logging.info("can't get template")
-            return jsonify("can't get template")
-    #     # a, b = check_args_validation(dic)
-    source_res=requests.post('http://10.0.2.120:58080/group1/default/20200928/18/38/3/招标文件 CWEME-1911ZSWZ-2J039 基于NLP的商务文本数据清洗关键技术研究项目-2019年12月中国水利电力物资集团有限公司项目（第三版终版）.docx')
-    target_res=requests.post('http://10.0.2.120:58080/group1/default/20200928/21/55/3/基于NLP的商务文本数据清洗关键技术研究项目合同+-+-打印版.docx')
-    source_Byio=BytesIO(source_res.content)
-    target_Byio = BytesIO(target_res.content)
+            # return jsonify("can't get template")
 
-    left,right=main(source_Byio,target_Byio)
+    source_doc_name=source_url.split('/')[-1]
+    tem_doc_name = template_url.split('/')[-1]
+
+    source_res = requests.post(source_url)
+    template_res=requests.post(template_url)
+    source_Byio=BytesIO(source_res.content)
+    template_Byio = BytesIO(template_res.content)
+
+    left,right=main(source_Byio,template_Byio)
     left_=[dict(i._asdict()) for i in left]
     right_ = [dict(i._asdict()) for i in right]
 
     print('left_:',left_)
     print('right:',right_)
     result_dic={
+        'source_name':source_doc_name,
+        'template_name':tem_doc_name,
         'template':left_,
         'source':right_
     }

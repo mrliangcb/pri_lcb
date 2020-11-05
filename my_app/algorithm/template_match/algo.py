@@ -185,11 +185,13 @@ def main(source,template):
     process_time=time.time()
     procer = processer()
     template_doc = procer.read_doc(template)
+    doc1_heading_obj_list = exctract_heading(template_doc.paragraphs)
     print('解析时间1.1:', time.time() - process_time)
 
-    process_time = time.time()
-    global_obj_target_obj_list, heading4_target_obj_list = extract_4para(template_doc)
-    print('解析时间1.2:', time.time() - process_time)
+    # process_time = time.time()
+    # global_obj_target_obj_list, heading4_target_obj_list = extract_4para(template_doc)
+    # print('解析时间1.2:', time.time() - process_time)
+
 
 
     process_time = time.time()
@@ -197,8 +199,13 @@ def main(source,template):
     source_heading_obj_list = exctract_heading(source_file.paragraphs)
     print('解析时间2:', time.time() - process_time)
 
+    time_find_tem=time.time()
+    template_obj_list = get_muban(doc1_heading_obj_list, source_heading_obj_list)
+    print('找模板时间:',time_find_tem-time.time())
+
+
     mat_time=time.time()
-    a,b=find_best_match(heading4_target_obj_list,source_heading_obj_list)
+    a,b=find_best_match(template_obj_list,source_heading_obj_list)
     print('匹配time:',time.time()-mat_time)
     return a,b
 
@@ -222,8 +229,6 @@ def get_muban(doc1_global_para,source_heading_obj_list):
     print('doc1_dic是什么?',doc1_dic)
 
     for i,j in enumerate(source_heading_obj_list):
-
-
         if doc1_dic.get(j.str_,None)!=None:
             print('找到了，source的情况', j)
             doc2_para_num.append(doc1_dic[j.str_])

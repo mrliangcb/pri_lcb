@@ -398,27 +398,9 @@ def template_match():
     print('now time:', time.localtime(time.time()))
     source_ok=0
     template_ok=0
-    # print('request.files是什么?',request.files)
-    # print('source是什么?',request.files['source'])
-    # print('template是什么?:',request.files['template'])
-    # try:#尝试挖出参数
-    #     source=request.files['source']
-    #     source_ok=1
-    #     template=request.files['template']
-    #     template_ok = 1
-    #     # a, b = check_args_validation(dic)
-    # except:
-    #     if source_ok==0:
-    #         print("can't get source")
-    #         logging.info("can't get source")
-    #         return jsonify("can't get source")
-    #     if template_ok==0:
-    #         print("can't get template")
-    #         logging.info("can't get template")
-    #         return jsonify("can't get template")
-    #     # a, b = check_args_validation(dic)
-    source_url='http://10.0.2.120:58080/group1/default/20200928/21/55/3/基于NLP的商务文本数据清洗关键技术研究项目合同+-+-打印版.docx'
-    template_url='http://10.0.2.120:58080/group1/default/20200928/18/38/3/招标文件 CWEME-1911ZSWZ-2J039 基于NLP的商务文本数据清洗关键技术研究项目-2019年12月中国水利电力物资集团有限公司项目（第三版终版）.docx'
+    # source_url='http://10.0.2.120:58080/group1/default/20200928/21/55/3/基于NLP的商务文本数据清洗关键技术研究项目合同+-+-打印版.docx'
+    # template_url='http://10.0.2.120:58080/group1/default/20200928/18/38/3/招标文件 CWEME-1911ZSWZ-2J039 基于NLP的商务文本数据清洗关键技术研究项目-2019年12月中国水利电力物资集团有限公司项目（第三版终版）.docx'
+
     try:  # 尝试挖出参数
         try:
             dic = request.args.to_dict()  #
@@ -437,34 +419,43 @@ def template_match():
         if source_ok == 0:
             print("can't get source")
             logging.info("can't get source")
-            # return jsonify("can't get source")
+            return jsonify("can't get source")
         if template_ok == 0:
             print("can't get template")
             logging.info("can't get template")
-            # return jsonify("can't get template")
+            return jsonify("can't get template")
 
     source_doc_name=source_url.split('/')[-1]
     tem_doc_name = template_url.split('/')[-1]
+    print('两个文档:',source_doc_name,tem_doc_name)
 
+    #获取文件
     source_res = requests.post(source_url)
     template_res=requests.post(template_url)
     source_Byio=BytesIO(source_res.content)
     template_Byio = BytesIO(template_res.content)
 
-    left,right=main(source_Byio,template_Byio)
+    # base=r'D:\lcb_note\code\Program\10月项目\my_docx'
+    # path1 = base+r'\招标文件 CWEME-1911ZSWZ-2J039 基于NLP的商务文本数据清洗关键技术研究项目-2019年12月中国水利电力物资集团有限公司项目（第三版终版）.docx'
+    # path2 = base+r'\基于NLP的商务文本数据清洗关键技术研究项目合同+-+-打印版.docx'
+
+    left,right,tem_global_list_obj,source_global_obj_list,match_rate_head=main(source_Byio,template_Byio)
+
     left_=[dict(i._asdict()) for i in left]
     right_ = [dict(i._asdict()) for i in right]
-
     print('left_:',left_)
     print('right:',right_)
+
+    # print('tem_global_list_obj是什么?',tem_global_list_obj[:10])
+    result0=render_template('html_for_match.html',template=tem_global_list_obj )
+    result1 = render_template('html_for_match_right.html', template=source_global_obj_list)
+
     result_dic={
-        'source_name':source_doc_name,
-        'template_name':tem_doc_name,
-        'template':left_,
-        'source':right_
+        'match_rate':match_rate_head,
+        'template':result0,
+        'source':result1
     }
-    result0=render_template('html_for_match.html',template=left_ )
-    # return result0
+    # return result1
     return jsonify(result_dic)  #obj传不了
 
 # 'source_info': '1(正确),-2(多余),-3(位置不正确),-4(位置正确但级别不对)',

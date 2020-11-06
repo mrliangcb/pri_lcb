@@ -3,35 +3,31 @@ import docx
 import collections
 from collections import namedtuple as nt
 
-para_obj =nt('paragraph', ['type', 'position', 'origin','str_','flag','test','para_num']) # flag和test怎么用
-para_obj.__new__.__defaults__ = ('para',None, None,None,None,None)
+para_obj =nt('paragraph', ['type', 'position', 'origin','str_','flag','test','para_num','from_global']) # flag和test怎么用
+para_obj.__new__.__defaults__ = ('para',None, None,None,None,None,None)
 
 
 
-def extract_4para(doc_file):  #主要用于处理模板文章
-    save_flag = 0
-    heading4_obj = []
-    global_obj=[]
-
-    for i,paragraph in enumerate(doc_file.paragraphs):
-        tem_obj=None
-        if paragraph.text!='':
-            if paragraph.text.strip('\n').startswith('第四章'):
-                save_flag = 1
-            if paragraph.text.strip('\n').startswith('第五章'):
-                save_flag = 0
-            # print('模板的:',paragraph.style.name,paragraph.text)
-            # tem_obj = para_obj(type=paragraph.style.name, position=i, origin=paragraph.text,str_=paragraph.text.strip().split(' ')[-1])  # type=normal/Heading *
-            # print('是否保存:',paragraph.style.name,paragraph.text,save_flag)
-            # save_flag=1
-            if save_flag == 1:
-                if paragraph.style.name.startswith('Heading') or paragraph.style.name.startswith('List Paragraph'):#这个para是heading
-                        x=para_obj(type=paragraph.style.name, position=i, origin=paragraph.text,str_=paragraph.text.strip().split(' ')[-1]) #1.64s
-                    # x = para_obj(type=paragraph.style.name, position=i) #ss1.5s
-                    # x={'type':paragraph.style.name,'position':i,'obj':paragraph} # 1.67s
-                        heading4_obj.append(x)
-            # global_obj.append(tem_obj)#要存这个的话好久
-    return global_obj,heading4_obj
+# def extract_4para(doc_file):  #主要用于处理模板文章
+#     save_flag = 0
+#     heading4_obj = []
+#     global_obj=[]
+#
+#     for i,paragraph in enumerate(doc_file.paragraphs):
+#         tem_obj=None
+#         if paragraph.text!='':
+#             if paragraph.text.strip('\n').startswith('第四章'):
+#                 save_flag = 1
+#             if paragraph.text.strip('\n').startswith('第五章'):
+#                 save_flag = 0
+#             if save_flag == 1:
+#                 if paragraph.style.name.startswith('Heading') or paragraph.style.name.startswith('List Paragraph'):#这个para是heading
+#                         x=para_obj(type=paragraph.style.name, position=i, origin=paragraph.text,str_=paragraph.text.strip().split(' ')[-1]) #1.64s
+#                     # x = para_obj(type=paragraph.style.name, position=i) #ss1.5s
+#                     # x={'type':paragraph.style.name,'position':i,'obj':paragraph} # 1.67s
+#                         heading4_obj.append(x)
+#             # global_obj.append(tem_obj)#要存这个的话好久
+#     return global_obj,heading4_obj
 
 
 
@@ -40,28 +36,25 @@ import re
 def exctract_heading(para_list):
     heading_list=[]
     para_num = -1
-    para_flag = []
+    global_obj=[]
     for i,para in enumerate(para_list):
-        if para.text != '':
-        # print(para.style.name)
-        # print('第{}段:'.format(i),para.style.name,para.text)
-        #     if para.style.name.startswith('Heading') or para.style.name.startswith('List Paragraph'):
-        # 模板：有第几章
-        # 合同: 没有第几章
+        if para.text != '' and para.text != '\n' and para.text != ' ' and para.text != '  ' and para.text.strip()!='':
+            examp=para_obj(type=para.style.name, position=i, origin=para.text.strip(),str_=para.text.strip().split(' ')[-1],para_num=para_num,flag=1)
+            global_obj.append(examp)
+
             if para.style.name.startswith('Heading'):
             # if (not para.style.name.startswith('Normal')) and (not para.style.name.startswith('normal')):
                 ptr = r'第(.*?)章'  # 非贪心
                 result = re.findall(ptr,para.text)
-                # print('result是什么',result)
                 if result and result[0] != '':
                     para_num += 1
-                    # print('这个是一个第几章标题', result,para_num)
-                    # 这是一个章标题
-                    para_flag.append({'para_num':para_num,'position':i})
-                x=para_obj(type=para.style.name, position=i, origin=para.text,str_=para.text.strip().split(' ')[-1],para_num=para_num)
 
+                    # 这是一个章标题
+                    # para_flag.append({'para_num':para_num,'position':i})
+                x=para_obj(type=para.style.name, position=i, origin=para.text.strip(),str_=para.text.strip().split(' ')[-1],para_num=para_num,from_global=len(global_obj)-1)
                 heading_list.append(x)
-    return heading_list
+
+    return heading_list,global_obj
 
 class processer():
     def read_doc(self,path):#path or io
@@ -70,10 +63,9 @@ class processer():
 
 class Solution:
     def lengthOfLIS(self, nums):
-        print('nums是什么',nums)
         dp = [1 for i in range(len(nums))]  # 用于存储每一个元素处的最大序列的长度
         dp2=[[i] for i in range(len(nums))] #存储序列   #大家默认只取自己
-        print('dp2是什么?',dp2)
+
         n = len(nums)
         max_len = 1
         max_id=0
@@ -97,12 +89,11 @@ class Solution:
                 if max_len<tmp:
                     max_len=tmp
                     max_id =i
-        print('最后dp2:',dp2)
         return max_len,dp2[max_id] #dp2是下标   如果喜test都是-2，那会返回0
 
 def make_seq(x,y):#x list  y dic   投标文档 参照字典，重做下标    有可能重复标题
     seq_=[-2 for i in range(len(x))]
-    print('初始化的seq_:',len(seq_),seq_)
+
     for i,j in enumerate(x):
         temp=y.get(j.str_)  # 模板字典的位置
         if temp!=None:
@@ -112,7 +103,9 @@ def make_seq(x,y):#x list  y dic   投标文档 参照字典，重做下标    �
             x[i] = x[i]._replace(test=-2)
             seq_[i] =x[i] #没找到
     return seq_
-def find_best_match(heading4_target_obj_list,source_heading_obj_list):
+def find_best_match(heading4_target_obj_list,source_heading_obj_list,source_global_obj_list):
+
+
     all_heading1_dic = {}
     all_heading1_list = []
     for i, j in enumerate(heading4_target_obj_list):
@@ -120,7 +113,6 @@ def find_best_match(heading4_target_obj_list,source_heading_obj_list):
             all_heading1_dic[j.str_] = i
             all_heading1_list.append(j.str_)   #如果重复了，算是有但错位
 
-    print('source_heading_obj_list?',source_heading_obj_list)
 
     seq = make_seq(source_heading_obj_list, all_heading1_dic) #shape=source   元素为template的下标
     all_heading1_set = set(all_heading1_list) #template集合
@@ -131,7 +123,6 @@ def find_best_match(heading4_target_obj_list,source_heading_obj_list):
     source_heading_set_str = set(source_heading_list_str) #source集合
 
 
-    print('seq是什么:?',seq) # [paragraph(type='Heading 5', position=633, origin='', str_='', flag=None, test=-2)]
     exam = Solution()
     result = exam.lengthOfLIS(seq) #seq要求包含 tem下表，也要有type
     print('最长公共结果result',result) # (1, 0)
@@ -166,8 +157,13 @@ def find_best_match(heading4_target_obj_list,source_heading_obj_list):
     # 做返回的obj
     for i, j in enumerate(flag_left):
         heading4_target_obj_list[i] = heading4_target_obj_list[i]._replace(flag=j)
+
+
     for i, j in enumerate(flag_right):
         source_heading_obj_list[i] = source_heading_obj_list[i]._replace(flag=j)
+        global_index=source_heading_obj_list[i].from_global
+        source_global_obj_list[global_index]=source_global_obj_list[global_index]._replace(flag=j)
+
 
     # 测试用显示
     left_print = []
@@ -176,38 +172,20 @@ def find_best_match(heading4_target_obj_list,source_heading_obj_list):
     right_print = []
     for i, j in enumerate(flag_right):
         right_print.append([j, source_heading_obj_list[i].str_])
-    print('左边',left_print)
-    print('右边:', right_print)
 
-    return heading4_target_obj_list,source_heading_obj_list
+    return heading4_target_obj_list,source_heading_obj_list,source_global_obj_list
+
+def extract_global(para_list):
+    heading_list = []
+    for i, para in enumerate(para_list):
+        if para.text != '' and para.text != '\n' and para.text != ' ' :
+            x = para_obj(type=para.style.name, position=i, origin=para.text.strip(),flag=1)
+            heading_list.append(x)
+    return heading_list
+
+
 import time
-def main(source,template):
-    process_time=time.time()
-    procer = processer()
-    template_doc = procer.read_doc(template)
-    doc1_heading_obj_list = exctract_heading(template_doc.paragraphs)
-    print('解析时间1.1:', time.time() - process_time)
 
-    # process_time = time.time()
-    # global_obj_target_obj_list, heading4_target_obj_list = extract_4para(template_doc)
-    # print('解析时间1.2:', time.time() - process_time)
-
-
-
-    process_time = time.time()
-    source_file = procer.read_doc(source)
-    source_heading_obj_list = exctract_heading(source_file.paragraphs)
-    print('解析时间2:', time.time() - process_time)
-
-    time_find_tem=time.time()
-    template_obj_list = get_muban(doc1_heading_obj_list, source_heading_obj_list)
-    print('找模板时间:',time_find_tem-time.time())
-
-
-    mat_time=time.time()
-    a,b=find_best_match(template_obj_list,source_heading_obj_list)
-    print('匹配time:',time.time()-mat_time)
-    return a,b
 
 from collections import Counter
 def get_muban(doc1_global_para,source_heading_obj_list):
@@ -222,23 +200,62 @@ def get_muban(doc1_global_para,source_heading_obj_list):
             para_obj_dict[j.para_num].append(j)
         else:#不存在，就新建
             para_obj_dict[j.para_num]=[j]
-    print('para_obj_dict这个是什么?',para_obj_dict)
-
 
     doc2_para_num=[]
-    print('doc1_dic是什么?',doc1_dic)
-
     for i,j in enumerate(source_heading_obj_list):
         if doc1_dic.get(j.str_,None)!=None:
-            print('找到了，source的情况', j)
             doc2_para_num.append(doc1_dic[j.str_])
-    print('组的情况:',Counter(doc2_para_num))
+
+
     # para_num_list=list(dict(y).keys())
     tem_para=Counter(doc2_para_num).most_common(1)[0][0]
-    print(tem_para)
+
     result=para_obj_dict[tem_para]
-    print('识别哪一段？',result)
+
     return result
+
+
+
+
+def main(source,template):
+    process_time=time.time()
+    procer = processer()
+    template_doc = procer.read_doc(template)
+    tem_heading_obj_list,tem_global_obj_list = exctract_heading(template_doc.paragraphs)
+
+
+    print('解析时间1.1:', time.time() - process_time)
+
+    process_time = time.time()
+    source_file = procer.read_doc(source)
+    source_heading_obj_list,source_global_obj_list = exctract_heading(source_file.paragraphs)
+    # source_global_list_obj = extract_global(source_file.paragraphs)
+    print('解析时间2:', time.time() - process_time)
+
+
+    time_find_tem=time.time()
+    template_select_obj_list = get_muban(tem_heading_obj_list, source_heading_obj_list)
+    print('找模板时间:',time.time()-time_find_tem)
+
+    mat_time=time.time()
+    tem_heading_match,source_heading,source_global_obj=find_best_match(template_select_obj_list,source_heading_obj_list,source_global_obj_list)
+    # source_global_list_obj 的flag是未改好的
+    # source_global_obj_list 是改好flag的了
+    correct_heading=0
+    for i,j in enumerate(tem_heading_match):
+        if j.flag==1:
+            correct_heading+=1
+    try:
+        match_rate_head=correct_heading/len(tem_heading_match)
+    except:
+        match_rate_head=0
+    return tem_heading_match,source_heading,tem_global_obj_list,source_global_obj,match_rate_head
+
+
+
+
+
+
 
 if __name__ == '__main__':
     base=r'D:\lcb_note\code\Program\10月项目\my_docx'
@@ -248,16 +265,16 @@ if __name__ == '__main__':
     doc_1 = procer.read_doc(path1)
     doc2_file = procer.read_doc(path2)
     # global_obj_target_obj_list, heading4_target_obj_list = extract_4para(doc_1)
-    doc1_global_para=exctract_heading(doc_1.paragraphs)
-    source_heading_obj_list = exctract_heading(doc2_file.paragraphs)
+    doc1_global_para,tem_global_obj=exctract_heading(doc_1.paragraphs)
+
+    source_heading_obj_list,source_global_obj = exctract_heading(doc2_file.paragraphs)
+    source_global_list_obj = extract_global(doc2_file.paragraphs)
+
+
 
     template_obj_list=get_muban(doc1_global_para,source_heading_obj_list)
-    # print('template_obj_list:',template_obj_list)
-    # print('heading4_target_obj_list:',heading4_target_obj_list)
+    a, b, source_global_obj_list = find_best_match(template_obj_list, source_heading_obj_list, source_global_obj)
 
-    a,b=find_best_match(template_obj_list,source_heading_obj_list)
-    print(a)
-    print(b)
 
 
 

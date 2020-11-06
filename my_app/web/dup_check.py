@@ -452,7 +452,7 @@ def template_match():
     # base=r'D:\lcb_note\code\Program\10月项目\my_docx'
     # path1 = base+r'\招标文件 CWEME-1911ZSWZ-2J039 基于NLP的商务文本数据清洗关键技术研究项目-2019年12月中国水利电力物资集团有限公司项目（第三版终版）.docx'
     # path2 = base+r'\基于NLP的商务文本数据清洗关键技术研究项目合同+-+-打印版.docx'
-
+    start_time=time.time()
     left,right,tem_global_list_obj,source_global_obj_list,match_rate_head=main(source_Byio,template_Byio)
 
     left_=[dict(i._asdict()) for i in left]
@@ -470,6 +470,7 @@ def template_match():
         'source':result1
     }
     # return result1
+    print('整个过程时间:',time.time()-start_time)
     return jsonify(result_dic)  #obj传不了
 
 # 'source_info': '1(正确),-2(多余),-3(位置不正确),-4(位置正确但级别不对)',

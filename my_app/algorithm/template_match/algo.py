@@ -30,7 +30,7 @@ para_obj.__new__.__defaults__ = ('para',None, None,None,None,None,None)
 #     return global_obj,heading4_obj
 
 
-
+trasbin=set(['','\n',' ','  ',])
 
 import re
 def exctract_heading(para_list):
@@ -38,21 +38,25 @@ def exctract_heading(para_list):
     para_num = -1
     global_obj=[]
     for i,para in enumerate(para_list):
-        if para.text != '' and para.text != '\n' and para.text != ' ' and para.text != '  ' and para.text.strip()!='':
-            examp=para_obj(type=para.style.name, position=i, origin=para.text.strip(),str_=para.text.strip().split(' ')[-1],para_num=para_num,flag=1)
-            global_obj.append(examp)
+        text=para.text.strip()
+        if text not in trasbin:
+            type_name=para.style.name
+            origin_=para.text.strip()
+            str_split=para.text.strip().split(' ')[-1]
 
-            if para.style.name.startswith('Heading'):
+            examp=para_obj(type=type_name, position=i, origin=origin_,str_=str_split,para_num=para_num,flag=1)
+            global_obj.append(examp)
+            if type_name.startswith('Heading'):
             # if (not para.style.name.startswith('Normal')) and (not para.style.name.startswith('normal')):
                 ptr = r'第(.*?)章'  # 非贪心
-                result = re.findall(ptr,para.text)
+                result = re.findall(ptr,text)
                 if result and result[0] != '':
                     para_num += 1
-
                     # 这是一个章标题
                     # para_flag.append({'para_num':para_num,'position':i})
-                x=para_obj(type=para.style.name, position=i, origin=para.text.strip(),str_=para.text.strip().split(' ')[-1],para_num=para_num,from_global=len(global_obj)-1)
+                x=para_obj(type=type_name, position=i, origin=text,str_=str_split,para_num=para_num,from_global=len(global_obj)-1)
                 heading_list.append(x)
+
 
     return heading_list,global_obj
 
@@ -104,7 +108,6 @@ def make_seq(x,y):#x list  y dic   投标文档 参照字典，重做下标    �
             seq_[i] =x[i] #没找到
     return seq_
 def find_best_match(heading4_target_obj_list,source_heading_obj_list,source_global_obj_list):
-
 
     all_heading1_dic = {}
     all_heading1_list = []
@@ -175,14 +178,6 @@ def find_best_match(heading4_target_obj_list,source_heading_obj_list,source_glob
 
     return heading4_target_obj_list,source_heading_obj_list,source_global_obj_list
 
-def extract_global(para_list):
-    heading_list = []
-    for i, para in enumerate(para_list):
-        if para.text != '' and para.text != '\n' and para.text != ' ' :
-            x = para_obj(type=para.style.name, position=i, origin=para.text.strip(),flag=1)
-            heading_list.append(x)
-    return heading_list
-
 
 import time
 
@@ -239,8 +234,8 @@ def main(source,template):
 
     mat_time=time.time()
     tem_heading_match,source_heading,source_global_obj=find_best_match(template_select_obj_list,source_heading_obj_list,source_global_obj_list)
-    # source_global_list_obj 的flag是未改好的
-    # source_global_obj_list 是改好flag的了
+    print('计算最长匹配子串时间:',time.time()-mat_time)
+
     correct_heading=0
     for i,j in enumerate(tem_heading_match):
         if j.flag==1:

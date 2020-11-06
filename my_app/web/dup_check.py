@@ -398,7 +398,7 @@ def template_match():
     print('now time:', time.localtime(time.time()))
     source_ok=0
     template_ok=0
-
+    # print('Content-Type:',request.content_encoding)# dir(request),
 
     try:  # 尝试挖出参数
         try:
@@ -424,12 +424,17 @@ def template_match():
             logging.info("can't get template")
             return jsonify("can't get template")
 
+
+
     source_doc_name=source_url.split('/')[-1]
     tem_doc_name = template_url.split('/')[-1]
     print('两个文档:',source_doc_name,tem_doc_name)
 
     print('source_url是什么?',source_url)
+    # print('解码过程:',str(source_url,'utf-8'))
     print('template_url是什么?', template_url)
+    # source_url = source_url
+
 
     # source_url=str(source_url, encoding = "utf8")
     # source_url=r'http://10.0.2.120:58080/group1/default/20200928/21/55/3/基于NLP的商务文本数据清洗关键技术研究项目合同+-+-打印版.docx'

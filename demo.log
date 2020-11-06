@@ -12651,3 +12651,429 @@ Fri 06 Nov 2020 11:27:18 connectionpool.py DEBUG http://10.0.2.120:58080 "POST /
 Fri 06 Nov 2020 11:27:18 connectionpool.py DEBUG Starting new HTTP connection (1): 10.0.2.120:58080
 Fri 06 Nov 2020 11:27:18 connectionpool.py DEBUG http://10.0.2.120:58080 "POST /group1/default/20200928/18/38/3/%E6%8B%9B%E6%A0%87%E6%96%87%E4%BB%B6%20CWEME-1911ZSWZ-2J039%20%E5%9F%BA%E4%BA%8ENLP%E7%9A%84%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%A1%B9%E7%9B%AE-2019%E5%B9%B412%E6%9C%88%E4%B8%AD%E5%9B%BD%E6%B0%B4%E5%88%A9%E7%94%B5%E5%8A%9B%E7%89%A9%E8%B5%84%E9%9B%86%E5%9B%A2%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E9%A1%B9%E7%9B%AE%EF%BC%88%E7%AC%AC%E4%B8%89%E7%89%88%E7%BB%88%E7%89%88%EF%BC%89.docx HTTP/1.1" 200 293197
 Fri 06 Nov 2020 11:27:25 _internal.py INFO 127.0.0.1 - - [06/Nov/2020 11:27:25] "[37mPOST /NLP/Algorithm/base/dup_check/template_match HTTP/1.1[0m" 200 -
+Fri 06 Nov 2020 11:31:23 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match' [POST]> to template_match
+Fri 06 Nov 2020 11:31:23 connectionpool.py DEBUG Starting new HTTP connection (1): 10.0.2.120:58080
+Fri 06 Nov 2020 11:31:23 connectionpool.py DEBUG http://10.0.2.120:58080 "POST /group1/default/20200928/21/55/3/%E5%9F%BA%E4%BA%8ENLP%E7%9A%84%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%A1%B9%E7%9B%AE%E5%90%88%E5%90%8C+-+-%E6%89%93%E5%8D%B0%E7%89%88.docx HTTP/1.1" 200 149030
+Fri 06 Nov 2020 11:31:23 connectionpool.py DEBUG Starting new HTTP connection (1): 10.0.2.120:58080
+Fri 06 Nov 2020 11:31:23 connectionpool.py DEBUG http://10.0.2.120:58080 "POST /group1/default/20200928/18/38/3/%E6%8B%9B%E6%A0%87%E6%96%87%E4%BB%B6%20CWEME-1911ZSWZ-2J039%20%E5%9F%BA%E4%BA%8ENLP%E7%9A%84%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%A1%B9%E7%9B%AE-2019%E5%B9%B412%E6%9C%88%E4%B8%AD%E5%9B%BD%E6%B0%B4%E5%88%A9%E7%94%B5%E5%8A%9B%E7%89%A9%E8%B5%84%E9%9B%86%E5%9B%A2%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E9%A1%B9%E7%9B%AE%EF%BC%88%E7%AC%AC%E4%B8%89%E7%89%88%E7%BB%88%E7%89%88%EF%BC%89.docx HTTP/1.1" 200 293197
+Fri 06 Nov 2020 11:31:30 _internal.py INFO 127.0.0.1 - - [06/Nov/2020 11:31:30] "[37mPOST /NLP/Algorithm/base/dup_check/template_match HTTP/1.1[0m" 200 -
+Fri 06 Nov 2020 11:34:41 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match' [POST]> to template_match
+Fri 06 Nov 2020 11:34:41 connectionpool.py DEBUG Starting new HTTP connection (1): 10.0.2.120:58080
+Fri 06 Nov 2020 11:34:41 connectionpool.py DEBUG http://10.0.2.120:58080 "POST /group1/default/20200928/21/55/3/%E5%9F%BA%E4%BA%8ENLP%E7%9A%84%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%A1%B9%E7%9B%AE%E5%90%88%E5%90%8C+-+-%E6%89%93%E5%8D%B0%E7%89%88.docx HTTP/1.1" 200 149030
+Fri 06 Nov 2020 11:34:41 connectionpool.py DEBUG Starting new HTTP connection (1): 10.0.2.120:58080
+Fri 06 Nov 2020 11:34:41 connectionpool.py DEBUG http://10.0.2.120:58080 "POST /group1/default/20200928/18/38/3/%E6%8B%9B%E6%A0%87%E6%96%87%E4%BB%B6%20CWEME-1911ZSWZ-2J039%20%E5%9F%BA%E4%BA%8ENLP%E7%9A%84%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%A1%B9%E7%9B%AE-2019%E5%B9%B412%E6%9C%88%E4%B8%AD%E5%9B%BD%E6%B0%B4%E5%88%A9%E7%94%B5%E5%8A%9B%E7%89%A9%E8%B5%84%E9%9B%86%E5%9B%A2%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E9%A1%B9%E7%9B%AE%EF%BC%88%E7%AC%AC%E4%B8%89%E7%89%88%E7%BB%88%E7%89%88%EF%BC%89.docx HTTP/1.1" 200 293197
+Fri 06 Nov 2020 11:34:47 _internal.py INFO 127.0.0.1 - - [06/Nov/2020 11:34:47] "[37mPOST /NLP/Algorithm/base/dup_check/template_match HTTP/1.1[0m" 200 -
+Fri 06 Nov 2020 11:43:37 dup_check.py WARNING warning
+Fri 06 Nov 2020 11:43:37 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 11:43:37 dup_check.py WARNING warning
+Fri 06 Nov 2020 11:43:37 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 11:43:37 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 11:43:37 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 11:48:19 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match?source=http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F21%2F55%2F3%2F»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿ºÏÍ¬+-+-´òÓ¡°æ.docx&template=http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F18%2F38%2F3%2FÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx' [POST]> to template_match
+Fri 06 Nov 2020 11:48:19 connectionpool.py DEBUG Starting new HTTP connection (1): 10.0.2.120:58080
+Fri 06 Nov 2020 11:48:19 connectionpool.py DEBUG http://10.0.2.120:58080 "POST /group1/default/20200928/21/55/3/%E5%9F%BA%E4%BA%8ENLP%E7%9A%84%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%A1%B9%E7%9B%AE%E5%90%88%E5%90%8C%20-%20-%E6%89%93%E5%8D%B0%E7%89%88.docx HTTP/1.1" 404 0
+Fri 06 Nov 2020 11:48:19 connectionpool.py DEBUG Starting new HTTP connection (1): 10.0.2.120:58080
+Fri 06 Nov 2020 11:48:19 connectionpool.py DEBUG http://10.0.2.120:58080 "POST /group1/default/20200928/18/38/3/%E6%8B%9B%E6%A0%87%E6%96%87%E4%BB%B6%20CWEME-1911ZSWZ-2J039%20%E5%9F%BA%E4%BA%8ENLP%E7%9A%84%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%A1%B9%E7%9B%AE-2019%E5%B9%B412%E6%9C%88%E4%B8%AD%E5%9B%BD%E6%B0%B4%E5%88%A9%E7%94%B5%E5%8A%9B%E7%89%A9%E8%B5%84%E9%9B%86%E5%9B%A2%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E9%A1%B9%E7%9B%AE%EF%BC%88%E7%AC%AC%E4%B8%89%E7%89%88%E7%BB%88%E7%89%88%EF%BC%89.docx HTTP/1.1" 200 293197
+Fri 06 Nov 2020 11:48:24 _internal.py INFO 127.0.0.1 - - [06/Nov/2020 11:48:24] "[35m[1mPOST /NLP/Algorithm/base/dup_check/template_match?source=http://10.0.2.120:58080/group1/default/20200928/21/55/3/»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿ºÏÍ¬+-+-´òÓ¡°æ.docx&template=http://10.0.2.120:58080/group1/default/20200928/18/38/3/ÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx HTTP/1.1[0m" 500 -
+Fri 06 Nov 2020 11:48:37 dup_check.py WARNING warning
+Fri 06 Nov 2020 11:48:37 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 11:48:37 dup_check.py WARNING warning
+Fri 06 Nov 2020 11:48:38 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 11:48:38 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 11:48:38 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 11:48:38 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match?source=http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F21%2F55%2F3%2F»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿ºÏÍ¬+-+-´òÓ¡°æ.docx&template=http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F18%2F38%2F3%2FÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx' [POST]> to template_match
+Fri 06 Nov 2020 11:48:38 connectionpool.py DEBUG Starting new HTTP connection (1): 10.0.2.120:58080
+Fri 06 Nov 2020 11:48:38 connectionpool.py DEBUG http://10.0.2.120:58080 "POST /group1/default/20200928/21/55/3/%E5%9F%BA%E4%BA%8ENLP%E7%9A%84%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%A1%B9%E7%9B%AE%E5%90%88%E5%90%8C%20-%20-%E6%89%93%E5%8D%B0%E7%89%88.docx HTTP/1.1" 404 0
+Fri 06 Nov 2020 11:48:38 connectionpool.py DEBUG Starting new HTTP connection (1): 10.0.2.120:58080
+Fri 06 Nov 2020 11:48:38 connectionpool.py DEBUG http://10.0.2.120:58080 "POST /group1/default/20200928/18/38/3/%E6%8B%9B%E6%A0%87%E6%96%87%E4%BB%B6%20CWEME-1911ZSWZ-2J039%20%E5%9F%BA%E4%BA%8ENLP%E7%9A%84%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%A1%B9%E7%9B%AE-2019%E5%B9%B412%E6%9C%88%E4%B8%AD%E5%9B%BD%E6%B0%B4%E5%88%A9%E7%94%B5%E5%8A%9B%E7%89%A9%E8%B5%84%E9%9B%86%E5%9B%A2%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E9%A1%B9%E7%9B%AE%EF%BC%88%E7%AC%AC%E4%B8%89%E7%89%88%E7%BB%88%E7%89%88%EF%BC%89.docx HTTP/1.1" 200 293197
+Fri 06 Nov 2020 11:48:43 _internal.py INFO 127.0.0.1 - - [06/Nov/2020 11:48:43] "[35m[1mPOST /NLP/Algorithm/base/dup_check/template_match?source=http://10.0.2.120:58080/group1/default/20200928/21/55/3/»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿ºÏÍ¬+-+-´òÓ¡°æ.docx&template=http://10.0.2.120:58080/group1/default/20200928/18/38/3/ÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx HTTP/1.1[0m" 500 -
+Fri 06 Nov 2020 11:49:09 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match?source=http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F21%2F55%2F3%2F»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿ºÏÍ¬+-+-´òÓ¡°æ.docx&template=http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F18%2F38%2F3%2FÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx' [POST]> to template_match
+Fri 06 Nov 2020 11:49:09 connectionpool.py DEBUG Starting new HTTP connection (1): 10.0.2.120:58080
+Fri 06 Nov 2020 11:49:09 connectionpool.py DEBUG http://10.0.2.120:58080 "POST /group1/default/20200928/21/55/3/%E5%9F%BA%E4%BA%8ENLP%E7%9A%84%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%A1%B9%E7%9B%AE%E5%90%88%E5%90%8C%20-%20-%E6%89%93%E5%8D%B0%E7%89%88.docx HTTP/1.1" 404 0
+Fri 06 Nov 2020 11:49:09 connectionpool.py DEBUG Starting new HTTP connection (1): 10.0.2.120:58080
+Fri 06 Nov 2020 11:49:09 connectionpool.py DEBUG http://10.0.2.120:58080 "POST /group1/default/20200928/18/38/3/%E6%8B%9B%E6%A0%87%E6%96%87%E4%BB%B6%20CWEME-1911ZSWZ-2J039%20%E5%9F%BA%E4%BA%8ENLP%E7%9A%84%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%A1%B9%E7%9B%AE-2019%E5%B9%B412%E6%9C%88%E4%B8%AD%E5%9B%BD%E6%B0%B4%E5%88%A9%E7%94%B5%E5%8A%9B%E7%89%A9%E8%B5%84%E9%9B%86%E5%9B%A2%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E9%A1%B9%E7%9B%AE%EF%BC%88%E7%AC%AC%E4%B8%89%E7%89%88%E7%BB%88%E7%89%88%EF%BC%89.docx HTTP/1.1" 200 293197
+Fri 06 Nov 2020 11:49:14 _internal.py INFO 127.0.0.1 - - [06/Nov/2020 11:49:14] "[35m[1mPOST /NLP/Algorithm/base/dup_check/template_match?source=http://10.0.2.120:58080/group1/default/20200928/21/55/3/»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿ºÏÍ¬+-+-´òÓ¡°æ.docx&template=http://10.0.2.120:58080/group1/default/20200928/18/38/3/ÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx HTTP/1.1[0m" 500 -
+Fri 06 Nov 2020 11:49:34 dup_check.py WARNING warning
+Fri 06 Nov 2020 11:49:34 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 11:49:34 dup_check.py WARNING warning
+Fri 06 Nov 2020 11:49:34 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 11:49:34 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 11:49:34 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 11:49:35 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match?source=http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F21%2F55%2F3%2F»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿ºÏÍ¬+-+-´òÓ¡°æ.docx&template=http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F18%2F38%2F3%2FÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx' [POST]> to template_match
+Fri 06 Nov 2020 11:49:35 connectionpool.py DEBUG Starting new HTTP connection (1): 10.0.2.120:58080
+Fri 06 Nov 2020 11:49:35 connectionpool.py DEBUG http://10.0.2.120:58080 "POST /group1/default/20200928/21/55/3/%E5%9F%BA%E4%BA%8ENLP%E7%9A%84%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%A1%B9%E7%9B%AE%E5%90%88%E5%90%8C%20-%20-%E6%89%93%E5%8D%B0%E7%89%88.docx HTTP/1.1" 404 0
+Fri 06 Nov 2020 11:49:35 connectionpool.py DEBUG Starting new HTTP connection (1): 10.0.2.120:58080
+Fri 06 Nov 2020 11:49:35 connectionpool.py DEBUG http://10.0.2.120:58080 "POST /group1/default/20200928/18/38/3/%E6%8B%9B%E6%A0%87%E6%96%87%E4%BB%B6%20CWEME-1911ZSWZ-2J039%20%E5%9F%BA%E4%BA%8ENLP%E7%9A%84%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%A1%B9%E7%9B%AE-2019%E5%B9%B412%E6%9C%88%E4%B8%AD%E5%9B%BD%E6%B0%B4%E5%88%A9%E7%94%B5%E5%8A%9B%E7%89%A9%E8%B5%84%E9%9B%86%E5%9B%A2%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E9%A1%B9%E7%9B%AE%EF%BC%88%E7%AC%AC%E4%B8%89%E7%89%88%E7%BB%88%E7%89%88%EF%BC%89.docx HTTP/1.1" 200 293197
+Fri 06 Nov 2020 11:49:41 _internal.py INFO 127.0.0.1 - - [06/Nov/2020 11:49:41] "[35m[1mPOST /NLP/Algorithm/base/dup_check/template_match?source=http://10.0.2.120:58080/group1/default/20200928/21/55/3/»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿ºÏÍ¬+-+-´òÓ¡°æ.docx&template=http://10.0.2.120:58080/group1/default/20200928/18/38/3/ÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx HTTP/1.1[0m" 500 -
+Fri 06 Nov 2020 11:49:56 dup_check.py WARNING warning
+Fri 06 Nov 2020 11:49:56 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 11:49:57 dup_check.py WARNING warning
+Fri 06 Nov 2020 11:49:57 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 11:49:57 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 11:49:57 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 11:49:57 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match?source=http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F21%2F55%2F3%2F»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿ºÏÍ¬+-+-´òÓ¡°æ.docx&template=http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F18%2F38%2F3%2FÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx' [POST]> to template_match
+Fri 06 Nov 2020 11:49:57 connectionpool.py DEBUG Starting new HTTP connection (1): 10.0.2.120:58080
+Fri 06 Nov 2020 11:49:57 connectionpool.py DEBUG http://10.0.2.120:58080 "POST /group1/default/20200928/21/55/3/%E5%9F%BA%E4%BA%8ENLP%E7%9A%84%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%A1%B9%E7%9B%AE%E5%90%88%E5%90%8C%20-%20-%E6%89%93%E5%8D%B0%E7%89%88.docx HTTP/1.1" 404 0
+Fri 06 Nov 2020 11:49:57 connectionpool.py DEBUG Starting new HTTP connection (1): 10.0.2.120:58080
+Fri 06 Nov 2020 11:49:57 connectionpool.py DEBUG http://10.0.2.120:58080 "POST /group1/default/20200928/18/38/3/%E6%8B%9B%E6%A0%87%E6%96%87%E4%BB%B6%20CWEME-1911ZSWZ-2J039%20%E5%9F%BA%E4%BA%8ENLP%E7%9A%84%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%A1%B9%E7%9B%AE-2019%E5%B9%B412%E6%9C%88%E4%B8%AD%E5%9B%BD%E6%B0%B4%E5%88%A9%E7%94%B5%E5%8A%9B%E7%89%A9%E8%B5%84%E9%9B%86%E5%9B%A2%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E9%A1%B9%E7%9B%AE%EF%BC%88%E7%AC%AC%E4%B8%89%E7%89%88%E7%BB%88%E7%89%88%EF%BC%89.docx HTTP/1.1" 200 293197
+Fri 06 Nov 2020 11:50:03 _internal.py INFO 127.0.0.1 - - [06/Nov/2020 11:50:03] "[35m[1mPOST /NLP/Algorithm/base/dup_check/template_match?source=http://10.0.2.120:58080/group1/default/20200928/21/55/3/»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿ºÏÍ¬+-+-´òÓ¡°æ.docx&template=http://10.0.2.120:58080/group1/default/20200928/18/38/3/ÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx HTTP/1.1[0m" 500 -
+Fri 06 Nov 2020 11:59:02 dup_check.py WARNING warning
+Fri 06 Nov 2020 11:59:02 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 11:59:02 dup_check.py WARNING warning
+Fri 06 Nov 2020 11:59:02 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 11:59:02 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 11:59:02 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 11:59:03 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match?source=http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F21%2F55%2F3%2F»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿ºÏÍ¬+-+-´òÓ¡°æ.docx&template=http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F18%2F38%2F3%2FÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx' [POST]> to template_match
+Fri 06 Nov 2020 11:59:03 connectionpool.py DEBUG Starting new HTTP connection (1): 10.0.2.120:58080
+Fri 06 Nov 2020 11:59:03 connectionpool.py DEBUG http://10.0.2.120:58080 "POST /group1/default/20200928/21/55/3/%E5%9F%BA%E4%BA%8ENLP%E7%9A%84%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%A1%B9%E7%9B%AE%E5%90%88%E5%90%8C%20-%20-%E6%89%93%E5%8D%B0%E7%89%88.docx HTTP/1.1" 404 0
+Fri 06 Nov 2020 11:59:03 connectionpool.py DEBUG Starting new HTTP connection (1): 10.0.2.120:58080
+Fri 06 Nov 2020 11:59:03 connectionpool.py DEBUG http://10.0.2.120:58080 "POST /group1/default/20200928/18/38/3/%E6%8B%9B%E6%A0%87%E6%96%87%E4%BB%B6%20CWEME-1911ZSWZ-2J039%20%E5%9F%BA%E4%BA%8ENLP%E7%9A%84%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%A1%B9%E7%9B%AE-2019%E5%B9%B412%E6%9C%88%E4%B8%AD%E5%9B%BD%E6%B0%B4%E5%88%A9%E7%94%B5%E5%8A%9B%E7%89%A9%E8%B5%84%E9%9B%86%E5%9B%A2%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E9%A1%B9%E7%9B%AE%EF%BC%88%E7%AC%AC%E4%B8%89%E7%89%88%E7%BB%88%E7%89%88%EF%BC%89.docx HTTP/1.1" 200 293197
+Fri 06 Nov 2020 11:59:07 dup_check.py WARNING warning
+Fri 06 Nov 2020 11:59:07 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 11:59:08 dup_check.py WARNING warning
+Fri 06 Nov 2020 11:59:08 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 11:59:08 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 11:59:08 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:06:10 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match?source=b'http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F21%2F55%2F3%2F%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F18%2F38%2F3%2FÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx' [POST]> to template_match
+Fri 06 Nov 2020 12:06:10 _internal.py INFO 127.0.0.1 - - [06/Nov/2020 12:06:10] "[35m[1mPOST /NLP/Algorithm/base/dup_check/template_match?source=b'http://10.0.2.120:58080/group1/default/20200928/21/55/3/%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http://10.0.2.120:58080/group1/default/20200928/18/38/3/ÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx HTTP/1.1[0m" 500 -
+Fri 06 Nov 2020 12:06:20 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:06:20 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:06:21 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:06:21 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:06:21 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:06:21 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:06:24 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match?source=b'http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F21%2F55%2F3%2F%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F18%2F38%2F3%2FÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx' [POST]> to template_match
+Fri 06 Nov 2020 12:06:24 _internal.py INFO 127.0.0.1 - - [06/Nov/2020 12:06:24] "[35m[1mPOST /NLP/Algorithm/base/dup_check/template_match?source=b'http://10.0.2.120:58080/group1/default/20200928/21/55/3/%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http://10.0.2.120:58080/group1/default/20200928/18/38/3/ÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx HTTP/1.1[0m" 500 -
+Fri 06 Nov 2020 12:07:42 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:07:42 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:07:43 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:07:43 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:07:43 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:07:43 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:07:43 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match?source=b'http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F21%2F55%2F3%2F%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F18%2F38%2F3%2FÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx' [POST]> to template_match
+Fri 06 Nov 2020 12:07:43 _internal.py INFO 127.0.0.1 - - [06/Nov/2020 12:07:43] "[35m[1mPOST /NLP/Algorithm/base/dup_check/template_match?source=b'http://10.0.2.120:58080/group1/default/20200928/21/55/3/%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http://10.0.2.120:58080/group1/default/20200928/18/38/3/ÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx HTTP/1.1[0m" 500 -
+Fri 06 Nov 2020 12:08:07 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Fri 06 Nov 2020 12:08:07 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:08:18 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:08:18 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:08:18 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:08:18 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:08:18 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:08:18 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:08:19 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match?source=b'http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F21%2F55%2F3%2F%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F18%2F38%2F3%2FÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx' [POST]> to template_match
+Fri 06 Nov 2020 12:08:19 _internal.py INFO 127.0.0.1 - - [06/Nov/2020 12:08:19] "[35m[1mPOST /NLP/Algorithm/base/dup_check/template_match?source=b'http://10.0.2.120:58080/group1/default/20200928/21/55/3/%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http://10.0.2.120:58080/group1/default/20200928/18/38/3/ÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx HTTP/1.1[0m" 500 -
+Fri 06 Nov 2020 12:08:29 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Fri 06 Nov 2020 12:08:29 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:08:30 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:08:30 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:08:30 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:08:30 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:08:34 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Fri 06 Nov 2020 12:08:35 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:08:35 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:08:35 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:08:35 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:08:35 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:09:08 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Fri 06 Nov 2020 12:09:08 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:09:09 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:09:09 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:09:10 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:09:10 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:09:10 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:09:10 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:09:10 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match?source=b'http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F21%2F55%2F3%2F%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F18%2F38%2F3%2FÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx' [POST]> to template_match
+Fri 06 Nov 2020 12:09:10 _internal.py INFO 127.0.0.1 - - [06/Nov/2020 12:09:10] "[35m[1mPOST /NLP/Algorithm/base/dup_check/template_match?source=b'http://10.0.2.120:58080/group1/default/20200928/21/55/3/%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http://10.0.2.120:58080/group1/default/20200928/18/38/3/ÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx HTTP/1.1[0m" 500 -
+Fri 06 Nov 2020 12:10:04 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Fri 06 Nov 2020 12:10:04 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:10:05 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:10:05 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:10:05 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:10:05 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:10:06 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:10:06 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:10:07 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:10:07 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:10:07 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:10:07 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:10:07 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match?source=b'http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F21%2F55%2F3%2F%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F18%2F38%2F3%2FÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx' [POST]> to template_match
+Fri 06 Nov 2020 12:10:07 _internal.py INFO 127.0.0.1 - - [06/Nov/2020 12:10:07] "[35m[1mPOST /NLP/Algorithm/base/dup_check/template_match?source=b'http://10.0.2.120:58080/group1/default/20200928/21/55/3/%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http://10.0.2.120:58080/group1/default/20200928/18/38/3/ÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx HTTP/1.1[0m" 500 -
+Fri 06 Nov 2020 12:10:37 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match?source=b'http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F21%2F55%2F3%2F%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F18%2F38%2F3%2FÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx' [POST]> to template_match
+Fri 06 Nov 2020 12:10:37 _internal.py INFO 127.0.0.1 - - [06/Nov/2020 12:10:37] "[35m[1mPOST /NLP/Algorithm/base/dup_check/template_match?source=b'http://10.0.2.120:58080/group1/default/20200928/21/55/3/%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http://10.0.2.120:58080/group1/default/20200928/18/38/3/ÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx HTTP/1.1[0m" 500 -
+Fri 06 Nov 2020 12:11:08 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Fri 06 Nov 2020 12:11:08 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:11:09 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:11:10 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:11:10 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:11:10 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:11:10 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:11:10 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:11:12 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match?source=b'http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F21%2F55%2F3%2F%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F18%2F38%2F3%2FÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx' [POST]> to template_match
+Fri 06 Nov 2020 12:11:12 _internal.py INFO 127.0.0.1 - - [06/Nov/2020 12:11:12] "[35m[1mPOST /NLP/Algorithm/base/dup_check/template_match?source=b'http://10.0.2.120:58080/group1/default/20200928/21/55/3/%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http://10.0.2.120:58080/group1/default/20200928/18/38/3/ÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx HTTP/1.1[0m" 500 -
+Fri 06 Nov 2020 12:11:21 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Fri 06 Nov 2020 12:11:21 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:11:22 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:11:22 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:11:22 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:11:22 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:11:31 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Fri 06 Nov 2020 12:11:31 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:11:32 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:11:32 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:11:32 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:11:32 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:11:33 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:11:33 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:11:34 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:11:34 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:11:34 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:11:34 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:11:34 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match?source=b'http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F21%2F55%2F3%2F%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F18%2F38%2F3%2FÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx' [POST]> to template_match
+Fri 06 Nov 2020 12:11:34 _internal.py INFO 127.0.0.1 - - [06/Nov/2020 12:11:34] "[35m[1mPOST /NLP/Algorithm/base/dup_check/template_match?source=b'http://10.0.2.120:58080/group1/default/20200928/21/55/3/%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http://10.0.2.120:58080/group1/default/20200928/18/38/3/ÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx HTTP/1.1[0m" 500 -
+Fri 06 Nov 2020 12:14:53 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Fri 06 Nov 2020 12:14:53 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:14:53 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:14:53 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:14:53 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:14:53 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:14:57 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Fri 06 Nov 2020 12:14:57 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:14:58 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:14:58 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:14:59 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:14:59 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:14:59 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:14:59 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:14:59 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match?source=b'http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F21%2F55%2F3%2F%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F18%2F38%2F3%2FÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx' [POST]> to template_match
+Fri 06 Nov 2020 12:14:59 _internal.py INFO 127.0.0.1 - - [06/Nov/2020 12:14:59] "[35m[1mPOST /NLP/Algorithm/base/dup_check/template_match?source=b'http://10.0.2.120:58080/group1/default/20200928/21/55/3/%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http://10.0.2.120:58080/group1/default/20200928/18/38/3/ÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx HTTP/1.1[0m" 500 -
+Fri 06 Nov 2020 12:15:17 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Fri 06 Nov 2020 12:15:17 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:15:18 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:15:18 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:15:18 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:15:18 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:16:48 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Fri 06 Nov 2020 12:16:48 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:16:48 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:16:48 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:16:48 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:16:48 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:17:11 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Fri 06 Nov 2020 12:17:11 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:17:12 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:17:12 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:17:12 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:17:12 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:18:32 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Fri 06 Nov 2020 12:18:33 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:18:33 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:18:33 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:18:33 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:18:33 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:18:35 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Fri 06 Nov 2020 12:18:36 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:18:36 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:18:36 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:18:36 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:18:36 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:18:51 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Fri 06 Nov 2020 12:18:51 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:18:51 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:18:51 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:18:51 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:18:51 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:18:52 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:18:52 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:18:53 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:18:53 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:18:53 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:18:53 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:18:53 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match?source=b'http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F21%2F55%2F3%2F%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F18%2F38%2F3%2FÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx' [POST]> to template_match
+Fri 06 Nov 2020 12:18:53 _internal.py INFO 127.0.0.1 - - [06/Nov/2020 12:18:53] "[35m[1mPOST /NLP/Algorithm/base/dup_check/template_match?source=b'http://10.0.2.120:58080/group1/default/20200928/21/55/3/%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http://10.0.2.120:58080/group1/default/20200928/18/38/3/ÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx HTTP/1.1[0m" 500 -
+Fri 06 Nov 2020 12:19:08 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Fri 06 Nov 2020 12:19:08 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:19:08 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:19:09 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:19:09 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:19:09 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:19:10 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:19:10 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:19:10 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:19:11 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:19:11 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:19:11 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:19:11 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match?source=b'http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F21%2F55%2F3%2F%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F18%2F38%2F3%2FÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx' [POST]> to template_match
+Fri 06 Nov 2020 12:19:11 _internal.py INFO 127.0.0.1 - - [06/Nov/2020 12:19:11] "[35m[1mPOST /NLP/Algorithm/base/dup_check/template_match?source=b'http://10.0.2.120:58080/group1/default/20200928/21/55/3/%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http://10.0.2.120:58080/group1/default/20200928/18/38/3/ÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx HTTP/1.1[0m" 500 -
+Fri 06 Nov 2020 12:19:25 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Fri 06 Nov 2020 12:19:25 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:19:26 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:19:26 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:19:26 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:19:26 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:21:23 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Fri 06 Nov 2020 12:21:23 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:21:24 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:21:24 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:21:24 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:21:24 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:21:25 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Fri 06 Nov 2020 12:21:25 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:21:26 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:21:26 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:21:26 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:21:26 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:21:31 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:21:31 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:21:32 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:21:32 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:21:32 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:21:32 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:21:33 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match?source=b'http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F21%2F55%2F3%2F%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F18%2F38%2F3%2FÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx' [POST]> to template_match
+Fri 06 Nov 2020 12:21:33 _internal.py INFO 127.0.0.1 - - [06/Nov/2020 12:21:33] "[35m[1mPOST /NLP/Algorithm/base/dup_check/template_match?source=b'http://10.0.2.120:58080/group1/default/20200928/21/55/3/%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http://10.0.2.120:58080/group1/default/20200928/18/38/3/ÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx HTTP/1.1[0m" 500 -
+Fri 06 Nov 2020 12:21:55 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Fri 06 Nov 2020 12:21:55 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:21:56 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:21:56 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:21:56 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:21:56 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:21:59 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match?source=b'http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F21%2F55%2F3%2F%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F18%2F38%2F3%2FÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx' [POST]> to template_match
+Fri 06 Nov 2020 12:21:59 _internal.py INFO 127.0.0.1 - - [06/Nov/2020 12:21:59] "[35m[1mPOST /NLP/Algorithm/base/dup_check/template_match?source=b'http://10.0.2.120:58080/group1/default/20200928/21/55/3/%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http://10.0.2.120:58080/group1/default/20200928/18/38/3/ÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx HTTP/1.1[0m" 500 -
+Fri 06 Nov 2020 12:23:00 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Fri 06 Nov 2020 12:23:00 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:23:00 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:23:01 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:23:01 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:23:01 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:23:03 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Fri 06 Nov 2020 12:23:03 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:23:04 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:23:04 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:23:05 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:23:05 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:23:05 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:23:05 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:23:05 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match?source=b'http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F21%2F55%2F3%2F%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F18%2F38%2F3%2FÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx' [POST]> to template_match
+Fri 06 Nov 2020 12:23:05 _internal.py INFO 127.0.0.1 - - [06/Nov/2020 12:23:05] "[35m[1mPOST /NLP/Algorithm/base/dup_check/template_match?source=b'http://10.0.2.120:58080/group1/default/20200928/21/55/3/%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http://10.0.2.120:58080/group1/default/20200928/18/38/3/ÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx HTTP/1.1[0m" 500 -
+Fri 06 Nov 2020 12:23:42 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Fri 06 Nov 2020 12:23:42 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:23:43 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:23:43 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:23:43 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:23:43 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:23:49 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Fri 06 Nov 2020 12:23:49 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:23:50 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:23:50 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:23:51 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:23:51 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:23:51 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:23:51 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:23:51 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match?source=b'http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F21%2F55%2F3%2F%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F18%2F38%2F3%2FÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx' [POST]> to template_match
+Fri 06 Nov 2020 12:23:51 _internal.py INFO 127.0.0.1 - - [06/Nov/2020 12:23:51] "[35m[1mPOST /NLP/Algorithm/base/dup_check/template_match?source=b'http://10.0.2.120:58080/group1/default/20200928/21/55/3/%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http://10.0.2.120:58080/group1/default/20200928/18/38/3/ÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx HTTP/1.1[0m" 500 -
+Fri 06 Nov 2020 12:24:31 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Fri 06 Nov 2020 12:24:31 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:24:32 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:24:32 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:24:32 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:24:32 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:24:33 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Fri 06 Nov 2020 12:24:33 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:24:34 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:24:34 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:24:34 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:24:34 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:24:35 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:24:35 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:24:36 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:24:36 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:24:36 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:24:36 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:24:36 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match?source=b'http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F21%2F55%2F3%2F%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F18%2F38%2F3%2FÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx' [POST]> to template_match
+Fri 06 Nov 2020 12:24:36 _internal.py INFO 127.0.0.1 - - [06/Nov/2020 12:24:36] "[35m[1mPOST /NLP/Algorithm/base/dup_check/template_match?source=b'http://10.0.2.120:58080/group1/default/20200928/21/55/3/%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http://10.0.2.120:58080/group1/default/20200928/18/38/3/ÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx HTTP/1.1[0m" 500 -
+Fri 06 Nov 2020 12:25:45 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Fri 06 Nov 2020 12:25:45 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:25:46 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:25:46 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:25:46 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:25:46 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:25:48 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:25:48 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:25:49 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:25:49 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:25:49 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:25:49 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:25:49 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match?source=b'http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F21%2F55%2F3%2F%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F18%2F38%2F3%2FÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx' [POST]> to template_match
+Fri 06 Nov 2020 12:25:49 _internal.py INFO 127.0.0.1 - - [06/Nov/2020 12:25:49] "[35m[1mPOST /NLP/Algorithm/base/dup_check/template_match?source=b'http://10.0.2.120:58080/group1/default/20200928/21/55/3/%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http://10.0.2.120:58080/group1/default/20200928/18/38/3/ÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx HTTP/1.1[0m" 500 -
+Fri 06 Nov 2020 12:40:07 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Fri 06 Nov 2020 12:40:07 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:40:08 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:40:08 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:40:08 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:40:08 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:40:21 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Fri 06 Nov 2020 12:40:21 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:40:22 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:40:22 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:40:22 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:40:22 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:40:28 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:40:28 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:40:29 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:40:29 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:40:29 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:40:29 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:40:29 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match?source=b'http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F21%2F55%2F3%2F%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F18%2F38%2F3%2FÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx' [POST]> to template_match
+Fri 06 Nov 2020 12:40:29 _internal.py INFO 127.0.0.1 - - [06/Nov/2020 12:40:29] "[35m[1mPOST /NLP/Algorithm/base/dup_check/template_match?source=b'http://10.0.2.120:58080/group1/default/20200928/21/55/3/%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http://10.0.2.120:58080/group1/default/20200928/18/38/3/ÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx HTTP/1.1[0m" 500 -
+Fri 06 Nov 2020 12:40:54 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Fri 06 Nov 2020 12:40:55 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:40:55 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:40:56 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:40:56 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:40:56 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:40:56 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:40:56 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:40:57 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match?source=b'http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F21%2F55%2F3%2F%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F18%2F38%2F3%2FÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx' [POST]> to template_match
+Fri 06 Nov 2020 12:40:57 _internal.py INFO 127.0.0.1 - - [06/Nov/2020 12:40:57] "[35m[1mPOST /NLP/Algorithm/base/dup_check/template_match?source=b'http://10.0.2.120:58080/group1/default/20200928/21/55/3/%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http://10.0.2.120:58080/group1/default/20200928/18/38/3/ÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx HTTP/1.1[0m" 500 -
+Fri 06 Nov 2020 12:41:44 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Fri 06 Nov 2020 12:41:44 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:41:44 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:41:45 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:41:45 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:41:46 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:41:46 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:41:46 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:41:46 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:41:46 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match?source=b'http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F21%2F55%2F3%2F%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F18%2F38%2F3%2FÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx' [POST]> to template_match
+Fri 06 Nov 2020 12:41:46 _internal.py INFO 127.0.0.1 - - [06/Nov/2020 12:41:46] "[35m[1mPOST /NLP/Algorithm/base/dup_check/template_match?source=b'http://10.0.2.120:58080/group1/default/20200928/21/55/3/%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http://10.0.2.120:58080/group1/default/20200928/18/38/3/ÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx HTTP/1.1[0m" 500 -
+Fri 06 Nov 2020 12:42:01 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Fri 06 Nov 2020 12:42:02 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:42:02 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:42:02 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:42:02 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:42:02 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:42:05 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:42:05 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:42:06 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:42:06 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:42:06 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:42:06 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:42:07 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match?source=b'http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F21%2F55%2F3%2F%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http:%2F%2F10.0.2.120:58080%2Fgroup1%2Fdefault%2F20200928%2F18%2F38%2F3%2FÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx' [POST]> to template_match
+Fri 06 Nov 2020 12:42:07 _internal.py INFO 127.0.0.1 - - [06/Nov/2020 12:42:07] "[35m[1mPOST /NLP/Algorithm/base/dup_check/template_match?source=b'http://10.0.2.120:58080/group1/default/20200928/21/55/3/%5Cxe5%5Cx9f%5Cxba%5Cxe4%5Cxba%5Cx8eNLP%5Cxe7%5Cx9a%5Cx84%5Cxe5%5Cx95%5Cx86%5Cxe5%5Cx8a%5Cxa1%5Cxe6%5Cx96%5Cx87%5Cxe6%5Cx9c%5Cxac%5Cxe6%5Cx95%5Cxb0%5Cxe6%5Cx8d%5Cxae%5Cxe6%5Cxb8%5Cx85%5Cxe6%5Cxb4%5Cx97%5Cxe5%5Cx85%5Cxb3%5Cxe9%5Cx94%5Cxae%5Cxe6%5Cx8a%5Cx80%5Cxe6%5Cx9c%5Cxaf%5Cxe7%5Cxa0%5Cx94%5Cxe7%5Cxa9%5Cxb6%5Cxe9%5Cxa1%5Cxb9%5Cxe7%5Cx9b%5Cxae%5Cxe5%5Cx90%5Cx88%5Cxe5%5Cx90%5Cx8c+-+-%5Cxe6%5Cx89%5Cx93%5Cxe5%5Cx8d%5Cxb0%5Cxe7%5Cx89%5Cx88.docx'&template=http://10.0.2.120:58080/group1/default/20200928/18/38/3/ÕÐ±êÎÄ¼þ%20CWEME-1911ZSWZ-2J039%20»ùÓÚNLPµÄÉÌÎñÎÄ±¾Êý¾ÝÇåÏ´¹Ø¼ü¼¼ÊõÑÐ¾¿ÏîÄ¿-2019Äê12ÔÂÖÐ¹úË®ÀûµçÁ¦Îï×Ê¼¯ÍÅÓÐÏÞ¹«Ë¾ÏîÄ¿£¨µÚÈý°æÖÕ°æ£©.docx HTTP/1.1[0m" 500 -
+Fri 06 Nov 2020 12:44:16 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Fri 06 Nov 2020 12:44:16 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:44:16 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:44:16 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:44:17 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:44:17 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:44:22 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Fri 06 Nov 2020 12:44:22 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:44:23 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:44:23 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:44:23 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:44:23 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 06 Nov 2020 12:44:25 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:44:25 _internal.py INFO  * Restarting with stat
+Fri 06 Nov 2020 12:44:26 dup_check.py WARNING warning
+Fri 06 Nov 2020 12:44:26 _internal.py WARNING  * Debugger is active!
+Fri 06 Nov 2020 12:44:26 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 06 Nov 2020 12:44:26 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)

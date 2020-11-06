@@ -10,8 +10,8 @@ import requests
 logging.basicConfig(format='%(asctime)s %(filename)s %(levelname)s %(message)s',datefmt='%a %d %b %Y %H:%M:%S',filename='demo.log',level=logging.DEBUG)# stream=file,
 logging.warning("warning")
 from io import BytesIO
-
-
+import docx
+import json
 
 # -*- coding: utf-8 -*-
 import codecs,sys
@@ -398,8 +398,7 @@ def template_match():
     print('now time:', time.localtime(time.time()))
     source_ok=0
     template_ok=0
-    # source_url='http://10.0.2.120:58080/group1/default/20200928/21/55/3/基于NLP的商务文本数据清洗关键技术研究项目合同+-+-打印版.docx'
-    # template_url='http://10.0.2.120:58080/group1/default/20200928/18/38/3/招标文件 CWEME-1911ZSWZ-2J039 基于NLP的商务文本数据清洗关键技术研究项目-2019年12月中国水利电力物资集团有限公司项目（第三版终版）.docx'
+
 
     try:  # 尝试挖出参数
         try:
@@ -429,11 +428,21 @@ def template_match():
     tem_doc_name = template_url.split('/')[-1]
     print('两个文档:',source_doc_name,tem_doc_name)
 
+    print('source_url是什么?',source_url)
+    print('template_url是什么?', template_url)
+
+    # source_url=str(source_url, encoding = "utf8")
+    # source_url=r'http://10.0.2.120:58080/group1/default/20200928/21/55/3/基于NLP的商务文本数据清洗关键技术研究项目合同+-+-打印版.docx'
+    # template_url=r'http://10.0.2.120:58080/group1/default/20200928/18/38/3/招标文件 CWEME-1911ZSWZ-2J039 基于NLP的商务文本数据清洗关键技术研究项目-2019年12月中国水利电力物资集团有限公司项目（第三版终版）.docx'
+    # print('是否相同?',source_url==source_url2)
+    # print(source_url)
+    # print(source_url2)
     #获取文件
     source_res = requests.post(source_url)
     template_res=requests.post(template_url)
     source_Byio=BytesIO(source_res.content)
     template_Byio = BytesIO(template_res.content)
+
 
     # base=r'D:\lcb_note\code\Program\10月项目\my_docx'
     # path1 = base+r'\招标文件 CWEME-1911ZSWZ-2J039 基于NLP的商务文本数据清洗关键技术研究项目-2019年12月中国水利电力物资集团有限公司项目（第三版终版）.docx'

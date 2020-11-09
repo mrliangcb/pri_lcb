@@ -15263,3 +15263,7 @@ Mon 09 Nov 2020 17:14:20 _internal.py INFO  * Debugger PIN: 304-402-708
 Mon 09 Nov 2020 17:14:20 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
 Mon 09 Nov 2020 17:14:22 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
 Mon 09 Nov 2020 17:14:22 _internal.py INFO  * Restarting with stat
+Mon 09 Nov 2020 17:14:23 dup_check.py WARNING warning
+Mon 09 Nov 2020 17:14:23 _internal.py WARNING  * Debugger is active!
+Mon 09 Nov 2020 17:14:23 _internal.py INFO  * Debugger PIN: 304-402-708
+Mon 09 Nov 2020 17:14:23 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)

@@ -217,11 +217,18 @@ def dup_check():
     # print('tem:',template_target[:100])
 
 
-    source=my_split(source)
+    # source=my_split(source)
 
     print('source split:',source[0][:100])
-    target=my_split(target)
+    # target=my_split(target)
     print('target split:', target[0][:100])
+    print('replace之前source',source)
+    source = source.replace('\n', '<br>')
+    print('replace之后source', source)
+    target = target.replace('\n', '<br>')
+    source=[source]
+    target=[target]
+
 
     source=clear(source)#去掉空段之后，至少存在一个['']
     target = clear(target)
@@ -248,7 +255,7 @@ def dup_check():
             g_, s_, e_ = doc2_wrap[i_][j_]
             if g_ != -1 and not doc2_wrap_dic.get(g_):
                 doc2_wrap_dic[g_]=tuple([i_,s_,e_])
-
+    print('doc2_wrap_dic:',doc2_wrap_dic) # {0: (0, 0, 29)}
 
     source_target_list=[]
     for i in range(len(doc1_wrap)):
@@ -260,8 +267,6 @@ def dup_check():
                 # print('group_,s,e:',group_,s,e)
                 # print('source:',source)
                 source_env=search_dot_2dec(source[i],s,e)
-
-
                 try:
                     sim=(e-s)/len(source_env)
                 except:
@@ -307,15 +312,48 @@ def dup_check():
     # print('source_dic::::',source_dic)
     # print('target_dic::::', target_dic)
 
+    # 隔段合并的问题:
+
+    doc1_wrap_2 = []
+    new_old_dic = {}
+    print('doc1_wrap:', doc1_wrap[0])
+    i = 0
+    # for i,j in enumerate(doc1_wrap[0]):
+    while i < len(doc1_wrap[0]):
+        # 如果是到最后一个，那就
+
+        if (i < len(doc1_wrap[0]) - 2):
+            a, c, d = doc1_wrap[0][i + 1]  # [(0, 0, 69), (-1, 70, 73), (1, 74, 103)]
+
+        if (i < len(doc1_wrap[0])-2) and (d - c == 3) and source[a][c:d + 1] == '<br>':  # 前面的一个是<bn>
+            # #默认中间只有一个分行  如果连续<br>就不好了
+            a1, c1, d1 = doc1_wrap[0][i]  # 本次
+            a2, c2, d2 = doc1_wrap[0][i + 2]  # 下下个
+            doc1_wrap_2.append(tuple([a1, c1, d2]))  # 编号用前面的
+            new_old_dic[a2] = a1  # a2需要变成a1
+            i += 3
+        else:
+            doc1_wrap_2.append(doc1_wrap[0][i])  # 直接装list
+            i += 1
+    doc1_wrap=[doc1_wrap_2]
+    print('合并组之后的doc1_wrap:', doc1_wrap)
+
+    print('需要最后改组的:', new_old_dic)
+    # 对wrap2改组号
+    for i, j in enumerate(doc2_wrap[0]):
+        a, b, c = j
+        if new_old_dic.get(a, None) != None:
+            doc2_wrap[0][i] = tuple([new_old_dic[a], b, c])
+    print('改组后的doc2_wrap:', doc2_wrap)
+
+
 
     for duan in range(len(doc1_wrap)):
         for num in range(len(doc1_wrap[duan])):
+            print('doc1_wrap[duan][num]是什么?',doc1_wrap[duan][num])
             a,b,c=doc1_wrap[duan][num]
             doc1_wrap[duan][num]=tuple([duan,a,b,c])
     print('doc1_wrap最后',doc1_wrap[:50])
-
-
-
 
     for duan in range(len(doc2_wrap)):
         for num in range(len(doc2_wrap[duan])):
@@ -325,26 +363,16 @@ def dup_check():
     print('make output time:',time.time()-s_output_time)
     logging.info('make output time: {}'.format(time.time()-s_output_time))
     result1=similarity
+
     result3 = render_template('testHtml2.html', name1='doc1', name2='doc2', time=time_, dup_check=similarity,doc1_str=source, doc2_str=target,
                     doc1_wrap=doc1_wrap, doc2_group_=doc2_wrap)
-    # return result3
-
-    # print('输出一下结果')
-    # for duan in doc1_wrap:
-    #     for duan_, g_id, s, e in duan:
-    #         if g_id == -1:
-    #             print(source[duan_][s:e + 1])
-    #         else:
-    #             print('有重复:',source[duan_][s:e+1])
-
-
-    # return result3
     result4 = render_template('add_href_doc1.html', doc1_wrap=doc1_wrap, doc1_str=source)
-
-
+    # return result4
     result5 = render_template('add_href_doc2.html', doc2_group_=doc2_wrap, doc2_str=target)
     # result6 = render_template('dup_list_source.html', source_dup=source_target_list_sorted)
+
     #
+
     # result7 = render_template('dup_list_target.html', target_dup=source_target_list_sorted)
 
     # return result7
@@ -449,10 +477,16 @@ def template_match():
     template_Byio = BytesIO(template_res.content)
 
 
+    docx.Document(source_Byio)
+    print('对source解码')
+    docx.Document(template_Byio)
+    print('对tem解码')
+
     # base=r'D:\lcb_note\code\Program\10月项目\my_docx'
     # path1 = base+r'\招标文件 CWEME-1911ZSWZ-2J039 基于NLP的商务文本数据清洗关键技术研究项目-2019年12月中国水利电力物资集团有限公司项目（第三版终版）.docx'
     # path2 = base+r'\基于NLP的商务文本数据清洗关键技术研究项目合同+-+-打印版.docx'
     start_time=time.time()
+
     left,right,tem_global_list_obj,source_global_obj_list,match_rate_head=main(source_Byio,template_Byio)
 
     left_=[dict(i._asdict()) for i in left]
@@ -469,6 +503,7 @@ def template_match():
         'template':result0,
         'source':result1
     }
+
     # return result1
     print('整个过程时间:',time.time()-start_time)
     return jsonify(result_dic)  #obj传不了

@@ -7,10 +7,10 @@
 <body>
 {% for dic in template %}
         {% if dic['flag']==1 %}
-            {{dic['origin']}}
+            {{dic['origin']|safe}}
             <br>
         {% else %}
-            <font style="color:red">{{dic['origin']}}</font>
+            <font style="color:red">{{dic['origin']|safe}}</font>
             <br>
         {% endif %}
 {% endfor %}

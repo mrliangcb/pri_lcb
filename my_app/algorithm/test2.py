@@ -36,4 +36,5 @@ x=['集体优秀奖']
 result=calculate_hashing_set(x)
 print(result)
 
-
+x=[1,2,3,4,5,6,7,8,9,10]
+print(x[1:4]+x[6:10])

@@ -12,6 +12,7 @@ class paragraph_winnowing():
         '''
         s_time=time.time()
         x1_gram=self.build_gram(x1,n)
+        print('x1_gram:',x1_gram)
         x2_gram=self.build_gram(x2,n)
         template_gram=self.build_gram(template,n)
 
@@ -39,6 +40,9 @@ class paragraph_winnowing():
         e_time=time.time()
         print('去除模板的时间:',e_time-s_time)
 
+        print('doc1_str:',doc1_str)
+        print('doc1_posi:', doc1_posi)
+        print('doc1_01:', doc1_01)
         # print('去除模板后的doc1_str',doc1_str)
         # print('去除模板后的doc1_01', doc1_01)
 
@@ -50,6 +54,7 @@ class paragraph_winnowing():
             size += len(x1[i])
 
         doc1_wrap=self.x1_group(doc1_01)
+        print('doc1_wrap:', doc1_wrap) #是一个二维的
         similarity=self.compu_dup_rate(doc1_wrap,size)
 
         # 正常
@@ -58,11 +63,16 @@ class paragraph_winnowing():
         # 正常
         # print('doc2_group_index在这里',doc2_group_index)
         doc2_wrap = self.doc2_tuple(doc2_group_index)
-
+        print('doc2_wrap:',doc2_wrap)  #[[(1, 0, 29), (-1, 30, 38), (0, 39, 68), (-1, 69, 74), (0, 75, 112)]]
 
         #按句号截取，然后计算每部分的重复率，写入字典，并写入top k堆
 
         # print(doc1_wrap)
+
+
+
+
+
 
         return similarity,doc1_str,doc1_wrap,doc2_wrap
 

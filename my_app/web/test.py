@@ -57,15 +57,16 @@
 # print(y.split(r'\n'))
 # print(repr(y).split('\n'))
 # print(repr(repr(y)).split('\n'))
-
-x=[[('a'),('b'),('c'),('d')],['1']]
-x[0].pop(3)
-print(x)
-
-
-
-
-
+#
+# x=[[('a'),('b'),('c'),('d')],['1']]
+# x[0].pop(3)
+# print(x)
+#
+# x=r'sdfhwuefpiuwae\n01283709287340'
+# print(x)
+# x=x.replace('\n','<br>')
+# print(x)
+#
 
 
 

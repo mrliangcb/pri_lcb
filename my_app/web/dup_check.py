@@ -5,6 +5,7 @@ from my_app.algorithm.dup_check_algo import check_str
 from my_app.algorithm.duan_winnowing import paragraph_winnowing
 import logging
 import requests
+import json
 # https://blog.csdn.net/weixin_30773135/article/details/97342082
 # file = open("demo.log", encoding="utf-8", mode="a")
 logging.basicConfig(format='%(asctime)s %(filename)s %(levelname)s %(message)s',datefmt='%a %d %b %Y %H:%M:%S',filename='demo.log',level=logging.DEBUG)# stream=file,
@@ -465,11 +466,13 @@ def template_match():
                 dic = request.args.to_dict()
                 source_content = dic['source_content']
                 source_content_ok=1
+                source_content=json.loads(source_content)
                 print('source是doc文件，内容为:',source_content[:10])
             except:
                 dic = request.form.to_dict()  #
                 source_content = dic['source_content']
                 source_content_ok = 1
+                source_content = json.loads(source_content)
                 print('source是doc文件，内容为:', source_content[:10])
         except:
             if source_content_ok == 0:
@@ -482,7 +485,6 @@ def template_match():
         source_content=docx.Document(source_Byio)
         print('对source解码')
 
-
     if tem_doc_name.endswith('doc'):
         tem_isdoc=1
         template_content_ok = 0
@@ -491,12 +493,14 @@ def template_match():
                 dic = request.args.to_dict()
                 template_content = dic['template_content']
                 template_content_ok=1
-                print('tem是doc文件，内容为:', template_content[:10])
+                template_content_ok = json.loads(template_content_ok)
+                print('tem是doc文件，内容为:', template_content[:20])
             except:
                 dic = request.form.to_dict()  #
                 template_content = dic['template_content']
                 template_content_ok = 1
-                print('tem是doc文件，内容为:', template_content[:10])
+                template_content_ok = json.loads(template_content_ok)
+                print('tem是doc文件，内容为:', template_content[:20])
         except:
             if template_content_ok == 0:
                 print("can't get template_content")

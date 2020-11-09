@@ -10,7 +10,7 @@ path2=r'.\招标文件 CWEME-1911ZSWZ-2J039 基于NLP的商务文本数据清洗
 
 docx.Document(path2)
 
-# def doc2docx(path):
+# def doc2docx(path):git 
 #     w = win32com.client.Dispatch('Word.Application')
 #     w.Visible = 0
 #     w.DisplayAlerts = 0

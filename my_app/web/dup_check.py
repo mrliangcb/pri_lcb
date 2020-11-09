@@ -452,14 +452,65 @@ def template_match():
             logging.info("can't get template")
             return jsonify("can't get template")
 
-
-
     source_doc_name=source_url.split('/')[-1]
     tem_doc_name = template_url.split('/')[-1]
-    print('两个文档:',source_doc_name,tem_doc_name)
 
+    source_isdoc=0
+    tem_isdoc=0
+    if source_doc_name.endswith('doc'):
+        source_content_ok = 0
+        source_isdoc=1
+        try:
+            try:
+                dic = request.args.to_dict()
+                source_content = dic['source_content']
+                source_content_ok=1
+                print('source是doc文件，内容为:',source_content[:10])
+            except:
+                dic = request.form.to_dict()  #
+                source_content = dic['source_content']
+                source_content_ok = 1
+                print('source是doc文件，内容为:', source_content[:10])
+        except:
+            if source_content_ok == 0:
+                print("can't get source_content")
+                logging.info("can't get source_content")
+                return jsonify("can't get source_content")
+    else:
+        source_res = requests.post(source_url)
+        source_Byio = BytesIO(source_res.content)
+        source_content=docx.Document(source_Byio)
+        print('对source解码')
+
+
+    if tem_doc_name.endswith('doc'):
+        tem_isdoc=1
+        template_content_ok = 0
+        try:
+            try:
+                dic = request.args.to_dict()
+                template_content = dic['template_content']
+                template_content_ok=1
+                print('tem是doc文件，内容为:', template_content[:10])
+            except:
+                dic = request.form.to_dict()  #
+                template_content = dic['template_content']
+                template_content_ok = 1
+                print('tem是doc文件，内容为:', template_content[:10])
+        except:
+            if template_content_ok == 0:
+                print("can't get template_content")
+                logging.info("can't get template_content")
+                return jsonify("can't get template_content")
+    else:
+        template_res = requests.post(template_url)
+        template_Byio = BytesIO(template_res.content)
+        template_content=docx.Document(template_Byio)
+        print('对tem解码')
+
+
+    print('两个文档:',source_doc_name,tem_doc_name)
     print('source_url是什么?',source_url)
-    # print('解码过程:',str(source_url,'utf-8'))
     print('template_url是什么?', template_url)
     # source_url = source_url
 
@@ -471,23 +522,15 @@ def template_match():
     # print(source_url)
     # print(source_url2)
     #获取文件
-    source_res = requests.post(source_url)
-    template_res=requests.post(template_url)
-    source_Byio=BytesIO(source_res.content)
-    template_Byio = BytesIO(template_res.content)
 
 
-    docx.Document(source_Byio)
-    print('对source解码')
-    docx.Document(template_Byio)
-    print('对tem解码')
 
     # base=r'D:\lcb_note\code\Program\10月项目\my_docx'
     # path1 = base+r'\招标文件 CWEME-1911ZSWZ-2J039 基于NLP的商务文本数据清洗关键技术研究项目-2019年12月中国水利电力物资集团有限公司项目（第三版终版）.docx'
     # path2 = base+r'\基于NLP的商务文本数据清洗关键技术研究项目合同+-+-打印版.docx'
     start_time=time.time()
 
-    left,right,tem_global_list_obj,source_global_obj_list,match_rate_head=main(source_Byio,template_Byio)
+    left,right,tem_global_list_obj,source_global_obj_list,match_rate_head=main(source_content,template_content,source_isdoc,tem_isdoc)
 
     left_=[dict(i._asdict()) for i in left]
     right_ = [dict(i._asdict()) for i in right]

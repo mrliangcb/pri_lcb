@@ -18,5 +18,6 @@ result=requests.post(url,data=data)
 res=result.json()
 print(res['dup_list'])
 
-
-
+# import time
+# x=time.strftime("%Y_%m_%d%H_%M_%S", time.localtime())
+# print(x)

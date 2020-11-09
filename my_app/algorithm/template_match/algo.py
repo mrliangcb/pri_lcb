@@ -212,26 +212,20 @@ def get_muban(doc1_global_para,source_heading_obj_list):
 
 
 
-def main(source,template):
+def main(source_file,template_doc,source_isdoc,tem_isdoc):
     process_time=time.time()
-    procer = processer()
-    template_doc = procer.read_doc(template)
+    # procer = processer()
+    # template_doc = procer.read_doc(template)
     tem_heading_obj_list,tem_global_obj_list = exctract_heading(template_doc.paragraphs)
-
-
     print('解析时间1.1:', time.time() - process_time)
-
     process_time = time.time()
-    source_file = procer.read_doc(source)
+    # source_file = procer.read_doc(source)
     source_heading_obj_list,source_global_obj_list = exctract_heading(source_file.paragraphs)
     # source_global_list_obj = extract_global(source_file.paragraphs)
     print('解析时间2:', time.time() - process_time)
-
-
     time_find_tem=time.time()
     template_select_obj_list = get_muban(tem_heading_obj_list, source_heading_obj_list)
     print('找模板时间:',time.time()-time_find_tem)
-
     mat_time=time.time()
     tem_heading_match,source_heading,source_global_obj=find_best_match(template_select_obj_list,source_heading_obj_list,source_global_obj_list)
     print('计算最长匹配子串时间:',time.time()-mat_time)

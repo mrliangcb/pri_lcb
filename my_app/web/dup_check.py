@@ -133,7 +133,7 @@ def search_dot_2dec(x,num1,num2):#根据两个位置寻找前后句号
     # print('num1和num2',x[num1],x[num2])
     for i in range(num1,-1,-1):
         if x[i]=='。' or (num1-i)>50:
-            s=i
+            s=i+1
             # print('找到s=句号',i,x[i])
             break
 

@@ -430,13 +430,13 @@ def get_doc(request,key,content_ok=0):
             content = dic[key]
             content_ok = 1
             content = json.loads(content)
-            print('source是doc文件，内容为:',content[:10])
+            print('{}内容为:{}'.format(key,content))
         except:
             dic = request.form.to_dict()  #
             content = dic[key]
             content_ok = 1
             content = json.loads(content)
-            print('{}内容为:{}'.format(key,content[:10]))
+            print('{}内容为:{}'.format(key,content))
     except:
         content=None
     return content_ok,content

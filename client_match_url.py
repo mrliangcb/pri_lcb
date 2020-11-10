@@ -28,7 +28,7 @@ template_url=r'http://10.0.2.120:58080/group1/default/20200925/16/31/3/招标文
 # print(res.json())
 # res=requests.post(url)
 
-template_content=json.dumps([{'text':'我是内容1','style':'标题'}])
+template_content=json.dumps([{'text':'我是内容1','style':'标题1'},{'text':'我是内容1','style':'正文'},{'text':'我是内容1','style':'标题1'},{'text':'我是内容1','style':'标题1'}])
 
 # http://10.200.5.45:50000/NLP/Algorithm/base/dup_check/template_match
 url=base

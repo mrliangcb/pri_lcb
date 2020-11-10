@@ -274,7 +274,7 @@ def main(source_file,template_doc,source_isdoc,tem_isdoc):
     if tem_isdoc==0:
         tem_heading_obj_list,tem_global_obj_list = exctract_heading(template_doc.paragraphs)
     else:# 是doc文件
-        tem_heading_obj_list,tem_global_obj_list=extract_doc_heading(template_doc)
+        tem_heading_obj_list,tem_global_obj_list=extract_doc_heading(template_doc) #
 
     print('解析时间1.1:', time.time() - process_time)
 

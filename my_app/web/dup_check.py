@@ -477,13 +477,14 @@ def template_match():
                 dic = request.args.to_dict()
                 template_content = dic['template_content']
                 template_content_ok=1
-                template_content_ok = json.loads(template_content_ok)
+                template_content_ok = json.loads(template_content)
                 print('tem是doc文件，内容为:', template_content[:100])
             except:
                 dic = request.form.to_dict()  #
                 template_content = dic['template_content']
                 template_content_ok = 1
-                template_content_ok = json.loads(template_content_ok)
+                print('template json之前:',template_content)
+                template_content_ok = json.loads(template_content)
                 print('tem是doc文件，内容为:', template_content[:100])
         except:
             if template_content_ok == 0:

@@ -1,5 +1,5 @@
 from flask import jsonify,Blueprint,request,render_template
-from my_app.forms import check_args_validation
+from my_app.forms import check_args_validation,vali_check_match1
 from . import web
 from my_app.algorithm.dup_check_algo import check_str
 from my_app.algorithm.duan_winnowing import paragraph_winnowing
@@ -84,19 +84,18 @@ def uniform_(x):#不管输入是多少段，规整后每段至少有一个''   �
 
 
 
-def clear(x):#至少是''
-
+def clear(x:list):#至少是''
     temp = []
+    transbin=set(['','\n',' ','\t'])
+
     for i in range(len(x)):  #遍历段
-        if x[i]=='' or  x[i]=='\n' or x[i]==[] or  x[i]==' ' or x[i]=='\t':
+        if x[i] in transbin or (not x[i]):
             pass
         else:
             temp.append(x[i])
-
     if temp==[]:
         return ['']  #至少是['']
-
-    return temp
+    return temp  #一维list
 
 def source_dup_dic(result_str):#
     result_str_plus=[]
@@ -143,7 +142,7 @@ def search_dot_2dec(x,num1,num2):#根据两个位置寻找前后句号
             break
     return x[s:e+1]
 
-def my_split(x):
+def my_split(x:str)->str:
     # 先查看转义还是非转义
     split_flag='\n'
     if split_flag in x:
@@ -152,6 +151,8 @@ def my_split(x):
         split_flag=r'\n'
 
     x = x.split(split_flag)  # ['']  ['','','']
+    x=clear(x) # ['']  ['','','']
+    x='<br>'.join(x) # '123<br>123'
     return x
 
 import time
@@ -218,22 +219,21 @@ def dup_check():
     # print('tem:',template_target[:100])
 
 
-    # source=my_split(source)
-
-    print('source split:',source[0][:100])
-    # target=my_split(target)
-    print('target split:', target[0][:100])
+    source=my_split(source) #str
+    print('source split:',source[:100])
+    target=my_split(target)
+    print('target split:', target[:100])
     print('replace之前source',source)
-    source = source.replace('\n', '<br>')
-    print('replace之后source', source)
-    target = target.replace('\n', '<br>')
+
+    # source = source.replace('\n', '<br>')
+    # print('replace之后source', source)
+    # target = target.replace('\n', '<br>')
     source=[source]
     target=[target]
 
-
-    source=clear(source)#去掉空段之后，至少存在一个['']
-    target = clear(target)
-    print('clear之后的source:',source[:500])
+    # source=clear(source)#去掉空段之后，至少存在一个['']
+    # target = clear(target)
+    # print('clear之后的source:',source[:500])
 
 
 
@@ -368,7 +368,7 @@ def dup_check():
     result3 = render_template('testHtml2.html', name1='doc1', name2='doc2', time=time_, dup_check=similarity,doc1_str=source, doc2_str=target,
                     doc1_wrap=doc1_wrap, doc2_group_=doc2_wrap)
     result4 = render_template('add_href_doc1.html', doc1_wrap=doc1_wrap, doc1_str=source)
-    # return result4
+    return result3
     result5 = render_template('add_href_doc2.html', doc2_group_=doc2_wrap, doc2_str=target)
     # result6 = render_template('dup_list_source.html', source_dup=source_target_list_sorted)
 
@@ -425,33 +425,17 @@ def template_match():
     logging.info('foreign request : {} to {}'.format(str(request),'template_match'))
     print('接收到request:', request)
     print('now time:', time.localtime(time.time()))
-    source_ok=0
-    template_ok=0
     # print('Content-Type:',request.content_encoding)# dir(request),
+    source_ok,template_ok,source_url,template_url=vali_check_match1(request)
 
-    try:  # 尝试挖出参数
-        try:
-            dic = request.args.to_dict()  #
-            source_url = dic['source']
-            source_ok = 1
-            template_url = dic['template']
-            template_ok = 1
-            # a, b = check_args_validation(dic)
-        except:
-            dic = request.form.to_dict()  #
-            source_url = dic['source']
-            source_ok = 1
-            template_url = dic['template']
-            template_ok = 1
-    except:
-        if source_ok == 0:
-            print("can't get source")
-            logging.info("can't get source")
-            return jsonify("can't get source")
-        if template_ok == 0:
-            print("can't get template")
-            logging.info("can't get template")
-            return jsonify("can't get template")
+    if source_ok == 0:
+        print("can't get source")
+        logging.info("can't get source")
+        return jsonify("can't get source")
+    if template_ok == 0:
+        print("can't get template")
+        logging.info("can't get template")
+        return jsonify("can't get template")
 
     source_doc_name=source_url.split('/')[-1]
     tem_doc_name = template_url.split('/')[-1]
@@ -467,13 +451,13 @@ def template_match():
                 source_content = dic['source_content']
                 source_content_ok=1
                 source_content=json.loads(source_content)
-                print('source是doc文件，内容为:',source_content[:10])
+                print('source是doc文件，内容为:',source_content[:100])
             except:
                 dic = request.form.to_dict()  #
                 source_content = dic['source_content']
                 source_content_ok = 1
                 source_content = json.loads(source_content)
-                print('source是doc文件，内容为:', source_content[:10])
+                print('source是doc文件，内容为:', source_content[:100])
         except:
             if source_content_ok == 0:
                 print("can't get source_content")
@@ -494,13 +478,13 @@ def template_match():
                 template_content = dic['template_content']
                 template_content_ok=1
                 template_content_ok = json.loads(template_content_ok)
-                print('tem是doc文件，内容为:', template_content[:20])
+                print('tem是doc文件，内容为:', template_content[:100])
             except:
                 dic = request.form.to_dict()  #
                 template_content = dic['template_content']
                 template_content_ok = 1
                 template_content_ok = json.loads(template_content_ok)
-                print('tem是doc文件，内容为:', template_content[:20])
+                print('tem是doc文件，内容为:', template_content[:100])
         except:
             if template_content_ok == 0:
                 print("can't get template_content")

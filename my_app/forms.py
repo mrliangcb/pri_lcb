@@ -20,10 +20,26 @@ def check_args_validation(request_args):
     print('验证通过')
     return True,True
 
-
-
-
-
+def vali_check_match1(request,source_ok=0,template_ok=0):
+    source_url=0
+    template_url=0
+    try:
+        try:
+            dic = request.args.to_dict()  #
+            source_url = dic['source']
+            source_ok = 1
+            template_url = dic['template']
+            template_ok = 1
+            # a, b = check_args_validation(dic)
+        except:
+            dic = request.form.to_dict()  #
+            source_url = dic['source']
+            source_ok = 1
+            template_url = dic['template']
+            template_ok = 1
+    except:
+        pass
+    return source_ok,template_ok,source_url,template_url
 
 
 

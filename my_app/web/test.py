@@ -67,13 +67,16 @@
 # x=x.replace('\n','<br>')
 # print(x)
 #
+# x=['1','2','3']
+# print('<br>'.join(x))
+#
+# def func(x:str)->list:
+#     pass
+#
 
-
-
-
-
-
-
+x=[]
+if x:
+    print(123)
 
 
 

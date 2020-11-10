@@ -37,26 +37,44 @@ def exctract_heading(para_list):
     heading_list=[]
     para_num = -1
     global_obj=[]
+    pos_num=0
     for i,para in enumerate(para_list):
         text=para.text.strip()
-        if text not in trasbin:
-            type_name=para.style.name
-            origin_=para.text.strip()
-            str_split=para.text.strip().split(' ')[-1]
+        type_name = para.style.name
+        str_split = text.split(' ')[-1]
 
-            examp=para_obj(type=type_name, position=i, origin=origin_,str_=str_split,para_num=para_num,flag=1)
-            global_obj.append(examp)
+        if (text not in trasbin) and text:
+            is_heading = 0
+            #校正章号
             if type_name.startswith('Heading'):
-            # if (not para.style.name.startswith('Normal')) and (not para.style.name.startswith('normal')):
+                # if (not para.style.name.startswith('Normal')) and (not para.style.name.startswith('normal')):
                 ptr = r'第(.*?)章'  # 非贪心
-                result = re.findall(ptr,text)
+                result = re.findall(ptr, text)
                 if result and result[0] != '':
                     para_num += 1
                     # 这是一个章标题
                     # para_flag.append({'para_num':para_num,'position':i})
-                x=para_obj(type=type_name, position=i, origin=text,str_=str_split,para_num=para_num,from_global=len(global_obj)-1)
-                heading_list.append(x)
 
+                # 顺便添加heading_obj
+                heading_exam = para_obj(type=type_name, position=pos_num, origin=text, str_=str_split, para_num=para_num,
+                             from_global=len(global_obj) - 1)
+                is_heading=1
+                heading_list.append(heading_exam)
+
+            #添加正文  容易和heading的解包重复
+            if is_heading==0:
+                origin_=text
+                global_examp=para_obj(type=type_name, position=pos_num, origin=origin_,str_=str_split,para_num=para_num,flag=1)
+                global_obj.append(global_examp)
+                pos_num+=1
+
+            else: #已经被heading_obj收录
+                global_examp=heading_exam
+                global_obj.append(global_examp)
+                pos_num+=1
+
+    # print('全文obj_list:',global_obj)
+    # print('标题obj_list:',heading_list)
 
     return heading_list,global_obj
 
@@ -209,23 +227,70 @@ def get_muban(doc1_global_para,source_heading_obj_list):
 
     return result
 
+trasbin=set(['','\n',' ','  ',])
+def extract_doc_heading(para_list:list):
+    heading_list=[]
+    para_num = -1
+    global_obj=[]
+    pos_num=0
+    for i,para in enumerate(para_list):
+        text=para.text.strip()
+        type_name = para.style
+        str_split = text.split(' ')[-1]
+        if (text not in trasbin) and text: #去除空段
+            is_heading = 0
+            #校正标章号  para_num应该是chapter_num
+            if type_name.startswith('标题'):
+                ptr = r'第(.*?)章'  # 非贪心
+                result = re.findall(ptr, text)
+                if result and result[0] != '':  # 是一个章的标志位
+                    para_num += 1
+                ## 顺便添加heading_obj
+                heading_exam = para_obj(type=type_name, position=pos_num, origin=text, str_=str_split, para_num=para_num,
+                             from_global=len(global_obj) - 1)
+                is_heading=1
+                heading_list.append(heading_exam)
 
+            #保存正文
+            if is_heading == 0:
+                origin_ = text
+
+                global_examp = para_obj(type=type_name, position=pos_num, origin=origin_, str_=str_split, para_num=para_num,
+                                        flag=1)
+                global_obj.append(global_examp)
+                pos_num+=1
+
+            else: #已经被heading_obj收录
+                global_examp=heading_exam
+                global_obj.append(global_examp)
+                pos_num+=1
+    return heading_list,global_obj
 
 
 def main(source_file,template_doc,source_isdoc,tem_isdoc):
     process_time=time.time()
     # procer = processer()
     # template_doc = procer.read_doc(template)
-    tem_heading_obj_list,tem_global_obj_list = exctract_heading(template_doc.paragraphs)
+    if tem_isdoc==0:
+        tem_heading_obj_list,tem_global_obj_list = exctract_heading(template_doc.paragraphs)
+    else:# 是doc文件
+        tem_heading_obj_list,tem_global_obj_list=extract_doc_heading(template_doc)
+
     print('解析时间1.1:', time.time() - process_time)
+
     process_time = time.time()
     # source_file = procer.read_doc(source)
-    source_heading_obj_list,source_global_obj_list = exctract_heading(source_file.paragraphs)
+    if source_isdoc == 0:
+        source_heading_obj_list,source_global_obj_list = exctract_heading(source_file.paragraphs)
+    else:
+        source_heading_obj_list,source_global_obj_list = extract_doc_heading(source_file)
     # source_global_list_obj = extract_global(source_file.paragraphs)
     print('解析时间2:', time.time() - process_time)
+
     time_find_tem=time.time()
     template_select_obj_list = get_muban(tem_heading_obj_list, source_heading_obj_list)
     print('找模板时间:',time.time()-time_find_tem)
+
     mat_time=time.time()
     tem_heading_match,source_heading,source_global_obj=find_best_match(template_select_obj_list,source_heading_obj_list,source_global_obj_list)
     print('计算最长匹配子串时间:',time.time()-mat_time)
@@ -240,12 +305,6 @@ def main(source_file,template_doc,source_isdoc,tem_isdoc):
         match_rate_head=0
     return tem_heading_match,source_heading,tem_global_obj_list,source_global_obj,match_rate_head
 
-
-
-
-
-
-
 if __name__ == '__main__':
     base=r'D:\lcb_note\code\Program\10月项目\my_docx'
     path1 = base+r'\招标文件 CWEME-1911ZSWZ-2J039 基于NLP的商务文本数据清洗关键技术研究项目-2019年12月中国水利电力物资集团有限公司项目（第三版终版）.docx'
@@ -258,8 +317,6 @@ if __name__ == '__main__':
 
     source_heading_obj_list,source_global_obj = exctract_heading(doc2_file.paragraphs)
     source_global_list_obj = extract_global(doc2_file.paragraphs)
-
-
 
     template_obj_list=get_muban(doc1_global_para,source_heading_obj_list)
     a, b, source_global_obj_list = find_best_match(template_obj_list, source_heading_obj_list, source_global_obj)

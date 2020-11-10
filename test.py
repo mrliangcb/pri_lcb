@@ -15,8 +15,9 @@ data={
 
 import requests
 result=requests.post(url,data=data)
-res=result.json()
-print(res['dup_list'])
+# res=result.json()
+# print(res['dup_list'])
+print(result.text)
 
 # import time
 # x=time.strftime("%Y_%m_%d%H_%M_%S", time.localtime())

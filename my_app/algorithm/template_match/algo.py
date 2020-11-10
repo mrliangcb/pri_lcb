@@ -267,8 +267,10 @@ def main(source_file,template_doc,source_isdoc,tem_isdoc):
     # procer = processer()
     # template_doc = procer.read_doc(template)
     if tem_isdoc==0:
+        print('tem进行docx解码')
         tem_heading_obj_list,tem_global_obj_list = exctract_heading(template_doc.paragraphs)
     else:# 是doc文件
+        print('tem进行doc解码')
         tem_heading_obj_list,tem_global_obj_list=extract_doc_heading(template_doc) #
 
     print('解析时间1.1:', time.time() - process_time)
@@ -276,8 +278,10 @@ def main(source_file,template_doc,source_isdoc,tem_isdoc):
     process_time = time.time()
     # source_file = procer.read_doc(source)
     if source_isdoc == 0:
+        print('sour进行docx解码')
         source_heading_obj_list,source_global_obj_list = exctract_heading(source_file.paragraphs)
     else:
+        print('sour进行doc解码')
         source_heading_obj_list,source_global_obj_list = extract_doc_heading(source_file)
     # source_global_list_obj = extract_global(source_file.paragraphs)
     print('解析时间2:', time.time() - process_time)

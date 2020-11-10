@@ -491,15 +491,17 @@ def template_match():
         logging.info("can't get template")
         return jsonify("can't get template")
 
+
     source_content,template_content,source_doc_name,tem_doc_name,source_isdoc,tem_isdoc=propose_docx_doc(source_url,template_url)
+
+    print('两个文档:', source_doc_name, tem_doc_name)
+    print('各种状态值:source_isdoc:{},tem_isdoc:{}'.format(source_isdoc,tem_isdoc))
+
     if not source_content:return jsonify("can't get source_content")
     if not template_content: return jsonify("can't get template_content")
 
-
-    print('两个文档:',source_doc_name,tem_doc_name)
     print('source_url是什么?',source_url)
     print('template_url是什么?', template_url)
-
 
     start_time=time.time()
     left,right,tem_global_list_obj,source_global_obj_list,match_rate_head=main(source_content,template_content,source_isdoc,tem_isdoc)

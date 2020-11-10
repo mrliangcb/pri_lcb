@@ -40,10 +40,10 @@ def exctract_heading(para_list):
     pos_num=0
     for i,para in enumerate(para_list):
         text=para.text.strip()
-        type_name = para.style.name
-        str_split = text.split(' ')[-1]
-
         if (text not in trasbin) and text:
+            # 有两个解析，等判空之后再做，减少一点时间，剪枝
+            type_name = para.style.name
+            str_split = text.split(' ')[-1]
             is_heading = 0
             #校正章号
             if type_name.startswith('Heading'):
@@ -60,7 +60,6 @@ def exctract_heading(para_list):
                              from_global=len(global_obj) - 1)
                 is_heading=1
                 heading_list.append(heading_exam)
-
             #添加正文  容易和heading的解包重复
             if is_heading==0:
                 origin_=text
@@ -72,10 +71,6 @@ def exctract_heading(para_list):
                 global_examp=heading_exam
                 global_obj.append(global_examp)
                 pos_num+=1
-
-    # print('全文obj_list:',global_obj)
-    # print('标题obj_list:',heading_list)
-
     return heading_list,global_obj
 
 class processer():
@@ -304,6 +299,16 @@ def main(source_file,template_doc,source_isdoc,tem_isdoc):
     except:
         match_rate_head=0
     return tem_heading_match,source_heading,tem_global_obj_list,source_global_obj,match_rate_head
+
+
+def main2():
+    pass
+
+
+
+
+
+
 
 if __name__ == '__main__':
     base=r'D:\lcb_note\code\Program\10月项目\my_docx'

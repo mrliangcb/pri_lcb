@@ -74,9 +74,163 @@
 #     pass
 #
 
-x=[]
-if x:
-    print(123)
+# x=[]
+# if x:
+#     print(123)
+#
+# x="哈哈哈\r"
+# print(x.strip())
+
+x='我在天桥底下能你。爱是踏破我i恶如啊我就法律上。也是莫拉拉萨看得见覅欧文人我欸如我欸如。我是梁成波我是梁成波我<br>是梁成波我是梁成波我是梁成波。'
+y=list(x)
+z=x.replace('<br>','')
+# 文字中段就消除<br> 头尾的这个要消除<br>
+# 如果查重没用到<> 但显示又能空行该多好
+
+x=['1234',
+   '5678910111213',
+   '141516171819202121232425',
+   '262728',
+   '29']
+
+maodian=[]
+for i,j in enumerate(x):
+    maodian.append(len(j))
+
+y=''.join(x)
+yyy='<br>'.join(x)
+length=len(y) # 49
+wrap=[(-1,0,9),(0,10,16),(-1,17,30),(1,31,48)]
+r=y[10:16+1]
+
+#加maodian
+k=0#取锚点的下表
+# result=[]
+# for i,j in enumerate(wrap):
+#     a,b,c=j
+#     while b<=maodian[k]<=c: #这个wrap含有断点的
+#         front=y[b:maodian[k]]
+#         inner='<br>'
+#         hou=''
+
+#看着锚点去改wrap
+
+for i in range(1,len(maodian)):
+    maodian[i]+=maodian[i-1]
+# print(maodian)
+
+# 阶梯算法
+# 设k为增加项
+k1=1
+k2=1
+# 做一个阶梯
+yy=[0 for i in range(len(y))]
+n=0
+for i,j in enumerate(yy):
+    # 现在这个位置比n个断电下表要大
+    if i>=maodian[n]:
+        n+=1
+    yy[i]=n*4
+
+for i,j in enumerate(wrap):
+    a, b, c = j
+    b_p=yy[b]
+    print('c是什么:',c)
+    c_p = yy[c]
+    b+=b_p
+    c+=c_p
+    wrap[i]=tuple([a,b,c])
+
+
+#判断连续性
+final_wrap=[]
+final_wrap.append(wrap[0])
+for i in range(1,len(wrap)):
+    a1,b1,c1=wrap[i-1]
+    a2, b2, c2 = wrap[i]
+    if b2-c1>1:# 断点  这种断点是因为左右都没有wrap元素
+        br_wrap=tuple([-1,c1+1,b2-1])
+        final_wrap.append(br_wrap)
+    final_wrap.append(wrap[i])
+print('final_wrap是什么?',final_wrap)
+
+for i,j in enumerate(final_wrap): #新的wrap
+    a, b, c = j
+    result=yyy[b:c+1]
+    print('编号{}，的内容::{}'.format(a,result))
+
+
+
+# 有些br实在bc中，有些不在
+
+print('ok')
+
+
+def chaibao(x):
+    maodian = []
+    for i, j in enumerate(x):
+        maodian.append(len(j))
+    y = ''.join(x) #str
+
+    for i in range(1, len(maodian)):
+        maodian[i] += maodian[i - 1]
+
+    return y,maodian
+
+
+def zubao(y,maodian,wrap):
+    #先做一个阶梯
+    yy = [0 for i in range(len(y))]
+    n = 0
+    for i, j in enumerate(yy):
+        # 现在这个位置比n个断电下表要大
+        if i >= maodian[n]:
+            n += 1
+        yy[i] = n * 4
+
+    for i, j in enumerate(wrap):
+        a, b, c = j
+        b_p = yy[b]
+        print('c是什么:', c)
+        c_p = yy[c]
+        b += b_p
+        c += c_p
+        wrap[i] = tuple([a, b, c])
+
+    final_wrap = []
+    final_wrap.append(wrap[0])
+    for i in range(1, len(wrap)):
+        a1, b1, c1 = wrap[i - 1]
+        a2, b2, c2 = wrap[i]
+        if b2 - c1 > 1:  # 断点  这种断点是因为左右都没有wrap元素
+            br_wrap = tuple([-1, c1 + 1, b2 - 1])
+            final_wrap.append(br_wrap)
+        final_wrap.append(wrap[i])
+
+    # for i, j in enumerate(final_wrap):  # 新的wrap
+    #     a, b, c = j
+    #     result = yyy[b:c + 1]
+    #     print('编号{}，的内容::{}'.format(a, result))
+    return final_wrap
+
+y,maodian=chaibao(x)
+wrap=[(-1,0,9),(0,10,16),(-1,17,30),(1,31,48)]
+final_wrap=zubao(y,maodian,wrap)
+
+yyy='<br>'.join(x)
+for i,j in enumerate(final_wrap): #新的wrap
+    a, b, c = j
+    result=yyy[b:c+1]
+    print('编号{}，的内容::{}'.format(a,result))
+
+
+
+
+
+
+
+
+
 
 
 

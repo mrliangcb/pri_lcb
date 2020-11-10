@@ -43,7 +43,6 @@ def dup_check3():
         return b
 
 
-
     time_, result = check_str(str(doc1), str(doc2), k=13)
     similiarize, dup_text, dup_dic, doc1_str, doc2_str, doc1_wrap, doc2_wrap = result
 
@@ -157,56 +156,153 @@ def my_split(x:str)->str:
 
 import time
 
+def get_key_data(request,key,key_ok=0):
+    try:#尝试挖出参数
+        try:
+            dic=request.args.to_dict() #
+            content=dic[key]
+            key_ok = 1
+        except:
+            dic=request.form.to_dict() #
+            content=dic[key]
+            key_ok = 1
+    except:
+        pass
+    return key_ok,content,dic
+
+def list_model(doc1_wrap,doc2_wrap,source,target):
+    doc2_wrap_dic = {}
+    for i_ in range(len(doc2_wrap)):
+        for j_ in range(len(doc2_wrap[i_])):
+            g_, s_, e_ = doc2_wrap[i_][j_]
+            if g_ != -1 and not doc2_wrap_dic.get(g_):
+                doc2_wrap_dic[g_] = tuple([i_, s_, e_])
+
+    source_target_list = []  #列表模式
+    for i in range(len(doc1_wrap)):
+        for j in range(len(doc1_wrap[i])):
+
+            group_,s,e=doc1_wrap[i][j]
+            if group_!=-1:
+                tem_group=group_
+                # print('i是什么:',i)
+                # print('group_,s,e:',group_,s,e)
+                # print('source:',source)
+                source_env=search_dot_2dec(source[i],s,e)  # 列表模式
+                try:
+                    sim=(e-s)/len(source_env)
+                except:
+                    sim=0
+                sim=round(sim, 3)
+                i_,s_,e_=doc2_wrap_dic.get(tem_group)
+                target_env = search_dot_2dec(target[i_], s_, e_)
+
+                # for i_ in range(len(doc2_wrap)):
+                #     for j_ in range(len(doc2_wrap[i_])):
+                #         g_,s_,e_=doc2_wrap[i_][j_]
+                #         if g_==tem_group:
+                #             target_env = search_dot_2dec(target[i_], s_, e_)#第i段
+
+                source_target_list.append([sim,source_env,target_env])
+    source_target_list_sorted = sorted(source_target_list, key=lambda x: x[0], reverse=True)
+
+    result_dup_list=[]
+    for i in source_target_list_sorted:
+        rate_,source_,target_=i
+        if rate_>0 and source_!='' and target_!='' and source_!='\n' and target_!='\n':
+            result_dup_list.append({'source':source_,'target':target_,'rate':rate_*100})
+    return result_dup_list
+
+def ouput_algo(doc1_wrap,doc2_wrap,source):
+    s_output_time = time.time()
+    doc1_wrap_2 = []
+    new_old_dic = {}
+    #改写doc1_wrap  <br>融入 前后两组
+    # print('doc1_wrap:', doc1_wrap[0])
+    i = 0
+    # for i,j in enumerate(doc1_wrap[0]):
+    while i < len(doc1_wrap[0]):
+        # 如果是到最后一个，那就
+        if (i < len(doc1_wrap[0]) - 2):
+            a, c, d = doc1_wrap[0][i + 1]  # [(0, 0, 69), (-1, 70, 73), (1, 74, 103)]
+
+        if (i < len(doc1_wrap[0]) - 2) and (d - c == 3) and source[a][c:d + 1] == '<br>':  # 前面的一个是<bn>
+            # #默认中间只有一个分行  如果连续<br>就不好了
+            a1, c1, d1 = doc1_wrap[0][i]  # 本次
+            a2, c2, d2 = doc1_wrap[0][i + 2]  # 下下个
+            doc1_wrap_2.append(tuple([a1, c1, d2]))  # 编号用前面的
+            new_old_dic[a2] = a1  # a2需要变成a1
+            i += 3
+        else:
+            doc1_wrap_2.append(doc1_wrap[0][i])  # 直接装list
+            i += 1
+    doc1_wrap = [doc1_wrap_2]
+    # print('合并组之后的doc1_wrap:', doc1_wrap)
+
+    # print('需要最后改组的:', new_old_dic)
+    # 对wrap2改组号
+    for i, j in enumerate(doc2_wrap[0]):
+        a, b, c = j
+        if new_old_dic.get(a, None) != None:
+            doc2_wrap[0][i] = tuple([new_old_dic[a], b, c])
+    # print('改组后的doc2_wrap:', doc2_wrap)
+
+    for duan in range(len(doc1_wrap)):
+        for num in range(len(doc1_wrap[duan])):
+            # print('doc1_wrap[duan][num]是什么?', doc1_wrap[duan][num])
+            a, b, c = doc1_wrap[duan][num]
+            doc1_wrap[duan][num] = tuple([duan, a, b, c])
+    # print('doc1_wrap最后', doc1_wrap[:50])
+
+    for duan in range(len(doc2_wrap)):
+        for num in range(len(doc2_wrap[duan])):
+            a, b, c = doc2_wrap[duan][num]
+            doc2_wrap[duan][num] = tuple([duan, a, b, c])
+
+    print('make output time:', time.time() - s_output_time)
+    logging.info('make output time: {}'.format(time.time() - s_output_time))
+    return doc1_wrap,doc2_wrap
+
+
+
+
+
+
 @web.route('/NLP/Algorithm/base/dup_check/winnowing', methods=['POST','GET'])
 def dup_check():
     # args_dic = request.args
+    global_start_time=time.time()
+
     print('now route winnowing')
     s_preprocess_time=time.time()
     args_dic=request.form.to_dict()
     print('接收到request:',request)
     print('now time:',time.localtime(time.time()))
-    source_ok=0
-    target_ok=0
 
     logging.info('foreign request : {} to {}'.format(str(request),'dup_check'))
+    key='source'
+    sou_key_ok,source,dic=get_key_data(request,key)
+    if sou_key_ok==0:
+        print("can't get source")
+        logging.info("can't get source")
+        return jsonify("can't get source")
 
-    try:#尝试挖出参数
-        try:
-            dic=request.args.to_dict() #
-            source=dic['source']
-            source_ok=1
-            target=dic['target']
-            target_ok = 1
-            # a, b = check_args_validation(dic)
-        except:
-            dic=request.form.to_dict() #
-            source=dic['source']
-            source_ok = 1
-            target=dic['target']
-            target_ok = 1
-    except:
-        if source_ok==0:
-            print("can't get source")
-            logging.info("can't get source")
-            return jsonify("can't get source")
-        if target_ok==0:
-            print("can't get target")
-            logging.info("can't get target")
-            return jsonify("can't get target")
+    key = 'target'
+    tem_key_ok, target,dic = get_key_data(request, key)
+    if tem_key_ok==0:
+        print("can't get target")
+        logging.info("can't get target")
+        return jsonify("can't get target")
 
-
-        # a, b = check_args_validation(dic)
 
     template_target = dic.get('template','') #有template 或者没有
     template_length=len(template_target)
     # source , target template 的异常[]   [……[]]
     # str阶段 ''或者无，'……'
 
-
     #分段并且去掉空段
     # template_target = template_target.split(r'\n')
     template_target=[template_target]
-
     template_target = clear(template_target)
 
     source_length = len(source)
@@ -218,24 +314,19 @@ def dup_check():
     # print('target:', target[:100])
     # print('tem:',template_target[:100])
 
-
     source=my_split(source) #str
     print('source split:',source[:100])
-    target=my_split(target)
+    target=my_split(target) # str  <br>连起来
     print('target split:', target[:100])
-    print('replace之前source',source)
-
     # source = source.replace('\n', '<br>')
     # print('replace之后source', source)
     # target = target.replace('\n', '<br>')
-    source=[source]
+    source=[source] #
     target=[target]
 
     # source=clear(source)#去掉空段之后，至少存在一个['']
     # target = clear(target)
     # print('clear之后的source:',source[:500])
-
-
 
     example=paragraph_winnowing()
     print('preprocess time:',time.time()-s_preprocess_time)
@@ -244,55 +335,16 @@ def dup_check():
     s_time=time.time()
     similarity,result_str,doc1_wrap,doc2_wrap=example.get_sim(source,target,template=template_target,n=13)
     # source_dup_dict=source_dup_dic(result_str)
-    time_=time.time()-s_time
-    print('get sim run time :',time_)
+    print('get sim run time :',time.time()-s_time)
+
     print('similarity:', similarity)
-    logging.info('run success!! time cost      :    {}      |length : {}  |  {}  |    {}  |dup_rate:{}'.format(time_,source_length,target_length,template_length,similarity))
-
-    s_output_time=time.time()
-    doc2_wrap_dic={}
-    for i_ in range(len(doc2_wrap)):
-        for j_ in range(len(doc2_wrap[i_])):
-            g_, s_, e_ = doc2_wrap[i_][j_]
-            if g_ != -1 and not doc2_wrap_dic.get(g_):
-                doc2_wrap_dic[g_]=tuple([i_,s_,e_])
-    print('doc2_wrap_dic:',doc2_wrap_dic) # {0: (0, 0, 29)}
-
-    source_target_list=[]
-    for i in range(len(doc1_wrap)):
-        for j in range(len(doc1_wrap[i])):
-            group_,s,e=doc1_wrap[i][j]
-            if group_!=-1:
-                tem_group=group_
-                # print('i是什么:',i)
-                # print('group_,s,e:',group_,s,e)
-                # print('source:',source)
-                source_env=search_dot_2dec(source[i],s,e)
-                try:
-                    sim=(e-s)/len(source_env)
-                except:
-                    sim=0
-                sim=round(sim, 3)
-                i_,s_,e_=doc2_wrap_dic.get(tem_group)
-
-                target_env = search_dot_2dec(target[i_], s_, e_)
-
-                # for i_ in range(len(doc2_wrap)):
-                #     for j_ in range(len(doc2_wrap[i_])):
-                #         g_,s_,e_=doc2_wrap[i_][j_]
-                #         if g_==tem_group:
-                #             target_env = search_dot_2dec(target[i_], s_, e_)#第i段
-
-                source_target_list.append([sim,source_env,target_env])
-    # print('source_target_list',source_target_list)
-    source_target_list_sorted = sorted(source_target_list, key=lambda x: x[0], reverse=True)
 
 
-    result_dup_list=[]
-    for i in source_target_list_sorted:
-        rate_,source_,target_=i
-        if rate_>0 and source_!='' and target_!='' and source_!='\n' and target_!='\n':
-            result_dup_list.append({'source':source_,'target':target_,'rate':rate_*100})
+
+    result_dup_list=list_model(doc1_wrap, doc2_wrap, source, target)
+    doc1_wrap,doc2_wrap=ouput_algo(doc1_wrap, doc2_wrap,source)
+
+
 
     # for i,j in enumerate(source_target_list_sorted):#加上编号
     #     source_target_list_sorted[i].insert(0,i)
@@ -315,69 +367,22 @@ def dup_check():
 
     # 隔段合并的问题:
 
-    doc1_wrap_2 = []
-    new_old_dic = {}
-    print('doc1_wrap:', doc1_wrap[0])
-    i = 0
-    # for i,j in enumerate(doc1_wrap[0]):
-    while i < len(doc1_wrap[0]):
-        # 如果是到最后一个，那就
+    time_=time.time()-global_start_time
+    print('全局时间:',time_)
+    logging.info('run success!! time cost      :    {}      |length : {}  |  {}  |    {}  |dup_rate:{}'.format(time_,
+                                                                                                               source_length,
+                                                                                                               target_length,
+                                                                                                               template_length,
+                                                                                                               similarity))
 
-        if (i < len(doc1_wrap[0]) - 2):
-            a, c, d = doc1_wrap[0][i + 1]  # [(0, 0, 69), (-1, 70, 73), (1, 74, 103)]
-
-        if (i < len(doc1_wrap[0])-2) and (d - c == 3) and source[a][c:d + 1] == '<br>':  # 前面的一个是<bn>
-            # #默认中间只有一个分行  如果连续<br>就不好了
-            a1, c1, d1 = doc1_wrap[0][i]  # 本次
-            a2, c2, d2 = doc1_wrap[0][i + 2]  # 下下个
-            doc1_wrap_2.append(tuple([a1, c1, d2]))  # 编号用前面的
-            new_old_dic[a2] = a1  # a2需要变成a1
-            i += 3
-        else:
-            doc1_wrap_2.append(doc1_wrap[0][i])  # 直接装list
-            i += 1
-    doc1_wrap=[doc1_wrap_2]
-    print('合并组之后的doc1_wrap:', doc1_wrap)
-
-    print('需要最后改组的:', new_old_dic)
-    # 对wrap2改组号
-    for i, j in enumerate(doc2_wrap[0]):
-        a, b, c = j
-        if new_old_dic.get(a, None) != None:
-            doc2_wrap[0][i] = tuple([new_old_dic[a], b, c])
-    print('改组后的doc2_wrap:', doc2_wrap)
-
-
-
-    for duan in range(len(doc1_wrap)):
-        for num in range(len(doc1_wrap[duan])):
-            print('doc1_wrap[duan][num]是什么?',doc1_wrap[duan][num])
-            a,b,c=doc1_wrap[duan][num]
-            doc1_wrap[duan][num]=tuple([duan,a,b,c])
-    print('doc1_wrap最后',doc1_wrap[:50])
-
-    for duan in range(len(doc2_wrap)):
-        for num in range(len(doc2_wrap[duan])):
-            a,b,c=doc2_wrap[duan][num]
-            doc2_wrap[duan][num]=tuple([duan,a,b,c])
-
-    print('make output time:',time.time()-s_output_time)
-    logging.info('make output time: {}'.format(time.time()-s_output_time))
     result1=similarity
-
     result3 = render_template('testHtml2.html', name1='doc1', name2='doc2', time=time_, dup_check=similarity,doc1_str=source, doc2_str=target,
                     doc1_wrap=doc1_wrap, doc2_group_=doc2_wrap)
     result4 = render_template('add_href_doc1.html', doc1_wrap=doc1_wrap, doc1_str=source)
-    return result3
+    # return result3
     result5 = render_template('add_href_doc2.html', doc2_group_=doc2_wrap, doc2_str=target)
     # result6 = render_template('dup_list_source.html', source_dup=source_target_list_sorted)
-
-    #
-
     # result7 = render_template('dup_list_target.html', target_dup=source_target_list_sorted)
-
-    # return result7
-    # return result7
 
     result_dic = {'dup_rate': result1,
                   'source_label': result4,
@@ -386,8 +391,7 @@ def dup_check():
                   }
 
 
-    # print('doc1_wrap:',doc1_wrap)
-    # print('doc2_wrap:', doc2_wrap)
+
     return jsonify(result_dic)
 
 
@@ -418,6 +422,56 @@ def dup_check():
     #               'doc2_label': result5}
     # return jsonify(result_dic)
 
+
+def get_doc(request,key,content_ok=0):
+    try:
+        try:
+            dic = request.args.to_dict()
+            content = dic[key]
+            content_ok = 1
+            content = json.loads(content)
+            print('source是doc文件，内容为:',content[:10])
+        except:
+            dic = request.form.to_dict()  #
+            content = dic[key]
+            content_ok = 1
+            content = json.loads(content)
+            print('{}内容为:{}'.format(key,content[:10]))
+    except:
+        content=None
+    return content_ok,content
+
+def intepret_docx(url):
+    res = requests.post(url)
+    Byio = BytesIO(res.content)
+    content = docx.Document(Byio)
+    return content
+
+
+def propose_docx_doc(source_url,template_url):
+    source_doc_name=source_url.split('/')[-1]
+    tem_doc_name = template_url.split('/')[-1]
+    source_isdoc = 0
+    tem_isdoc = 0
+    if source_doc_name.endswith('doc'): #是doc文件
+        # source_content_ok = 0
+        source_isdoc=1
+        key='source_content'
+        source_content_ok,source_content=get_doc(request,key) #source_content 正确或者None
+
+    else:# 是docx文件
+        source_content=intepret_docx(source_url)
+
+    if tem_doc_name.endswith('doc'):
+        tem_isdoc=1
+        # template_content_ok = 0
+        key='template_content'
+        tem_content_ok, template_content = get_doc(request, key)
+    else:# docx文件
+        template_content = intepret_docx(template_url)
+    return source_content,template_content,source_doc_name,tem_doc_name,source_isdoc,tem_isdoc
+
+
 from my_app.algorithm.template_match.algo import main
 @web.route('/NLP/Algorithm/base/dup_check/template_match', methods=['POST','GET'])
 def template_match():
@@ -437,96 +491,23 @@ def template_match():
         logging.info("can't get template")
         return jsonify("can't get template")
 
-    source_doc_name=source_url.split('/')[-1]
-    tem_doc_name = template_url.split('/')[-1]
-
-    source_isdoc=0
-    tem_isdoc=0
-    if source_doc_name.endswith('doc'):
-        source_content_ok = 0
-        source_isdoc=1
-        try:
-            try:
-                dic = request.args.to_dict()
-                source_content = dic['source_content']
-                source_content_ok=1
-                source_content=json.loads(source_content)
-                print('source是doc文件，内容为:',source_content[:100])
-            except:
-                dic = request.form.to_dict()  #
-                source_content = dic['source_content']
-                source_content_ok = 1
-                source_content = json.loads(source_content)
-                print('source是doc文件，内容为:', source_content[:100])
-        except:
-            if source_content_ok == 0:
-                print("can't get source_content")
-                logging.info("can't get source_content")
-                return jsonify("can't get source_content")
-    else:
-        source_res = requests.post(source_url)
-        source_Byio = BytesIO(source_res.content)
-        source_content=docx.Document(source_Byio)
-        print('对source解码')
-
-    if tem_doc_name.endswith('doc'):
-        tem_isdoc=1
-        template_content_ok = 0
-        try:
-            try:
-                dic = request.args.to_dict()
-                template_content = dic['template_content']
-                template_content_ok=1
-                template_content = json.loads(template_content)
-                print('tem是doc文件，内容为:', template_content[:100])
-            except:
-                dic = request.form.to_dict()  #
-                template_content = dic['template_content']
-                template_content_ok = 1
-                print('template json之前:',template_content)
-                template_content = json.loads(template_content)
-                print('tem是doc文件，内容为:', template_content[:100])
-        except:
-            if template_content_ok == 0:
-                print("can't get template_content")
-                logging.info("can't get template_content")
-                return jsonify("can't get template_content")
-    else:
-        template_res = requests.post(template_url)
-        template_Byio = BytesIO(template_res.content)
-        template_content=docx.Document(template_Byio)
-        print('对tem解码')
+    source_content,template_content,source_doc_name,tem_doc_name,source_isdoc,tem_isdoc=propose_docx_doc(source_url,template_url)
+    if not source_content:return jsonify("can't get source_content")
+    if not template_content: return jsonify("can't get template_content")
 
 
     print('两个文档:',source_doc_name,tem_doc_name)
     print('source_url是什么?',source_url)
     print('template_url是什么?', template_url)
-    # source_url = source_url
 
 
-    # source_url=str(source_url, encoding = "utf8")
-    # source_url=r'http://10.0.2.120:58080/group1/default/20200928/21/55/3/基于NLP的商务文本数据清洗关键技术研究项目合同+-+-打印版.docx'
-    # template_url=r'http://10.0.2.120:58080/group1/default/20200928/18/38/3/招标文件 CWEME-1911ZSWZ-2J039 基于NLP的商务文本数据清洗关键技术研究项目-2019年12月中国水利电力物资集团有限公司项目（第三版终版）.docx'
-    # print('是否相同?',source_url==source_url2)
-    # print(source_url)
-    # print(source_url2)
-    #获取文件
-
-
-
-    # base=r'D:\lcb_note\code\Program\10月项目\my_docx'
-    # path1 = base+r'\招标文件 CWEME-1911ZSWZ-2J039 基于NLP的商务文本数据清洗关键技术研究项目-2019年12月中国水利电力物资集团有限公司项目（第三版终版）.docx'
-    # path2 = base+r'\基于NLP的商务文本数据清洗关键技术研究项目合同+-+-打印版.docx'
     start_time=time.time()
-
     left,right,tem_global_list_obj,source_global_obj_list,match_rate_head=main(source_content,template_content,source_isdoc,tem_isdoc)
-
     left_=[dict(i._asdict()) for i in left]
     right_ = [dict(i._asdict()) for i in right]
     print('left_:',left_)
     print('right:',right_)
 
-    # print('tem_global_list_obj是什么?',tem_global_list_obj[:10])
     result0=render_template('html_for_match.html',template=tem_global_list_obj )
     result1 = render_template('html_for_match_right.html', template=source_global_obj_list)
 

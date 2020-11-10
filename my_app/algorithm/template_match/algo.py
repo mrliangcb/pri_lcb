@@ -229,9 +229,11 @@ def extract_doc_heading(para_list:list):
     global_obj=[]
     pos_num=0
     for i,para in enumerate(para_list):
-        text=para.text.strip()
-        type_name = para.style
+        print('第{}个para是什么:{}'.format(i,para))
+        text=para['text'].strip()
+        type_name = para['style']
         str_split = text.split(' ')[-1]
+
         if (text not in trasbin) and text: #去除空段
             is_heading = 0
             #校正标章号  para_num应该是chapter_num
@@ -271,6 +273,7 @@ def main(source_file,template_doc,source_isdoc,tem_isdoc):
         tem_heading_obj_list,tem_global_obj_list = exctract_heading(template_doc.paragraphs)
     else:# 是doc文件
         print('tem进行doc解码')
+        print('template_doc的例子:',template_doc[:2])
         tem_heading_obj_list,tem_global_obj_list=extract_doc_heading(template_doc) #
 
     print('解析时间1.1:', time.time() - process_time)

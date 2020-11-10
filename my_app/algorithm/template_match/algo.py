@@ -57,7 +57,7 @@ def exctract_heading(para_list):
 
                 # 顺便添加heading_obj
                 heading_exam = para_obj(type=type_name, position=pos_num, origin=text, str_=str_split, para_num=para_num,
-                             from_global=len(global_obj) - 1)
+                             from_global=len(global_obj),flag=1)
                 is_heading=1
                 heading_list.append(heading_exam)
             #添加正文  容易和heading的解包重复
@@ -174,10 +174,17 @@ def find_best_match(heading4_target_obj_list,source_heading_obj_list,source_glob
     for i, j in enumerate(flag_left):
         heading4_target_obj_list[i] = heading4_target_obj_list[i]._replace(flag=j)
 
+    # print('flag_right:',len(flag_right))
+    print('source_heading_obj_list:', len(source_heading_obj_list),source_heading_obj_list)
+    print('source_global_obj_list:',source_global_obj_list)
 
+    # flag_right 和 source_heading_obj_list 都是 长度30
     for i, j in enumerate(flag_right):
         source_heading_obj_list[i] = source_heading_obj_list[i]._replace(flag=j)
+
+
         global_index=source_heading_obj_list[i].from_global
+
         source_global_obj_list[global_index]=source_global_obj_list[global_index]._replace(flag=j)
 
 
@@ -216,10 +223,13 @@ def get_muban(doc1_global_para,source_heading_obj_list):
 
 
     # para_num_list=list(dict(y).keys())
-    tem_para=Counter(doc2_para_num).most_common(1)[0][0]
-
-    result=para_obj_dict[tem_para]
-
+    # tem_para=Counter(doc2_para_num).most_common(1)[0][0]
+    tem_para = Counter(doc2_para_num).most_common(1)
+    if tem_para!=[]:
+        tem_para=tem_para[0][0]
+        result=para_obj_dict[tem_para]  #取出最匹配的那个段
+    else:
+        result=0
     return result
 
 trasbin=set(['','\n',' ','  ',])
@@ -244,7 +254,7 @@ def extract_doc_heading(para_list:list):
                     para_num += 1
                 ## 顺便添加heading_obj
                 heading_exam = para_obj(type=type_name, position=pos_num, origin=text, str_=str_split, para_num=para_num,
-                             from_global=len(global_obj) - 1)
+                             from_global=len(global_obj),flag=1)
                 is_heading=1
                 heading_list.append(heading_exam)
 
@@ -305,7 +315,17 @@ def main(source_file,template_doc,source_isdoc,tem_isdoc):
         match_rate_head=correct_heading/len(tem_heading_match)
     except:
         match_rate_head=0
+
+    '''
+    tem_heading_match:left
+    source_heading:right
+    tem_global_obj_list:tem_global_list_obj  应该是按照原样返回的，  flag全部是1
+    source_global_obj: 修改了flag的，可以变红色  相当于将right放回到global
+    match_rate_head： 标题匹配度
+        
+    '''
     return tem_heading_match,source_heading,tem_global_obj_list,source_global_obj,match_rate_head
+
 
 
 def main2():

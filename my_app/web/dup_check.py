@@ -532,8 +532,8 @@ def propose_docx_doc(source_url,template_url):
     else:# 是docx文件
         source_content=intepret_docx(source_url)
 
-        path1=r'D:\lcb_note\code\Program\10月项目\my_docx\基于NLP的商务文本数据清洗关键技术研究项目合同+-+-打印版.docx'
-        source_content=docx.Document(path1)
+        # path1=r'D:\lcb_note\code\Program\10月项目\my_docx\基于NLP的商务文本数据清洗关键技术研究项目合同+-+-打印版.docx'
+        # source_content=docx.Document(path1)
 
     if tem_doc_name.endswith('doc'):
         tem_isdoc=1
@@ -543,8 +543,8 @@ def propose_docx_doc(source_url,template_url):
     else:# docx文件
         template_content = intepret_docx(template_url)
 
-        path2 = r'D:\lcb_note\code\Program\10月项目\my_docx\招标文件 CWEME-1911ZSWZ-2J039 基于NLP的商务文本数据清洗关键技术研究项目-2019年12月中国水利电力物资集团有限公司项目（第三版终版）.docx'
-        template_content = docx.Document(path2)
+        # path2 = r'D:\lcb_note\code\Program\10月项目\my_docx\招标文件 CWEME-1911ZSWZ-2J039 基于NLP的商务文本数据清洗关键技术研究项目-2019年12月中国水利电力物资集团有限公司项目（第三版终版）.docx'
+        # template_content = docx.Document(path2)
 
     return source_content,template_content,source_doc_name,tem_doc_name,source_isdoc,tem_isdoc
 

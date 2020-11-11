@@ -224,36 +224,36 @@ def list_model(doc1_wrap,doc2_wrap,source,target):
 
 def ouput_algo(doc1_wrap,doc2_wrap,source):
     s_output_time = time.time()
-    doc1_wrap_2 = []
-    new_old_dic = {}
-    #改写doc1_wrap  <br>融入 前后两组
-    # print('doc1_wrap:', doc1_wrap[0])
-    i = 0
-    # for i,j in enumerate(doc1_wrap[0]):
-    while i < len(doc1_wrap[0]):
-        # 如果是到最后一个，那就
-        if (i < len(doc1_wrap[0]) - 2):
-            a, c, d = doc1_wrap[0][i + 1]  # [(0, 0, 69), (-1, 70, 73), (1, 74, 103)]
-
-        if (i < len(doc1_wrap[0]) - 2) and (d - c == 3) and source[a][c:d + 1] == '<br>':  # 前面的一个是<bn>
-            # #默认中间只有一个分行  如果连续<br>就不好了
-            a1, c1, d1 = doc1_wrap[0][i]  # 本次
-            a2, c2, d2 = doc1_wrap[0][i + 2]  # 下下个
-            doc1_wrap_2.append(tuple([a1, c1, d2]))  # 编号用前面的
-            new_old_dic[a2] = a1  # a2需要变成a1
-            i += 3
-        else:
-            doc1_wrap_2.append(doc1_wrap[0][i])  # 直接装list
-            i += 1
-    doc1_wrap = [doc1_wrap_2]
-    # print('合并组之后的doc1_wrap:', doc1_wrap)
-
-    # print('需要最后改组的:', new_old_dic)
-    # 对wrap2改组号
-    for i, j in enumerate(doc2_wrap[0]):
-        a, b, c = j
-        if new_old_dic.get(a, None) != None:
-            doc2_wrap[0][i] = tuple([new_old_dic[a], b, c])
+    # doc1_wrap_2 = []
+    # new_old_dic = {}
+    # #改写doc1_wrap  <br>融入 前后两组
+    # # print('doc1_wrap:', doc1_wrap[0])
+    # i = 0
+    # # for i,j in enumerate(doc1_wrap[0]):
+    # while i < len(doc1_wrap[0]):
+    #     # 如果是到最后一个，那就
+    #     if (i < len(doc1_wrap[0]) - 2):
+    #         a, c, d = doc1_wrap[0][i + 1]  # [(0, 0, 69), (-1, 70, 73), (1, 74, 103)]
+    #
+    #     if (i < len(doc1_wrap[0]) - 2) and (d - c == 3) and source[a][c:d + 1] == '<br>':  # 前面的一个是<bn>
+    #         # #默认中间只有一个分行  如果连续<br>就不好了
+    #         a1, c1, d1 = doc1_wrap[0][i]  # 本次
+    #         a2, c2, d2 = doc1_wrap[0][i + 2]  # 下下个
+    #         doc1_wrap_2.append(tuple([a1, c1, d2]))  # 编号用前面的
+    #         new_old_dic[a2] = a1  # a2需要变成a1
+    #         i += 3
+    #     else:
+    #         doc1_wrap_2.append(doc1_wrap[0][i])  # 直接装list
+    #         i += 1
+    # doc1_wrap = [doc1_wrap_2]
+    # # print('合并组之后的doc1_wrap:', doc1_wrap)
+    #
+    # # print('需要最后改组的:', new_old_dic)
+    # # 对wrap2改组号
+    # for i, j in enumerate(doc2_wrap[0]):
+    #     a, b, c = j
+    #     if new_old_dic.get(a, None) != None:
+    #         doc2_wrap[0][i] = tuple([new_old_dic[a], b, c])
     # print('改组后的doc2_wrap:', doc2_wrap)
 
     for duan in range(len(doc1_wrap)):

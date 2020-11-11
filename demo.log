@@ -2271,3 +2271,5 @@ Wed 11 Nov 2020 12:46:29 dup_check.py INFO preprocess time: 0.001000642776489257
 Wed 11 Nov 2020 12:46:29 dup_check.py INFO make output time: 0.0
 Wed 11 Nov 2020 12:46:29 dup_check.py INFO run success!! time cost      :    0.01801586151123047      |length : 104  |  110  |    0  |dup_rate:0.9902912621359223
 Wed 11 Nov 2020 12:46:29 _internal.py INFO 127.0.0.1 - - [11/Nov/2020 12:46:29] "[37mPOST /NLP/Algorithm/base/dup_check/winnowing HTTP/1.1[0m" 200 -
+Wed 11 Nov 2020 13:07:39 dup_check.py WARNING warning
+Wed 11 Nov 2020 13:07:39 _internal.py INFO  * Restarting with stat

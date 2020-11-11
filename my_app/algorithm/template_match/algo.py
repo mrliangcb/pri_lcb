@@ -154,7 +154,7 @@ def find_best_match(heading4_target_obj_list,source_heading_obj_list,source_glob
         if seq[j].type == heading4_target_obj_list[template_index].type:
             tem_flag = 1
         else:
-            tem_flag = -4
+            tem_flag = 1 #-4
         flag_left[template_index] = tem_flag
         flag_right[j] = tem_flag
 
@@ -307,14 +307,22 @@ def main(source_file,template_doc,source_isdoc,tem_isdoc):
     tem_heading_match,source_heading,source_global_obj=find_best_match(template_select_obj_list,source_heading_obj_list,source_global_obj_list)
     print('计算最长匹配子串时间:',time.time()-mat_time)
 
-    correct_heading=0
-    for i,j in enumerate(tem_heading_match):
-        if j.flag==1:
-            correct_heading+=1
+    print('计算最长匹配子串时间:', time.time() - mat_time)
+
+    left_2 = 0
+    for i, j in enumerate(tem_heading_match):
+        if j.flag == -2:
+            left_2 += 1
+
+    correct_heading = 0
+    for i, j in enumerate(source_heading):
+        if j.flag == 1:
+            correct_heading += 1
+    print('计算匹配值:{}/{}'.format(correct_heading, len(source_heading) + left_2))
     try:
-        match_rate_head=correct_heading/len(tem_heading_match)
+        match_rate_head = correct_heading / (len(source_heading) + left_2)
     except:
-        match_rate_head=0
+        match_rate_head = 0
 
     '''
     tem_heading_match:left

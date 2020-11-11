@@ -225,6 +225,8 @@ for i,j in enumerate(final_wrap): #新的wrap
 
 
 
+# 前后指针写wrap
+x=[0,0,0,0,0,1,1,1,0,1,1,0]
 
 
 

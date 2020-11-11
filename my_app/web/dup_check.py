@@ -123,8 +123,6 @@ def source_dup_dic(result_str):#
 
 
 
-
-
 def search_dot_2dec(x,num1,num2):#根据两个位置寻找前后句号
     s = 0
     e = len(x)
@@ -139,7 +137,7 @@ def search_dot_2dec(x,num1,num2):#根据两个位置寻找前后句号
         if x[i]=='。'or (i-num2)>100:
             e=i+1
             break
-    return x[s:e+1]
+    return x[s:e]
 
 def my_split(x:str)->str:
     # 先查看转义还是非转义
@@ -151,8 +149,19 @@ def my_split(x:str)->str:
 
     x = x.split(split_flag)  # ['']  ['','','']
     x=clear(x) # ['']  ['','','']
-    x='<br>'.join(x) # '123<br>123'
-    return x
+    x_fenduan=x
+    duandian = []
+    for i, j in enumerate(x):
+        duandian.append(len(j)) #
+
+    # 断点递增
+    for i in range(1, len(duandian)):
+        duandian[i] += duandian[i - 1]
+
+    x=''.join(x) # '123\n123'  变成'123123'
+
+
+    return x_fenduan,x,duandian
 
 import time
 
@@ -264,6 +273,50 @@ def ouput_algo(doc1_wrap,doc2_wrap,source):
     return doc1_wrap,doc2_wrap
 
 
+def zubao(x,y,maodian,wrap):
+    '''
+    x: 是二维的 list
+    y: 是一维的str
+
+    '''
+    print('进入组包的wrap',wrap)
+    #先做一个阶梯
+    yy = [0 for i in range(len(y))]
+    n = 0
+    for i, j in enumerate(yy):
+        # 现在这个位置比n个断电下表要大
+        if i >= maodian[n]:
+            n += 1
+        yy[i] = n * len('<br>')
+
+    for i, j in enumerate(wrap):
+        a, b, c = j
+        b_p = yy[b]
+
+        c_p = yy[c]
+        b += b_p
+        c += c_p
+        wrap[i] = tuple([a, b, c])
+
+    final_wrap = []
+    final_wrap.append(wrap[0])
+    for i in range(1, len(wrap)):
+        a1, b1, c1 = wrap[i - 1]
+        a2, b2, c2 = wrap[i]
+        if b2 - c1 > 1:  # 断点  这种断点是因为左右都没有wrap元素
+            br_wrap = tuple([-1, c1 + 1, b2 - 1])
+            final_wrap.append(br_wrap)
+        final_wrap.append(wrap[i])
+
+    join_br='<br>'.join(x)
+    # for i, j in enumerate(final_wrap):  # 新的wrap
+    #     a, b, c = j
+    #     result = yyy[b:c + 1]
+    #     print('编号{}，的内容::{}'.format(a, result))
+
+
+    return final_wrap,join_br
+
 @web.route('/NLP/Algorithm/base/dup_check/winnowing', methods=['POST','GET'])
 def dup_check():
     # args_dic = request.args
@@ -312,37 +365,53 @@ def dup_check():
     # print('target:', target[:100])
     # print('tem:',template_target[:100])
 
-    source=my_split(source) #str
+    x_fenduan,source,x_duandian=my_split(source) # str
     print('source split:',source[:100])
-    target=my_split(target) # str  <br>连起来
+    y_fenduan,target,y_duandian=my_split(target) # str  <br>连起来
     print('target split:', target[:100])
     # source = source.replace('\n', '<br>')
     # print('replace之后source', source)
     # target = target.replace('\n', '<br>')
     source=[source] #
     target=[target]
-
     # source=clear(source)#去掉空段之后，至少存在一个['']
     # target = clear(target)
     # print('clear之后的source:',source[:500])
 
-    example=paragraph_winnowing()
     print('preprocess time:',time.time()-s_preprocess_time)
     logging.info('preprocess time: {}'.format(time.time()-s_preprocess_time))
 
     s_time=time.time()
+    example = paragraph_winnowing()
+    print('送入检测的source:',len(source[0]),source)  #103长度
+    print('送入检测的target:', target)
     similarity,result_str,doc1_wrap,doc2_wrap=example.get_sim(source,target,template=template_target,n=13)
+
+    print('未加入br的wrap1:', doc1_wrap) # 下表最大是102  [[(0, 0, 101), (-1, 102, 102)]]
+
+    result_dup_list = list_model(doc1_wrap, doc2_wrap, source, target)
+
+    # 给source和target加入br
+    x_final_wrap,x_join_br = zubao(x_fenduan,source[0],x_duandian,doc1_wrap[0])
+    y_final_wrap, y_join_br = zubao(y_fenduan, target[0], y_duandian, doc2_wrap[0])
+    x_final_wrap=[x_final_wrap]
+    y_final_wrap=[y_final_wrap]
+    x_join_br=[x_join_br]
+    y_join_br = [y_join_br]
+
+    print('x_final_wrap是什么?',x_final_wrap)
+    print('x_join_br是什么?', x_join_br)
+    print('y_final_wrap是什么?', y_final_wrap)
+    print('y_join_br是什么?', y_join_br)
+
     # source_dup_dict=source_dup_dic(result_str)
     print('get sim run time :',time.time()-s_time)
-
     print('similarity:', similarity)
 
 
 
-    result_dup_list=list_model(doc1_wrap, doc2_wrap, source, target)
-
     print('ouput_algo之前的doc1_wrap:',doc1_wrap)
-    doc1_wrap,doc2_wrap=ouput_algo(doc1_wrap, doc2_wrap,source)
+    x_final_wrap,y_final_wrap=ouput_algo(x_final_wrap, y_final_wrap,x_join_br)  #把wrap中的 <br>一下，正常来说，通过zubao，是不用改的
     print('ouput_algo之后的doc1_wrap:', doc1_wrap)
 
 
@@ -376,11 +445,11 @@ def dup_check():
                                                                                                                similarity))
 
     result1=similarity
-    result3 = render_template('testHtml2.html', name1='doc1', name2='doc2', time=time_, dup_check=similarity,doc1_str=source, doc2_str=target,
-                    doc1_wrap=doc1_wrap, doc2_group_=doc2_wrap)
-    result4 = render_template('add_href_doc1.html', doc1_wrap=doc1_wrap, doc1_str=source)
+    result3 = render_template('testHtml2.html', name1='doc1', name2='doc2', time=time_, dup_check=similarity,doc1_str=x_join_br, doc2_str=y_join_br,
+                    doc1_wrap=x_final_wrap, doc2_group_=y_final_wrap)
+    result4 = render_template('add_href_doc1.html', doc1_wrap=x_final_wrap, doc1_str=x_join_br)
     # return result3
-    result5 = render_template('add_href_doc2.html', doc2_group_=doc2_wrap, doc2_str=target)
+    result5 = render_template('add_href_doc2.html', doc2_group_=y_final_wrap, doc2_str=y_join_br)
     # result6 = render_template('dup_list_source.html', source_dup=source_target_list_sorted)
     # result7 = render_template('dup_list_target.html', target_dup=source_target_list_sorted)
 

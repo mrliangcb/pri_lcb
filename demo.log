@@ -1811,182 +1811,463 @@ Tue 10 Nov 2020 22:21:50 dup_check.py WARNING warning
 Tue 10 Nov 2020 22:21:50 _internal.py WARNING  * Debugger is active!
 Tue 10 Nov 2020 22:21:50 _internal.py INFO  * Debugger PIN: 304-402-708
 Tue 10 Nov 2020 22:21:50 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
-Wed 11 Nov 2020 10:11:28 dup_check.py WARNING warning
-Wed 11 Nov 2020 10:11:28 _internal.py INFO  * Restarting with stat
-Wed 11 Nov 2020 10:11:29 dup_check.py WARNING warning
-Wed 11 Nov 2020 10:11:29 _internal.py WARNING  * Debugger is active!
-Wed 11 Nov 2020 10:11:29 _internal.py INFO  * Debugger PIN: 304-402-708
-Wed 11 Nov 2020 10:11:29 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
-Wed 11 Nov 2020 10:11:33 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match' [POST]> to template_match
-Wed 11 Nov 2020 10:11:33 connectionpool.py DEBUG Starting new HTTP connection (1): 10.0.2.120:58080
-Wed 11 Nov 2020 10:11:33 connectionpool.py DEBUG http://10.0.2.120:58080 "POST /group1/default/20200928/21/55/3/%E5%9F%BA%E4%BA%8ENLP%E7%9A%84%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%A1%B9%E7%9B%AE%E5%90%88%E5%90%8C+-+-%E6%89%93%E5%8D%B0%E7%89%88.docx HTTP/1.1" 200 149030
-Wed 11 Nov 2020 10:11:33 connectionpool.py DEBUG Starting new HTTP connection (1): 10.0.2.120:58080
-Wed 11 Nov 2020 10:11:33 connectionpool.py DEBUG http://10.0.2.120:58080 "POST /group1/default/20200928/18/38/3/%E6%8B%9B%E6%A0%87%E6%96%87%E4%BB%B6%20CWEME-1911ZSWZ-2J039%20%E5%9F%BA%E4%BA%8ENLP%E7%9A%84%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%A1%B9%E7%9B%AE-2019%E5%B9%B412%E6%9C%88%E4%B8%AD%E5%9B%BD%E6%B0%B4%E5%88%A9%E7%94%B5%E5%8A%9B%E7%89%A9%E8%B5%84%E9%9B%86%E5%9B%A2%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E9%A1%B9%E7%9B%AE%EF%BC%88%E7%AC%AC%E4%B8%89%E7%89%88%E7%BB%88%E7%89%88%EF%BC%89.docx HTTP/1.1" 200 293197
-Wed 11 Nov 2020 10:11:36 _internal.py INFO 127.0.0.1 - - [11/Nov/2020 10:11:36] "[37mPOST /NLP/Algorithm/base/dup_check/template_match HTTP/1.1[0m" 200 -
-Wed 11 Nov 2020 10:17:30 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match' [POST]> to template_match
-Wed 11 Nov 2020 10:17:30 connectionpool.py DEBUG Starting new HTTP connection (1): 10.0.2.120:58080
-Wed 11 Nov 2020 10:17:30 connectionpool.py DEBUG http://10.0.2.120:58080 "POST /group1/default/20200928/21/55/3/%E5%9F%BA%E4%BA%8ENLP%E7%9A%84%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%A1%B9%E7%9B%AE%E5%90%88%E5%90%8C+-+-%E6%89%93%E5%8D%B0%E7%89%88.docx HTTP/1.1" 200 149030
-Wed 11 Nov 2020 10:17:30 connectionpool.py DEBUG Starting new HTTP connection (1): 10.0.2.120:58080
-Wed 11 Nov 2020 10:17:30 connectionpool.py DEBUG http://10.0.2.120:58080 "POST /group1/default/20200928/18/38/3/%E6%8B%9B%E6%A0%87%E6%96%87%E4%BB%B6%20CWEME-1911ZSWZ-2J039%20%E5%9F%BA%E4%BA%8ENLP%E7%9A%84%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%A1%B9%E7%9B%AE-2019%E5%B9%B412%E6%9C%88%E4%B8%AD%E5%9B%BD%E6%B0%B4%E5%88%A9%E7%94%B5%E5%8A%9B%E7%89%A9%E8%B5%84%E9%9B%86%E5%9B%A2%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E9%A1%B9%E7%9B%AE%EF%BC%88%E7%AC%AC%E4%B8%89%E7%89%88%E7%BB%88%E7%89%88%EF%BC%89.docx HTTP/1.1" 200 293197
-Wed 11 Nov 2020 10:17:34 _internal.py INFO 127.0.0.1 - - [11/Nov/2020 10:17:34] "[35m[1mPOST /NLP/Algorithm/base/dup_check/template_match HTTP/1.1[0m" 500 -
-Wed 11 Nov 2020 10:17:50 dup_check.py WARNING warning
-Wed 11 Nov 2020 10:17:50 _internal.py INFO  * Restarting with stat
-Wed 11 Nov 2020 10:17:51 dup_check.py WARNING warning
-Wed 11 Nov 2020 10:17:51 _internal.py WARNING  * Debugger is active!
-Wed 11 Nov 2020 10:17:51 _internal.py INFO  * Debugger PIN: 304-402-708
-Wed 11 Nov 2020 10:17:51 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
-Wed 11 Nov 2020 10:17:51 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match' [POST]> to template_match
-Wed 11 Nov 2020 10:17:51 connectionpool.py DEBUG Starting new HTTP connection (1): 10.0.2.120:58080
-Wed 11 Nov 2020 10:17:51 connectionpool.py DEBUG http://10.0.2.120:58080 "POST /group1/default/20200928/21/55/3/%E5%9F%BA%E4%BA%8ENLP%E7%9A%84%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%A1%B9%E7%9B%AE%E5%90%88%E5%90%8C+-+-%E6%89%93%E5%8D%B0%E7%89%88.docx HTTP/1.1" 200 149030
-Wed 11 Nov 2020 10:17:51 connectionpool.py DEBUG Starting new HTTP connection (1): 10.0.2.120:58080
-Wed 11 Nov 2020 10:17:51 connectionpool.py DEBUG http://10.0.2.120:58080 "POST /group1/default/20200928/18/38/3/%E6%8B%9B%E6%A0%87%E6%96%87%E4%BB%B6%20CWEME-1911ZSWZ-2J039%20%E5%9F%BA%E4%BA%8ENLP%E7%9A%84%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%A1%B9%E7%9B%AE-2019%E5%B9%B412%E6%9C%88%E4%B8%AD%E5%9B%BD%E6%B0%B4%E5%88%A9%E7%94%B5%E5%8A%9B%E7%89%A9%E8%B5%84%E9%9B%86%E5%9B%A2%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E9%A1%B9%E7%9B%AE%EF%BC%88%E7%AC%AC%E4%B8%89%E7%89%88%E7%BB%88%E7%89%88%EF%BC%89.docx HTTP/1.1" 200 293197
-Wed 11 Nov 2020 10:17:55 _internal.py INFO 127.0.0.1 - - [11/Nov/2020 10:17:55] "[37mPOST /NLP/Algorithm/base/dup_check/template_match HTTP/1.1[0m" 200 -
-Wed 11 Nov 2020 10:21:27 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\algorithm\\template_match\\algo.py', reloading
-Wed 11 Nov 2020 10:21:27 _internal.py INFO  * Restarting with stat
-Wed 11 Nov 2020 10:21:28 dup_check.py WARNING warning
-Wed 11 Nov 2020 10:21:28 _internal.py INFO  * Restarting with stat
-Wed 11 Nov 2020 10:21:29 dup_check.py WARNING warning
-Wed 11 Nov 2020 10:21:29 _internal.py WARNING  * Debugger is active!
-Wed 11 Nov 2020 10:21:29 _internal.py INFO  * Debugger PIN: 304-402-708
-Wed 11 Nov 2020 10:21:29 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
-Wed 11 Nov 2020 10:21:30 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match' [POST]> to template_match
-Wed 11 Nov 2020 10:21:30 connectionpool.py DEBUG Starting new HTTP connection (1): 10.0.2.120:58080
-Wed 11 Nov 2020 10:21:30 connectionpool.py DEBUG http://10.0.2.120:58080 "POST /group1/default/20200928/21/55/3/%E5%9F%BA%E4%BA%8ENLP%E7%9A%84%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%A1%B9%E7%9B%AE%E5%90%88%E5%90%8C+-+-%E6%89%93%E5%8D%B0%E7%89%88.docx HTTP/1.1" 200 149030
-Wed 11 Nov 2020 10:21:30 connectionpool.py DEBUG Starting new HTTP connection (1): 10.0.2.120:58080
-Wed 11 Nov 2020 10:21:30 connectionpool.py DEBUG http://10.0.2.120:58080 "POST /group1/default/20200928/18/38/3/%E6%8B%9B%E6%A0%87%E6%96%87%E4%BB%B6%20CWEME-1911ZSWZ-2J039%20%E5%9F%BA%E4%BA%8ENLP%E7%9A%84%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%A1%B9%E7%9B%AE-2019%E5%B9%B412%E6%9C%88%E4%B8%AD%E5%9B%BD%E6%B0%B4%E5%88%A9%E7%94%B5%E5%8A%9B%E7%89%A9%E8%B5%84%E9%9B%86%E5%9B%A2%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E9%A1%B9%E7%9B%AE%EF%BC%88%E7%AC%AC%E4%B8%89%E7%89%88%E7%BB%88%E7%89%88%EF%BC%89.docx HTTP/1.1" 200 293197
-Wed 11 Nov 2020 10:21:34 _internal.py INFO 127.0.0.1 - - [11/Nov/2020 10:21:34] "[37mPOST /NLP/Algorithm/base/dup_check/template_match HTTP/1.1[0m" 200 -
-Wed 11 Nov 2020 10:22:53 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\algorithm\\template_match\\algo.py', reloading
-Wed 11 Nov 2020 10:22:53 _internal.py INFO  * Restarting with stat
-Wed 11 Nov 2020 10:22:54 dup_check.py WARNING warning
-Wed 11 Nov 2020 10:22:54 _internal.py WARNING  * Debugger is active!
-Wed 11 Nov 2020 10:22:54 _internal.py INFO  * Debugger PIN: 304-402-708
-Wed 11 Nov 2020 10:22:54 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
-Wed 11 Nov 2020 10:22:57 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\algorithm\\template_match\\algo.py', reloading
-Wed 11 Nov 2020 10:22:57 _internal.py INFO  * Restarting with stat
-Wed 11 Nov 2020 10:22:58 dup_check.py WARNING warning
-Wed 11 Nov 2020 10:22:58 _internal.py WARNING  * Debugger is active!
-Wed 11 Nov 2020 10:22:58 _internal.py INFO  * Debugger PIN: 304-402-708
-Wed 11 Nov 2020 10:22:58 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
-Wed 11 Nov 2020 10:23:04 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\algorithm\\template_match\\algo.py', reloading
-Wed 11 Nov 2020 10:23:04 _internal.py INFO  * Restarting with stat
-Wed 11 Nov 2020 10:23:05 dup_check.py WARNING warning
-Wed 11 Nov 2020 10:23:05 _internal.py WARNING  * Debugger is active!
-Wed 11 Nov 2020 10:23:05 _internal.py INFO  * Debugger PIN: 304-402-708
-Wed 11 Nov 2020 10:23:05 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
-Wed 11 Nov 2020 10:23:06 dup_check.py WARNING warning
-Wed 11 Nov 2020 10:23:06 _internal.py INFO  * Restarting with stat
-Wed 11 Nov 2020 10:23:07 dup_check.py WARNING warning
-Wed 11 Nov 2020 10:23:07 _internal.py WARNING  * Debugger is active!
-Wed 11 Nov 2020 10:23:07 _internal.py INFO  * Debugger PIN: 304-402-708
-Wed 11 Nov 2020 10:23:07 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
-Wed 11 Nov 2020 10:23:08 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match' [POST]> to template_match
-Wed 11 Nov 2020 10:23:08 connectionpool.py DEBUG Starting new HTTP connection (1): 10.0.2.120:58080
-Wed 11 Nov 2020 10:23:08 connectionpool.py DEBUG http://10.0.2.120:58080 "POST /group1/default/20200928/21/55/3/%E5%9F%BA%E4%BA%8ENLP%E7%9A%84%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%A1%B9%E7%9B%AE%E5%90%88%E5%90%8C+-+-%E6%89%93%E5%8D%B0%E7%89%88.docx HTTP/1.1" 200 149030
-Wed 11 Nov 2020 10:23:08 connectionpool.py DEBUG Starting new HTTP connection (1): 10.0.2.120:58080
-Wed 11 Nov 2020 10:23:08 connectionpool.py DEBUG http://10.0.2.120:58080 "POST /group1/default/20200928/18/38/3/%E6%8B%9B%E6%A0%87%E6%96%87%E4%BB%B6%20CWEME-1911ZSWZ-2J039%20%E5%9F%BA%E4%BA%8ENLP%E7%9A%84%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%A1%B9%E7%9B%AE-2019%E5%B9%B412%E6%9C%88%E4%B8%AD%E5%9B%BD%E6%B0%B4%E5%88%A9%E7%94%B5%E5%8A%9B%E7%89%A9%E8%B5%84%E9%9B%86%E5%9B%A2%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E9%A1%B9%E7%9B%AE%EF%BC%88%E7%AC%AC%E4%B8%89%E7%89%88%E7%BB%88%E7%89%88%EF%BC%89.docx HTTP/1.1" 200 293197
-Wed 11 Nov 2020 10:23:12 _internal.py INFO 127.0.0.1 - - [11/Nov/2020 10:23:12] "[37mPOST /NLP/Algorithm/base/dup_check/template_match HTTP/1.1[0m" 200 -
-Wed 11 Nov 2020 10:23:49 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\algorithm\\template_match\\algo.py', reloading
-Wed 11 Nov 2020 10:23:49 _internal.py INFO  * Restarting with stat
-Wed 11 Nov 2020 10:23:50 dup_check.py WARNING warning
-Wed 11 Nov 2020 10:23:50 _internal.py WARNING  * Debugger is active!
-Wed 11 Nov 2020 10:23:50 _internal.py INFO  * Debugger PIN: 304-402-708
-Wed 11 Nov 2020 10:23:50 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
-Wed 11 Nov 2020 10:23:56 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\algorithm\\template_match\\algo.py', reloading
-Wed 11 Nov 2020 10:23:56 _internal.py INFO  * Restarting with stat
-Wed 11 Nov 2020 10:23:56 dup_check.py WARNING warning
-Wed 11 Nov 2020 10:23:57 _internal.py WARNING  * Debugger is active!
-Wed 11 Nov 2020 10:23:57 _internal.py INFO  * Debugger PIN: 304-402-708
-Wed 11 Nov 2020 10:23:57 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
-Wed 11 Nov 2020 10:24:19 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\algorithm\\template_match\\algo.py', reloading
-Wed 11 Nov 2020 10:24:19 _internal.py INFO  * Restarting with stat
-Wed 11 Nov 2020 10:24:19 dup_check.py WARNING warning
-Wed 11 Nov 2020 10:24:19 _internal.py WARNING  * Debugger is active!
-Wed 11 Nov 2020 10:24:19 _internal.py INFO  * Debugger PIN: 304-402-708
-Wed 11 Nov 2020 10:24:19 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
-Wed 11 Nov 2020 10:24:34 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\algorithm\\template_match\\algo.py', reloading
-Wed 11 Nov 2020 10:24:34 _internal.py INFO  * Restarting with stat
-Wed 11 Nov 2020 10:24:34 dup_check.py WARNING warning
-Wed 11 Nov 2020 10:24:34 _internal.py WARNING  * Debugger is active!
-Wed 11 Nov 2020 10:24:34 _internal.py INFO  * Debugger PIN: 304-402-708
-Wed 11 Nov 2020 10:24:34 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
-Wed 11 Nov 2020 10:24:42 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\algorithm\\template_match\\algo.py', reloading
-Wed 11 Nov 2020 10:24:42 _internal.py INFO  * Restarting with stat
-Wed 11 Nov 2020 10:24:43 dup_check.py WARNING warning
-Wed 11 Nov 2020 10:24:43 _internal.py WARNING  * Debugger is active!
-Wed 11 Nov 2020 10:24:43 _internal.py INFO  * Debugger PIN: 304-402-708
-Wed 11 Nov 2020 10:24:43 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
-Wed 11 Nov 2020 10:24:44 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\algorithm\\template_match\\algo.py', reloading
-Wed 11 Nov 2020 10:24:44 _internal.py INFO  * Restarting with stat
-Wed 11 Nov 2020 10:24:45 dup_check.py WARNING warning
-Wed 11 Nov 2020 10:24:45 _internal.py WARNING  * Debugger is active!
-Wed 11 Nov 2020 10:24:45 _internal.py INFO  * Debugger PIN: 304-402-708
-Wed 11 Nov 2020 10:24:45 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
-Wed 11 Nov 2020 10:24:46 dup_check.py WARNING warning
-Wed 11 Nov 2020 10:24:46 _internal.py INFO  * Restarting with stat
-Wed 11 Nov 2020 10:24:46 dup_check.py WARNING warning
-Wed 11 Nov 2020 10:24:46 _internal.py WARNING  * Debugger is active!
-Wed 11 Nov 2020 10:24:46 _internal.py INFO  * Debugger PIN: 304-402-708
-Wed 11 Nov 2020 10:24:46 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
-Wed 11 Nov 2020 10:24:46 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match' [POST]> to template_match
-Wed 11 Nov 2020 10:24:47 connectionpool.py DEBUG Starting new HTTP connection (1): 10.0.2.120:58080
-Wed 11 Nov 2020 10:24:47 connectionpool.py DEBUG http://10.0.2.120:58080 "POST /group1/default/20200928/21/55/3/%E5%9F%BA%E4%BA%8ENLP%E7%9A%84%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%A1%B9%E7%9B%AE%E5%90%88%E5%90%8C+-+-%E6%89%93%E5%8D%B0%E7%89%88.docx HTTP/1.1" 200 149030
-Wed 11 Nov 2020 10:24:47 connectionpool.py DEBUG Starting new HTTP connection (1): 10.0.2.120:58080
-Wed 11 Nov 2020 10:24:47 connectionpool.py DEBUG http://10.0.2.120:58080 "POST /group1/default/20200928/18/38/3/%E6%8B%9B%E6%A0%87%E6%96%87%E4%BB%B6%20CWEME-1911ZSWZ-2J039%20%E5%9F%BA%E4%BA%8ENLP%E7%9A%84%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%A1%B9%E7%9B%AE-2019%E5%B9%B412%E6%9C%88%E4%B8%AD%E5%9B%BD%E6%B0%B4%E5%88%A9%E7%94%B5%E5%8A%9B%E7%89%A9%E8%B5%84%E9%9B%86%E5%9B%A2%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E9%A1%B9%E7%9B%AE%EF%BC%88%E7%AC%AC%E4%B8%89%E7%89%88%E7%BB%88%E7%89%88%EF%BC%89.docx HTTP/1.1" 200 293197
-Wed 11 Nov 2020 10:24:50 _internal.py INFO 127.0.0.1 - - [11/Nov/2020 10:24:50] "[37mPOST /NLP/Algorithm/base/dup_check/template_match HTTP/1.1[0m" 200 -
-Wed 11 Nov 2020 10:25:23 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\algorithm\\template_match\\algo.py', reloading
-Wed 11 Nov 2020 10:25:23 _internal.py INFO  * Restarting with stat
-Wed 11 Nov 2020 10:25:24 dup_check.py WARNING warning
-Wed 11 Nov 2020 10:25:25 dup_check.py WARNING warning
-Wed 11 Nov 2020 10:25:25 _internal.py INFO  * Restarting with stat
-Wed 11 Nov 2020 10:25:25 dup_check.py WARNING warning
-Wed 11 Nov 2020 10:25:25 _internal.py WARNING  * Debugger is active!
-Wed 11 Nov 2020 10:25:25 _internal.py INFO  * Debugger PIN: 304-402-708
-Wed 11 Nov 2020 10:25:25 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
-Wed 11 Nov 2020 10:25:26 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match' [POST]> to template_match
-Wed 11 Nov 2020 10:25:26 connectionpool.py DEBUG Starting new HTTP connection (1): 10.0.2.120:58080
-Wed 11 Nov 2020 10:25:26 connectionpool.py DEBUG http://10.0.2.120:58080 "POST /group1/default/20200928/21/55/3/%E5%9F%BA%E4%BA%8ENLP%E7%9A%84%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%A1%B9%E7%9B%AE%E5%90%88%E5%90%8C+-+-%E6%89%93%E5%8D%B0%E7%89%88.docx HTTP/1.1" 200 149030
-Wed 11 Nov 2020 10:25:26 connectionpool.py DEBUG Starting new HTTP connection (1): 10.0.2.120:58080
-Wed 11 Nov 2020 10:25:26 connectionpool.py DEBUG http://10.0.2.120:58080 "POST /group1/default/20200928/18/38/3/%E6%8B%9B%E6%A0%87%E6%96%87%E4%BB%B6%20CWEME-1911ZSWZ-2J039%20%E5%9F%BA%E4%BA%8ENLP%E7%9A%84%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%A1%B9%E7%9B%AE-2019%E5%B9%B412%E6%9C%88%E4%B8%AD%E5%9B%BD%E6%B0%B4%E5%88%A9%E7%94%B5%E5%8A%9B%E7%89%A9%E8%B5%84%E9%9B%86%E5%9B%A2%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E9%A1%B9%E7%9B%AE%EF%BC%88%E7%AC%AC%E4%B8%89%E7%89%88%E7%BB%88%E7%89%88%EF%BC%89.docx HTTP/1.1" 200 293197
-Wed 11 Nov 2020 10:25:29 _internal.py INFO 127.0.0.1 - - [11/Nov/2020 10:25:29] "[37mPOST /NLP/Algorithm/base/dup_check/template_match HTTP/1.1[0m" 200 -
-Wed 11 Nov 2020 10:26:00 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\algorithm\\template_match\\algo.py', reloading
-Wed 11 Nov 2020 10:26:00 _internal.py INFO  * Restarting with stat
-Wed 11 Nov 2020 10:26:01 dup_check.py WARNING warning
-Wed 11 Nov 2020 10:26:02 dup_check.py WARNING warning
-Wed 11 Nov 2020 10:26:02 _internal.py INFO  * Restarting with stat
-Wed 11 Nov 2020 10:26:02 dup_check.py WARNING warning
-Wed 11 Nov 2020 10:26:02 _internal.py WARNING  * Debugger is active!
-Wed 11 Nov 2020 10:26:02 _internal.py INFO  * Debugger PIN: 304-402-708
-Wed 11 Nov 2020 10:26:02 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
-Wed 11 Nov 2020 10:26:10 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match' [POST]> to template_match
-Wed 11 Nov 2020 10:26:10 connectionpool.py DEBUG Starting new HTTP connection (1): 10.0.2.120:58080
-Wed 11 Nov 2020 10:26:10 connectionpool.py DEBUG http://10.0.2.120:58080 "POST /group1/default/20200928/21/55/3/%E5%9F%BA%E4%BA%8ENLP%E7%9A%84%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%A1%B9%E7%9B%AE%E5%90%88%E5%90%8C+-+-%E6%89%93%E5%8D%B0%E7%89%88.docx HTTP/1.1" 200 149030
-Wed 11 Nov 2020 10:26:11 connectionpool.py DEBUG Starting new HTTP connection (1): 10.0.2.120:58080
-Wed 11 Nov 2020 10:26:11 connectionpool.py DEBUG http://10.0.2.120:58080 "POST /group1/default/20200928/18/38/3/%E6%8B%9B%E6%A0%87%E6%96%87%E4%BB%B6%20CWEME-1911ZSWZ-2J039%20%E5%9F%BA%E4%BA%8ENLP%E7%9A%84%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%A1%B9%E7%9B%AE-2019%E5%B9%B412%E6%9C%88%E4%B8%AD%E5%9B%BD%E6%B0%B4%E5%88%A9%E7%94%B5%E5%8A%9B%E7%89%A9%E8%B5%84%E9%9B%86%E5%9B%A2%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E9%A1%B9%E7%9B%AE%EF%BC%88%E7%AC%AC%E4%B8%89%E7%89%88%E7%BB%88%E7%89%88%EF%BC%89.docx HTTP/1.1" 200 293197
-Wed 11 Nov 2020 10:26:14 _internal.py INFO 127.0.0.1 - - [11/Nov/2020 10:26:14] "[37mPOST /NLP/Algorithm/base/dup_check/template_match HTTP/1.1[0m" 200 -
-Wed 11 Nov 2020 10:27:02 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match' [POST]> to template_match
-Wed 11 Nov 2020 10:27:02 connectionpool.py DEBUG Starting new HTTP connection (1): 10.0.2.120:58080
-Wed 11 Nov 2020 10:27:02 connectionpool.py DEBUG http://10.0.2.120:58080 "POST /group1/default/20200928/21/55/3/%E5%9F%BA%E4%BA%8ENLP%E7%9A%84%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%A1%B9%E7%9B%AE%E5%90%88%E5%90%8C+-+-%E6%89%93%E5%8D%B0%E7%89%88.docx HTTP/1.1" 200 149030
-Wed 11 Nov 2020 10:27:02 connectionpool.py DEBUG Starting new HTTP connection (1): 10.0.2.120:58080
-Wed 11 Nov 2020 10:27:02 connectionpool.py DEBUG http://10.0.2.120:58080 "POST /group1/default/20200928/18/38/3/%E6%8B%9B%E6%A0%87%E6%96%87%E4%BB%B6%20CWEME-1911ZSWZ-2J039%20%E5%9F%BA%E4%BA%8ENLP%E7%9A%84%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%A1%B9%E7%9B%AE-2019%E5%B9%B412%E6%9C%88%E4%B8%AD%E5%9B%BD%E6%B0%B4%E5%88%A9%E7%94%B5%E5%8A%9B%E7%89%A9%E8%B5%84%E9%9B%86%E5%9B%A2%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E9%A1%B9%E7%9B%AE%EF%BC%88%E7%AC%AC%E4%B8%89%E7%89%88%E7%BB%88%E7%89%88%EF%BC%89.docx HTTP/1.1" 200 293197
-Wed 11 Nov 2020 10:27:03 dup_check.py WARNING warning
-Wed 11 Nov 2020 10:27:03 _internal.py INFO  * Restarting with stat
-Wed 11 Nov 2020 10:27:04 dup_check.py WARNING warning
-Wed 11 Nov 2020 10:27:04 _internal.py INFO  * Restarting with stat
-Wed 11 Nov 2020 10:27:05 dup_check.py WARNING warning
-Wed 11 Nov 2020 10:27:05 _internal.py WARNING  * Debugger is active!
-Wed 11 Nov 2020 10:27:05 _internal.py INFO  * Debugger PIN: 304-402-708
-Wed 11 Nov 2020 10:27:05 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
-Wed 11 Nov 2020 10:27:05 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/template_match' [POST]> to template_match
-Wed 11 Nov 2020 10:27:05 connectionpool.py DEBUG Starting new HTTP connection (1): 10.0.2.120:58080
-Wed 11 Nov 2020 10:27:05 connectionpool.py DEBUG http://10.0.2.120:58080 "POST /group1/default/20200928/21/55/3/%E5%9F%BA%E4%BA%8ENLP%E7%9A%84%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%A1%B9%E7%9B%AE%E5%90%88%E5%90%8C+-+-%E6%89%93%E5%8D%B0%E7%89%88.docx HTTP/1.1" 200 149030
-Wed 11 Nov 2020 10:27:05 connectionpool.py DEBUG Starting new HTTP connection (1): 10.0.2.120:58080
-Wed 11 Nov 2020 10:27:05 connectionpool.py DEBUG http://10.0.2.120:58080 "POST /group1/default/20200928/18/38/3/%E6%8B%9B%E6%A0%87%E6%96%87%E4%BB%B6%20CWEME-1911ZSWZ-2J039%20%E5%9F%BA%E4%BA%8ENLP%E7%9A%84%E5%95%86%E5%8A%A1%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E9%A1%B9%E7%9B%AE-2019%E5%B9%B412%E6%9C%88%E4%B8%AD%E5%9B%BD%E6%B0%B4%E5%88%A9%E7%94%B5%E5%8A%9B%E7%89%A9%E8%B5%84%E9%9B%86%E5%9B%A2%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E9%A1%B9%E7%9B%AE%EF%BC%88%E7%AC%AC%E4%B8%89%E7%89%88%E7%BB%88%E7%89%88%EF%BC%89.docx HTTP/1.1" 200 293197
-Wed 11 Nov 2020 10:27:09 _internal.py INFO 127.0.0.1 - - [11/Nov/2020 10:27:09] "[37mPOST /NLP/Algorithm/base/dup_check/template_match HTTP/1.1[0m" 200 -
-Wed 11 Nov 2020 10:28:26 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
-Wed 11 Nov 2020 10:28:26 _internal.py INFO  * Restarting with stat
-Wed 11 Nov 2020 10:28:27 dup_check.py WARNING warning
-Wed 11 Nov 2020 10:28:27 _internal.py WARNING  * Debugger is active!
-Wed 11 Nov 2020 10:28:27 _internal.py INFO  * Debugger PIN: 304-402-708
-Wed 11 Nov 2020 10:28:27 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
-Wed 11 Nov 2020 10:28:29 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
-Wed 11 Nov 2020 10:28:29 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 11:50:59 dup_check.py WARNING warning
+Wed 11 Nov 2020 11:51:00 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 11:51:00 dup_check.py WARNING warning
+Wed 11 Nov 2020 11:51:00 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 11:51:00 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 11:51:00 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 11:51:03 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing' [POST]> to dup_check
+Wed 11 Nov 2020 11:51:03 dup_check.py INFO preprocess time: 0.002002239227294922
+Wed 11 Nov 2020 11:51:03 _internal.py INFO 127.0.0.1 - - [11/Nov/2020 11:51:03] "[35m[1mPOST /NLP/Algorithm/base/dup_check/winnowing HTTP/1.1[0m" 500 -
+Wed 11 Nov 2020 11:51:32 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 11:51:32 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 11:51:33 dup_check.py WARNING warning
+Wed 11 Nov 2020 11:51:33 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 11:51:33 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 11:51:33 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 11:51:34 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 11:51:34 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 11:51:35 dup_check.py WARNING warning
+Wed 11 Nov 2020 11:51:35 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 11:51:35 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 11:51:35 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 11:51:37 dup_check.py WARNING warning
+Wed 11 Nov 2020 11:51:37 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 11:51:37 dup_check.py WARNING warning
+Wed 11 Nov 2020 11:51:37 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 11:51:37 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 11:51:37 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 11:51:38 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing' [POST]> to dup_check
+Wed 11 Nov 2020 11:51:38 dup_check.py INFO preprocess time: 0.002002239227294922
+Wed 11 Nov 2020 11:51:38 _internal.py INFO 127.0.0.1 - - [11/Nov/2020 11:51:38] "[35m[1mPOST /NLP/Algorithm/base/dup_check/winnowing HTTP/1.1[0m" 500 -
+Wed 11 Nov 2020 11:51:52 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 11:51:52 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 11:51:52 dup_check.py WARNING warning
+Wed 11 Nov 2020 11:51:53 dup_check.py WARNING warning
+Wed 11 Nov 2020 11:51:53 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 11:51:54 dup_check.py WARNING warning
+Wed 11 Nov 2020 11:51:54 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 11:51:54 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 11:51:54 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 11:51:58 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing' [POST]> to dup_check
+Wed 11 Nov 2020 11:51:58 dup_check.py INFO preprocess time: 0.001001119613647461
+Wed 11 Nov 2020 11:51:58 dup_check.py INFO make output time: 0.0
+Wed 11 Nov 2020 11:51:58 dup_check.py INFO run success!! time cost      :    0.010009288787841797      |length : 104  |  110  |    0  |dup_rate:0.9902912621359223
+Wed 11 Nov 2020 11:51:58 _internal.py INFO 127.0.0.1 - - [11/Nov/2020 11:51:58] "[37mPOST /NLP/Algorithm/base/dup_check/winnowing HTTP/1.1[0m" 200 -
+Wed 11 Nov 2020 11:53:46 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 11:53:46 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 11:53:47 dup_check.py WARNING warning
+Wed 11 Nov 2020 11:53:47 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 11:53:47 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 11:53:47 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:22:49 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:22:49 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:22:50 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:22:50 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:22:50 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:22:50 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:22:53 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:22:53 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:22:54 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:22:54 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:22:54 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:22:54 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:23:06 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:23:06 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:23:07 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:23:07 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:23:08 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:23:08 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:23:08 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:23:08 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:23:08 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing' [POST]> to dup_check
+Wed 11 Nov 2020 12:23:08 dup_check.py INFO preprocess time: 0.0020024776458740234
+Wed 11 Nov 2020 12:23:08 dup_check.py INFO make output time: 0.0
+Wed 11 Nov 2020 12:23:08 dup_check.py INFO run success!! time cost      :    0.010009288787841797      |length : 104  |  110  |    0  |dup_rate:0.9902912621359223
+Wed 11 Nov 2020 12:23:08 _internal.py INFO 127.0.0.1 - - [11/Nov/2020 12:23:08] "[37mPOST /NLP/Algorithm/base/dup_check/winnowing HTTP/1.1[0m" 200 -
+Wed 11 Nov 2020 12:23:25 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:23:26 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:23:26 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:23:26 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:23:26 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:23:26 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:23:30 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:23:30 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:23:31 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:23:31 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:23:31 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:23:31 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:23:32 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:23:32 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:23:32 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:23:33 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:23:33 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:23:33 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:23:33 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing' [POST]> to dup_check
+Wed 11 Nov 2020 12:23:33 dup_check.py INFO preprocess time: 0.0020017623901367188
+Wed 11 Nov 2020 12:23:33 dup_check.py INFO make output time: 0.0
+Wed 11 Nov 2020 12:23:33 dup_check.py INFO run success!! time cost      :    0.006005764007568359      |length : 104  |  110  |    0  |dup_rate:0.9902912621359223
+Wed 11 Nov 2020 12:23:33 _internal.py INFO 127.0.0.1 - - [11/Nov/2020 12:23:33] "[37mPOST /NLP/Algorithm/base/dup_check/winnowing HTTP/1.1[0m" 200 -
+Wed 11 Nov 2020 12:25:16 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:25:16 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:25:17 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:25:17 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:25:17 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:25:17 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:25:21 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:25:21 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:25:21 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:25:21 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:25:21 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:25:21 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:25:21 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing' [POST]> to dup_check
+Wed 11 Nov 2020 12:25:21 dup_check.py INFO preprocess time: 0.002002239227294922
+Wed 11 Nov 2020 12:25:21 dup_check.py INFO make output time: 0.0
+Wed 11 Nov 2020 12:25:21 dup_check.py INFO run success!! time cost      :    0.009007453918457031      |length : 104  |  110  |    0  |dup_rate:0.9902912621359223
+Wed 11 Nov 2020 12:25:21 _internal.py INFO 127.0.0.1 - - [11/Nov/2020 12:25:21] "[37mPOST /NLP/Algorithm/base/dup_check/winnowing HTTP/1.1[0m" 200 -
+Wed 11 Nov 2020 12:25:40 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:25:40 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:25:41 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:25:41 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:25:41 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:25:41 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:25:52 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:25:52 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:25:53 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:25:53 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:25:53 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:25:53 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:25:56 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:25:56 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:25:57 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:25:57 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:25:57 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:25:57 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:25:58 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:25:58 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:25:59 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:25:59 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:25:59 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:25:59 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:25:59 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing' [GET]> to dup_check
+Wed 11 Nov 2020 12:25:59 _internal.py INFO 127.0.0.1 - - [11/Nov/2020 12:25:59] "[35m[1mGET /NLP/Algorithm/base/dup_check/winnowing HTTP/1.1[0m" 500 -
+Wed 11 Nov 2020 12:25:59 _internal.py INFO 127.0.0.1 - - [11/Nov/2020 12:25:59] "[37mGET /NLP/Algorithm/base/dup_check/winnowing?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+Wed 11 Nov 2020 12:25:59 _internal.py INFO 127.0.0.1 - - [11/Nov/2020 12:25:59] "[37mGET /NLP/Algorithm/base/dup_check/winnowing?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+Wed 11 Nov 2020 12:25:59 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing' [POST]> to dup_check
+Wed 11 Nov 2020 12:25:59 dup_check.py INFO preprocess time: 0.001001119613647461
+Wed 11 Nov 2020 12:25:59 dup_check.py INFO make output time: 0.0
+Wed 11 Nov 2020 12:25:59 dup_check.py INFO run success!! time cost      :    0.016014575958251953      |length : 104  |  110  |    0  |dup_rate:0.9902912621359223
+Wed 11 Nov 2020 12:25:59 _internal.py INFO 127.0.0.1 - - [11/Nov/2020 12:25:59] "[37mPOST /NLP/Algorithm/base/dup_check/winnowing HTTP/1.1[0m" 200 -
+Wed 11 Nov 2020 12:25:59 _internal.py INFO 127.0.0.1 - - [11/Nov/2020 12:25:59] "[37mGET /NLP/Algorithm/base/dup_check/winnowing?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+Wed 11 Nov 2020 12:25:59 _internal.py INFO 127.0.0.1 - - [11/Nov/2020 12:25:59] "[37mGET /NLP/Algorithm/base/dup_check/winnowing?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+Wed 11 Nov 2020 12:25:59 _internal.py INFO 127.0.0.1 - - [11/Nov/2020 12:25:59] "[37mGET /NLP/Algorithm/base/dup_check/winnowing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+Wed 11 Nov 2020 12:25:59 _internal.py INFO 127.0.0.1 - - [11/Nov/2020 12:25:59] "[37mGET /NLP/Algorithm/base/dup_check/winnowing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+Wed 11 Nov 2020 12:26:35 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:26:35 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:26:36 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:26:36 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:26:36 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:26:36 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:26:49 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:26:49 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:26:50 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:26:50 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:26:50 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:26:50 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:27:02 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:27:02 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:27:03 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:27:03 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:27:04 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:27:04 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:27:04 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:27:04 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:27:05 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing' [POST]> to dup_check
+Wed 11 Nov 2020 12:27:05 dup_check.py INFO preprocess time: 0.0020012855529785156
+Wed 11 Nov 2020 12:27:05 dup_check.py INFO make output time: 0.0
+Wed 11 Nov 2020 12:27:05 dup_check.py INFO run success!! time cost      :    0.011009454727172852      |length : 104  |  110  |    0  |dup_rate:0.9902912621359223
+Wed 11 Nov 2020 12:27:05 _internal.py INFO 127.0.0.1 - - [11/Nov/2020 12:27:05] "[37mPOST /NLP/Algorithm/base/dup_check/winnowing HTTP/1.1[0m" 200 -
+Wed 11 Nov 2020 12:27:23 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:27:23 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:27:24 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:27:24 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:27:24 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:27:24 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:27:25 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:27:25 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:27:26 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:27:26 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:27:26 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:27:26 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:27:26 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing' [POST]> to dup_check
+Wed 11 Nov 2020 12:27:26 dup_check.py INFO preprocess time: 0.0010008811950683594
+Wed 11 Nov 2020 12:27:26 dup_check.py INFO make output time: 0.0
+Wed 11 Nov 2020 12:27:26 dup_check.py INFO run success!! time cost      :    0.009008646011352539      |length : 104  |  110  |    0  |dup_rate:0.9902912621359223
+Wed 11 Nov 2020 12:27:26 _internal.py INFO 127.0.0.1 - - [11/Nov/2020 12:27:26] "[37mPOST /NLP/Algorithm/base/dup_check/winnowing HTTP/1.1[0m" 200 -
+Wed 11 Nov 2020 12:27:35 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:27:36 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:27:36 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:27:36 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:27:36 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:27:36 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:28:04 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:28:04 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:28:04 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:28:04 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:28:04 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:28:04 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:28:44 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:28:44 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:28:45 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:28:45 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:28:46 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:28:46 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:28:46 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:28:46 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:28:47 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing' [POST]> to dup_check
+Wed 11 Nov 2020 12:28:47 dup_check.py INFO preprocess time: 0.0010006427764892578
+Wed 11 Nov 2020 12:28:47 dup_check.py INFO make output time: 0.0
+Wed 11 Nov 2020 12:28:47 dup_check.py INFO run success!! time cost      :    0.01401376724243164      |length : 104  |  110  |    0  |dup_rate:0.9902912621359223
+Wed 11 Nov 2020 12:28:47 _internal.py INFO 127.0.0.1 - - [11/Nov/2020 12:28:47] "[37mPOST /NLP/Algorithm/base/dup_check/winnowing HTTP/1.1[0m" 200 -
+Wed 11 Nov 2020 12:28:56 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:28:56 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:28:57 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:28:57 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:28:57 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:28:57 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:29:03 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:29:04 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:29:04 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:29:04 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:29:04 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:29:04 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:29:34 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:29:34 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:29:35 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:29:35 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:29:35 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:29:35 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:29:40 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:29:40 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:29:41 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:29:41 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:29:41 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:29:41 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:29:42 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:29:42 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:29:43 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:29:43 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:29:43 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:29:43 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:29:56 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:29:56 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:29:57 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:29:57 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:29:57 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:29:57 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:30:06 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:30:06 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:32:29 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:32:30 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:32:30 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:32:30 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:32:30 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:32:30 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:32:31 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing' [POST]> to dup_check
+Wed 11 Nov 2020 12:32:31 dup_check.py INFO preprocess time: 0.0010008811950683594
+Wed 11 Nov 2020 12:32:31 dup_check.py INFO make output time: 0.0
+Wed 11 Nov 2020 12:32:31 dup_check.py INFO run success!! time cost      :    0.025022506713867188      |length : 104  |  110  |    0  |dup_rate:0.9902912621359223
+Wed 11 Nov 2020 12:32:31 _internal.py INFO 127.0.0.1 - - [11/Nov/2020 12:32:31] "[37mPOST /NLP/Algorithm/base/dup_check/winnowing HTTP/1.1[0m" 200 -
+Wed 11 Nov 2020 12:34:57 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing' [POST]> to dup_check
+Wed 11 Nov 2020 12:34:57 dup_check.py INFO preprocess time: 0.0
+Wed 11 Nov 2020 12:34:57 dup_check.py INFO make output time: 0.0
+Wed 11 Nov 2020 12:34:57 dup_check.py INFO run success!! time cost      :    0.020017623901367188      |length : 104  |  110  |    0  |dup_rate:0.9902912621359223
+Wed 11 Nov 2020 12:34:57 _internal.py INFO 127.0.0.1 - - [11/Nov/2020 12:34:57] "[37mPOST /NLP/Algorithm/base/dup_check/winnowing HTTP/1.1[0m" 200 -
+Wed 11 Nov 2020 12:36:49 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:36:49 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:36:50 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:36:50 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:36:50 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:36:50 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:36:53 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing' [POST]> to dup_check
+Wed 11 Nov 2020 12:36:53 dup_check.py INFO preprocess time: 0.0010006427764892578
+Wed 11 Nov 2020 12:36:53 dup_check.py INFO make output time: 0.0
+Wed 11 Nov 2020 12:36:53 dup_check.py INFO run success!! time cost      :    0.02302098274230957      |length : 104  |  110  |    0  |dup_rate:0.9902912621359223
+Wed 11 Nov 2020 12:36:53 _internal.py INFO 127.0.0.1 - - [11/Nov/2020 12:36:53] "[37mPOST /NLP/Algorithm/base/dup_check/winnowing HTTP/1.1[0m" 200 -
+Wed 11 Nov 2020 12:39:44 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:39:44 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:39:45 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:39:45 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:39:45 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:39:45 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:39:48 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:39:48 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:39:49 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:39:49 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:39:49 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:39:49 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:40:00 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:40:00 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:40:01 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:40:01 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:40:01 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:40:01 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:40:10 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:40:10 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:40:11 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:40:11 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:40:11 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:40:11 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:40:15 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:40:15 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:40:16 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:40:16 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:40:16 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:40:16 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:40:19 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:40:19 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:40:20 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:40:20 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:40:20 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:40:20 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:40:21 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:40:21 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:40:22 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:40:22 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:40:22 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:40:22 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:40:23 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:40:23 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:40:24 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:40:24 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:40:24 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:40:24 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:40:26 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing' [POST]> to dup_check
+Wed 11 Nov 2020 12:40:26 dup_check.py INFO preprocess time: 0.0010004043579101562
+Wed 11 Nov 2020 12:40:26 dup_check.py INFO make output time: 0.0
+Wed 11 Nov 2020 12:40:26 dup_check.py INFO run success!! time cost      :    0.023020505905151367      |length : 104  |  110  |    0  |dup_rate:0.9902912621359223
+Wed 11 Nov 2020 12:40:26 _internal.py INFO 127.0.0.1 - - [11/Nov/2020 12:40:26] "[35m[1mPOST /NLP/Algorithm/base/dup_check/winnowing HTTP/1.1[0m" 500 -
+Wed 11 Nov 2020 12:40:30 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:40:30 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:40:31 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:40:31 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:40:31 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:40:31 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:40:32 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing' [POST]> to dup_check
+Wed 11 Nov 2020 12:40:32 dup_check.py INFO preprocess time: 0.0020020008087158203
+Wed 11 Nov 2020 12:40:32 dup_check.py INFO make output time: 0.0
+Wed 11 Nov 2020 12:40:32 dup_check.py INFO run success!! time cost      :    0.02402210235595703      |length : 104  |  110  |    0  |dup_rate:0.9902912621359223
+Wed 11 Nov 2020 12:40:32 _internal.py INFO 127.0.0.1 - - [11/Nov/2020 12:40:32] "[35m[1mPOST /NLP/Algorithm/base/dup_check/winnowing HTTP/1.1[0m" 500 -
+Wed 11 Nov 2020 12:41:03 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:41:03 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:41:04 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:41:04 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:41:04 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:41:04 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:41:16 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:41:16 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:41:17 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:41:17 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:41:17 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:41:17 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:41:22 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:41:22 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:41:23 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:41:23 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:41:23 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:41:23 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:41:46 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:41:46 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:41:47 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:41:47 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:41:47 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:41:47 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:41:53 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:41:53 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:41:53 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:41:53 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:41:53 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:41:53 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:42:19 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:42:19 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:42:20 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:42:20 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:42:20 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:42:20 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:42:22 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:42:22 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:42:23 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:42:23 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:42:23 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:42:23 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:42:25 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:42:25 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:42:26 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:42:26 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:42:26 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:42:26 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:42:28 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:42:28 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:42:29 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:42:29 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:42:29 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:42:29 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:42:32 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:42:32 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:42:33 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:42:33 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:42:33 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:42:33 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:42:40 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:42:40 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:42:41 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:42:41 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:42:41 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:42:41 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:42:42 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:42:42 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:42:43 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:42:43 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:42:43 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:42:43 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:42:44 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:42:44 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:42:44 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:42:44 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:42:44 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:42:44 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:42:44 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing' [POST]> to dup_check
+Wed 11 Nov 2020 12:42:44 dup_check.py INFO preprocess time: 0.002002239227294922
+Wed 11 Nov 2020 12:42:44 dup_check.py INFO make output time: 0.0
+Wed 11 Nov 2020 12:42:44 dup_check.py INFO run success!! time cost      :    0.031028270721435547      |length : 104  |  110  |    0  |dup_rate:0.9902912621359223
+Wed 11 Nov 2020 12:42:44 _internal.py INFO 127.0.0.1 - - [11/Nov/2020 12:42:44] "[37mPOST /NLP/Algorithm/base/dup_check/winnowing HTTP/1.1[0m" 200 -
+Wed 11 Nov 2020 12:43:22 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:43:22 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:43:22 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:43:22 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:43:22 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:43:22 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:43:41 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:43:41 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:43:42 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:43:42 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:43:42 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:43:42 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:43:49 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:43:49 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:43:49 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:43:49 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:43:49 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:43:49 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:46:24 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.6_fenlibr\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Wed 11 Nov 2020 12:46:24 _internal.py INFO  * Restarting with stat
+Wed 11 Nov 2020 12:46:25 dup_check.py WARNING warning
+Wed 11 Nov 2020 12:46:25 _internal.py WARNING  * Debugger is active!
+Wed 11 Nov 2020 12:46:25 _internal.py INFO  * Debugger PIN: 135-586-556
+Wed 11 Nov 2020 12:46:25 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Wed 11 Nov 2020 12:46:29 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing' [POST]> to dup_check
+Wed 11 Nov 2020 12:46:29 dup_check.py INFO preprocess time: 0.0010006427764892578
+Wed 11 Nov 2020 12:46:29 dup_check.py INFO make output time: 0.0
+Wed 11 Nov 2020 12:46:29 dup_check.py INFO run success!! time cost      :    0.01801586151123047      |length : 104  |  110  |    0  |dup_rate:0.9902912621359223
+Wed 11 Nov 2020 12:46:29 _internal.py INFO 127.0.0.1 - - [11/Nov/2020 12:46:29] "[37mPOST /NLP/Algorithm/base/dup_check/winnowing HTTP/1.1[0m" 200 -

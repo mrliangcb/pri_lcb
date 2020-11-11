@@ -154,7 +154,7 @@ def find_best_match(heading4_target_obj_list,source_heading_obj_list,source_glob
         if seq[j].type == heading4_target_obj_list[template_index].type:
             tem_flag = 1
         else:
-            tem_flag = -4
+            tem_flag = 1 #-4
         flag_left[template_index] = tem_flag
         flag_right[j] = tem_flag
 
@@ -165,9 +165,13 @@ def find_best_match(heading4_target_obj_list,source_heading_obj_list,source_glob
                 flag_left[i] = -3
 
     # 右边 解决是否存在的问题
+    print('all_heading1_set:',all_heading1_set)
+    print('flag_right是什么:',flag_right)
     for i,j in enumerate(flag_right):
         if j==-2:#只检查-2的情况
+            print('-2情况的例子:',source_heading_list_str[i])
             if source_heading_list_str[i] in all_heading1_set: #在但位置不对
+                print('当前改为-3的:',source_heading_list_str[i],i)
                 flag_right[i]=-3
 
     # 做返回的obj
@@ -178,6 +182,7 @@ def find_best_match(heading4_target_obj_list,source_heading_obj_list,source_glob
     print('source_heading_obj_list:', len(source_heading_obj_list),source_heading_obj_list)
     print('source_global_obj_list:',source_global_obj_list)
 
+    print('flag_right是什么?',flag_right)
     # flag_right 和 source_heading_obj_list 都是 长度30
     for i, j in enumerate(flag_right):
         source_heading_obj_list[i] = source_heading_obj_list[i]._replace(flag=j)

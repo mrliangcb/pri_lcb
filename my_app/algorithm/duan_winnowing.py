@@ -15,8 +15,11 @@ class paragraph_winnowing():
         print('x1_gram:',x1_gram)
         x2_gram=self.build_gram(x2,n)
         template_gram=self.build_gram(template,n)
+        print('template_gram是这个:',template_gram)
 
         template_hash = self.gram_hash(template_gram,n)
+        print('template_hash:', template_hash)
+
         x1_hash = self.gram_hash(x1_gram,n)
         x2_hash = self.gram_hash(x2_gram,n)
         e_time=time.time()
@@ -71,9 +74,7 @@ class paragraph_winnowing():
 
 
 
-
-
-
+        print('doc1_wrap:',doc1_wrap)
         return similarity,doc1_str,doc1_wrap,doc2_wrap
 
     def compu_dup_rate(self,doc1_wrap,size):

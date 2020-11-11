@@ -264,10 +264,6 @@ def ouput_algo(doc1_wrap,doc2_wrap,source):
     return doc1_wrap,doc2_wrap
 
 
-
-
-
-
 @web.route('/NLP/Algorithm/base/dup_check/winnowing', methods=['POST','GET'])
 def dup_check():
     # args_dic = request.args
@@ -296,6 +292,7 @@ def dup_check():
 
 
     template_target = dic.get('template','') #有template 或者没有
+    print('提取的模板:',template_target)
     template_length=len(template_target)
     # source , target template 的异常[]   [……[]]
     # str阶段 ''或者无，'……'
@@ -303,7 +300,8 @@ def dup_check():
     #分段并且去掉空段
     # template_target = template_target.split(r'\n')
     template_target=[template_target]
-    template_target = clear(template_target)
+    template_target = clear(template_target) # template_target没有split
+    print('clear之后的template_target:',template_target)
 
     source_length = len(source)
     target_length = len(target)
@@ -342,8 +340,10 @@ def dup_check():
 
 
     result_dup_list=list_model(doc1_wrap, doc2_wrap, source, target)
-    doc1_wrap,doc2_wrap=ouput_algo(doc1_wrap, doc2_wrap,source)
 
+    print('ouput_algo之前的doc1_wrap:',doc1_wrap)
+    doc1_wrap,doc2_wrap=ouput_algo(doc1_wrap, doc2_wrap,source)
+    print('ouput_algo之后的doc1_wrap:', doc1_wrap)
 
 
     # for i,j in enumerate(source_target_list_sorted):#加上编号

@@ -164,6 +164,8 @@ def find_best_match(heading4_target_obj_list,source_heading_obj_list,source_glob
             if all_heading1_list[i] in source_heading_set_str:  # 在但位置不对
                 flag_left[i] = -3
 
+    print('flag_left是什么:',flag_left)
+    print('flag_right是什么:',flag_right)
     # 右边 解决是否存在的问题
     for i,j in enumerate(flag_right):
         if j==-2:#只检查-2的情况
@@ -175,8 +177,8 @@ def find_best_match(heading4_target_obj_list,source_heading_obj_list,source_glob
         heading4_target_obj_list[i] = heading4_target_obj_list[i]._replace(flag=j)
 
     # print('flag_right:',len(flag_right))
-    print('source_heading_obj_list:', len(source_heading_obj_list),source_heading_obj_list)
-    print('source_global_obj_list:',source_global_obj_list)
+    # print('source_heading_obj_list:', len(source_heading_obj_list),source_heading_obj_list)
+    # print('source_global_obj_list:',source_global_obj_list)
 
     # flag_right 和 source_heading_obj_list 都是 长度30
     for i, j in enumerate(flag_right):
@@ -225,11 +227,13 @@ def get_muban(doc1_global_para,source_heading_obj_list):
     # para_num_list=list(dict(y).keys())
     # tem_para=Counter(doc2_para_num).most_common(1)[0][0]
     tem_para = Counter(doc2_para_num).most_common(1)
+
     if tem_para!=[]:
         tem_para=tem_para[0][0]
         result=para_obj_dict[tem_para]  #取出最匹配的那个段
     else:
         result=0
+    print('最匹配的模板段:',result)
     return result
 
 trasbin=set(['','\n',' ','  ',])

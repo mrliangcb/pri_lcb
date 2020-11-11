@@ -227,6 +227,15 @@ for i,j in enumerate(final_wrap): #新的wrap
 
 # 前后指针写wrap
 x=[0,0,0,0,0,1,1,1,0,1,1,0]
+res=[]
+i=0
+while i<len(x):
+    j=i
+    while j<len(x) and x[i]==x[j]:
+        j+=1
+    res.append(tuple([i,j]))
+    i=j
+print(res)
 
 
 

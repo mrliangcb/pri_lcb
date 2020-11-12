@@ -89,13 +89,13 @@ class simhash:
 def create_hash_obj_list(sen_list):
     hash_list = []
     for i, j in enumerate(sen_list):
-        s_t=time.time()
+        # s_t=time.time()
         j = list(jieba.cut(j)) #生成tokens
-        print('jieba时间:',time.time()-s_t)
+        # print('jieba时间:',time.time()-s_t)
 
-        s_t2=time.time()
+        # s_t2=time.time()
         hash = simhash(j)
-        print('simhash时间:',time.time()-s_t2)
+        # print('simhash时间:',time.time()-s_t2)
 
         hash_list.append(hash)
     return hash_list
@@ -123,6 +123,7 @@ def comp_dis_mat(hash_list1,hash_list2):
     dis_mat = [[0 for i in range(len(hash_list2))] for i in range(len(hash_list1))]  # hash1是行数
     print('hash_list1的长度:', len(hash_list1))
     print('dis_mat的长度', len(dis_mat))  # 935
+
     for i in range(len(hash_list1)):
         for j in range(len(hash_list2)):
             dis = func(hash_list1[i], hash_list2[j])
@@ -132,8 +133,14 @@ def comp_dis_mat(hash_list1,hash_list2):
 
 def get_closest(hash_list1,dis_mat,docu1,docu2):
     close_list = []
+    print('get_closest里面')
+    print('hash_list1长度:',len(hash_list1))
+    print('docu1长度:', len(docu1))
+    print('docu2长度:', len(docu2))
+
     for i, j in enumerate(hash_list1):
         min_, index = find_min(dis_mat[i])
+        print('min_:',min_,'index_:',index)
         close_list.append(tuple([i, min_, index, docu1[i], docu2[index]]))
     return close_list
 
@@ -162,6 +169,11 @@ def sim_main(source,target,tem):
     target_sen = extract_sen(target)
     tem_sen = extract_sen(tem)
     print('extract时间:',time.time()-s1)
+
+    print('提取后的source_sen:',source_sen[:5])
+    print('提取后的source_sen:', target_sen[:5])
+    print('提取后的source_sen:', tem_sen[:5])
+
 
     s2 = time.time()
     hash_list1 = create_hash_obj_list(source_sen)

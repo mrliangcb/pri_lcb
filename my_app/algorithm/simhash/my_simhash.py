@@ -146,6 +146,8 @@ def get_closest(hash_list1,dis_mat,docu1,docu2):
 
 
 def extract_sen(x):
+    if x==['']:
+        return x
     sent=[]
     for i in range(len(x)):# 先遍历段
         j=0
@@ -157,6 +159,7 @@ def extract_sen(x):
                 k+=1
             sent.append(x[i][j:k+1])
             j=k+1
+
     return sent
 import time
 def sim_main(source,target,tem):

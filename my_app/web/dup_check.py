@@ -370,11 +370,12 @@ def dup_check():
     # print('target:', target[:100])
     # print('tem:',template_target[:100])
 
-    print('tem_str是什么?',tem_str[:5])
+    print('tem_str是什么?',tem_str[:5]) # 应该是None
 
     tem_fenduan, tem_split, tem_duandian = my_split(tem_str) # 输入是str  先分段，然后去掉空行 然后返回拼接或者直接返回段信息
     # x_fenduan 是一维的，每维是一段一个str
-    print('tem_fenduan是什么?',tem_fenduan[:5])
+    print('tem_fenduan是什么?',tem_fenduan[:5]) # ['']
+
     x_fenduan,source,x_duandian=my_split(source) # str
     print('source split  str:',source[:100])
     y_fenduan,target,y_duandian=my_split(target) # str  <br>连起来

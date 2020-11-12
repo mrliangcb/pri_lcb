@@ -258,7 +258,7 @@ class paragraph_winnowing():
 
     def x1_group( #给x1分组
             self,result_01,doc1_str):
-        trasbin=set(['',' '])
+        trasbin=set(['',' ','\t','\r'])
         all_group = [] #x1的全部段分组
         contin_flag = 0
         count = 0

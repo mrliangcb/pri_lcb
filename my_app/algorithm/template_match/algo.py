@@ -155,6 +155,7 @@ def find_best_match(heading4_target_obj_list,source_heading_obj_list,source_glob
             tem_flag = 1
         else:
             tem_flag = 1 #-4
+
         try:
             flag_left[template_index] = tem_flag
         except:
@@ -289,8 +290,8 @@ def main(source_file,template_doc,source_isdoc,tem_isdoc):
     if tem_isdoc==0:
         print('tem进行docx解码')
         tem_heading_obj_list,tem_global_obj_list = exctract_heading(template_doc.paragraphs)
-        print('模板题目的解析:',tem_heading_obj_list)
-        print('模板全文的解析:',tem_global_obj_list)
+        # print('模板题目的解析:',tem_heading_obj_list)
+        # print('模板全文的解析:',tem_global_obj_list)
 
     else:# 是doc文件
         print('tem进行doc解码')
@@ -304,8 +305,7 @@ def main(source_file,template_doc,source_isdoc,tem_isdoc):
     if source_isdoc == 0:
         print('sour进行docx解码')
         source_heading_obj_list,source_global_obj_list = exctract_heading(source_file.paragraphs)
-        print('source题目的解析:', source_heading_obj_list)
-        print('source全文的解析:', source_global_obj_list)
+        # print('source题目的解析:', source_heading_obj_list)
     else:
         print('sour进行doc解码')
         source_heading_obj_list,source_global_obj_list = extract_doc_heading(source_file)
@@ -321,8 +321,6 @@ def main(source_file,template_doc,source_isdoc,tem_isdoc):
     mat_time=time.time()
     tem_heading_match,source_heading,source_global_obj=find_best_match(template_select_obj_list,source_heading_obj_list,source_global_obj_list)
     print('计算最长匹配子串时间:',time.time()-mat_time)
-
-    print('计算最长匹配子串时间:', time.time() - mat_time)
 
     left_2 = 0
     for i, j in enumerate(tem_heading_match):

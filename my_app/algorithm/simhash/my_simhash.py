@@ -214,7 +214,7 @@ def sim_main(source,target,tem):
 
 
     #排序 从0起
-    sorted_list = sorted(no_docu3_list, key=lambda x: x[0], reverse=False)
+    sorted_list = sorted(no_docu3_list, key=lambda x: x[0], reverse=True)# 选rate就要reverse，选dis就要False
     print('剔除之后的list:', sorted_list)
 
     select_final = []

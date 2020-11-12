@@ -377,13 +377,9 @@ def dup_check():
     # print('tem_fenduan是什么?',tem_fenduan[:5]) # ['']
 
     x_fenduan,source,x_duandian=my_split(source) # str
-    # print('source split  str:',source[:100])
+    print('source split  str:',source[:1000])
     y_fenduan,target,y_duandian=my_split(target) # str  <br>连起来
-    # print('target split str:', target[:100])
-
-
-
-
+    print('target split str:', target[:1000])
 
     # source = source.replace('\n', '<br>')
     # print('replace之后source', source)
@@ -392,7 +388,8 @@ def dup_check():
     target=[target]
     # source=clear(source)#去掉空段之后，至少存在一个['']
     # target = clear(target)
-    # print('clear之后的source:',source[:500])
+    # print('clear之后的source:',source[:1000])
+    # print('clear之后的source:', source[:1000])
 
     print('preprocess time:',time.time()-s_preprocess_time)
     logging.info('preprocess time: {}'.format(time.time()-s_preprocess_time))

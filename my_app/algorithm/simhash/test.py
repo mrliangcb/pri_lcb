@@ -4,11 +4,12 @@
 
 
 class simhash:
-
     # 构造函数
     def __init__(self, tokens='', hashbits=128):
+
         self.hashbits = hashbits
         self.hash = self.simhash(tokens);
+        # print('self.token_hash_list是什么？:',self.token_hash_list)
 
     # toString函数
     def __str__(self):
@@ -17,7 +18,9 @@ class simhash:
     # 生成simhash值
     def simhash(self, tokens):
         v = [0] * self.hashbits
+        self.token_hash_list=[]
         for t in [self._string_hash(x) for x in tokens]:  # t为token的普通hash值
+            self.token_hash_list.append(t)
             for i in range(self.hashbits):
                 bitmask = 1 << i
                 if t & bitmask:
@@ -40,6 +43,17 @@ class simhash:
             x &= x - 1
         return tot
 
+    def dup_rate(self,other):
+        other_set=set(other.token_hash_list)
+        score=0
+        for i,j in enumerate(self.token_hash_list):
+            if j in other_set:
+                score+=1
+        # try:
+        rate=score/len(self.token_hash_list)
+        # except:
+        #     rate=0
+        return rate
 
     # 求相似度
     def similarity(self, other):

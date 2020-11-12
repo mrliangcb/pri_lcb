@@ -1,6 +1,7 @@
 
 
 import flask
+import jieba
 from flask import Flask
 print('flask版本:',flask.__version__)
 from my_app.web import create_app
@@ -18,6 +19,13 @@ import codecs,sys
 
 # sys.stdout.reconfigure(encoding='utf-8')  #py3.7开始
 
+# print('import 结巴')
+
+# print('运行结巴')
+# y=start_jieba()
+# print(y)
+# res=jieba.cut(jieba)
+# print(res)
 
 app=create_app()
 con_dic=app.config  #取得配置文件的字典，是在app.web 的init读入的
@@ -33,6 +41,7 @@ con_dic=app.config  #取得配置文件的字典，是在app.web 的init读入�
 
 
 if __name__ == '__main__':
+
     app.run("0.0.0.0",debug=True,port=50000,threaded=True)# ,,threaded=True, ,processes=True
 
 

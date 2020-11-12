@@ -226,8 +226,9 @@ def get_muban(doc1_global_para,source_heading_obj_list):
 
     # para_num_list=list(dict(y).keys())
     # tem_para=Counter(doc2_para_num).most_common(1)[0][0]
-    tem_para = Counter(doc2_para_num).most_common(1)
 
+    tem_para = Counter(doc2_para_num).most_common(1)
+    print('最匹配的段counter:',Counter(doc2_para_num))
     if tem_para!=[]:
         tem_para=tem_para[0][0]
         result=para_obj_dict[tem_para]  #取出最匹配的那个段
@@ -285,6 +286,9 @@ def main(source_file,template_doc,source_isdoc,tem_isdoc):
     if tem_isdoc==0:
         print('tem进行docx解码')
         tem_heading_obj_list,tem_global_obj_list = exctract_heading(template_doc.paragraphs)
+        print('模板题目的解析:',tem_heading_obj_list)
+        print('模板全文的解析:',tem_global_obj_list)
+
     else:# 是doc文件
         print('tem进行doc解码')
         print('template_doc的例子:',template_doc[:2])
@@ -297,6 +301,8 @@ def main(source_file,template_doc,source_isdoc,tem_isdoc):
     if source_isdoc == 0:
         print('sour进行docx解码')
         source_heading_obj_list,source_global_obj_list = exctract_heading(source_file.paragraphs)
+        print('source题目的解析:', source_heading_obj_list)
+        print('source全文的解析:', source_global_obj_list)
     else:
         print('sour进行doc解码')
         source_heading_obj_list,source_global_obj_list = extract_doc_heading(source_file)

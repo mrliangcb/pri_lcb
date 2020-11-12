@@ -13,7 +13,8 @@ logging.warning("warning")
 from io import BytesIO
 import docx
 import json
-
+from my_app.algorithm.simhash.my_simhash import start_jieba,sim_main
+y = start_jieba()
 # -*- coding: utf-8 -*-
 import codecs,sys
 # sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
@@ -83,7 +84,7 @@ def uniform_(x):#不管输入是多少段，规整后每段至少有一个''   �
 
 
 
-def clear(x:list):#至少是''
+def clear(x:list):#至少是''  输入是多个段
     temp = []
     transbin=set(['','\n',' ','\t'])
 
@@ -317,6 +318,8 @@ def zubao(x,y,maodian,wrap):
 
     return final_wrap,join_br
 
+
+
 @web.route('/NLP/Algorithm/base/dup_check/winnowing', methods=['POST','GET'])
 def dup_check():
     # args_dic = request.args
@@ -345,16 +348,18 @@ def dup_check():
 
 
     template_target = dic.get('template','') #有template 或者没有
-    print('提取的模板:',template_target)
+    # print('提取的模板:',template_target)
     template_length=len(template_target)
     # source , target template 的异常[]   [……[]]
     # str阶段 ''或者无，'……'
 
     #分段并且去掉空段
     # template_target = template_target.split(r'\n')
+    tem_str=template_target
     template_target=[template_target]
-    template_target = clear(template_target) # template_target没有split
+    template_target = clear(template_target) # 其实clear没用
     print('clear之后的template_target:',template_target)
+
 
     source_length = len(source)
     target_length = len(target)
@@ -365,10 +370,18 @@ def dup_check():
     # print('target:', target[:100])
     # print('tem:',template_target[:100])
 
+
+    tem_fenduan, tem_split, tem_duandian = my_split(tem_str) # 输入是str  先分段，然后去掉空行 然后返回拼接或者直接返回段信息
+    # x_fenduan 是一维的，每维是一段一个str
+
     x_fenduan,source,x_duandian=my_split(source) # str
-    print('source split:',source[:100])
+    print('source split  str:',source[:100])
     y_fenduan,target,y_duandian=my_split(target) # str  <br>连起来
-    print('target split:', target[:100])
+    print('target split str:', target[:100])
+
+
+
+
     # source = source.replace('\n', '<br>')
     # print('replace之后source', source)
     # target = target.replace('\n', '<br>')
@@ -381,6 +394,17 @@ def dup_check():
     print('preprocess time:',time.time()-s_preprocess_time)
     logging.info('preprocess time: {}'.format(time.time()-s_preprocess_time))
 
+    simh_time_s=time.time()
+    # simhash
+    sim_list=sim_main(x_fenduan, y_fenduan, tem_fenduan)
+    print('simhash全部时间:',time.time()-simh_time_s)
+    dup_list_simhash=[]
+    for i,j in enumerate(sim_list):
+        rate, doc1_index, dis, doc2_index, doc1, doc2=j
+        dic_sim={'source':doc1,'target':doc2,'rate':rate}
+        dup_list_simhash.append(dic_sim)
+    print('组装好的dup_list_simhash:',dup_list_simhash)
+
     s_time=time.time()
     example = paragraph_winnowing()
     print('送入检测的source:',len(source[0]),source)  #103长度
@@ -389,7 +413,11 @@ def dup_check():
 
     print('未加入br的wrap1:', doc1_wrap) # 下表最大是102  [[(0, 0, 101), (-1, 102, 102)]]
 
-    result_dup_list = list_model(doc1_wrap, doc2_wrap, source, target)
+    # result_dup_list = list_model(doc1_wrap, doc2_wrap, source, target)
+    # print('result_dup_list:',result_dup_list)
+    result_dup_list=dup_list_simhash
+
+    # [{'source': '我是马大哈我是马大哈我是马大哈我是马大哈我是马大哈我是马大哈我是马大哈我是马大哈。我是梁静怡我是梁静怡我是梁静怡我是梁静怡我是梁静怡我是梁静怡。', 'target': '我是梁静怡我是梁静怡我是梁静怡我是梁静怡我是梁静怡我是梁静怡哈哈哈哈哈。', 'rate': 98.6}]
 
     # 给source和target加入br
     x_final_wrap,x_join_br = zubao(x_fenduan,source[0],x_duandian,doc1_wrap[0])
@@ -531,20 +559,24 @@ def propose_docx_doc(source_url,template_url):
 
     else:# 是docx文件
         source_content=intepret_docx(source_url)
-
+        # '招标文件-基于NLP的商务文本数据清洗关键技术研究（1021评审）（第一版）.docx'
+        path1=r'D:\lcb_note\code\Program\10月项目\查重需求资料\查重需求资料\1.招标文件文档查重对比材料\招标文件-基于NLP的商务文本数据清洗关键技术研究（1021评审）（第一版）.docx'
         # path1=r'D:\lcb_note\code\Program\10月项目\my_docx\基于NLP的商务文本数据清洗关键技术研究项目合同+-+-打印版.docx'
-        # source_content=docx.Document(path1)
+        source_content=docx.Document(path1)
+
 
     if tem_doc_name.endswith('doc'):
         tem_isdoc=1
         # template_content_ok = 0
         key='template_content'
         tem_content_ok, template_content = get_doc(request, key)
+        print('template_content是什么?',template_content)
     else:# docx文件
         template_content = intepret_docx(template_url)
 
+        base = r"D:\lcb_note\code\Program\10月项目\查重需求资料\查重需求资料\1.招标文件文档查重对比材料\招标文件 CWEME-1911ZSWZ-2J039 基于NLP的商务文本数据清洗关键技术研究项目-2019年12月中国水利电力物资集团有限公司项目（第三版终版）.docx"
         # path2 = r'D:\lcb_note\code\Program\10月项目\my_docx\招标文件 CWEME-1911ZSWZ-2J039 基于NLP的商务文本数据清洗关键技术研究项目-2019年12月中国水利电力物资集团有限公司项目（第三版终版）.docx'
-        # template_content = docx.Document(path2)
+        template_content = docx.Document(base)
 
     return source_content,template_content,source_doc_name,tem_doc_name,source_isdoc,tem_isdoc
 

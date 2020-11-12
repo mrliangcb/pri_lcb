@@ -370,14 +370,16 @@ def dup_check():
     # print('target:', target[:100])
     # print('tem:',template_target[:100])
 
+    print('tem_str是什么?',tem_str[:5])
 
     tem_fenduan, tem_split, tem_duandian = my_split(tem_str) # 输入是str  先分段，然后去掉空行 然后返回拼接或者直接返回段信息
     # x_fenduan 是一维的，每维是一段一个str
-
+    print('tem_fenduan是什么?',tem_fenduan[:5])
     x_fenduan,source,x_duandian=my_split(source) # str
     print('source split  str:',source[:100])
     y_fenduan,target,y_duandian=my_split(target) # str  <br>连起来
     print('target split str:', target[:100])
+
 
 
 
@@ -395,6 +397,7 @@ def dup_check():
     logging.info('preprocess time: {}'.format(time.time()-s_preprocess_time))
 
     simh_time_s=time.time()
+
     # simhash
     sim_list=sim_main(x_fenduan, y_fenduan, tem_fenduan)
     print('simhash全部时间:',time.time()-simh_time_s)
@@ -404,6 +407,8 @@ def dup_check():
         dic_sim={'source':doc1,'target':doc2,'rate':rate}
         dup_list_simhash.append(dic_sim)
     print('组装好的dup_list_simhash:',dup_list_simhash)
+
+
 
     s_time=time.time()
     example = paragraph_winnowing()
@@ -427,10 +432,10 @@ def dup_check():
     x_join_br=[x_join_br]
     y_join_br = [y_join_br]
 
-    print('x_final_wrap是什么?',x_final_wrap)
-    print('x_join_br是什么?', x_join_br)
-    print('y_final_wrap是什么?', y_final_wrap)
-    print('y_join_br是什么?', y_join_br)
+    # print('x_final_wrap是什么?',x_final_wrap)
+    # print('x_join_br是什么?', x_join_br)
+    # print('y_final_wrap是什么?', y_final_wrap)
+    # print('y_join_br是什么?', y_join_br)
 
     # source_dup_dict=source_dup_dic(result_str)
     print('get sim run time :',time.time()-s_time)

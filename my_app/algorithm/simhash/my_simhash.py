@@ -212,10 +212,14 @@ def sim_main(source,target,tem):
             # sorted_list[i] = tuple([rate, doc1_index, dis, doc2_index, doc1, doc2])
             no_docu3_list.append(tuple([rate, doc1_index, dis, doc2_index, doc1, doc2]))
 
+
     #排序 从0起
     sorted_list = sorted(no_docu3_list, key=lambda x: x[0], reverse=False)
+    print('剔除之后的list:', sorted_list)
+
     select_final = []
     sen_count = 0
+    print('排序')
     for i, j in enumerate(sorted_list):
         if sen_count>20: #取出最接近的20个
             break

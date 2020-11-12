@@ -566,9 +566,9 @@ def propose_docx_doc(source_url,template_url):
     else:# 是docx文件
         source_content=intepret_docx(source_url)
         # '招标文件-基于NLP的商务文本数据清洗关键技术研究（1021评审）（第一版）.docx'
-        path1=r'D:\lcb_note\code\Program\10月项目\查重需求资料\查重需求资料\1.招标文件文档查重对比材料\招标文件-基于NLP的商务文本数据清洗关键技术研究（1021评审）（第一版）.docx'
+        # path1=r'D:\lcb_note\code\Program\10月项目\查重需求资料\查重需求资料\1.招标文件文档查重对比材料\招标文件-基于NLP的商务文本数据清洗关键技术研究（1021评审）（第一版）.docx'
         # path1=r'D:\lcb_note\code\Program\10月项目\my_docx\基于NLP的商务文本数据清洗关键技术研究项目合同+-+-打印版.docx'
-        source_content=docx.Document(path1)
+        # source_content=docx.Document(path1)
 
 
     if tem_doc_name.endswith('doc'):
@@ -580,9 +580,9 @@ def propose_docx_doc(source_url,template_url):
     else:# docx文件
         template_content = intepret_docx(template_url)
 
-        path2 = r"D:\lcb_note\code\Program\10月项目\查重需求资料\查重需求资料\1.招标文件文档查重对比材料\招标文件 CWEME-1911ZSWZ-2J039 基于NLP的商务文本数据清洗关键技术研究项目-2019年12月中国水利电力物资集团有限公司项目（第三版终版）.docx"
+        # path2 = r"D:\lcb_note\code\Program\10月项目\查重需求资料\查重需求资料\1.招标文件文档查重对比材料\招标文件 CWEME-1911ZSWZ-2J039 基于NLP的商务文本数据清洗关键技术研究项目-2019年12月中国水利电力物资集团有限公司项目（第三版终版）.docx"
         # path2 = r'D:\lcb_note\code\Program\10月项目\my_docx\招标文件 CWEME-1911ZSWZ-2J039 基于NLP的商务文本数据清洗关键技术研究项目-2019年12月中国水利电力物资集团有限公司项目（第三版终版）.docx'
-        template_content = docx.Document(path2)
+        # template_content = docx.Document(path2)
 
     return source_content,template_content,source_doc_name,tem_doc_name,source_isdoc,tem_isdoc
 

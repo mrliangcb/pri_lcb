@@ -56,7 +56,7 @@ class paragraph_winnowing():
         for i in range(len(x1)):
             size += len(x1[i])
 
-        doc1_wrap=self.x1_group(doc1_01)
+        doc1_wrap=self.x1_group(doc1_01,doc1_str)
         # print('doc1_wrap:', doc1_wrap) #是一个二维的
         similarity=self.compu_dup_rate(doc1_wrap,size)
 
@@ -255,8 +255,10 @@ class paragraph_winnowing():
             result_01.append(temp_01)
         return result_str,result_posi,result_01 #至少[['']]或者[[0]]
 
+
     def x1_group( #给x1分组
-            self,result_01):
+            self,result_01,doc1_str):
+        trasbin=set(['',' '])
         all_group = [] #x1的全部段分组
         contin_flag = 0
         count = 0
@@ -265,15 +267,21 @@ class paragraph_winnowing():
             duan1_group = []
             s = 0
             e = 0
+            true_ele = 0
             if len(result_01[i])>1: #
-                for j in range(1, len(result_01[i])):
+                for j in range(1, len(result_01[i])): #开始遍历这一段
+                    if doc1_str[i][j] not in trasbin:
+                        true_ele+=1
                     if (result_01[i][j] != result_01[i][j - 1]):  # 触发跳变
                         # print('段:',duan,j,result_01[i][j-1],result_01[i][j])
-                        if (result_01[i][j - 1] == 1) and (e-s+1)>=13: #上一个是1，表示是重复的 并且长度>13
+
+                        if (result_01[i][j - 1] == 1) and (e-s+1)>=13 and true_ele>=13: #上一个是1，表示是重复的 并且长度>13  true_ele就是避免 匹配空格的问题，把空格也算进13就不好
                             duan1_group.append(tuple([group_num, s, e]))  # 取的时候 (s:e+1)
                             group_num += 1
+                            true_ele=0
                         else:#非重复的
                             duan1_group.append(tuple([-1, s, e]))
+                            true_ele=0
                         s = j
                         e = j
                     else:

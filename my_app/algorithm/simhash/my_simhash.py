@@ -209,12 +209,13 @@ def sim_main(source,target,tem):
         if tichu_list[i] == 0:  # 不剔除的才计算重复率
             doc1_index, dis, doc2_index, doc1, doc2 = j
             rate = hash_list1[doc1_index].dup_rate(hash_list2[doc2_index])
+            rate*=100
             # sorted_list[i] = tuple([rate, doc1_index, dis, doc2_index, doc1, doc2])
             no_docu3_list.append(tuple([rate, doc1_index, dis, doc2_index, doc1, doc2]))
 
 
     #排序 从0起
-    sorted_list = sorted(no_docu3_list, key=lambda x: x[0], reverse=True)# 选rate就要reverse，选dis就要False
+    sorted_list = sorted(no_docu3_list, key=lambda x: x[0], reverse=True)# 选rate就要reverse true是降序 ，选dis就要False
     print('剔除之后的list:', sorted_list)
 
     select_final = []
@@ -224,7 +225,7 @@ def sim_main(source,target,tem):
         if sen_count>20: #取出最接近的20个
             break
         rate, doc1_index, dis, doc2_index, doc1, doc2 = j
-        if len(doc1) > 1 and len(doc2) > 1 and rate>0.1:
+        if len(doc1) > 8 and len(doc2) > 8 and rate>10:
             select_final.append(j)
             sen_count+=1
     # print('最后筛选结果:',select_final)

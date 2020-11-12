@@ -443,10 +443,11 @@ def dup_check():
     print('similarity:', similarity)
 
     print('ouput_algo之前的doc1_wrap:',doc1_wrap[:20])
-    print('抽出来看:',x_join_br[0][782:800])
+    # print('x_join_br:',x_join_br)
+    # print('抽出来看:',x_join_br[0][782:800])
 
     x_final_wrap,y_final_wrap=ouput_algo(x_final_wrap, y_final_wrap,x_join_br)  #把wrap中的 <br>一下，正常来说，通过zubao，是不用改的
-    print('ouput_algo之后的doc1_wrap:', doc1_wrap[:20])
+    print('ouput_algo之后的doc1_wrap:', x_final_wrap[:20])
 
 
     # for i,j in enumerate(source_target_list_sorted):#加上编号

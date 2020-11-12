@@ -4068,3 +4068,43 @@ Thu 12 Nov 2020 14:34:06 _internal.py INFO  * Debugger PIN: 304-402-708
 Thu 12 Nov 2020 14:34:06 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
 Thu 12 Nov 2020 14:34:09 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10月项目\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
 Thu 12 Nov 2020 14:34:09 _internal.py INFO  * Restarting with stat
+Thu 12 Nov 2020 14:34:10 dup_check.py WARNING warning
+Thu 12 Nov 2020 14:34:10 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 12 Nov 2020 14:34:10 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 12 Nov 2020 14:34:11 __init__.py DEBUG Loading model cost 0.691 seconds.
+Thu 12 Nov 2020 14:34:11 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 12 Nov 2020 14:34:11 _internal.py WARNING  * Debugger is active!
+Thu 12 Nov 2020 14:34:11 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 12 Nov 2020 14:34:11 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 12 Nov 2020 14:35:56 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10月项目\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Thu 12 Nov 2020 14:35:56 _internal.py INFO  * Restarting with stat
+Thu 12 Nov 2020 14:35:57 dup_check.py WARNING warning
+Thu 12 Nov 2020 14:35:57 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 12 Nov 2020 14:35:57 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 12 Nov 2020 14:35:57 __init__.py DEBUG Loading model cost 0.642 seconds.
+Thu 12 Nov 2020 14:35:57 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 12 Nov 2020 14:35:57 _internal.py WARNING  * Debugger is active!
+Thu 12 Nov 2020 14:35:57 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 12 Nov 2020 14:35:57 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 12 Nov 2020 14:36:37 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10月项目\\winnowing1.5\\pri_lcb\\my_app\\algorithm\\duan_winnowing.py', reloading
+Thu 12 Nov 2020 14:36:37 _internal.py INFO  * Restarting with stat
+Thu 12 Nov 2020 14:36:38 dup_check.py WARNING warning
+Thu 12 Nov 2020 14:36:38 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 12 Nov 2020 14:36:38 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 12 Nov 2020 14:36:39 __init__.py DEBUG Loading model cost 0.653 seconds.
+Thu 12 Nov 2020 14:36:39 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 12 Nov 2020 14:36:39 _internal.py WARNING  * Debugger is active!
+Thu 12 Nov 2020 14:36:39 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 12 Nov 2020 14:36:39 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 12 Nov 2020 14:36:43 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10月项目\\winnowing1.5\\pri_lcb\\my_app\\algorithm\\duan_winnowing.py', reloading
+Thu 12 Nov 2020 14:36:43 _internal.py INFO  * Restarting with stat
+Thu 12 Nov 2020 14:36:44 dup_check.py WARNING warning
+Thu 12 Nov 2020 14:36:44 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 12 Nov 2020 14:36:44 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 12 Nov 2020 14:36:45 __init__.py DEBUG Loading model cost 0.662 seconds.
+Thu 12 Nov 2020 14:36:45 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 12 Nov 2020 14:36:45 _internal.py WARNING  * Debugger is active!
+Thu 12 Nov 2020 14:36:45 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 12 Nov 2020 14:36:45 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 12 Nov 2020 14:37:30 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10月项目\\winnowing1.5\\pri_lcb\\my_app\\algorithm\\duan_winnowing.py', reloading
+Thu 12 Nov 2020 14:37:30 _internal.py INFO  * Restarting with stat

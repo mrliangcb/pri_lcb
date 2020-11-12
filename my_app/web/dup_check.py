@@ -280,7 +280,7 @@ def zubao(x,y,maodian,wrap):
     y: 是一维的str
 
     '''
-    print('进入组包的wrap',wrap)
+    # print('进入组包的wrap',wrap)
     #先做一个阶梯
     yy = [0 for i in range(len(y))]
     n = 0

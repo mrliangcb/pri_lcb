@@ -220,7 +220,7 @@ def sim_main(source,target,tem):
         if sen_count>20: #取出最接近的20个
             break
         rate, doc1_index, dis, doc2_index, doc1, doc2 = j
-        if len(doc1) > 13 and len(doc2) > 13:
+        if len(doc1) > 1 and len(doc2) > 1 and rate>0.1:
             select_final.append(j)
             sen_count+=1
     # print('最后筛选结果:',select_final)

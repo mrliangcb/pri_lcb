@@ -140,7 +140,7 @@ def get_closest(hash_list1,dis_mat,docu1,docu2):
 
     for i, j in enumerate(hash_list1):
         min_, index = find_min(dis_mat[i])
-        print('min_:',min_,'index_:',index)
+        # print('min_:',min_,'index_:',index)
         close_list.append(tuple([i, min_, index, docu1[i], docu2[index]]))
     return close_list
 
@@ -153,7 +153,7 @@ def extract_sen(x):
         while j<len(x[i]):
             k=j
             while k<length and x[i][k]!='。':
-                print('k为',k,'x[0]长度为:',len(x[i]))
+                # print('k为',k,'x[0]长度为:',len(x[i]))
                 k+=1
             sent.append(x[i][j:k+1])
             j=k+1
@@ -171,8 +171,8 @@ def sim_main(source,target,tem):
     print('extract时间:',time.time()-s1)
 
     print('提取后的source_sen:',source_sen[:5])
-    print('提取后的source_sen:', target_sen[:5])
-    print('提取后的source_sen:', tem_sen[:5])
+    print('提取后的tar_sen:', target_sen[:5])
+    print('提取后的tem_sen:', tem_sen[:5])
 
 
     s2 = time.time()
@@ -185,6 +185,8 @@ def sim_main(source,target,tem):
     dis_mat12=comp_dis_mat(hash_list1,hash_list2)
     dis_mat13 = comp_dis_mat(hash_list1, hash_list3)
     print('建立hash对象时间:', time.time() - s3)
+
+
 
     close_list12 = get_closest(hash_list1, dis_mat12, source_sen, target_sen)  # 一维[] 长度为list1 每个元素是最近的 句子
     close_list13 = get_closest(hash_list1, dis_mat13, source_sen, tem_sen)

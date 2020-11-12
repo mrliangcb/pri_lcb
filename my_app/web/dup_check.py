@@ -533,13 +533,13 @@ def get_doc(request,key,content_ok=0):
             content = dic[key]
             content_ok = 1
             content = json.loads(content)
-            print('{}内容为:{}'.format(key,content))
+            # print('{}内容为:{}'.format(key,content))
         except:
             dic = request.form.to_dict()  #
             content = dic[key]
             content_ok = 1
             content = json.loads(content)
-            print('{}内容为:{}'.format(key,content))
+            # print('{}内容为:{}'.format(key,content))
     except:
         content=None
     return content_ok,content
@@ -576,7 +576,7 @@ def propose_docx_doc(source_url,template_url):
         # template_content_ok = 0
         key='template_content'
         tem_content_ok, template_content = get_doc(request, key)
-        print('template_content是什么?',template_content)
+        # print('template_content是什么?',template_content)
     else:# docx文件
         template_content = intepret_docx(template_url)
 
@@ -625,8 +625,8 @@ def template_match():
 
     left_=[dict(i._asdict()) for i in left]
     right_ = [dict(i._asdict()) for i in right]
-    print('left_:',left_)
-    print('right:',right_)
+    # print('left_:',left_)
+    # print('right:',right_)
 
     result0=render_template('html_for_match.html',template=tem_global_list_obj )
     result1 = render_template('html_for_match_right.html', template=source_global_obj_list)

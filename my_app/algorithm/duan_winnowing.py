@@ -66,7 +66,7 @@ class paragraph_winnowing():
         # 正常
         # print('doc2_group_index在这里',doc2_group_index)
         doc2_wrap = self.doc2_tuple(doc2_group_index)
-        print('doc2_wrap:',doc2_wrap)  #[[(1, 0, 29), (-1, 30, 38), (0, 39, 68), (-1, 69, 74), (0, 75, 112)]]
+        # print('doc2_wrap:',doc2_wrap)  #[[(1, 0, 29), (-1, 30, 38), (0, 39, 68), (-1, 69, 74), (0, 75, 112)]]
 
         #按句号截取，然后计算每部分的重复率，写入字典，并写入top k堆
 

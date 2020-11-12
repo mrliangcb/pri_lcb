@@ -326,13 +326,7 @@ class paragraph_winnowing():
                             # print('k值',i,k)
                              #doc1中，超过13个字的连续才填入到doc2
                                 d, e, f = doc1_2_doc2_index[i][k]  # d是段号  e是第几个   f是字
-
-
-
                                 #这里要不拆分doc1_tuple
-
-
-
                                 if doc2_group_index[d][e] == -1:
                                     # print('doc2可以填入',a,d,e,f)
                                     doc2_group_index[d][e] = a  # 给分组标号

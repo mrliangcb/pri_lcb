@@ -247,7 +247,7 @@ def extract_doc_heading(para_list:list):
     global_obj=[]
     pos_num=0
     for i,para in enumerate(para_list):
-        print('第{}个para是什么:{}'.format(i,para))
+        # print('第{}个para是什么:{}'.format(i,para))
         text=para['text'].strip()
         type_name = para['style']
         str_split = text.split(' ')[-1]

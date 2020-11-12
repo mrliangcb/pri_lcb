@@ -309,9 +309,11 @@ def main(source_file,template_doc,source_isdoc,tem_isdoc):
     # source_global_list_obj = extract_global(source_file.paragraphs)
     print('解析时间2:', time.time() - process_time)
 
-    time_find_tem=time.time()
-    template_select_obj_list = get_muban(tem_heading_obj_list, source_heading_obj_list)
-    print('找模板时间:',time.time()-time_find_tem)
+
+    template_select_obj_list=tem_heading_obj_list
+    # time_find_tem=time.time()
+    # template_select_obj_list = get_muban(tem_heading_obj_list, source_heading_obj_list)
+    # print('找模板时间:',time.time()-time_find_tem)
 
     mat_time=time.time()
     tem_heading_match,source_heading,source_global_obj=find_best_match(template_select_obj_list,source_heading_obj_list,source_global_obj_list)

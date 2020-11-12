@@ -92,11 +92,9 @@ def create_hash_obj_list(sen_list):
         # s_t=time.time()
         j = list(jieba.cut(j)) #生成tokens
         # print('jieba时间:',time.time()-s_t)
-
         # s_t2=time.time()
         hash = simhash(j)
         # print('simhash时间:',time.time()-s_t2)
-
         hash_list.append(hash)
     return hash_list
 
@@ -216,7 +214,7 @@ def sim_main(source,target,tem):
 
     #排序 从0起
     sorted_list = sorted(no_docu3_list, key=lambda x: x[0], reverse=True)# 选rate就要reverse true是降序 ，选dis就要False
-    print('剔除之后的list:', sorted_list)
+    # print('剔除之后的list:', sorted_list)
 
     select_final = []
     sen_count = 0

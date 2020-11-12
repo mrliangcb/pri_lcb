@@ -377,9 +377,9 @@ def dup_check():
     # print('tem_fenduan是什么?',tem_fenduan[:5]) # ['']
 
     x_fenduan,source,x_duandian=my_split(source) # str
-    print('source split  str:',source[:1000])
+    print('字符串source:',source[:1000])
     y_fenduan,target,y_duandian=my_split(target) # str  <br>连起来
-    print('target split str:', target[:1000])
+    print('字符串target:', target[:1000])
 
     # source = source.replace('\n', '<br>')
     # print('replace之后source', source)

@@ -358,7 +358,7 @@ def dup_check():
     tem_str=template_target
     template_target=[template_target]
     template_target = clear(template_target) # 其实clear没用
-    print('clear之后的template_target:',template_target)
+    # print('clear之后的template_target:',template_target)
 
 
     source_length = len(source)
@@ -374,12 +374,12 @@ def dup_check():
 
     tem_fenduan, tem_split, tem_duandian = my_split(tem_str) # 输入是str  先分段，然后去掉空行 然后返回拼接或者直接返回段信息
     # x_fenduan 是一维的，每维是一段一个str
-    print('tem_fenduan是什么?',tem_fenduan[:5]) # ['']
+    # print('tem_fenduan是什么?',tem_fenduan[:5]) # ['']
 
     x_fenduan,source,x_duandian=my_split(source) # str
-    print('source split  str:',source[:100])
+    # print('source split  str:',source[:100])
     y_fenduan,target,y_duandian=my_split(target) # str  <br>连起来
-    print('target split str:', target[:100])
+    # print('target split str:', target[:100])
 
 
 
@@ -413,11 +413,11 @@ def dup_check():
 
     s_time=time.time()
     example = paragraph_winnowing()
-    print('送入检测的source:',len(source[0]),source)  #103长度
-    print('送入检测的target:', target)
+    # print('送入检测的source:',len(source[0]),source)  #103长度
+    # print('送入检测的target:', target)
     similarity,result_str,doc1_wrap,doc2_wrap=example.get_sim(source,target,template=template_target,n=13)
 
-    print('未加入br的wrap1:', doc1_wrap) # 下表最大是102  [[(0, 0, 101), (-1, 102, 102)]]
+    # print('未加入br的wrap1:', doc1_wrap) # 下表最大是102  [[(0, 0, 101), (-1, 102, 102)]]
 
     # result_dup_list = list_model(doc1_wrap, doc2_wrap, source, target)
     # print('result_dup_list:',result_dup_list)
@@ -444,9 +444,9 @@ def dup_check():
 
 
 
-    print('ouput_algo之前的doc1_wrap:',doc1_wrap)
+    # print('ouput_algo之前的doc1_wrap:',doc1_wrap)
     x_final_wrap,y_final_wrap=ouput_algo(x_final_wrap, y_final_wrap,x_join_br)  #把wrap中的 <br>一下，正常来说，通过zubao，是不用改的
-    print('ouput_algo之后的doc1_wrap:', doc1_wrap)
+    # print('ouput_algo之后的doc1_wrap:', doc1_wrap)
 
 
     # for i,j in enumerate(source_target_list_sorted):#加上编号

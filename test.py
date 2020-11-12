@@ -5,7 +5,7 @@
 # para_obj =nt('paragraph', ['type', 'position', 'origin','str_','flag','test']) # flag和test怎么用
 # para_obj.__new__.__defaults__ = ('para',None, None,None,None,None)
 #
-
+import requests
 
 url='http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing'
 data={
@@ -14,7 +14,7 @@ data={
     'template':'我是梁成波我是梁成波我是梁成波我是梁成波我是梁成波我是梁成波'
 }
 
-import requests
+
 result=requests.post(url,data=data)
 res=result.json()
 print(res)

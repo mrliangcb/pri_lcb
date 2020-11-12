@@ -155,7 +155,10 @@ def find_best_match(heading4_target_obj_list,source_heading_obj_list,source_glob
             tem_flag = 1
         else:
             tem_flag = 1 #-4
-        flag_left[template_index] = tem_flag
+        try:
+            flag_left[template_index] = tem_flag
+        except:
+            print('flag_left[template_index]越界了：',len(flag_left),flag_left,template_index)
         flag_right[j] = tem_flag
 
     # 左边 解决是否存在的问题

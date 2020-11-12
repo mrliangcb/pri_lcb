@@ -133,10 +133,10 @@ def comp_dis_mat(hash_list1,hash_list2):
 
 def get_closest(hash_list1,dis_mat,docu1,docu2):
     close_list = []
-    print('get_closest里面')
-    print('hash_list1长度:',len(hash_list1))
-    print('docu1长度:', len(docu1))
-    print('docu2长度:', len(docu2))
+    # print('get_closest里面')
+    # print('hash_list1长度:',len(hash_list1))
+    # print('docu1长度:', len(docu1))
+    # print('docu2长度:', len(docu2))
 
     for i, j in enumerate(hash_list1):
         min_, index = find_min(dis_mat[i])
@@ -173,9 +173,9 @@ def sim_main(source,target,tem):
     tem_sen = extract_sen(tem)
     print('extract时间:',time.time()-s1)
 
-    print('提取后的source_sen:',source_sen[:5])
-    print('提取后的tar_sen:', target_sen[:5])
-    print('提取后的tem_sen:', tem_sen[:5])
+    # print('提取后的source_sen:',source_sen[:5])
+    # print('提取后的tar_sen:', target_sen[:5])
+    # print('提取后的tem_sen:', tem_sen[:5])
 
 
     s2 = time.time()
@@ -199,9 +199,9 @@ def sim_main(source,target,tem):
         doc1_index, dis, doc2_index, doc1, doc2 = j #解包
         if dis<=5:
             tichu_list[i]=1 #在模板中有，点亮，表明要除去
-    for i,j in enumerate(tichu_list):
-        if j ==1:
-            print('剔除结果:',source_sen[i])
+    # for i,j in enumerate(tichu_list):
+    #     if j ==1:
+            # print('剔除结果:',source_sen[i])
 
     #计算重复率
     no_docu3_list = []
@@ -223,7 +223,7 @@ def sim_main(source,target,tem):
         if len(doc1) > 13 and len(doc2) > 13:
             select_final.append(j)
             sen_count+=1
-    print('最后筛选结果:',select_final)
+    # print('最后筛选结果:',select_final)
     return select_final
 
 

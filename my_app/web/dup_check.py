@@ -407,7 +407,7 @@ def dup_check():
         rate, doc1_index, dis, doc2_index, doc1, doc2=j
         dic_sim={'source':doc1,'target':doc2,'rate':rate}
         dup_list_simhash.append(dic_sim)
-    print('组装好的dup_list_simhash:',dup_list_simhash)
+    print('组装好的dup_list_simhash:',dup_list_simhash[:10])
 
 
 

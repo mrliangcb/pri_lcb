@@ -12,13 +12,13 @@ class paragraph_winnowing():
         '''
         s_time=time.time()
         x1_gram=self.build_gram(x1,n)
-        print('x1_gram:',x1_gram)
+        # print('x1_gram:',x1_gram)
         x2_gram=self.build_gram(x2,n)
         template_gram=self.build_gram(template,n)
-        print('template_gram是这个:',template_gram)
+        # print('template_gram是这个:',template_gram)
 
         template_hash = self.gram_hash(template_gram,n)
-        print('template_hash:', template_hash)
+        # print('template_hash:', template_hash)
 
         x1_hash = self.gram_hash(x1_gram,n)
         x2_hash = self.gram_hash(x2_gram,n)

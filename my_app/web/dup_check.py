@@ -477,7 +477,6 @@ def dup_check():
     result_dic = {'dup_rate': result1,
                   'source_label': result4,
                   'target_label': result5
-
                   }
 
     return jsonify(result_dic)

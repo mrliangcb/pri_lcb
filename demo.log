@@ -5922,3 +5922,23 @@ Fri 13 Nov 2020 09:21:38 _internal.py INFO  * Debugger PIN: 304-402-708
 Fri 13 Nov 2020 09:21:38 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
 Fri 13 Nov 2020 09:21:45 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10月项目\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
 Fri 13 Nov 2020 09:21:45 _internal.py INFO  * Restarting with stat
+Fri 13 Nov 2020 09:21:46 dup_check.py WARNING warning
+Fri 13 Nov 2020 09:21:46 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Fri 13 Nov 2020 09:21:46 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Fri 13 Nov 2020 09:21:47 __init__.py DEBUG Loading model cost 0.651 seconds.
+Fri 13 Nov 2020 09:21:47 __init__.py DEBUG Prefix dict has been built successfully.
+Fri 13 Nov 2020 09:21:47 _internal.py WARNING  * Debugger is active!
+Fri 13 Nov 2020 09:21:47 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 13 Nov 2020 09:21:47 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 13 Nov 2020 09:25:15 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10月项目\\winnowing1.5\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Fri 13 Nov 2020 09:25:16 _internal.py INFO  * Restarting with stat
+Fri 13 Nov 2020 09:25:17 dup_check.py WARNING warning
+Fri 13 Nov 2020 09:25:17 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Fri 13 Nov 2020 09:25:17 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Fri 13 Nov 2020 09:25:17 __init__.py DEBUG Loading model cost 0.667 seconds.
+Fri 13 Nov 2020 09:25:17 __init__.py DEBUG Prefix dict has been built successfully.
+Fri 13 Nov 2020 09:25:17 _internal.py WARNING  * Debugger is active!
+Fri 13 Nov 2020 09:25:17 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 13 Nov 2020 09:25:17 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 13 Nov 2020 09:27:50 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10月项目\\winnowing1.5\\pri_lcb\\run.py', reloading
+Fri 13 Nov 2020 09:27:50 _internal.py INFO  * Restarting with stat

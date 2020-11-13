@@ -42,7 +42,7 @@ con_dic=app.config  #取得配置文件的字典，是在app.web 的init读入�
 
 if __name__ == '__main__':
 
-    app.run("0.0.0.0",debug=True,port=50000,threaded=True)# ,,threaded=True, ,processes=True
+    app.run("0.0.0.0",debug=True,port=50000,processes=True)# ,,threaded=True, ,processes=True
 
 
 

@@ -2,7 +2,7 @@
 
 
 import jieba
-
+import time
 def start_jieba():
     x='完成jieba激活分词load model'
     y=list(jieba.cut(x))
@@ -89,15 +89,20 @@ class simhash:
 
 def create_hash_obj_list(sen_list):
     hash_list = []
+    jieba_time=0
+    build_hash_time=0
+
     for i, j in enumerate(sen_list):
-        # s_t=time.time()
+        s_t=time.time()
         j = list(jieba.cut(j)) #生成tokens
+        jieba_time+=time.time()-s_t
         # print('jieba时间:',time.time()-s_t)
-        # s_t2=time.time()
+        s_t2=time.time()
         hash = simhash(j)
+        build_hash_time+=time.time()-s_t2
         # print('simhash时间:',time.time()-s_t2)
         hash_list.append(hash)
-    return hash_list
+    return hash_list,jieba_time,build_hash_time
 
 def func(a,b):
     dis=a.hamming_distance(b)
@@ -178,9 +183,13 @@ def sim_main(source,target,tem):
 
 
     s2 = time.time()
-    hash_list1 = create_hash_obj_list(source_sen)
-    hash_list2 = create_hash_obj_list(target_sen)
-    hash_list3 = create_hash_obj_list(tem_sen)
+    hash_list1,jieba_time1,build_hash_time1 = create_hash_obj_list(source_sen)
+    hash_list2,jieba_time2,build_hash_time2 = create_hash_obj_list(target_sen)
+    hash_list3,jieba_time3,build_hash_time3 = create_hash_obj_list(tem_sen)
+
+    print('cut的所有时间:',jieba_time1+jieba_time2+jieba_time3)
+    print('simhash编码的所有时间:', build_hash_time1 + build_hash_time2 + build_hash_time3)
+
     print('建立hash对象时间:', time.time() - s2)  #很耗时
 
     s3 = time.time()

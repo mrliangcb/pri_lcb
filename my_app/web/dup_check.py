@@ -693,9 +693,18 @@ def template_match():
 # <p style="color:red">红色的字</p>
 
 
+# def func(x):
+#     print('x是什么?',x)
+#     print('我是{}'.format(x))
 
-
-
+# from my_app.web.test2 import parallelize
+# @web.route('/NLP/Algorithm/base/dup_check/duojincheng', methods=['POST','GET'])
+# def duojin():
+#     # key='source'
+#     # key_ok,content,dic=get_key_data(request,key)
+#     data_input = [[[1], [2]], [[3], [4]]]  # 可以进入func再解包   每次读入 [[1],[2]]
+#     parallelize(data_input, func)
+#     return 'ok'
 
 
 

@@ -43,11 +43,15 @@ class simhash:
 
         # 求海明距离
     def hamming_distance(self, other):
-        x = (self.hash ^ other.hash) & ((1 << self.hashbits) - 1)
-        tot = 0;
-        while x:
-            tot += 1
-            x &= x - 1
+        # print('self的哈希值:',self.hash)
+        # print('other的哈希值:', other.hash) # 5852796532665
+        # x = (self.hash ^ other.hash) & ((1 << self.hashbits) - 1)
+        # tot = 0;
+        # while x:
+        #     tot += 1
+        #     x &= x - 1
+        tot=bin(int(self.hash) ^ int(other.hash)).count("1")
+
         return tot
 
     def dup_rate(self,other):
@@ -125,6 +129,7 @@ def find_min(x):
 
 def comp_dis_mat(hash_list1,hash_list2):
     dis_mat = [[0 for i in range(len(hash_list2))] for i in range(len(hash_list1))]  # hash1是行数
+
     print('hash_list1的长度:', len(hash_list1))
     print('dis_mat的长度', len(dis_mat))  # 935
 
@@ -132,6 +137,7 @@ def comp_dis_mat(hash_list1,hash_list2):
         for j in range(len(hash_list2)):
             dis = func(hash_list1[i], hash_list2[j])
             dis_mat[i][j] = dis
+
     return dis_mat
 
 
@@ -190,12 +196,12 @@ def sim_main(source,target,tem):
     print('cut的所有时间:',jieba_time1+jieba_time2+jieba_time3)
     print('simhash编码的所有时间:', build_hash_time1 + build_hash_time2 + build_hash_time3)
 
-    print('建立hash对象时间:', time.time() - s2)  #很耗时
+    print('建立hash对象时间:', time.time() - s2)  #   1.82768535
 
     s3 = time.time()
     dis_mat12=comp_dis_mat(hash_list1,hash_list2)
     dis_mat13 = comp_dis_mat(hash_list1, hash_list3)
-    print('建立hash对象时间:', time.time() - s3)
+    print('匹配hash对象时间:', time.time() - s3)  #主要这里耗时
 
 
 
@@ -212,6 +218,7 @@ def sim_main(source,target,tem):
             # print('剔除结果:',source_sen[i])
 
     #计算重复率
+    dup_time=time.time()
     no_docu3_list = []
     for i, j in enumerate(close_list12):
         if tichu_list[i] == 0:  # 不剔除的才计算重复率
@@ -220,7 +227,7 @@ def sim_main(source,target,tem):
             rate*=100
             # sorted_list[i] = tuple([rate, doc1_index, dis, doc2_index, doc1, doc2])
             no_docu3_list.append(tuple([rate, doc1_index, dis, doc2_index, doc1, doc2]))
-
+    print('dup计算时间',time.time()-dup_time)
 
     #排序 从0起
     sorted_list = sorted(no_docu3_list, key=lambda x: x[0], reverse=True)# 选rate就要reverse true是降序 ，选dis就要False

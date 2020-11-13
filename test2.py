@@ -29,7 +29,6 @@ filename=path1
 if filename.endswith('.doc'):
 
     subprocess.call(['soffice', '--headless', '--convert-to', 'docx', filename])
-
     doc = docx.Document(filename[:-4]+".docx")
     for para in doc.paragraphs:
         print (para.text)

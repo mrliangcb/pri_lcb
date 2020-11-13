@@ -108,34 +108,44 @@ class Solution:
                     max_id =i
         return max_len,dp2[max_id] #dp2是下标   如果喜test都是-2，那会返回0
 
-def make_seq(x,y):#x list  y dic   投标文档 参照字典，重做下标    有可能重复标题
+def make_seq(x,y):# x list  y dic   投标文档 参照字典，重做下标    有可能重复标题
     seq_=[-2 for i in range(len(x))]
 
     for i,j in enumerate(x):
         temp=y.get(j.str_)  # 模板字典的位置
         if temp!=None:
-            x[i] = x[i]._replace(test=temp) # 与flag区别    test是暂时用于放template的对应下标
+            x[i] = x[i]._replace(test=temp) # 与flag区别    test是暂时用于放template的对应下标   #这个操作会改变原来的x的test   temp就是在标题对象中的序号
             seq_[i]=x[i]
         else:
-            x[i] = x[i]._replace(test=-2)
+            x[i] = x[i]._replace(test=-2) #找不到下标
             seq_[i] =x[i] #没找到
     return seq_
+
+
 def find_best_match(heading4_target_obj_list,source_heading_obj_list,source_global_obj_list):
+    print('模板标题对象:',heading4_target_obj_list[:3],len(heading4_target_obj_list))
+    print('source标题对象:', source_heading_obj_list[:3], len(source_heading_obj_list))
+    print('source全文标题对象:', source_global_obj_list[:3], len(source_global_obj_list))
 
     all_heading1_dic = {}
     all_heading1_list = []
+    over_heading=0
     for i, j in enumerate(heading4_target_obj_list):
-        if not all_heading1_dic.get(j.str_):  # 不重复的标题
-            all_heading1_dic[j.str_] = i
+        if not all_heading1_dic.get(j.str_):  # 不重复的标题   将模板标题的str放到  字典
+            all_heading1_dic[j.str_] = i  # str -> i   i是标题对象的序号
             all_heading1_list.append(j.str_)   #如果重复了，算是有但错位
-
+        else:
+            over_heading=1 #重复标题出现
+    print('是否有重复标题:',over_heading==1)
 
     seq = make_seq(source_heading_obj_list, all_heading1_dic) #shape=source   元素为template的下标
+    # seq是source标题对象，test被赋予了 模板标题的序号
+    # 按道理来说source_heading_obj和seq是一样的
     all_heading1_set = set(all_heading1_list) #template集合
 
     source_heading_list_str = []
     for i, j in enumerate(source_heading_obj_list):
-        source_heading_list_str.append(j.str_)
+        source_heading_list_str.append(j.str_) # source的内容做个集合
     source_heading_set_str = set(source_heading_list_str) #source集合
 
 
@@ -145,12 +155,12 @@ def find_best_match(heading4_target_obj_list,source_heading_obj_list,source_glob
 
     #左边
     # 解决序列对上的，级别是否对上
-    flag_left = [-2 for i in range(len(all_heading1_list))]
+    flag_left = [-2 for i in range(len(heading4_target_obj_list))] # 如果出现重复标题 heading4_target_obj_list 可能大于这个 all_heading1_list
     flag_right = [-2 for i, _ in enumerate(source_heading_list_str)]
 
 
     for i, j in enumerate(result[1]):  # seq的最长公共子序列下标
-        template_index = seq[j].test #对应到template下标  seq是source的对象list
+        template_index = seq[j].test # j是seq里面的下表  .test是模板题目的下标        对应到template下标  seq是source的对象list
         if seq[j].type == heading4_target_obj_list[template_index].type:
             tem_flag = 1
         else:

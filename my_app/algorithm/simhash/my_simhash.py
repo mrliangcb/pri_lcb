@@ -50,7 +50,10 @@ class simhash:
         # while x:
         #     tot += 1
         #     x &= x - 1
+
         tot=bin(int(self.hash) ^ int(other.hash)).count("1")
+
+
 
         return tot
 
@@ -128,7 +131,7 @@ def find_min(x):
 
 
 def comp_dis_mat(hash_list1,hash_list2):
-    dis_mat = [[0 for i in range(len(hash_list2))] for i in range(len(hash_list1))]  # hash1是行数
+    dis_mat = [[100 for i in range(len(hash_list2))] for i in range(len(hash_list1))]  # hash1是行数
 
     print('hash_list1的长度:', len(hash_list1))
     print('dis_mat的长度', len(dis_mat))  # 935
@@ -137,6 +140,7 @@ def comp_dis_mat(hash_list1,hash_list2):
         for j in range(len(hash_list2)):
             dis = func(hash_list1[i], hash_list2[j])
             dis_mat[i][j] = dis
+            if dis==0:break
 
     return dis_mat
 

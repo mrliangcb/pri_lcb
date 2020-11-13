@@ -395,19 +395,6 @@ def dup_check():
     print('preprocess time:',time.time()-s_preprocess_time)
     logging.info('preprocess time: {}'.format(time.time()-s_preprocess_time))
 
-    simh_time_s=time.time()
-
-    # simhash
-    sim_list=sim_main(x_fenduan, y_fenduan, tem_fenduan)
-    print('simhash全部时间:',time.time()-simh_time_s)
-    dup_list_simhash=[]
-    for i,j in enumerate(sim_list):
-        rate, doc1_index, dis, doc2_index, doc1, doc2=j
-        dic_sim={'source':doc1,'target':doc2,'rate':rate}
-        dup_list_simhash.append(dic_sim)
-    # print('组装好的dup_list_simhash:',dup_list_simhash[:10])
-
-
 
     s_time=time.time()
     example = paragraph_winnowing()
@@ -419,7 +406,7 @@ def dup_check():
 
     # result_dup_list = list_model(doc1_wrap, doc2_wrap, source, target)
     # print('result_dup_list:',result_dup_list)
-    result_dup_list=dup_list_simhash
+
 
     # [{'source': '我是马大哈我是马大哈我是马大哈我是马大哈我是马大哈我是马大哈我是马大哈我是马大哈。我是梁静怡我是梁静怡我是梁静怡我是梁静怡我是梁静怡我是梁静怡。', 'target': '我是梁静怡我是梁静怡我是梁静怡我是梁静怡我是梁静怡我是梁静怡哈哈哈哈哈。', 'rate': 98.6}]
 
@@ -480,6 +467,7 @@ def dup_check():
     result1=similarity
     result3 = render_template('testHtml2.html', name1='doc1', name2='doc2', time=time_, dup_check=similarity,doc1_str=x_join_br, doc2_str=y_join_br,
                     doc1_wrap=x_final_wrap, doc2_group_=y_final_wrap)
+
     result4 = render_template('add_href_doc1.html', doc1_wrap=x_final_wrap, doc1_str=x_join_br)
     # return result3
     result5 = render_template('add_href_doc2.html', doc2_group_=y_final_wrap, doc2_str=y_join_br)
@@ -488,11 +476,9 @@ def dup_check():
 
     result_dic = {'dup_rate': result1,
                   'source_label': result4,
-                  'target_label': result5,
-                 'dup_list':result_dup_list
+                  'target_label': result5
+
                   }
-
-
 
     return jsonify(result_dic)
 
@@ -586,6 +572,68 @@ def propose_docx_doc(source_url,template_url):
     return source_content,template_content,source_doc_name,tem_doc_name,source_isdoc,tem_isdoc
 
 
+
+@web.route('/NLP/Algorithm/base/dup_check/simhash', methods=['POST','GET'])
+def simhash_route():
+    # args_dic = request.args
+    global_start_time=time.time()
+
+    print('########################  now route simhash  ###############################')
+    # s_preprocess_time=time.time()
+    # args_dic=request.form.to_dict()
+    print('接收到request:',request)
+    print('now time:',time.localtime(time.time()))
+    logging.info('{} foreign request : {} to {}'.format('simhash:',str(request),'dup_check'))
+    key='source'
+    sou_key_ok,source,dic=get_key_data(request,key)
+    if sou_key_ok==0:
+        print("can't get source")
+        logging.info("can't get source")
+        return jsonify("can't get source")
+    key = 'target'
+    tem_key_ok, target, dic = get_key_data(request, key)
+    if tem_key_ok == 0:
+        print("can't get target")
+        logging.info("can't get target")
+        return jsonify("can't get target")
+
+    template_target = dic.get('template', '')  # 有template 或者没有
+    # print('提取的模板:',template_target)
+    template_length = len(template_target)
+    # source , target template 的异常[]   [……[]]
+    # str阶段 ''或者无，'……'
+
+    # 分段并且去掉空段
+    # template_target = template_target.split(r'\n')
+    tem_str = template_target
+    template_target = [template_target]
+    template_target = clear(template_target)  # 其实clear没用
+    # print('clear之后的template_target:',template_target)
+
+    source_length = len(source)
+    target_length = len(target)
+    print('长度：  source: {} | target : {} | template: {}'.format(source_length, target_length, template_length))
+
+    tem_fenduan, tem_split, tem_duandian = my_split(tem_str)
+    x_fenduan, source, x_duandian = my_split(source)
+    y_fenduan, target, y_duandian = my_split(target)
+
+    # simhash
+    simh_time_s = time.time()
+    sim_list = sim_main(x_fenduan, y_fenduan, tem_fenduan)
+    print('simhash全部时间:', time.time() - simh_time_s)
+    dup_list_simhash = []
+    for i, j in enumerate(sim_list):
+        rate, doc1_index, dis, doc2_index, doc1, doc2 = j
+        dic_sim = {'source': doc1, 'target': doc2, 'rate': rate}
+        dup_list_simhash.append(dic_sim)
+    # print('组装好的dup_list_simhash:',dup_list_simhash[:10])
+
+    result_dup_list = dup_list_simhash
+    result_dic={'dup_list':result_dup_list}
+    return jsonify(result_dic)
+
+
 from my_app.algorithm.template_match.algo import main
 @web.route('/NLP/Algorithm/base/dup_check/template_match', methods=['POST','GET'])
 def template_match():
@@ -644,6 +692,53 @@ def template_match():
 # 'tem_info': '1(正确),-2(缺失),-3(位置不正确),-4(位置正确但级别不对)',
 
 # <p style="color:red">红色的字</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

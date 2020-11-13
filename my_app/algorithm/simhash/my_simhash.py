@@ -38,6 +38,7 @@ class simhash:
             if v[i] >= 0:
                 fingerprint += 1 << i
         return fingerprint  # 整个文档的fingerprint为最终各个位>=0的和
+        # finger指纹是长文本向量
 
 
         # 求海明距离
@@ -84,7 +85,7 @@ class simhash:
         x ^= len(source)
         if x == - 1:
             x = - 2
-        return x
+        return x #hash值
 
 def create_hash_obj_list(sen_list):
     hash_list = []

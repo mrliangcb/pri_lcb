@@ -87,7 +87,7 @@ class paragraph_winnowing():
             if a in doc2_wrap_set:
                 pass
             else:#如果没找到这一组，那就改成-1
-                doc1_wrap[0][i]=tuple([-1,b,c])
+                # doc1_wrap[0][i]=tuple([-1,b,c])
                 print('验证不合格的组号:',a)
         print('验证及格后的doc1_wrap:',doc1_wrap)
 

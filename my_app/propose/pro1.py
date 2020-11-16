@@ -1,6 +1,7 @@
 
 
-
+import re
+import regex as re
 
 
 def gehang(s):
@@ -15,12 +16,14 @@ def gehang(s):
     for i in range(len(y) - 1, 0, -1):
         if (y[i] - y[i - 1]) == 3:
             s_new = s_new[0:y[i]] + s_new[y[i] + 2:]
+    ptr=r"[\d]*\\t"
+    s_new = re.sub(ptr, '', s_new)
     return s_new
 
 
 
 if __name__=="__main__":
-    s='这个是什么呢大\n唐\n中\n水\n集\n团'
+    s='这个是什么呢大\n唐\n中\n水\n集\n团10\t21'
 
     print(s)
     y=[]

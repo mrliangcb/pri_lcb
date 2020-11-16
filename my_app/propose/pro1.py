@@ -20,6 +20,7 @@ def gehang(s):
     s_new = re.sub(ptr, '', s_new)
     # s_new = s_new.replace('\\n','\n')
     s_new=eval(s_new)
+    # s_new = eval(s_new)
     return s_new
 
 

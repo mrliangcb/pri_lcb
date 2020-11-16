@@ -265,14 +265,18 @@ class paragraph_winnowing():
             s = 0
             e = 0
             true_ele = 0
+            dot_ele=0
             if len(result_01[i])>1: #
                 for j in range(1, len(result_01[i])): #开始遍历这一段
                     if doc1_str[i][j] not in trasbin:
                         true_ele+=1
+                    if doc1_str[i][j]=='.':
+                        dot_ele+=1
+
                     if (result_01[i][j] != result_01[i][j - 1]):  # 触发跳变
                         # print('段:',duan,j,result_01[i][j-1],result_01[i][j])
 
-                        if (result_01[i][j - 1] == 1) and (e-s+1)>=13 and true_ele>=13: #上一个是1，表示是重复的 并且长度>13  true_ele就是避免 匹配空格的问题，把空格也算进13就不好
+                        if (result_01[i][j - 1] == 1) and (e-s+1)>=13 and true_ele>=13 and dot_ele<13: #上一个是1，表示是重复的 并且长度>13  true_ele就是避免 匹配空格的问题，把空格也算进13就不好 垃圾符号超过13个就不
                             duan1_group.append(tuple([group_num, s, e]))  # 取的时候 (s:e+1)
                             group_num += 1
                             true_ele=0

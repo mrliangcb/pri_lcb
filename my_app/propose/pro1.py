@@ -18,6 +18,8 @@ def gehang(s):
             s_new = s_new[0:y[i]] + s_new[y[i] + 2:]
     ptr=r"[\d]*\\t"
     s_new = re.sub(ptr, '', s_new)
+    # s_new = s_new.replace('\\n','\n')
+    s_new=eval(s_new)
     return s_new
 
 
@@ -27,8 +29,13 @@ if __name__=="__main__":
 
     print(s)
     y=[]
-    print(gehang(s))
+    res=gehang(s)
+    res=res[1:-1]
 
+    print(type(res))
+    print(res)
+    s='123\u300023'
+    print(s)
 
 # import re
 # import regex as re

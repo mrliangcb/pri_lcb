@@ -77,7 +77,7 @@ class paragraph_winnowing():
         # [[(0, 0, 29), (-1, 30, 80), (0, 81, 121)]]
         doc2_wrap_set=[]
         for i in range(len(doc2_wrap[0])):
-            a,b,c=doc1_wrap[0][i]
+            a,b,c=doc2_wrap[0][i]
             doc2_wrap_set.append(a)
         doc2_wrap_set=set(doc2_wrap_set)
         print('doc2_wrap_set是什么:',doc2_wrap_set)

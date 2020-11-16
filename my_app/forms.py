@@ -47,10 +47,3 @@ def vali_check_match1(request,source_ok=0,template_ok=0):
 
 
 
-
-
-
-
-
-
-

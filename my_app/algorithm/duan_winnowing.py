@@ -324,7 +324,7 @@ class paragraph_winnowing():
                         for k in range(b, c + 1):# 把13个在doc2的地址找出来
                             d, e, f = doc1_2_doc2_index[i][k]  #第一个重复字下表是tuple，d是在doc2的哪个段  e是doc2 d段的第几个字  f是文字
                             if doc2_group_index[d][e] == -1:#如果doc2组编号中还没写入东西
-                                test_count+=1 #这13个字可以写入
+                                test_count+=1 # 这13个字可以写入
 
                         if test_count>=13:# 如果doc2那边有13个以上-1   有可能前面出现过短句，现在是长句
                             for k in range(b, c + 1):  # 找s到e之间，去doc2的信息

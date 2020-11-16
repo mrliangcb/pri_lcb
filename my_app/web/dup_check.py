@@ -318,13 +318,13 @@ def zubao(x,y,maodian,wrap):
 
     return final_wrap,join_br
 
-
+from my_app.propose.pro1 import gehang
 
 @web.route('/NLP/Algorithm/base/dup_check/winnowing', methods=['POST','GET'])
 def dup_check():
     # args_dic = request.args
-    global_start_time=time.time()
 
+    global_start_time=time.time()
     print('now route winnowing')
     s_preprocess_time=time.time()
     args_dic=request.form.to_dict()
@@ -376,9 +376,12 @@ def dup_check():
     # x_fenduan 是一维的，每维是一段一个str
     # print('tem_fenduan是什么?',tem_fenduan[:5]) # ['']
 
+    source=gehang(source)
     x_fenduan,source,x_duandian=my_split(source) # str
     print('source_string:')
     print('字符串source:',repr(source[:1000]))
+
+    target = gehang(target)
     y_fenduan,target,y_duandian=my_split(target) # str  <br>连起来
     print('字符串target:', repr(target[:1000]))
 

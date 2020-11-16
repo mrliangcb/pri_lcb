@@ -76,7 +76,7 @@ class paragraph_winnowing():
         print('doc2_wrap:',doc2_wrap)
         # [[(0, 0, 29), (-1, 30, 80), (0, 81, 121)]]
         for i in range(len(doc1_wrap[0])):
-
+            pass
 
 
 

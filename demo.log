@@ -7104,3 +7104,5 @@ Mon 16 Nov 2020 14:58:16 dup_check.py INFO preprocess time: 0.003002643585205078
 Mon 16 Nov 2020 14:58:16 dup_check.py INFO make output time: 0.0
 Mon 16 Nov 2020 14:58:16 dup_check.py INFO run success!! time cost      :    0.003002643585205078      |length : 119  |  124  |    30  |dup_rate:0.6016949152542372
 Mon 16 Nov 2020 14:58:17 _internal.py INFO 127.0.0.1 - - [16/Nov/2020 14:58:17] "[37mPOST /NLP/Algorithm/base/dup_check/winnowing HTTP/1.1[0m" 200 -
+Mon 16 Nov 2020 15:15:12 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\pri_lcb\\my_app\\algorithm\\duan_winnowing.py', reloading
+Mon 16 Nov 2020 15:15:12 _internal.py INFO  * Restarting with stat

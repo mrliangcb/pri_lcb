@@ -376,7 +376,7 @@ def dup_check():
     # x_fenduan 是一维的，每维是一段一个str
     # print('tem_fenduan是什么?',tem_fenduan[:5]) # ['']
 
-    print('source原文：',source)
+    print('source原文：',repr(source))
     source=gehang(source)
     x_fenduan,source,x_duandian=my_split(source) # str
 

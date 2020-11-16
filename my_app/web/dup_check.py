@@ -376,15 +376,15 @@ def dup_check():
     # x_fenduan 是一维的，每维是一段一个str
     # print('tem_fenduan是什么?',tem_fenduan[:5]) # ['']
 
-    print('source原文：',source[:20000])
+    print('source原文：',source)
     source=gehang(source)
     x_fenduan,source,x_duandian=my_split(source) # str
 
-    print('字符串source:',repr(source[:1000]))
+    # print('字符串source:',repr(source[:1000]))
 
     target = gehang(target)
     y_fenduan,target,y_duandian=my_split(target) # str  <br>连起来
-    print('字符串target:', repr(target[:1000]))
+    # print('字符串target:', repr(target[:1000]))
 
     # source = source.replace('\n', '<br>')
     # print('replace之后source', source)

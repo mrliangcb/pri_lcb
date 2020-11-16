@@ -4,6 +4,8 @@
 
 
 def gehang(s):
+    s=repr(s)
+    # print('传入的s',s)
     s_new = s
     y = []
     for i in range(1, len(s)):
@@ -18,9 +20,11 @@ def gehang(s):
 
 
 if __name__=="__main__":
-    s=r'这个是什么呢大\n唐\n中\n水\n集\n团'
-    y=[]
+    s='这个是什么呢大\n唐\n中\n水\n集\n团'
 
+    print(s)
+    y=[]
+    print(gehang(s))
 
 
 # import re

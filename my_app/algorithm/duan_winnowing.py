@@ -60,6 +60,8 @@ class paragraph_winnowing():
         # 正常
         doc2_group_index, doc1_wrap = self.doc2_label_group1(x2,doc1_wrap, doc1_posi) #返回doc2的组编号，改写后的doc1组
 
+
+
         # 正常
         # print('doc2_group_index在这里',doc2_group_index)
         doc2_wrap = self.doc2_tuple(doc2_group_index)
@@ -68,6 +70,14 @@ class paragraph_winnowing():
         #按句号截取，然后计算每部分的重复率，写入字典，并写入top k堆
 
         # print(doc1_wrap)
+
+        # 验证一下 是不是wrap1的在wrap2都有
+        print('doc1_wrap:',doc1_wrap)
+        print('doc2_wrap:',doc2_wrap)
+        # [[(0, 0, 29), (-1, 30, 80), (0, 81, 121)]]
+        for i in range(len(doc1_wrap[0])):
+
+
 
 
 
@@ -288,7 +298,6 @@ class paragraph_winnowing():
                     else:
                         e = j
                 # 如果还有没有tuple包起来的
-
                 if (result_01[i][j] == 1):
                     duan1_group.append(tuple([group_num, s, e]))
                     group_num += 1
@@ -296,7 +305,6 @@ class paragraph_winnowing():
                     duan1_group.append(tuple([-1, s, e]))
             else:
                 duan1_group.append(tuple([-1, s, e]))
-
             all_group.append(duan1_group)
         return all_group
 

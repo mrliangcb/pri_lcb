@@ -133,15 +133,18 @@ def find_best_match(heading4_target_obj_list,source_heading_obj_list,source_glob
     for i, j in enumerate(heading4_target_obj_list):
         if not all_heading1_dic.get(j.str_):  # 不重复的标题   将模板标题的str放到  字典
             all_heading1_dic[j.str_] = i  # str -> i   i是标题对象的序号
-            all_heading1_list.append(j.str_)   #如果重复了，算是有但错位
+               #如果重复了，算是有但错位
         else:
             over_heading=1 #重复标题出现
+        all_heading1_list.append(j.str_) # 含重复标题
+
     print('是否有重复标题:',over_heading==1)
 
     seq = make_seq(source_heading_obj_list, all_heading1_dic) #shape=source   元素为template的下标
     # seq是source标题对象，test被赋予了 模板标题的序号
     # 按道理来说source_heading_obj和seq是一样的
-    all_heading1_set = set(all_heading1_list) #template集合
+    all_heading1_set = set(all_heading1_list) # 有重复标题的时候，set变小
+    print('all_heading1_list与heading4_target_obj_list的长度:',len(all_heading1_list),len(heading4_target_obj_list))
 
     source_heading_list_str = []
     for i, j in enumerate(source_heading_obj_list):
@@ -170,12 +173,13 @@ def find_best_match(heading4_target_obj_list,source_heading_obj_list,source_glob
             flag_left[template_index] = tem_flag
         except:
             print('flag_left[template_index]越界了：',len(flag_left),flag_left,template_index)
+
         flag_right[j] = tem_flag
 
     # 左边 解决是否存在的问题
     for i, j in enumerate(flag_left):
         if j == -2:  # 只检查-2的情况
-            if all_heading1_list[i] in source_heading_set_str:  # 在但位置不对
+            if all_heading1_list[i] in source_heading_set_str:
                 flag_left[i] = -3
 
     print('flag_left是什么:',flag_left)

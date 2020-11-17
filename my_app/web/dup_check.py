@@ -398,8 +398,6 @@ def dup_check():
 
     print('preprocess time:',time.time()-s_preprocess_time)
     logging.info('preprocess time: {}'.format(time.time()-s_preprocess_time))
-
-
     s_time=time.time()
     example = paragraph_winnowing()
     # print('送入检测的source:',len(source[0]),source)  #103长度
@@ -671,6 +669,7 @@ def template_match():
     start_time=time.time()
     left,right,tem_global_list_obj,source_global_obj_list,match_rate_head=main(source_content,template_content,source_isdoc,tem_isdoc)
 
+    print('left是什么:',left)
 
 
     left_=[dict(i._asdict()) for i in left]

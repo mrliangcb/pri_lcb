@@ -122,7 +122,7 @@ def make_seq(x,y):# x list  y dic   投标文档 参照字典，重做下标    
     return seq_
 
 
-def find_best_match(heading4_target_obj_list,source_heading_obj_list,source_global_obj_list):
+def find_best_match(heading4_target_obj_list,tem_global_obj_list,source_heading_obj_list,source_global_obj_list):
     print('模板标题对象:',heading4_target_obj_list,len(heading4_target_obj_list))
     print('source标题对象:', source_heading_obj_list, len(source_heading_obj_list))
     # print('source全文标题对象:', source_global_obj_list, len(source_global_obj_list))
@@ -191,6 +191,9 @@ def find_best_match(heading4_target_obj_list,source_heading_obj_list,source_glob
     # 做返回的obj
     for i, j in enumerate(flag_left):
         heading4_target_obj_list[i] = heading4_target_obj_list[i]._replace(flag=j)
+        global_index = heading4_target_obj_list[i].from_global
+        tem_global_obj_list[global_index]=tem_global_obj_list[global_index]._replace(flag=j)
+
 
     # print('flag_right:',len(flag_right))
     # print('source_heading_obj_list:', len(source_heading_obj_list),source_heading_obj_list)
@@ -200,9 +203,7 @@ def find_best_match(heading4_target_obj_list,source_heading_obj_list,source_glob
     for i, j in enumerate(flag_right):
         source_heading_obj_list[i] = source_heading_obj_list[i]._replace(flag=j)
 
-
         global_index=source_heading_obj_list[i].from_global
-
         source_global_obj_list[global_index]=source_global_obj_list[global_index]._replace(flag=j)
 
 
@@ -331,7 +332,7 @@ def main(source_file,template_doc,source_isdoc,tem_isdoc):
     # print('找模板时间:',time.time()-time_find_tem)
 
     mat_time=time.time()
-    tem_heading_match,source_heading,source_global_obj=find_best_match(template_select_obj_list,source_heading_obj_list,source_global_obj_list)
+    tem_heading_match,source_heading,source_global_obj=find_best_match(template_select_obj_list,tem_global_obj_list,source_heading_obj_list,source_global_obj_list)
     print('计算最长匹配子串时间:',time.time()-mat_time)
 
     left_2 = 0
@@ -344,6 +345,9 @@ def main(source_file,template_doc,source_isdoc,tem_isdoc):
         if j.flag == 1:
             correct_heading += 1
     print('计算匹配值:{}/{}'.format(correct_heading, len(source_heading) + left_2))
+
+
+
     try:
         match_rate_head = correct_heading / (len(source_heading) + left_2)
     except:

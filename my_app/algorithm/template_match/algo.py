@@ -123,9 +123,9 @@ def make_seq(x,y):# x list  y dic   投标文档 参照字典，重做下标    
 
 
 def find_best_match(heading4_target_obj_list,source_heading_obj_list,source_global_obj_list):
-    print('模板标题对象:',heading4_target_obj_list[:3],len(heading4_target_obj_list))
-    print('source标题对象:', source_heading_obj_list[:3], len(source_heading_obj_list))
-    print('source全文标题对象:', source_global_obj_list[:3], len(source_global_obj_list))
+    print('模板标题对象:',heading4_target_obj_list,len(heading4_target_obj_list))
+    print('source标题对象:', source_heading_obj_list, len(source_heading_obj_list))
+    # print('source全文标题对象:', source_global_obj_list, len(source_global_obj_list))
 
     all_heading1_dic = {}
     all_heading1_list = []
@@ -168,12 +168,10 @@ def find_best_match(heading4_target_obj_list,source_heading_obj_list,source_glob
             tem_flag = 1
         else:
             tem_flag = 1 #-4
-
         try:
             flag_left[template_index] = tem_flag
         except:
             print('flag_left[template_index]越界了：',len(flag_left),flag_left,template_index)
-
         flag_right[j] = tem_flag
 
     # 左边 解决是否存在的问题
@@ -350,6 +348,8 @@ def main(source_file,template_doc,source_isdoc,tem_isdoc):
         match_rate_head = correct_heading / (len(source_heading) + left_2)
     except:
         match_rate_head = 0
+
+    print('match_rate_head是多少?',match_rate_head)
 
     '''
     tem_heading_match:left

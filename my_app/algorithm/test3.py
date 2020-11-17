@@ -25,7 +25,29 @@ y=[11,2,3,4,12,13,2,3,4,5,6] #2，3，4匹给左边还是右边呢
 
 # 只要选好头就好了
 
+y_dic={}
+for i,j in enumerate(y):
+    tem=y_dic.get(j,None)
+    if tem==None:
+        y_dic[j]=[i]
+    else:
+        tem_list=[]
+        y_dic[j].append(i)
+print('字典',y_dic)
+
 y_set=set(y)
+a=0
+b=0
+c=0
+doc1_index=[-1 for i in range(len(x))]
+for i,j in enumerate(x):
+    # print(j)
+    if j in y_set:
+        # 是否一个
+        if len(y_dic[j])==1:
+            pass
+
+
 
 
 

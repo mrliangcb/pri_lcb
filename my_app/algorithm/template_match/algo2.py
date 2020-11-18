@@ -366,6 +366,9 @@ def main(source_file, template_doc, source_isdoc, tem_isdoc):
 
     template_select_obj_list = tem_heading_obj_list
 
+    print('source_heading_obj_list:',source_heading_obj_list)
+    print('tem_heading_obj_list:',tem_heading_obj_list)
+
 
     # time_find_tem=time.time()
     # template_select_obj_list = get_muban(tem_heading_obj_list, source_heading_obj_list)

@@ -3,8 +3,8 @@ import collections
 from collections import namedtuple as nt
 
 para_obj = nt('paragraph',
-              ['type', 'position', 'origin', 'str_', 'flag', 'test', 'para_num', 'from_global'])  # flag和test怎么用  flag表示是否正确
-para_obj.__new__.__defaults__ = ('para', None, None, None, None, None, None)
+              ['type', 'position', 'origin', 'str_', 'flag', 'test', 'para_num', 'from_global','title'])  # flag和test怎么用  flag表示是否正确
+para_obj.__new__.__defaults__ = ('para', None, None, None, None, None, None,None,None)
 
 # def extract_4para(doc_file):  #主要用于处理模板文章
 #     save_flag = 0
@@ -44,12 +44,16 @@ def exctract_heading(para_list):
             # 有两个解析，等判空之后再做，减少一点时间，剪枝
             type_name = para.style.name
             str_split = text.replace(' ','') #去掉空格  1.2标题内容  1.2 标题内容
-
             is_heading = 0
             # 校正章号
+            title=0
             if type_name.startswith('Heading'):
                 # if (not para.style.name.startswith('Normal')) and (not para.style.name.startswith('normal')):
-                # ptr = r'第(.*?)章'  # 非贪心
+                ptr = r'第(.*?)章'  # 非贪心
+                ptr = r'(第[0-9一二三四五六七八九十]+章[\s]*.*)'
+                res = re.match(ptr, text)
+                if res:#大标题
+                    title=1
                 # result = re.findall(ptr, text)
                 # if result and result[0] != '':
                 #     para_num += 1
@@ -57,7 +61,7 @@ def exctract_heading(para_list):
                     # para_flag.append({'para_num':para_num,'position':i})
 
                 # 顺便添加heading_obj
-                heading_exam = para_obj(type=type_name, position=pos_num, origin=text, str_=str_split,from_global=len(global_obj), flag=1)# para_num=para_num,
+                heading_exam = para_obj(type=type_name, position=pos_num, origin=text, str_=str_split,from_global=len(global_obj), flag=1,title=title)# para_num=para_num,
                 is_heading = 1
                 heading_list.append(heading_exam)
             # 添加正文  容易和heading的解包重复
@@ -268,17 +272,23 @@ def extract_doc_heading(para_list: list):
         text = para['text'].strip()
         type_name = para['style']
         str_split = text.replace(' ','') # text.split(' ')[-1]
-
+        title_level = 0
         if (text not in trasbin) and text:  # 去除空段
             is_heading = 0
             # 校正标章号  para_num应该是chapter_num
+
             if type_name.startswith('标题'):
                 # ptr = r'第(.*?)章'  # 非贪心
                 # result = re.findall(ptr, text)
                 # if result and result[0] != '':  # 是一个章的标志位
                 #     para_num += 1
                 ## 顺便添加heading_obj
-                heading_exam = para_obj(type=type_name, position=pos_num, origin=text, str_=str_split,from_global=len(global_obj), flag=1)# para_num=para_num,
+                ptr = r'(第[0-9一二三四五六七八九十]+章[\s]*.*)'
+                res = re.match(ptr, text)
+                if res:  # 大标题
+                    title_level = 1
+
+                heading_exam = para_obj(type=type_name, position=pos_num, origin=text, str_=str_split,from_global=len(global_obj), flag=1,title=title_level)# para_num=para_num,
                 is_heading = 1
                 heading_list.append(heading_exam)
             # 保存正文
@@ -330,6 +340,8 @@ def main(source_file, template_doc, source_isdoc, tem_isdoc):
     source_heading_str_set = set(source_heading_str_list)
 
     flag_tem=[0 for i in range(len(tem_heading_str_list))]
+
+
     print('tem中没有重复标题:',len(tem_heading_str_set)==len(tem_heading_str_list)) #重复的概率比较小， 位置编号+内容
 
     for i,j in enumerate(tem_heading_str_list):
@@ -381,22 +393,51 @@ def main(source_file, template_doc, source_isdoc, tem_isdoc):
     # print('计算最长匹配子串时间:', time.time() - mat_time)
 
     left_2 = 0
+    b_t_1=0 #缺失的大标题
+    s_t_1=0 #缺失的小标题
     for i, j in enumerate(flag_tem):
         if j == 0:
-            left_2 += 1
+            if tem_heading_obj_list[i].title ==1: #大标题
+                b_t_1+=1
+            else:
+                s_t_1 +=1
 
+    b_t_2 = 0 #正确的大标题1
+    s_t_2 = 0 #正确的小标题
+    r_b=0 # 右边所有的大标题
+    r_s=0 # 右边所有的小标题
     correct_heading = 0
     for i, j in enumerate(flag_source):
         if j == 1:
-            correct_heading += 1
-    print('计算匹配值:{}/{}'.format(correct_heading, len(flag_source) + left_2)) # (source中的正确标题)/(source全部标题+tem的缺失标题)
+            if source_heading_obj_list[i].title == 1:  # 大标题
+                b_t_2+=1
+            else:
+                s_t_2+=1
 
+    for i, j in enumerate(source_heading_obj_list):
+        if j.title == 1:
+            r_b+=1
+        else:
+            r_s+=1
+
+    print('正确大标题:',b_t_2)
+    print('正确小标题:', s_t_2)
+
+    print('r_b:{},r_s:{}'.format(r_b,r_s))
+    print('b_t_1:{},b_t_2:{}'.format(b_t_1, b_t_2))
+
+    # print('计算匹配值:{}/{}'.format(correct_heading, len(flag_source) + left_2)) # (source中的正确标题)/(source全部标题+tem的缺失标题)
     try:
-        match_rate_head = correct_heading / (len(flag_source) + left_2)
+        b_score = 0.65 * (b_t_2 / (r_b + b_t_1))
     except:
-        match_rate_head = 0
+        b_score = 0
+    try:
+        s_score = 0.35 * (s_t_2 / (r_s + s_t_1))
+    except:
+        s_score = 0
+    global_score = b_score + s_score
 
-    print('match_rate_head是多少?', match_rate_head)
+    print('global_score是多少?', global_score)
 
     '''
     tem_heading_match:left
@@ -406,7 +447,7 @@ def main(source_file, template_doc, source_isdoc, tem_isdoc):
     match_rate_head： 标题匹配度
 
     '''
-    return flag_tem, flag_source, tem_global_obj_list, source_global_obj_list, match_rate_head
+    return flag_tem, flag_source, tem_global_obj_list, source_global_obj_list, global_score
 
 
 def main2():

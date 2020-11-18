@@ -552,10 +552,10 @@ def propose_docx_doc(source_url,template_url):
     else:# 是docx文件
         source_content=intepret_docx(source_url)
         # '招标文件-基于NLP的商务文本数据清洗关键技术研究（1021评审）（第一版）.docx'
-        # path1=r'D:\lcb_note\code\Program\10月项目\查重需求资料\查重需求资料\1.招标文件文档查重对比材料\招标文件-基于NLP的商务文本数据清洗关键技术研究（1021评审）（第一版）.docx'
+        path1=r'D:\lcb_note\code\Program\10月项目\查重需求资料\查重需求资料\1.招标文件文档查重对比材料\招标文件-基于NLP的商务文本数据清洗关键技术研究（1021评审）（第一版）.docx'
         # path1=r'D:\lcb_note\code\Program\10月项目\winnowing1.5\越界1\招标文件-基于NLP的商务文本数据清洗关键技术研究（1021评审）（第一版）.docx'
         # path1=r'D:\lcb_note\code\Program\10月项目\my_docx\基于NLP的商务文本数据清洗关键技术研究项目合同+-+-打印版.docx'
-        # source_content=docx.Document(path1)
+        source_content=docx.Document(path1)
 
     if tem_doc_name.endswith('doc'):
         tem_isdoc=1
@@ -565,10 +565,10 @@ def propose_docx_doc(source_url,template_url):
         # print('template_content是什么?',template_content)
     else:# docx文件
         template_content = intepret_docx(template_url)
-        # path2 = r"D:\lcb_note\code\Program\10月项目\查重需求资料\查重需求资料\1.招标文件文档查重对比材料\招标文件 CWEME-1911ZSWZ-2J039 基于NLP的商务文本数据清洗关键技术研究项目-2019年12月中国水利电力物资集团有限公司项目（第三版终版）.docx"
+        path2 = r"D:\lcb_note\code\Program\10月项目\查重需求资料\查重需求资料\1.招标文件文档查重对比材料\招标文件 CWEME-1911ZSWZ-2J039 基于NLP的商务文本数据清洗关键技术研究项目-2019年12月中国水利电力物资集团有限公司项目（第三版终版）.docx"
         # path2=r'D:\lcb_note\code\Program\10月项目\winnowing1.5\越界1\招标文件 CWEME-1910ZSWZ-2J036 物资成套信息管理平台招标-2019年10月中国水利电力物资集团有限公司项目-招标三部（第二版模板）.doc'
         # path2 = r'D:\lcb_note\code\Program\10月项目\my_docx\招标文件 CWEME-1911ZSWZ-2J039 基于NLP的商务文本数据清洗关键技术研究项目-2019年12月中国水利电力物资集团有限公司项目（第三版终版）.docx'
-        # template_content = docx.Document(path2)
+        template_content = docx.Document(path2)
 
     return source_content,template_content,source_doc_name,tem_doc_name,source_isdoc,tem_isdoc
 
@@ -635,7 +635,7 @@ def simhash_route():
     return jsonify(result_dic)
 
 
-from my_app.algorithm.template_match.algo import main
+from my_app.algorithm.template_match.algo2 import main
 @web.route('/NLP/Algorithm/base/dup_check/template_match', methods=['POST','GET'])
 def template_match():
     #接收区
@@ -669,11 +669,11 @@ def template_match():
     start_time=time.time()
     left,right,tem_global_list_obj,source_global_obj_list,match_rate_head=main(source_content,template_content,source_isdoc,tem_isdoc)
 
-    print('left是什么:',left)
+    # print('tem_global_list_obj:',tem_global_list_obj)
+    # print('source_global_obj_list:',source_global_obj_list)
 
-
-    left_=[dict(i._asdict()) for i in left]
-    right_ = [dict(i._asdict()) for i in right]
+    # left_=[dict(i._asdict()) for i in left]
+    # right_ = [dict(i._asdict()) for i in right]
     # print('left_:',left_)
     # print('right:',right_)
 

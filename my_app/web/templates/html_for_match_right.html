@@ -9,11 +9,15 @@
         {% if dic['flag']==-2 %}
             <font style="color:red">{{dic['origin']|safe}}</font>
             <br>
-        {% elif dic['flag']==-3 %}
-            <font style="color:blue">{{dic['origin']|safe}}</font>
+        {% elif dic['flag']==1 %}
+            <font style="color:limegreen">{{dic['origin']|safe}}</font>
             <br>
-        {% else %}
+        {% elif dic['flag']==2 %}
             {{dic['origin']|safe}}
+            <br>
+
+        {% else %}
+            <font style="color:yellow">{{dic['origin']|safe}}</font>
             <br>
         {% endif %}
 {% endfor %}

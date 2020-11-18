@@ -267,7 +267,7 @@ def extract_doc_heading(para_list: list):
         # print('第{}个para是什么:{}'.format(i,para))
         text = para['text'].strip()
         type_name = para['style']
-        str_split = text.split(' ')[-1]
+        str_split = text.replace(' ','') # text.split(' ')[-1]
 
         if (text not in trasbin) and text:  # 去除空段
             is_heading = 0

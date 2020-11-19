@@ -130,8 +130,8 @@ def make_seq(x, y):  # x list  y dic   投标文档 参照字典，重做下标 
 
 
 def find_best_match(heading4_target_obj_list, tem_global_obj_list, source_heading_obj_list, source_global_obj_list):
-    print('模板标题对象:', heading4_target_obj_list, len(heading4_target_obj_list))
-    print('source标题对象:', source_heading_obj_list, len(source_heading_obj_list))
+    # print('模板标题对象:', heading4_target_obj_list, len(heading4_target_obj_list))
+    # print('source标题对象:', source_heading_obj_list, len(source_heading_obj_list))
     # print('source全文标题对象:', source_global_obj_list, len(source_global_obj_list))
 
     all_heading1_dic = {}
@@ -160,7 +160,7 @@ def find_best_match(heading4_target_obj_list, tem_global_obj_list, source_headin
 
     exam = Solution()
     result = exam.lengthOfLIS(seq)  # seq要求包含 tem下表，也要有type
-    print('最长公共结果result', result)  # (1, 0)
+    # print('最长公共结果result', result)  # (1, 0)
 
     # 左边
     # 解决序列对上的，级别是否对上
@@ -186,8 +186,8 @@ def find_best_match(heading4_target_obj_list, tem_global_obj_list, source_headin
             if all_heading1_list[i] in source_heading_set_str:
                 flag_left[i] = -3
 
-    print('flag_left是什么:', flag_left)
-    print('flag_right是什么:', flag_right)
+    # print('flag_left是什么:', flag_left)
+    # print('flag_right是什么:', flag_right)
     # 右边 解决是否存在的问题
     for i, j in enumerate(flag_right):
         if j == -2:  # 只检查-2的情况

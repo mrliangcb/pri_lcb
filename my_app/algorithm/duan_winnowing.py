@@ -239,6 +239,8 @@ class paragraph_winnowing():
 
             if len(doc1[i])>n and len(hash2posi_dic)>0:#>13的就处理一下，不足的，就保持['']或者[0]作为一段    如果集合中没有元素，则找都不用找了，达到剪枝加速
                 for j in range(len(x1_hash[i])): #段内
+                    if j==12466:
+                        print('hash1的第12466个了')
                     if conti_condi==1:  # 连续状态 判断长度和下一个
                         duan,num=last_doc2_id # num是上一个num
                         # print('是否进入修改:',duan,num,len(doc2[duan]),x1_hash[i][j],x2_hash[duan][num+1],doc2[duan][num+1])
@@ -267,11 +269,13 @@ class paragraph_winnowing():
 
                     else:  # 非连续状态
                         # if x1_hash[i][j] in doc2_key_set: #集合找到
+
                         if (hash2posi_dic.get(x1_hash[i][j]) != None):
+                            if j == 12466:
+                                print('根据12466位置，查到什么:',hash2posi_dic.get(x1_hash[i][j]))
                             duan, num = hash2posi_dic[x1_hash[i][j]]
                             last_doc2_id=tuple([duan, num])
                             for k in range(n):#要遍历13个，容易出错
-
                                 if temp[j + k] == '':
                                     temp[j + k] = doc2[duan][num + k] #只收集文字
                                     temp2[j + k] = tuple([duan, num + k, doc2[duan][num + k]]) #位置和文字

@@ -256,13 +256,18 @@ class paragraph_winnowing():
 
                             num=num+1 #当前的num
                             if j==12466:
-                                print('temp中12466的位置',temp[j:j+13])
+                                print('temp中12466的位置',temp[j:j+15])
 
                             for k in range(n):#要遍历13个，容易出错
                                 if temp[j + k] == '':
                                     temp[j + k] = doc2[duan][num + k] #只收集文字
                                     temp2[j + k] = tuple([duan, num + k, doc2[duan][num + k]]) #位置和文字
                                     temp_01[j + k] = 1
+                            if j == 12466:
+                                print('填写完之后temp:',temp[j-10:j+15])
+                                print('填写完之后temp2:', temp2[j - 10:j + 15])
+                                print('填写完之后temp_01',temp_01[j-10:j+15])
+
                             last_doc2_id=tuple([duan,num])
                         else:#越界或者下一个不等，按照不连续处理
                             # if x1_hash[i][j] in doc2_key_set:  # 集合找到
@@ -297,9 +302,9 @@ class paragraph_winnowing():
 
                             # temp[j]=doc2_gram_dic[doc1_hash[i][j]] # tuple装进temp
             try:
-                print('temp中12466的位置', temp[12460:12466+13])
-                print('result_01:',result_01[12460:12466+13])
-                print('result_posi:',result_posi[12460:12466+13])
+                print('结尾temp中12466的位置', temp[12460:12466+20])
+                print('结尾temp2:',temp2[12460:12466+20])
+                print('结尾temp_01:',temp_01[12460:12466+20])
             except:
                 pass
 

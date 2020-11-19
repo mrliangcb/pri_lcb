@@ -14,14 +14,20 @@ class paragraph_winnowing():
         x1_gram=self.build_gram(x1,n)
         # print('x1_gram:',x1_gram)
         x2_gram=self.build_gram(x2,n)
+
+
         template_gram=self.build_gram(template,n)
         # print('template_gram是这个:',template_gram)
-
         template_hash = self.gram_hash(template_gram,n)
         # print('template_hash:', template_hash)
 
         x1_hash = self.gram_hash(x1_gram,n)
         x2_hash = self.gram_hash(x2_gram,n)
+
+        print('左边文章1的12466:',x1_gram[0][12466])
+        # print('是否在x2_hash中',x1_gram[0][12466] in x2_hash[0])
+
+
         e_time=time.time()
         print('gram和hash的时间:',e_time-s_time)
 
@@ -144,7 +150,8 @@ class paragraph_winnowing():
             #     print('为达到从商务文本中自',duan)
             exam_str=str[i:i + n]
             if exam_str.startswith('为达到从商务文本中自'):
-                print('为达到从商务文本中自  ################################## 第几个gram',i)
+                print('为达到从商务文本中自  ################################## 第几个gram',i,len(n_gram))
+                print('这句话:',str[i:i + n])
             n_gram.append(str[i:i + n])
         return n_gram
 
@@ -214,6 +221,8 @@ class paragraph_winnowing():
 
     def compare(self,x1_hash,x2_hash,doc1,doc2,n=13):#hatsh至少[['']]
         hash2posi_dic=self.search_dict(x2_hash)#doc2是参考文章
+
+        print('hash2中是否有12466的gram的hash值:',hash2posi_dic.get(x1_hash[0][12466]))
 
         # print('hash2posi_dic:',hash2posi_dic)
         # doc2_key_set = set(hash2posi_dic.keys())  #这种方法也不怎么节省时间，就是减少内存

@@ -139,7 +139,7 @@ def find_min(x,hash1_obj,hash_list2,one_docu1,docu2):
             rate = hash1_obj.dup_rate(hash_list2[i])
             if rate>max_rate: #rate 大于最佳的rate
                 index = i
-            print('有多个标题:',one_docu1,docu2[i])
+            # print('有多个标题:',one_docu1,docu2[i])
     #
 
 

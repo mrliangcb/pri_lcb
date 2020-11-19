@@ -244,10 +244,17 @@ class paragraph_winnowing():
                         print('根据12466位置，查到什么:', i, j, hash2posi_dic.get(x1_hash[i][j]))
                         print('根据12466位置，查到什么:', i, j, hash2posi_dic.get(x1_hash[0][12466]))
                         print('连续状态:',conti_condi)
+                        print('last_doc2_id是什么:',last_doc2_id)
+                        duan, num = last_doc2_id
+                        print('当前哈希值x1_hash[i][j]:',x1_hash[i][j])
+                        print('x2_hash[duan][num+1]:',x2_hash[duan][num+1])
+
                     if conti_condi==1:  # 连续状态 判断长度和下一个
                         duan,num=last_doc2_id # num是上一个num
                         # print('是否进入修改:',duan,num,len(doc2[duan]),x1_hash[i][j],x2_hash[duan][num+1],doc2[duan][num+1])
                         if (num+1<len(x2_hash[duan]) and x1_hash[i][j]==x2_hash[duan][num+1]):#j是当前的x1_hash   只有x2_hash后面还有gram，才能true
+
+
                             num=num+1 #当前的num
                             for k in range(n):#要遍历13个，容易出错
                                 if temp[j + k] == '':

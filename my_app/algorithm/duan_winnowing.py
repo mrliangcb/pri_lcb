@@ -135,11 +135,16 @@ class paragraph_winnowing():
 
 
 
-    def generate_n_gram(self,str,n=13): #入口是不含段
+    def generate_n_gram(self,str,n=13): #
         if len(str)<13:
             return ['']
         n_gram = []
         for i in range(len(str) - n + 1):
+            # if str_exam.startswith('为达到从商务文本中自')
+            #     print('为达到从商务文本中自',duan)
+            exam_str=str[i:i + n]
+            exam_str.startswith('为达到从商务文本中自')
+            print('为达到从商务文本中自  ################################## 第几个gram',i)
             n_gram.append(str[i:i + n])
         return n_gram
 
@@ -173,6 +178,8 @@ class paragraph_winnowing():
     def gram_hash(self,x,n=13): # 至少[['']]
         result = []
         for duan in range(len(x)):
+            str_exam=x[duan]
+
             duan_hash = self.calculate_hashing_set(x[duan],n) #['','']或者['']
             result.append(duan_hash)
         return result #[[段1 hash1],[段2 hash2]]或[['']]

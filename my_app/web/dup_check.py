@@ -636,7 +636,7 @@ def simhash_route():
     return jsonify(result_dic)
 
 
-from my_app.algorithm.template_match.algo2 import main
+from my_app.algorithm.template_match.algo3 import main
 @web.route('/NLP/Algorithm/base/dup_check/template_match', methods=['POST','GET'])
 def template_match():
     #接收区

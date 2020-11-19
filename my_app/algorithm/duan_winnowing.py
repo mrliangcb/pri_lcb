@@ -241,6 +241,9 @@ class paragraph_winnowing():
                 for j in range(len(x1_hash[i])): #段内
                     if j==12466:
                         print('hash1的第12466个了')
+                        print('根据12466位置，查到什么:', i, j, hash2posi_dic.get(x1_hash[i][j]))
+                        print('根据12466位置，查到什么:', i, j, hash2posi_dic.get(x1_hash[0][12466]))
+                        print('连续状态:',conti_condi)
                     if conti_condi==1:  # 连续状态 判断长度和下一个
                         duan,num=last_doc2_id # num是上一个num
                         # print('是否进入修改:',duan,num,len(doc2[duan]),x1_hash[i][j],x2_hash[duan][num+1],doc2[duan][num+1])
@@ -271,8 +274,7 @@ class paragraph_winnowing():
                         # if x1_hash[i][j] in doc2_key_set: #集合找到
 
                         if (hash2posi_dic.get(x1_hash[i][j]) != None):
-                            if j == 12466:
-                                print('根据12466位置，查到什么:',hash2posi_dic.get(x1_hash[i][j]))
+
                             duan, num = hash2posi_dic[x1_hash[i][j]]
                             last_doc2_id=tuple([duan, num])
                             for k in range(n):#要遍历13个，容易出错

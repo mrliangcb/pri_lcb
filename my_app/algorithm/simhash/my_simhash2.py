@@ -115,15 +115,33 @@ def func(a,b):
     dis=a.hamming_distance(b)
     return dis
 
-def find_min(x):
+
+
+def find_min(x,hash1_obj,hash_list2,one_docu1,docu2):
+    '''
+    :param x: 关联矩阵的一行
+    :param hash1_obj: 这一行对应的hash1对象，一个
+    :param hash_list2: 这一行所有的hash2对象，多个
+    one_docu1: 这一行的hash1的内容，一个
+    docu2: 这一行对应hash2的内容,多个
+    :return:
+    '''
     min_=1000
     index=-1
+    max_rate=0
     for i,j in enumerate(x):
         if j<min_:
             index=i
             min_=j
+            rate = hash1_obj.dup_rate(hash_list2[i])
+            max_rate=rate
         elif j==min_:
-            print('有多个标题:',i,min_)
+            rate = hash1_obj.dup_rate(hash_list2[i])
+            if rate>max_rate: #rate 大于最佳的rate
+                index = i
+            print('有多个标题:',one_docu1,docu2[i])
+    #
+
 
     '''
     min_: 最小值
@@ -148,7 +166,7 @@ def comp_dis_mat(hash_list1,hash_list2):
     return dis_mat
 
 
-def get_closest(hash_list1,dis_mat,docu1,docu2):
+def get_closest(hash_list1,hash_list2,dis_mat,docu1,docu2):
     close_list = []
     # print('get_closest里面')
     # print('hash_list1长度:',len(hash_list1))
@@ -156,7 +174,7 @@ def get_closest(hash_list1,dis_mat,docu1,docu2):
     # print('docu2长度:', len(docu2))
 
     for i, j in enumerate(hash_list1):
-        min_, index = find_min(dis_mat[i])
+        min_, index = find_min(dis_mat[i],j,hash_list2,docu1[i],docu2)
         # print('min_:',min_,'index_:',index)
         close_list.append(tuple([i, min_, index, docu1[i], docu2[index]]))
 
@@ -213,8 +231,9 @@ def sim_main(source,target,tem):
 
 
 
-    close_list12 = get_closest(hash_list1, dis_mat12, source_sen, target_sen)  # 一维[] 长度为list1 每个元素是最近的 句子
-    close_list13 = get_closest(hash_list1, dis_mat13, source_sen, tem_sen)
+    close_list12 = get_closest(hash_list1,hash_list2,dis_mat12, source_sen, target_sen)  # 一维[] 长度为list1 每个元素是最近的 句子
+
+    close_list13 = get_closest(hash_list1,hash_list3,dis_mat13, source_sen, tem_sen)
 
     tichu_list=[0 for i in range(len(close_list13))]
     for i,j in enumerate(close_list13):

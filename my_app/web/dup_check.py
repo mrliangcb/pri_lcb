@@ -357,6 +357,7 @@ def dup_check():
     # template_target = template_target.split(r'\n')
     tem_str=template_target
     template_target=[template_target]
+
     template_target = clear(template_target) # 其实clear没用
     # print('clear之后的template_target:',template_target)
 
@@ -380,14 +381,14 @@ def dup_check():
     source=gehang(source)
 
     x_fenduan,source,x_duandian=my_split(source) # str
-    print('去掉泛函之后的文本:',source)
+    # print('去掉泛函之后的文本:',source)
 
     # print('字符串source:',repr(source[:1000]))
 
     target = gehang(target)
     y_fenduan,target,y_duandian=my_split(target) # str  <br>连起来
     # print('字符串target:', repr(target[:1000]))
-    print('去掉泛函之后的文本target:', target)
+    # print('去掉泛函之后的文本target:', target)
     # source = source.replace('\n', '<br>')
     # print('replace之后source', source)
     # target = target.replace('\n', '<br>')

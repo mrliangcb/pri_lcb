@@ -9879,3 +9879,213 @@ Thu 19 Nov 2020 16:48:06 _internal.py INFO  * Debugger PIN: 304-402-708
 Thu 19 Nov 2020 16:48:06 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
 Thu 19 Nov 2020 16:48:11 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\pri_lcb\\my_app\\algorithm\\duan_winnowing.py', reloading
 Thu 19 Nov 2020 16:48:11 _internal.py INFO  * Restarting with stat
+Thu 19 Nov 2020 17:01:53 dup_check.py WARNING warning
+Thu 19 Nov 2020 17:01:53 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 19 Nov 2020 17:01:53 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 19 Nov 2020 17:01:54 __init__.py DEBUG Loading model cost 0.701 seconds.
+Thu 19 Nov 2020 17:01:54 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 19 Nov 2020 17:01:54 _internal.py INFO  * Restarting with stat
+Thu 19 Nov 2020 17:01:55 dup_check.py WARNING warning
+Thu 19 Nov 2020 17:01:55 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 19 Nov 2020 17:01:55 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 19 Nov 2020 17:01:55 __init__.py DEBUG Loading model cost 0.720 seconds.
+Thu 19 Nov 2020 17:01:55 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 19 Nov 2020 17:01:55 _internal.py WARNING  * Debugger is active!
+Thu 19 Nov 2020 17:01:55 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 19 Nov 2020 17:01:55 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 19 Nov 2020 17:01:55 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing' [POST]> to dup_check
+Thu 19 Nov 2020 17:01:55 dup_check.py INFO preprocess time: 0.002001523971557617
+Thu 19 Nov 2020 17:01:55 dup_check.py INFO make output time: 0.0
+Thu 19 Nov 2020 17:01:55 dup_check.py INFO run success!! time cost      :    0.003003358840942383      |length : 68  |  88  |    0  |dup_rate:1.0
+Thu 19 Nov 2020 17:01:55 _internal.py INFO 127.0.0.1 - - [19/Nov/2020 17:01:55] "[37mPOST /NLP/Algorithm/base/dup_check/winnowing HTTP/1.1[0m" 200 -
+Thu 19 Nov 2020 17:02:04 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Thu 19 Nov 2020 17:02:04 _internal.py INFO  * Restarting with stat
+Thu 19 Nov 2020 17:02:06 dup_check.py WARNING warning
+Thu 19 Nov 2020 17:02:06 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 19 Nov 2020 17:02:06 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 19 Nov 2020 17:02:07 __init__.py DEBUG Loading model cost 0.928 seconds.
+Thu 19 Nov 2020 17:02:07 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 19 Nov 2020 17:02:07 _internal.py WARNING  * Debugger is active!
+Thu 19 Nov 2020 17:02:07 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 19 Nov 2020 17:02:07 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 19 Nov 2020 17:02:09 dup_check.py WARNING warning
+Thu 19 Nov 2020 17:02:09 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 19 Nov 2020 17:02:09 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 19 Nov 2020 17:02:10 __init__.py DEBUG Loading model cost 0.700 seconds.
+Thu 19 Nov 2020 17:02:10 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 19 Nov 2020 17:02:10 _internal.py INFO  * Restarting with stat
+Thu 19 Nov 2020 17:02:11 dup_check.py WARNING warning
+Thu 19 Nov 2020 17:02:11 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 19 Nov 2020 17:02:11 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 19 Nov 2020 17:02:12 __init__.py DEBUG Loading model cost 0.716 seconds.
+Thu 19 Nov 2020 17:02:12 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 19 Nov 2020 17:02:12 _internal.py WARNING  * Debugger is active!
+Thu 19 Nov 2020 17:02:12 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 19 Nov 2020 17:02:12 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 19 Nov 2020 17:02:12 dup_check.py INFO foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing' [POST]> to dup_check
+Thu 19 Nov 2020 17:02:12 dup_check.py INFO preprocess time: 0.0020012855529785156
+Thu 19 Nov 2020 17:02:12 dup_check.py INFO make output time: 0.0
+Thu 19 Nov 2020 17:02:12 dup_check.py INFO run success!! time cost      :    0.0030024051666259766      |length : 68  |  88  |    0  |dup_rate:1.0
+Thu 19 Nov 2020 17:02:12 _internal.py INFO 127.0.0.1 - - [19/Nov/2020 17:02:12] "[37mPOST /NLP/Algorithm/base/dup_check/winnowing HTTP/1.1[0m" 200 -
+Thu 19 Nov 2020 17:02:41 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\pri_lcb\\my_app\\algorithm\\duan_winnowing.py', reloading
+Thu 19 Nov 2020 17:02:41 _internal.py INFO  * Restarting with stat
+Thu 19 Nov 2020 17:02:42 dup_check.py WARNING warning
+Thu 19 Nov 2020 17:02:42 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 19 Nov 2020 17:02:42 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 19 Nov 2020 17:02:42 __init__.py DEBUG Loading model cost 0.702 seconds.
+Thu 19 Nov 2020 17:02:42 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 19 Nov 2020 17:02:42 _internal.py WARNING  * Debugger is active!
+Thu 19 Nov 2020 17:02:42 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 19 Nov 2020 17:02:42 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 19 Nov 2020 17:02:45 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\pri_lcb\\my_app\\algorithm\\duan_winnowing.py', reloading
+Thu 19 Nov 2020 17:02:45 _internal.py INFO  * Restarting with stat
+Thu 19 Nov 2020 17:02:46 dup_check.py WARNING warning
+Thu 19 Nov 2020 17:02:46 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 19 Nov 2020 17:02:46 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 19 Nov 2020 17:02:46 __init__.py DEBUG Loading model cost 0.701 seconds.
+Thu 19 Nov 2020 17:02:46 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 19 Nov 2020 17:02:46 _internal.py WARNING  * Debugger is active!
+Thu 19 Nov 2020 17:02:46 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 19 Nov 2020 17:02:47 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 19 Nov 2020 17:02:58 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\pri_lcb\\my_app\\algorithm\\duan_winnowing.py', reloading
+Thu 19 Nov 2020 17:02:58 _internal.py INFO  * Restarting with stat
+Thu 19 Nov 2020 17:02:59 dup_check.py WARNING warning
+Thu 19 Nov 2020 17:02:59 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 19 Nov 2020 17:02:59 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 19 Nov 2020 17:02:59 __init__.py DEBUG Loading model cost 0.696 seconds.
+Thu 19 Nov 2020 17:02:59 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 19 Nov 2020 17:02:59 _internal.py WARNING  * Debugger is active!
+Thu 19 Nov 2020 17:02:59 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 19 Nov 2020 17:02:59 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 19 Nov 2020 17:03:01 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\pri_lcb\\my_app\\algorithm\\duan_winnowing.py', reloading
+Thu 19 Nov 2020 17:03:01 _internal.py INFO  * Restarting with stat
+Thu 19 Nov 2020 17:03:02 dup_check.py WARNING warning
+Thu 19 Nov 2020 17:03:02 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 19 Nov 2020 17:03:02 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 19 Nov 2020 17:03:03 __init__.py DEBUG Loading model cost 0.720 seconds.
+Thu 19 Nov 2020 17:03:03 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 19 Nov 2020 17:03:03 _internal.py WARNING  * Debugger is active!
+Thu 19 Nov 2020 17:03:03 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 19 Nov 2020 17:03:03 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 19 Nov 2020 17:03:07 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\pri_lcb\\my_app\\algorithm\\duan_winnowing.py', reloading
+Thu 19 Nov 2020 17:03:07 _internal.py INFO  * Restarting with stat
+Thu 19 Nov 2020 17:03:08 dup_check.py WARNING warning
+Thu 19 Nov 2020 17:03:08 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 19 Nov 2020 17:03:08 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 19 Nov 2020 17:03:09 __init__.py DEBUG Loading model cost 1.012 seconds.
+Thu 19 Nov 2020 17:03:09 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 19 Nov 2020 17:03:09 _internal.py WARNING  * Debugger is active!
+Thu 19 Nov 2020 17:03:09 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 19 Nov 2020 17:03:09 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 19 Nov 2020 17:03:13 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\pri_lcb\\my_app\\algorithm\\duan_winnowing.py', reloading
+Thu 19 Nov 2020 17:03:13 _internal.py INFO  * Restarting with stat
+Thu 19 Nov 2020 17:03:14 dup_check.py WARNING warning
+Thu 19 Nov 2020 17:03:14 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 19 Nov 2020 17:03:14 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 19 Nov 2020 17:03:15 __init__.py DEBUG Loading model cost 0.879 seconds.
+Thu 19 Nov 2020 17:03:15 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 19 Nov 2020 17:03:15 _internal.py WARNING  * Debugger is active!
+Thu 19 Nov 2020 17:03:15 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 19 Nov 2020 17:03:15 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 19 Nov 2020 17:03:20 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\pri_lcb\\my_app\\algorithm\\duan_winnowing.py', reloading
+Thu 19 Nov 2020 17:03:20 _internal.py INFO  * Restarting with stat
+Thu 19 Nov 2020 17:03:21 dup_check.py WARNING warning
+Thu 19 Nov 2020 17:03:21 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 19 Nov 2020 17:03:21 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 19 Nov 2020 17:03:22 __init__.py DEBUG Loading model cost 0.766 seconds.
+Thu 19 Nov 2020 17:03:22 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 19 Nov 2020 17:03:22 _internal.py WARNING  * Debugger is active!
+Thu 19 Nov 2020 17:03:22 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 19 Nov 2020 17:03:22 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 19 Nov 2020 17:04:03 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Thu 19 Nov 2020 17:04:03 _internal.py INFO  * Restarting with stat
+Thu 19 Nov 2020 17:04:04 dup_check.py WARNING warning
+Thu 19 Nov 2020 17:04:04 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 19 Nov 2020 17:04:04 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 19 Nov 2020 17:04:05 __init__.py DEBUG Loading model cost 0.730 seconds.
+Thu 19 Nov 2020 17:04:05 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 19 Nov 2020 17:04:05 _internal.py WARNING  * Debugger is active!
+Thu 19 Nov 2020 17:04:05 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 19 Nov 2020 17:04:05 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 19 Nov 2020 17:04:08 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Thu 19 Nov 2020 17:04:08 _internal.py INFO  * Restarting with stat
+Thu 19 Nov 2020 17:04:09 dup_check.py WARNING warning
+Thu 19 Nov 2020 17:04:10 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 19 Nov 2020 17:04:10 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 19 Nov 2020 17:04:10 __init__.py DEBUG Loading model cost 0.721 seconds.
+Thu 19 Nov 2020 17:04:10 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 19 Nov 2020 17:04:10 _internal.py WARNING  * Debugger is active!
+Thu 19 Nov 2020 17:04:10 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 19 Nov 2020 17:04:10 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 19 Nov 2020 17:20:28 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\pri_lcb\\my_app\\algorithm\\duan_winnowing.py', reloading
+Thu 19 Nov 2020 17:20:28 _internal.py INFO  * Restarting with stat
+Thu 19 Nov 2020 17:20:29 dup_check.py WARNING warning
+Thu 19 Nov 2020 17:20:29 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 19 Nov 2020 17:20:29 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 19 Nov 2020 17:20:30 __init__.py DEBUG Loading model cost 0.697 seconds.
+Thu 19 Nov 2020 17:20:30 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 19 Nov 2020 17:20:30 _internal.py WARNING  * Debugger is active!
+Thu 19 Nov 2020 17:20:30 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 19 Nov 2020 17:20:30 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 19 Nov 2020 17:20:45 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\pri_lcb\\my_app\\algorithm\\duan_winnowing.py', reloading
+Thu 19 Nov 2020 17:20:45 _internal.py INFO  * Restarting with stat
+Thu 19 Nov 2020 17:20:46 dup_check.py WARNING warning
+Thu 19 Nov 2020 17:20:46 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 19 Nov 2020 17:20:46 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 19 Nov 2020 17:20:46 __init__.py DEBUG Loading model cost 0.805 seconds.
+Thu 19 Nov 2020 17:20:46 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 19 Nov 2020 17:20:47 _internal.py WARNING  * Debugger is active!
+Thu 19 Nov 2020 17:20:47 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 19 Nov 2020 17:20:47 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 19 Nov 2020 17:20:49 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\pri_lcb\\my_app\\algorithm\\duan_winnowing.py', reloading
+Thu 19 Nov 2020 17:20:49 _internal.py INFO  * Restarting with stat
+Thu 19 Nov 2020 17:20:50 dup_check.py WARNING warning
+Thu 19 Nov 2020 17:20:50 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 19 Nov 2020 17:20:50 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 19 Nov 2020 17:20:51 __init__.py DEBUG Loading model cost 0.760 seconds.
+Thu 19 Nov 2020 17:20:51 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 19 Nov 2020 17:20:51 _internal.py WARNING  * Debugger is active!
+Thu 19 Nov 2020 17:20:51 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 19 Nov 2020 17:20:51 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 19 Nov 2020 17:21:00 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\pri_lcb\\my_app\\algorithm\\duan_winnowing.py', reloading
+Thu 19 Nov 2020 17:21:00 _internal.py INFO  * Restarting with stat
+Thu 19 Nov 2020 17:21:01 dup_check.py WARNING warning
+Thu 19 Nov 2020 17:21:01 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 19 Nov 2020 17:21:01 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 19 Nov 2020 17:21:02 __init__.py DEBUG Loading model cost 0.778 seconds.
+Thu 19 Nov 2020 17:21:02 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 19 Nov 2020 17:21:02 _internal.py WARNING  * Debugger is active!
+Thu 19 Nov 2020 17:21:02 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 19 Nov 2020 17:21:02 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 19 Nov 2020 17:21:25 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\pri_lcb\\my_app\\algorithm\\duan_winnowing.py', reloading
+Thu 19 Nov 2020 17:21:25 _internal.py INFO  * Restarting with stat
+Thu 19 Nov 2020 17:21:26 dup_check.py WARNING warning
+Thu 19 Nov 2020 17:21:26 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 19 Nov 2020 17:21:26 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 19 Nov 2020 17:21:26 __init__.py DEBUG Loading model cost 0.724 seconds.
+Thu 19 Nov 2020 17:21:26 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 19 Nov 2020 17:21:26 _internal.py WARNING  * Debugger is active!
+Thu 19 Nov 2020 17:21:27 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 19 Nov 2020 17:21:27 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 19 Nov 2020 17:21:29 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\pri_lcb\\my_app\\algorithm\\duan_winnowing.py', reloading
+Thu 19 Nov 2020 17:21:29 _internal.py INFO  * Restarting with stat
+Thu 19 Nov 2020 17:21:30 dup_check.py WARNING warning
+Thu 19 Nov 2020 17:21:30 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 19 Nov 2020 17:21:30 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 19 Nov 2020 17:21:31 __init__.py DEBUG Loading model cost 0.739 seconds.
+Thu 19 Nov 2020 17:21:31 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 19 Nov 2020 17:21:31 _internal.py WARNING  * Debugger is active!
+Thu 19 Nov 2020 17:21:31 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 19 Nov 2020 17:21:31 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 19 Nov 2020 17:21:33 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\pri_lcb\\my_app\\algorithm\\duan_winnowing.py', reloading
+Thu 19 Nov 2020 17:21:33 _internal.py INFO  * Restarting with stat
+Thu 19 Nov 2020 17:21:35 dup_check.py WARNING warning
+Thu 19 Nov 2020 17:21:35 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 19 Nov 2020 17:21:35 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 19 Nov 2020 17:21:35 __init__.py DEBUG Loading model cost 0.777 seconds.
+Thu 19 Nov 2020 17:21:35 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 19 Nov 2020 17:21:36 _internal.py WARNING  * Debugger is active!
+Thu 19 Nov 2020 17:21:36 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 19 Nov 2020 17:21:36 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 19 Nov 2020 17:21:38 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\pri_lcb\\my_app\\algorithm\\duan_winnowing.py', reloading
+Thu 19 Nov 2020 17:21:38 _internal.py INFO  * Restarting with stat

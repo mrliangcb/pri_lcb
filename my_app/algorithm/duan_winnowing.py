@@ -35,7 +35,12 @@ class paragraph_winnowing():
         s_time=time.time()
         doc1_str,doc1_posi,doc1_01=self.compare(x1_hash,x2_hash,x1,x2)
         # 查一下source_2_template
+        print('template_hash是什么?',template_hash)
+        print('template:是什么?',template)
         source_tem_str, source_tem_posi, source_tem_01 = self.compare(x1_hash, template_hash, x1, template)
+
+
+
         e_time=time.time()
         print('两次compare的时间:',e_time-s_time)
         s_time=time.time()
@@ -46,6 +51,10 @@ class paragraph_winnowing():
         #     print('未去模板result_str:',i,''.join(doc1_str[i]))
 
         doc1_str, doc1_posi, doc1_01=self.clear_template(doc1_str, doc1_posi, doc1_01, source_tem_str, source_tem_posi, source_tem_01)
+        print('清理模板之后doc1_str:',doc1_str[0][12460:12466+20])
+        print('清理模板之后doc1_posi:', doc1_posi[0][12460:12466 + 20])
+        print('清理模板之后doc1_01:', doc1_01[0][12460:12466 + 20])
+
         e_time=time.time()
         print('去除模板的时间:',e_time-s_time)
         # print('去除模板之后的doc1_str:',doc1_str)
@@ -267,7 +276,6 @@ class paragraph_winnowing():
                                 print('填写完之后temp:',temp[j-10:j+15])
                                 print('填写完之后temp2:', temp2[j - 10:j + 15])
                                 print('填写完之后temp_01',temp_01[j-10:j+15])
-
                             last_doc2_id=tuple([duan,num])
                         else:#越界或者下一个不等，按照不连续处理
                             # if x1_hash[i][j] in doc2_key_set:  # 集合找到

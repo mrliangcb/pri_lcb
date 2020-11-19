@@ -143,8 +143,8 @@ class paragraph_winnowing():
             # if str_exam.startswith('为达到从商务文本中自')
             #     print('为达到从商务文本中自',duan)
             exam_str=str[i:i + n]
-            exam_str.startswith('为达到从商务文本中自')
-            print('为达到从商务文本中自  ################################## 第几个gram',i)
+            if exam_str.startswith('为达到从商务文本中自'):
+                print('为达到从商务文本中自  ################################## 第几个gram',i)
             n_gram.append(str[i:i + n])
         return n_gram
 

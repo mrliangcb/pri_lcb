@@ -40,7 +40,7 @@ def exctract_heading(para_list):
     global_obj = []
     pos_num = 0
     ptr1 = r'(第[0-9一二三四五六七八九十]+章[\s]*.*)'
-    ptr2 = r'([\d](?:[\.][\d]*)*|第[0-9一二三四五六七八九十]+章)[\s]*(.*)'
+    ptr2 = r'([\d](?:[\.][\d]*)*|第[0-9一二三四五六七八九十]+章|[一二三四五六七八九十]+)[\s]*(.*)'
     ptr1 = re.compile(ptr1)
     ptr2 = re.compile(ptr2)
 
@@ -59,13 +59,12 @@ def exctract_heading(para_list):
                 # ptr = r'(第[0-9一二三四五六七八九十]+章[\s]*.*)'
                 res1 = re.match(ptr1, text)
                 if res1:#大标题
-                    title=1
+                    title_level=1
                 # result = re.findall(ptr, text)
                 # if result and result[0] != '':
                 #     para_num += 1
                     # 这是一个章标题
                     # para_flag.append({'para_num':para_num,'position':i})
-
                 # 顺便添加heading_obj
                 heading_exam = para_obj(type=type_name, position=pos_num, origin=text, str_=str_split,from_global=len(global_obj), flag=1,title=title_level)# para_num=para_num,
                 is_heading = 1
@@ -82,7 +81,6 @@ def exctract_heading(para_list):
                         likely_heading = para_obj(type=type_name, position=pos_num, origin=text, str_=str_split,
                                             from_global=len(global_obj), flag=2, title=title_level)
                         likely_heading_list.append(likely_heading)
-
 
             # 添加正文  容易和heading的解包重复
             if is_heading == 0:
@@ -456,48 +454,83 @@ def main(source_file, template_doc, source_isdoc, tem_isdoc):
                 sour_global_index=sour_likely_heading_list[sou_index].from_global
                 source_global_obj_list[sour_global_index]=source_global_obj_list[sour_global_index]._replace(flag=1)
 
+    tem_li_str_list=[]
+    tem_li_str_dic={}
+    for i,j in enumerate(tem_likely_heading_list):
+        tem_li_str_list.append(j.str_)
+        if not tem_li_str_dic.get(j.str_,None):
+            tem_li_str_dic[j.str_]=i
 
-    left_2 = 0
-    b_t_1=0 #缺失的大标题
-    s_t_1=0 #缺失的小标题
-    for i, j in enumerate(flag_tem):
-        if j == 0:
-            if tem_heading_obj_list[i].title ==1: #大标题
-                b_t_1+=1
+    for i,j in enumerate(source_heading_obj_list):
+        if j.flag==-2:
+            if tem_li_str_dic.get(j.str_,None): #如果查到有
+                # tem的-2改成1
+                # tem的global -2改成1
+                # source global 的2改成1
+                # source like 2改成1
+                source_heading_obj_list[i]=source_heading_obj_list[i]._replace(flag=1) #
+                global_index = source_heading_obj_list[i].from_global
+                source_global_obj_list[global_index] = source_global_obj_list[global_index]._replace(flag=1)
+
+                tem_index=tem_li_str_dic[j.str_]
+                tem_global_index=tem_likely_heading_list[tem_index].from_global
+                tem_global_obj_list[tem_global_index]=tem_global_obj_list[tem_global_index]._replace(flag=1)
+
+
+    # 正确标题 flag 1
+    # 错误标题 flag -2
+    # 大标题 title 1
+    # 小标题 title 0
+    l_b=0
+    l_s=0
+    l_b_y=0
+    l_s_y=0
+
+    set2=set([1,-2])
+    for i,j in enumerate(tem_global_obj_list):
+        if j.flag in set2:#是标题
+            if j.title==1:
+                l_b+=1
+                if j.flag==1:#大标题并且正确
+                    l_b_y+=1
             else:
-                s_t_1 +=1
+                l_s+=1
+                if j.flag==1:#小标题并且正确
+                    l_s_y+=1
 
-    b_t_2 = 0 #正确的大标题1
-    s_t_2 = 0 #正确的小标题
-    r_b=0 # 右边所有的大标题
-    r_s=0 # 右边所有的小标题
-    correct_heading = 0
-    for i, j in enumerate(flag_source):
-        if j == 1:
-            if source_heading_obj_list[i].title == 1:  # 大标题
-                b_t_2+=1
+    r_b=0
+    r_s=0
+    r_b_y=0
+    r_s_y=0
+    set2=set([1,-2])
+    for i,j in enumerate(source_global_obj_list):
+        if j.flag in set2:#是标题
+            if j.title==1:
+                r_b+=1
+                if j.flag==1:#大标题并且正确
+                    r_b_y+=1
             else:
-                s_t_2+=1
+                r_s+=1
+                if j.flag==1:#小标题并且正确
+                    r_s_y+=1
 
-    for i, j in enumerate(source_heading_obj_list):
-        if j.title == 1:
-            r_b+=1
-        else:
-            r_s+=1
 
-    print('正确大标题:',b_t_2)
-    print('正确小标题:', s_t_2)
+    print('正确大标题:{}/{}'.format(r_b_y+l_b_y,r_b+l_b))
+    print('正确小标题:{}/{}'.format(r_s_y+l_s_y,r_s+l_s))
 
-    print('r_b:{},r_s:{}'.format(r_b,r_s))
-    print('b_t_1:{},b_t_2:{}'.format(b_t_1, b_t_2))
+    b_y=r_b_y+l_b_y
+    all_b=r_b+l_b
+
+    s_y = r_s_y + l_s_y
+    all_s = r_s + l_s
 
     # print('计算匹配值:{}/{}'.format(correct_heading, len(flag_source) + left_2)) # (source中的正确标题)/(source全部标题+tem的缺失标题)
     try:
-        b_score = 0.65 * (b_t_2 / (r_b + b_t_1))
+        b_score = 0.65 * (b_y / (all_b))
     except:
         b_score = 0
     try:
-        s_score = 0.35 * (s_t_2 / (r_s + s_t_1))
+        s_score = 0.35 * (s_y / (all_s))
     except:
         s_score = 0
     global_score = b_score + s_score

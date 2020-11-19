@@ -13,7 +13,7 @@ logging.warning("warning")
 from io import BytesIO
 import docx
 import json
-from my_app.algorithm.simhash.my_simhash import start_jieba,sim_main
+from my_app.algorithm.simhash.my_simhash2 import start_jieba,sim_main
 y = start_jieba()
 # -*- coding: utf-8 -*-
 import codecs,sys
@@ -556,7 +556,7 @@ def propose_docx_doc(source_url,template_url):
         # path1=r'D:\lcb_note\code\Program\10月项目\winnowing1.5\越界1\招标文件 CWEME-1910ZSWZ-2J036 物资成套信息管理平台招标-2019年10月中国水利电力物资集团有限公司项目-招标三部（第二版模板）.doc'
         # path1=r'D:\lcb_note\code\Program\10月项目\winnowing1.5\越界1\招标文件-基于NLP的商务文本数据清洗关键技术研究（1021评审）（第一版）.docx'
         # path1=r'D:\lcb_note\code\Program\10月项目\my_docx\基于NLP的商务文本数据清洗关键技术研究项目合同+-+-打印版.docx'
-        # source_content=docx.Document(path1)
+        # source_content = docx.Document(path1)
 
     if tem_doc_name.endswith('doc'):
         tem_isdoc=1
@@ -567,8 +567,6 @@ def propose_docx_doc(source_url,template_url):
     else:# docx文件
         template_content = intepret_docx(template_url)
         # path2 = r'D:\lcb_note\code\Program\10月项目\查重需求资料\查重需求资料\1.招标文件文档查重对比材料\招标文件-基于NLP的商务文本数据清洗关键技术研究（1021评审）（第一版）.docx'
-
-
         # path2=r'D:\lcb_note\code\Program\10月项目\winnowing1.5\越界1\招标文件 CWEME-1910ZSWZ-2J036 物资成套信息管理平台招标-2019年10月中国水利电力物资集团有限公司项目-招标三部（第二版模板）.doc'
         # path2 = r'D:\lcb_note\code\Program\10月项目\my_docx\招标文件 CWEME-1911ZSWZ-2J039 基于NLP的商务文本数据清洗关键技术研究项目-2019年12月中国水利电力物资集团有限公司项目（第三版终版）.docx'
         # template_content = docx.Document(path2)

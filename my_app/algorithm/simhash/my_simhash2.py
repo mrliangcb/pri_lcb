@@ -122,6 +122,9 @@ def find_min(x):
         if j<min_:
             index=i
             min_=j
+        elif j==min_:
+            print('有多个标题:',i,min_)
+
     '''
     min_: 最小值
     index: 下标

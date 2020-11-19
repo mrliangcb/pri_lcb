@@ -24,7 +24,7 @@ class paragraph_winnowing():
         x1_hash = self.gram_hash(x1_gram,n)
         x2_hash = self.gram_hash(x2_gram,n)
 
-        print('左边文章1的12466:',x1_gram[0][12466])
+        # print('左边文章1的12466:',x1_gram[0][12466])
         # print('是否在x2_hash中',x1_gram[0][12466] in x2_hash[0])
 
 
@@ -222,7 +222,7 @@ class paragraph_winnowing():
     def compare(self,x1_hash,x2_hash,doc1,doc2,n=13):#hatsh至少[['']]
         hash2posi_dic=self.search_dict(x2_hash)#doc2是参考文章
 
-        print('hash2中是否有12466的gram的hash值:',hash2posi_dic.get(x1_hash[0][12466]))
+        # print('hash2中是否有12466的gram的hash值:',hash2posi_dic.get(x1_hash[0][12466]))
 
         # print('hash2posi_dic:',hash2posi_dic)
         # doc2_key_set = set(hash2posi_dic.keys())  #这种方法也不怎么节省时间，就是减少内存
@@ -254,8 +254,10 @@ class paragraph_winnowing():
                         # print('是否进入修改:',duan,num,len(doc2[duan]),x1_hash[i][j],x2_hash[duan][num+1],doc2[duan][num+1])
                         if (num+1<len(x2_hash[duan]) and x1_hash[i][j]==x2_hash[duan][num+1]):#j是当前的x1_hash   只有x2_hash后面还有gram，才能true
 
-
                             num=num+1 #当前的num
+                            if j==12466:
+                                print('temp中12466的位置',temp[j:j+13])
+
                             for k in range(n):#要遍历13个，容易出错
                                 if temp[j + k] == '':
                                     temp[j + k] = doc2[duan][num + k] #只收集文字

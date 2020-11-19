@@ -296,6 +296,12 @@ class paragraph_winnowing():
                             conti_condi = 0
 
                             # temp[j]=doc2_gram_dic[doc1_hash[i][j]] # tuple装进temp
+            try:
+                print('temp中12466的位置', temp[12460:12466+13])
+                print('result_01:',result_01[12460:12466+13])
+                print('result_posi:',result_posi[12460:12466+13])
+            except:
+                pass
 
             result_str.append(temp)  # temp段 装进文章
             result_posi.append(temp2)

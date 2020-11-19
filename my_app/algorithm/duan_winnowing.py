@@ -72,23 +72,23 @@ class paragraph_winnowing():
         # print(doc1_wrap)
 
         # 验证一下 是不是wrap1的在wrap2都有
-        print('doc1_wrap:',doc1_wrap)
-        print('doc2_wrap:',doc2_wrap)
+        # print('doc1_wrap:',doc1_wrap)
+        # print('doc2_wrap:',doc2_wrap)
         # [[(0, 0, 29), (-1, 30, 80), (0, 81, 121)]]
-        doc2_wrap_set=[]
-        for i in range(len(doc2_wrap[0])):
-            a,b,c=doc2_wrap[0][i]
-            doc2_wrap_set.append(a)
-        doc2_wrap_set=set(doc2_wrap_set)
-        print('doc2_wrap_set是什么:',doc2_wrap_set)
+        # doc2_wrap_set=[]
+        # for i in range(len(doc2_wrap[0])):
+        #     a,b,c=doc2_wrap[0][i]
+        #     doc2_wrap_set.append(a)
+        # doc2_wrap_set=set(doc2_wrap_set)
         #
-        for i in range(len(doc1_wrap[0])):
-            a,b,c=doc1_wrap[0][i]
-            if a in doc2_wrap_set:
-                pass
-            else:#如果没找到这一组，那就改成-1
-                doc1_wrap[0][i]=tuple([-1,b,c])
-                print('验证不合格的组号:',a)
+        # #
+        # for i in range(len(doc1_wrap[0])):
+        #     a,b,c=doc1_wrap[0][i]
+        #     if a in doc2_wrap_set:
+        #         pass
+        #     else:#如果没找到这一组，那就改成-1
+        #         doc1_wrap[0][i]=tuple([-1,b,c])
+        #         print('验证不合格的组号:',a)
         # print('验证及格后的doc1_wrap:',doc1_wrap)
 
         return similarity,doc1_str,doc1_wrap,doc2_wrap

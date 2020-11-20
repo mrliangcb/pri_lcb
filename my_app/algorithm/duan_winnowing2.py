@@ -35,8 +35,8 @@ class paragraph_winnowing():
         s_time=time.time()
         doc1_str,doc1_posi,doc1_01=self.compare(x1_hash,x2_hash,x1,x2)
         # 查一下source_2_template
-        print('template_hash是什么?',template_hash)
-        print('template:是什么?',template)
+        # print('template_hash是什么?',template_hash)
+        # print('template:是什么?',template)
         source_tem_str, source_tem_posi, source_tem_01 = self.compare(x1_hash, template_hash, x1, template)
 
 

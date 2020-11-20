@@ -45,6 +45,7 @@ def exctract_heading(para_list):
     ptr2 = re.compile(ptr2)
 
     for i, para in enumerate(para_list):
+        print(para.text)
         text = para.text.strip()
         if (text not in trasbin) and text:
             # 有两个解析，等判空之后再做，减少一点时间，剪枝
@@ -338,6 +339,7 @@ def extract_doc_heading(para_list: list):
                 global_examp = heading_exam
                 global_obj.append(global_examp)
                 pos_num += 1
+    print('提取完doc文档，标题:',heading_list[:10])
     return heading_list, global_obj,likely_heading_list
 
 

@@ -412,26 +412,26 @@ def dup_check():
     # print('送入检测的target:', target)
 
     # print('连续的source:',source[0][:5000])
-    print('连续的target:', target[0])
-    sen_exam=r'我们完全理解并同意放弃对这方面有不明及误解的权利'
-    my_leng=len(sen_exam)
-    posi_exam_s=[]
-    posi_exam_t=[]
-    for i in range(len(source)):
-        if len(source[i:i+my_leng])!=my_leng:
-            print('长度不对')
-        if source[i:i+my_leng]==sen_exam:
-            print('source找到所在位置',i)
-            posi_exam_s.append(i)
-
-    for i in range(len(target)):
-        if target[i:i+my_leng]==sen_exam:
-            print('target找到所在位置',i)
-            posi_exam_t.append(i)
-    if posi_exam_s:
-        print('juzisuozai huanjing_s:',source[posi_exam_s[0]-50:posi_exam_s[0]+100])
-    if posi_exam_t:
-        print('juzisuozai huanjing_t:', target[posi_exam_t[0] - 50:posi_exam_t[0] + 100])
+    # print('连续的target:', target[0])
+    # sen_exam=r'我们完全理解并同意放弃对这方面有不明及误解的权利'
+    # my_leng=len(sen_exam)
+    # posi_exam_s=[]
+    # posi_exam_t=[]
+    # for i in range(len(source)):
+    #     if len(source[i:i+my_leng])!=my_leng:
+    #         print('长度不对')
+    #     if source[i:i+my_leng]==sen_exam:
+    #         print('source找到所在位置',i)
+    #         posi_exam_s.append(i)
+    #
+    # for i in range(len(target)):
+    #     if target[i:i+my_leng]==sen_exam:
+    #         print('target找到所在位置',i)
+    #         posi_exam_t.append(i)
+    # if posi_exam_s:
+    #     print('juzisuozai huanjing_s:',source[posi_exam_s[0]-50:posi_exam_s[0]+100])
+    # if posi_exam_t:
+    #     print('juzisuozai huanjing_t:', target[posi_exam_t[0] - 50:posi_exam_t[0] + 100])
 
 
     similarity,result_str,doc1_wrap,doc2_wrap=example.get_sim(source,target,template=template_target,n=13)
@@ -710,6 +710,8 @@ def template_match():
     # print('left_:',left_)
     # print('right:',right_)
 
+    print('tem_global_list_obj:',tem_global_list_obj)
+    print('source_global_obj_list:',source_global_obj_list)
     result0=render_template('html_for_match.html',template=tem_global_list_obj )
     result1 = render_template('html_for_match_right.html', template=source_global_obj_list)
 

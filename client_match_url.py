@@ -45,7 +45,7 @@ resp = requests.post(url, data=data,headers=headers)
 rece=resp.json()
 # print(rece)
 # print(rece)
-print(rece['template'])
+print(rece['source'])
 
 
 

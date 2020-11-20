@@ -343,29 +343,27 @@ class paragraph_winnowing():
                 # for j in range(1, len(result_01[i])): #开始遍历这一段
                 while s < length_duan:
                     e = s
-                    try:
-                        while e < length_duan and result_01[i][s] == result_01[i][e] and (doc1_posi[i][e][1]-doc1_posi[i][s][1]==e-s):#判断连续性
-                            if doc1_str[i][e] not in trasbin:
-                                true_ele += 1
-                            if doc1_str[i][e] == '.':
-                                dot_ele += 1
-                            e += 1
-                        #遇到跳变
-                        if (result_01[i][e - 1] == 1) and (
-                                e - s) >= 13 and true_ele >= 13 and dot_ele < 13:  # 上一个是1，表示是重复的 并且长度>13  true_ele就是避免 匹配空格的问题，把空格也算进13就不好 垃圾符号超过13个就不
-                            duan1_group.append(tuple([group_num, s, e-1]))  # 取的时候 (s:e+1)
-                            group_num += 1
-                        else:  # 非重复的
-                            duan1_group.append(tuple([-1, s, e-1]))
-                    except:
-                        print('while越界了')
-                        print('s,e:',s,e)
-                        print('i:',i)
-                        print('result_01',len(result_01[i]),result_01[i][:10])
-                        print('doc1_posi:',len(doc1_posi[i]),doc1_posi[i][:10])
-                        print('doc1_str[i]',doc1_str[i][:10])
+                    print('当前s:',s)
+                    while e < length_duan and result_01[i][s] == result_01[i][e] :#
+                        try:#获取doc1_posi解包，若解包失败，表明当前是-1组，直接pass就好了   0的话没有解包  1的话有解包
+                            if (doc1_posi[i][e][1] - doc1_posi[i][s][1] != e - s): #判断连续性
+                                break
+                        except:
+                                print('当前是-1组')
+                                pass
 
-
+                        if doc1_str[i][e] not in trasbin:
+                            true_ele += 1
+                        if doc1_str[i][e] == '.':
+                            dot_ele += 1
+                        e += 1
+                    #遇到跳变
+                    if (result_01[i][e - 1] == 1) and (
+                            e - s) >= 13 and true_ele >= 13 and dot_ele < 13:  # 上一个是1，表示是重复的 并且长度>13  true_ele就是避免 匹配空格的问题，把空格也算进13就不好 垃圾符号超过13个就不
+                        duan1_group.append(tuple([group_num, s, e-1]))  # 取的时候 (s:e+1)
+                        group_num += 1
+                    else:  # 非重复的
+                        duan1_group.append(tuple([-1, s, e-1]))
                     true_ele = 0
                     dot_ele = 0
                     s = e
@@ -428,17 +426,17 @@ class paragraph_winnowing():
                                 # 当有模板去除的时候，连续的字符可能<13
                                 # 当然，<13其实就可以不算重复了 所以换成-1组号
                         else:#doc2那边小于13个-1  doc1这边有13个
-                            old_group = -1  # 这个 就转化为-1吧，不显示了
+                            old_group = -1  # 这个 就转化为d
                             new_group = a
                             new_group_old[new_group] = old_group  #a转化为-1组了
                     else:#doc1直接就是<13个字
                         # 找到一个组长度不够13，直接换组号 换成-1
                         old_group = -1  #
                         new_group = a
-                        new_group_old[new_gsroup] = old_group
+                        new_group_old[new_group] = old_group
 
                     # 短句先出现，长句后出现，
-
+        print('要改写的组:',new_group_old)
         #改写doc1_group
         exis_new_group = set(new_group_old.keys())
         for i in range(len(doc1_tuple)):

@@ -67,8 +67,8 @@ class paragraph_winnowing():
         size = 0
         for i in range(len(x1)):
             size += len(x1[i])
-
-        doc1_wrap=self.x1_group(doc1_01,doc1_str)
+        print('doc1_posi是什么:',doc1_posi)
+        doc1_wrap=self.x1_group(doc1_01,doc1_str,doc1_posi)
 
 
         # print('doc1_wrap:', doc1_wrap) #是一个二维的
@@ -325,7 +325,7 @@ class paragraph_winnowing():
 
 
     def x1_group( #给x1分组
-            self,result_01,doc1_str):
+            self,result_01,doc1_str,doc1_posi):
         trasbin=set(['',' ','\t','\r'])
         all_group = [] #x1的全部段分组
         contin_flag = 0
@@ -337,39 +337,35 @@ class paragraph_winnowing():
             e = 0
             true_ele = 0
             dot_ele=0
+            length_duan=len(result_01[i])
             if len(result_01[i])>1: #
-                for j in range(1, len(result_01[i])): #开始遍历这一段
-                    # if j==12460:
-                    #     print('x1_group的12460 检查阶段')
-                    if doc1_str[i][j] not in trasbin:
-                        true_ele+=1
-                    if doc1_str[i][j]=='.':
-                        dot_ele+=1
+                # for j in range(1, len(result_01[i])): #开始遍历这一段
+                while s < length_duan:
+                    e = s
+                    while e < length_duan and result_01[i][s] == result_01[i][e] and (doc1_posi[i][e][1]-doc1_posi[i][s][1]==e-s):#判断连续性
+                        if doc1_str[i][e] not in trasbin:
+                            true_ele += 1
+                        if doc1_str[i][e] == '.':
+                            dot_ele += 1
+                        e += 1
+                    #遇到跳变
+                    if (result_01[i][e - 1] == 1) and (
+                            e - s) >= 13 and true_ele >= 13 and dot_ele < 13:  # 上一个是1，表示是重复的 并且长度>13  true_ele就是避免 匹配空格的问题，把空格也算进13就不好 垃圾符号超过13个就不
+                        duan1_group.append(tuple([group_num, s, e-1]))  # 取的时候 (s:e+1)
+                        group_num += 1
+                    else:  # 非重复的
+                        duan1_group.append(tuple([-1, s, e-1]))
 
-                    if (result_01[i][j] != result_01[i][j - 1]):  # 触发跳变
-                        # print('段:',duan,j,result_01[i][j-1],result_01[i][j])
-                        if (result_01[i][j - 1] == 1) and (e-s+1)>=13 and true_ele>=13 and dot_ele<13: #上一个是1，表示是重复的 并且长度>13  true_ele就是避免 匹配空格的问题，把空格也算进13就不好 垃圾符号超过13个就不
-                            duan1_group.append(tuple([group_num, s, e]))  # 取的时候 (s:e+1)
-                            group_num += 1
-                            true_ele=0
-                            dot_ele=0
-                        else:#非重复的
-                            duan1_group.append(tuple([-1, s, e]))
-                            true_ele=0
-                            dot_ele=0
-                        s = j
-                        e = j
-                    else:
-                        e = j
+                    true_ele = 0
+                    dot_ele = 0
+                    s = e
+                    # if (result_01[i][j] != result_01[i][j - 1]):  # 触发跳变
                 # 如果还有没有tuple包起来的
-                if (result_01[i][j] == 1):
-                    duan1_group.append(tuple([group_num, s, e]))
-                    group_num += 1
-                else:
-                    duan1_group.append(tuple([-1, s, e]))
             else:
-                duan1_group.append(tuple([-1, s, e]))
+                #这里会遇到什么情况
+                duan1_group.append(tuple([-1, 0, -1]))
             all_group.append(duan1_group)
+            print('all_group是什么?',all_group)
         return all_group
 
     def doc2_label_group1(self,doc2,doc1_tuple,doc1_2_doc2_index):

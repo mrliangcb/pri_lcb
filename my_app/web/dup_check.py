@@ -2,7 +2,7 @@ from flask import jsonify,Blueprint,request,render_template
 from my_app.forms import check_args_validation,vali_check_match1
 from . import web
 from my_app.algorithm.dup_check_algo import check_str
-from my_app.algorithm.duan_winnowing import paragraph_winnowing
+from my_app.algorithm.duan_winnowing2 import paragraph_winnowing
 import logging
 import requests
 import json
@@ -358,9 +358,9 @@ def dup_check():
     tem_str=template_target
     template_target=[template_target]
 
+
     template_target = clear(template_target) # 其实clear没用
     # print('clear之后的template_target:',template_target)
-
 
     source_length = len(source)
     target_length = len(target)
@@ -371,16 +371,21 @@ def dup_check():
     # print('target:', target[:100])
     # print('tem:',template_target[:100])
     print('tem_string:')
-    print('tem_str是什么?123',repr(tem_str[:5])) # 应该是None
+    print('tem_str是什么?123',repr(tem_str[:20])) # 应该是None
 
     tem_fenduan, tem_split, tem_duandian = my_split(tem_str) # 输入是str  先分段，然后去掉空行 然后返回拼接或者直接返回段信息
     # x_fenduan 是一维的，每维是一段一个str
     # print('tem_fenduan是什么?',tem_fenduan[:5]) # ['']
 
     # print('source原文：',repr(source))
+    sour_gechang_time=time.time()
     source=gehang(source)
+    print('source gehang时间:',time.time()-sour_gechang_time)
 
+    sou_ms=time.time()
     x_fenduan,source,x_duandian=my_split(source) # str
+    print('sou my split time:',time.time()-sou_ms)
+
     # print('去掉泛函之后的文本:',source)
 
     # print('字符串source:',repr(source[:1000]))

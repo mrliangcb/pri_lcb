@@ -413,6 +413,23 @@ def dup_check():
 
     print('连续的source:',source[0][:5000])
     print('连续的target:', target[0][:5000])
+    sen_exam=r'我们完全理解并同意放弃对这方面有不明及误解的权利'
+    my_leng=len(sen_exam)
+    posi_exam_s=[]
+    posi_exam_t=[]
+    for i in range(len(source)):
+        if source[i:i+my_leng]==sen_exam:
+            print('source找到所在位置',i)
+            posi_exam_s.append(i)
+
+    for i in range(len(target)):
+        if target[i:i+my_leng]==sen_exam:
+            print('target找到所在位置',i)
+            posi_exam_t.append(i)
+
+    print('juzisuozai huanjing_s:',source[posi_exam_s[0]-50:posi_exam_s[0]+100])
+    print('juzisuozai huanjing_t:', target[posi_exam_t[0] - 50:posi_exam_t[0] + 100])
+
 
     similarity,result_str,doc1_wrap,doc2_wrap=example.get_sim(source,target,template=template_target,n=13)
 

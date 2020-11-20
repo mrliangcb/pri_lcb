@@ -10842,3 +10842,23 @@ Fri 20 Nov 2020 10:47:07 _internal.py INFO  * Debugger PIN: 304-402-708
 Fri 20 Nov 2020 10:47:07 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
 Fri 20 Nov 2020 10:47:09 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10月项目\\winnowing1.5_3接口_单核版\\pri_lcb\\my_app\\web\\dup_check.py', reloading
 Fri 20 Nov 2020 10:47:09 _internal.py INFO  * Restarting with stat
+Fri 20 Nov 2020 10:47:10 dup_check.py WARNING warning
+Fri 20 Nov 2020 10:47:10 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Fri 20 Nov 2020 10:47:10 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Fri 20 Nov 2020 10:47:10 __init__.py DEBUG Loading model cost 0.678 seconds.
+Fri 20 Nov 2020 10:47:10 __init__.py DEBUG Prefix dict has been built successfully.
+Fri 20 Nov 2020 10:47:10 _internal.py WARNING  * Debugger is active!
+Fri 20 Nov 2020 10:47:10 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 20 Nov 2020 10:47:10 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 20 Nov 2020 10:51:32 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10月项目\\winnowing1.5_3接口_单核版\\pri_lcb\\my_app\\algorithm\\duan_winnowing2.py', reloading
+Fri 20 Nov 2020 10:51:32 _internal.py INFO  * Restarting with stat
+Fri 20 Nov 2020 10:51:33 dup_check.py WARNING warning
+Fri 20 Nov 2020 10:51:33 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Fri 20 Nov 2020 10:51:33 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Fri 20 Nov 2020 10:51:34 __init__.py DEBUG Loading model cost 0.718 seconds.
+Fri 20 Nov 2020 10:51:34 __init__.py DEBUG Prefix dict has been built successfully.
+Fri 20 Nov 2020 10:51:34 _internal.py WARNING  * Debugger is active!
+Fri 20 Nov 2020 10:51:34 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 20 Nov 2020 10:51:34 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 20 Nov 2020 10:54:36 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10月项目\\winnowing1.5_3接口_单核版\\pri_lcb\\my_app\\web\\dup_check.py', reloading
+Fri 20 Nov 2020 10:54:36 _internal.py INFO  * Restarting with stat

@@ -67,7 +67,7 @@ class paragraph_winnowing():
         size = 0
         for i in range(len(x1)):
             size += len(x1[i])
-        print('doc1_posi是什么:',doc1_posi)
+        # print('doc1_posi是什么:',doc1_posi)
         doc1_wrap=self.x1_group(doc1_01,doc1_str,doc1_posi)
 
 

@@ -426,9 +426,10 @@ def dup_check():
         if target[i:i+my_leng]==sen_exam:
             print('target找到所在位置',i)
             posi_exam_t.append(i)
-
-    print('juzisuozai huanjing_s:',source[posi_exam_s[0]-50:posi_exam_s[0]+100])
-    print('juzisuozai huanjing_t:', target[posi_exam_t[0] - 50:posi_exam_t[0] + 100])
+    if posi_exam_s:
+        print('juzisuozai huanjing_s:',source[posi_exam_s[0]-50:posi_exam_s[0]+100])
+    if posi_exam_t:
+        print('juzisuozai huanjing_t:', target[posi_exam_t[0] - 50:posi_exam_t[0] + 100])
 
 
     similarity,result_str,doc1_wrap,doc2_wrap=example.get_sim(source,target,template=template_target,n=13)

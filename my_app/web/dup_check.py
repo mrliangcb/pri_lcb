@@ -412,7 +412,7 @@ def dup_check():
     # print('送入检测的target:', target)
 
     # print('连续的source:',source[0][:5000])
-    # print('连续的target:', target[0][:5000])
+    print('连续的target:', target[0][:5000])
     sen_exam=r'我们完全理解并同意放弃对这方面有不明及误解的权利'
     my_leng=len(sen_exam)
     posi_exam_s=[]

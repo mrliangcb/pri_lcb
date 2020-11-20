@@ -356,7 +356,7 @@ def dup_check():
     #分段并且去掉空段
     # template_target = template_target.split(r'\n')
     tem_str=template_target
-    template_target=[template_target]
+    template_target=[template_target] # '' 变成[''] #含有换行符
 
 
     template_target = clear(template_target) # 其实clear没用
@@ -370,8 +370,8 @@ def dup_check():
     # print('source:',source[:100] )
     # print('target:', target[:100])
     # print('tem:',template_target[:100])
-    print('tem_string:')
-    print('tem_str是什么?123',repr(tem_str[:20])) # 应该是None
+    print('tem_string:',tem_str[:100])
+    print('tem_str是什么?123',repr(tem_str[:100])) # 应该是None
 
     tem_fenduan, tem_split, tem_duandian = my_split(tem_str) # 输入是str  先分段，然后去掉空行 然后返回拼接或者直接返回段信息
     # x_fenduan 是一维的，每维是一段一个str
@@ -639,9 +639,10 @@ def simhash_route():
 
     # 分段并且去掉空段
     # template_target = template_target.split(r'\n')
-    tem_str = template_target
-    template_target = [template_target]
-    template_target = clear(template_target)  # 其实clear没用
+    tem_str = template_target # '含符号'
+    print('模板加入:',tem_str[:100])
+    # template_target = [template_target]
+    # template_target = clear(template_target)  # 其实clear没用
     # print('clear之后的template_target:',template_target)
 
     source_length = len(source)

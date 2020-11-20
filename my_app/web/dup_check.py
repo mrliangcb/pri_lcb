@@ -410,6 +410,10 @@ def dup_check():
     example = paragraph_winnowing()
     # print('送入检测的source:',len(source[0]),source)  #103长度
     # print('送入检测的target:', target)
+
+    print('连续的source:',source[0][:5000])
+    print('连续的target:', target[0][:5000])
+
     similarity,result_str,doc1_wrap,doc2_wrap=example.get_sim(source,target,template=template_target,n=13)
 
     # print('未加入br的wrap1:', doc1_wrap) # 下表最大是102  [[(0, 0, 101), (-1, 102, 102)]]

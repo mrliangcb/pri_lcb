@@ -338,18 +338,17 @@ class paragraph_winnowing():
             true_ele = 0
             dot_ele=0
             length_duan=len(result_01[i])
-            print('两个长度是否相同:',len(result_01[i])==len(doc1_posi[i]))
+            # print('两个长度是否相同:',len(result_01[i])==len(doc1_posi[i]))
             if len(result_01[i])>1: #
                 # for j in range(1, len(result_01[i])): #开始遍历这一段
                 while s < length_duan:
                     e = s
-                    print('当前s:',s)
+                    # print('当前s:',s)
                     while e < length_duan and result_01[i][s] == result_01[i][e] :#
                         try:#获取doc1_posi解包，若解包失败，表明当前是-1组，直接pass就好了   0的话没有解包  1的话有解包
                             if (doc1_posi[i][e][1] - doc1_posi[i][s][1] != e - s): #判断连续性
                                 break
                         except:
-                                print('当前是-1组')
                                 pass
 
                         if doc1_str[i][e] not in trasbin:
@@ -373,7 +372,7 @@ class paragraph_winnowing():
                 #这里会遇到什么情况
                 duan1_group.append(tuple([-1, 0, -1]))
             all_group.append(duan1_group)
-            print('all_group是什么?',all_group)
+            # print('all_group是什么?',all_group)
         return all_group
 
     def doc2_label_group1(self,doc2,doc1_tuple,doc1_2_doc2_index):

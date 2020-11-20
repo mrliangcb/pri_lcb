@@ -338,6 +338,8 @@ class paragraph_winnowing():
             true_ele = 0
             dot_ele=0
             length_duan=len(result_01[i])
+            print('两个长度是否相同:',len(result_01[i])==len(doc1_posi[i]))
+
             if len(result_01[i])>1: #
                 # for j in range(1, len(result_01[i])): #开始遍历这一段
                 while s < length_duan:

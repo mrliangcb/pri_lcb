@@ -711,8 +711,8 @@ def template_match():
     # print('left_:',left_)
     # print('right:',right_)
 
-    print('tem_global_list_obj:',tem_global_list_obj)
-    print('source_global_obj_list:',source_global_obj_list)
+    # print('tem_global_list_obj:',tem_global_list_obj)
+    # print('source_global_obj_list:',source_global_obj_list)
     result0=render_template('html_for_match.html',template=tem_global_list_obj )
     result1 = render_template('html_for_match_right.html', template=source_global_obj_list)
 

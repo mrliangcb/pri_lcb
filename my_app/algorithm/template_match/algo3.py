@@ -34,6 +34,7 @@ import re
 
 
 def exctract_heading(para_list):
+    true_heading_list=[]
     heading_list = []
     likely_heading_list = []
     para_num = -1
@@ -45,7 +46,7 @@ def exctract_heading(para_list):
     ptr2 = re.compile(ptr2)
 
     for i, para in enumerate(para_list):
-        print(para.text)
+        # print(para.text)
         text = para.text.strip()
         if (text not in trasbin) and text:
             # 有两个解析，等判空之后再做，减少一点时间，剪枝
@@ -54,13 +55,15 @@ def exctract_heading(para_list):
             is_heading = 0
             # 校正章号
             title_level=0
-            if type_name.startswith('Heading'):
+            res1 = re.match(ptr1, text)
+            if res1:  # 大标题
+                title_level = 1
+
+            if type_name.startswith('Heading') or title_level==1: #标题样式或者大标题
                 # if (not para.style.name.startswith('Normal')) and (not para.style.name.startswith('normal')):
                 # ptr = r'第(.*?)章'  # 非贪心
                 # ptr = r'(第[0-9一二三四五六七八九十]+章[\s]*.*)'
-                res1 = re.match(ptr1, text)
-                if res1:#大标题
-                    title_level=1
+
                 # result = re.findall(ptr, text)
                 # if result and result[0] != '':
                 #     para_num += 1
@@ -70,23 +73,34 @@ def exctract_heading(para_list):
                 heading_exam = para_obj(type=type_name, position=pos_num, origin=text, str_=str_split,from_global=len(global_obj), flag=1,title=title_level)# para_num=para_num,
                 is_heading = 1
                 heading_list.append(heading_exam)
-            else:# 不是标题，疑似标题
+            else:# 不是标题，疑似标题  只能是小标题
                 res2 = re.match(ptr2,text)
                 # print(res2.groups())
                 if res2:
                     # join_text=''.join(res2.groups())
-                    if len(str_split)<30:
+                    if len(str_split)<50:
                         #长度合适，有可能是标题
-                        if str_split.startswith('第'):
-                            title_level=1 #原来是0 第几章  作为大标题
+                        # if str_split.startswith('第'):
+                        #     title_level=1 #原来是0 第几章  作为大标题
+                        if title_level!=0:
+                            print('小标题flag不等于0')
                         likely_heading = para_obj(type=type_name, position=pos_num, origin=text, str_=str_split,
                                             from_global=len(global_obj), flag=2, title=title_level)
                         likely_heading_list.append(likely_heading)
+                # 也有可能是真标题 第几章
+                res1 = re.match(ptr1, text)
+                if res1:
+                    is_heading = 1
+                    title_level=1
+                    big_heading = para_obj(type=type_name, position=pos_num, origin=text, str_=str_split,
+                                           from_global=len(global_obj), flag=1, title=title_level)
+                    true_heading_list.append(big_heading)
+
 
             # 添加正文  容易和heading的解包重复
             if is_heading == 0:
                 origin_ = text
-                global_examp = para_obj(type=type_name, position=pos_num, origin=origin_, str_=str_split,flag=2)# para_num=para_num
+                global_examp = para_obj(type=type_name, position=pos_num, origin=origin_, str_=str_split,flag=2,title=title_level)# para_num=para_num
                 global_obj.append(global_examp)
                 pos_num += 1
 
@@ -94,7 +108,7 @@ def exctract_heading(para_list):
                 global_examp = heading_exam
                 global_obj.append(global_examp)
                 pos_num += 1
-    return heading_list, global_obj,likely_heading_list
+    return heading_list, global_obj,likely_heading_list,true_heading_list
 
 
 class processer():
@@ -282,12 +296,13 @@ trasbin = set(['', '\n', ' ', '  ', ])
 
 
 def extract_doc_heading(para_list: list):
+    true_heading_list=[]
     heading_list = []
     likely_heading_list=[]
     para_num = -1
     global_obj = []
     pos_num = 0
-    ptr1 = r'(第[0-9一二三四五六七八九十]+章[\s]*.*)'
+    ptr1 = r'(第[0-9一二三四五六七八九十]+章)[\s]*.*'
     ptr2 = r'([\d](?:[\.][\d]*)*|第[0-9一二三四五六七八九十]+章)[\s]*(.*)'
     ptr1 = re.compile(ptr1)
     ptr2 = re.compile(ptr2)
@@ -302,33 +317,42 @@ def extract_doc_heading(para_list: list):
             is_heading = 0
             title_level = 0
             # 校正标章号  para_num应该是chapter_num
+            res1 = re.match(ptr1, text)
+            if res1:  # 大标题
+                title_level = 1
 
-            if type_name.startswith('标题'):
+
+            if type_name.startswith('标题') or title_level==1:# 标题样式或者大标题
                 # ptr = r'第(.*?)章'  # 非贪心
                 # result = re.findall(ptr, text)
                 # if result and result[0] != '':  # 是一个章的标志位
                 #     para_num += 1
                 ## 顺便添加heading_obj
-                res1 = re.match(ptr1, text)
-                if res1:  # 大标题
-                    title_level = 1
 
                 heading_exam = para_obj(type=type_name, position=pos_num, origin=text, str_=str_split,from_global=len(global_obj), flag=1,title=title_level)# para_num=para_num,
                 is_heading = 1
                 heading_list.append(heading_exam)
             else:# 不是标题，疑似标题
                 res2 = re.match(ptr2,text)
-
                 # print(res2.groups())
                 if res2:
                     # join_text=''.join(res2.groups())
-                    if len(str_split)<30:
+                    if len(str_split)<50:
                         #长度合适，有可能是标题
-                        if str_split.startswith('第'):
-                            title_level=1 #原来是0
+                        # if str_split.startswith('第'):
+                        #     title_level=1 #原来是0
+                        if title_level!=0:
+                            print('小标题flag不等于0')
                         likely_heading = para_obj(type=type_name, position=pos_num, origin=text, str_=str_split,
                                             from_global=len(global_obj), flag=2, title=title_level)
                         likely_heading_list.append(likely_heading)
+                # 也有可能是真标题 第几章
+                res1 = re.match(ptr1,text)
+                if res1:
+                    big_heading=para_obj(type=type_name, position=pos_num, origin=text, str_=str_split,
+                                            from_global=len(global_obj), flag=1, title=1)
+                    true_heading_list.append(big_heading)
+
             # 保存正文
             if is_heading == 0:
                 origin_ = text
@@ -340,7 +364,7 @@ def extract_doc_heading(para_list: list):
                 global_obj.append(global_examp)
                 pos_num += 1
     print('提取完doc文档，标题:',heading_list[:10])
-    return heading_list, global_obj,likely_heading_list
+    return heading_list, global_obj,likely_heading_list,true_heading_list
 
 
 def main(source_file, template_doc, source_isdoc, tem_isdoc):
@@ -349,14 +373,14 @@ def main(source_file, template_doc, source_isdoc, tem_isdoc):
     # template_doc = procer.read_doc(template)
     if tem_isdoc == 0:
         print('tem进行docx解码')
-        tem_heading_obj_list, tem_global_obj_list,tem_likely_heading_list = exctract_heading(template_doc.paragraphs)
+        tem_heading_obj_list, tem_global_obj_list,tem_likely_heading_list,tem_true_heading_list = exctract_heading(template_doc.paragraphs)
         # print('模板题目的解析:',tem_heading_obj_list)
         # print('模板全文的解析:',tem_global_obj_list)
 
     else:  # 是doc文件
         print('tem进行doc解码')
         print('template_doc的例子:', template_doc[:2])
-        tem_heading_obj_list, tem_global_obj_list,tem_likely_heading_list = extract_doc_heading(template_doc)  #
+        tem_heading_obj_list, tem_global_obj_list,tem_likely_heading_list,tem_true_heading_list = extract_doc_heading(template_doc)  #
 
     print('解析时间1.1:', time.time() - process_time)
 
@@ -364,11 +388,11 @@ def main(source_file, template_doc, source_isdoc, tem_isdoc):
     # source_file = procer.read_doc(source)
     if source_isdoc == 0:
         print('sour进行docx解码')
-        source_heading_obj_list, source_global_obj_list,sour_likely_heading_list = exctract_heading(source_file.paragraphs)
+        source_heading_obj_list, source_global_obj_list,sour_likely_heading_list,sou_true_heading_list = exctract_heading(source_file.paragraphs)
         # print('source题目的解析:', source_heading_obj_list)
     else:
         print('sour进行doc解码')
-        source_heading_obj_list, source_global_obj_list,sour_likely_heading_list = extract_doc_heading(source_file)
+        source_heading_obj_list, source_global_obj_list,sour_likely_heading_list,sou_true_heading_list = extract_doc_heading(source_file)
     # source_global_list_obj = extract_global(source_file.paragraphs)
     print('解析时间2:', time.time() - process_time)
 
@@ -380,9 +404,10 @@ def main(source_file, template_doc, source_isdoc, tem_isdoc):
 
     flag_tem=[0 for i in range(len(tem_heading_str_list))]
 
-
     print('tem中没有重复标题:',len(tem_heading_str_set)==len(tem_heading_str_list)) #重复的概率比较小， 位置编号+内容
 
+
+    # 1次匹配
     for i,j in enumerate(tem_heading_str_list):
         # print('i是什么?',i)
         # print('source_heading_obj_list的长度:',len(source_heading_obj_list))
@@ -431,7 +456,7 @@ def main(source_file, template_doc, source_isdoc, tem_isdoc):
     #                                                                        source_global_obj_list)
     # print('计算最长匹配子串时间:', time.time() - mat_time)
 
-
+    # 2次匹配 将标题中的-2 再次检查
     # 复查tem中的-2:
     # 从source的疑似heading中找
     sou_li_str_list=[]
@@ -477,6 +502,24 @@ def main(source_file, template_doc, source_isdoc, tem_isdoc):
                 tem_index=tem_li_str_dic[j.str_]
                 tem_global_index=tem_likely_heading_list[tem_index].from_global
                 tem_global_obj_list[tem_global_index]=tem_global_obj_list[tem_global_index]._replace(flag=1)
+
+    # # 3次匹配  将正文状态的标题挖掘出来
+    # # 不要漏掉大标题  第几章
+    # for i,j in enumerate(tem_true_heading_list):
+    #     global_index=j.from_global
+    #     # set_flag=set([1,-2])
+    #     # -1 1 2正文
+    #     if tem_global_obj_list[global_index].flag==2: # 如果是正文状态,那就把他当成是标题
+    #         # 2的话再检查一便
+    #         if sou_li_str_dic.get(j.str_,None):
+    #             # 查到有这个章节
+    #             tem_global_obj_list[global_index] = tem_global_obj_list[global_index]._replace(flag=1) #正确标题
+    #         else:
+    #             tem_global_obj_list[global_index] = tem_global_obj_list[global_index]._replace(flag=-2)  # 错误标题
+    #     else:
+    #         pass
+
+
 
 
     # 正确标题 flag 1

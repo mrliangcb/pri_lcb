@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fd0c8e45-0a1a-4d34-a858-791fa0151c6f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo.log" beforeDir="false" afterPath="$PROJECT_DIR$/demo.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_app/web/dup_check.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_app/web/dup_check.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_app/algorithm/simhash/my_simhash2.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_app/algorithm/simhash/my_simhash2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +31,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="JupyterTrust" id="c234007a-d41d-4927-908c-cc134c3ebb34" />
+  <component name="JupyterTrust" id="d7d0c1dd-dbde-4727-afe9-b14a5cda80f0" />
   <component name="ProjectId" id="1jNRvHtKPSRYP9X3lRQczk8QWAP" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -41,7 +40,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="D:/lcb_note/code/Program/python_yuyue/test.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager" selected="Python.run">
     <configuration name="duan_winnowing" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
@@ -196,6 +195,7 @@
       <workItem from="1602835684804" duration="4391000" />
       <workItem from="1603642793080" duration="9694000" />
       <workItem from="1603683459273" duration="3092000" />
+      <workItem from="1606231235354" duration="822000" />
     </task>
     <servers />
   </component>
@@ -245,10 +245,10 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/pri_lcb$test.coverage" NAME="test Coverage Results" MODIFIED="1603678332271" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/my_app/web" />
     <SUITE FILE_PATH="coverage/pri_lcb$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1603685753777" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/lcb_note/code/Program/python_yuyue" />
-    <SUITE FILE_PATH="coverage/winnowing$dup_check_algo.coverage" NAME="dup_check_algo Coverage Results" MODIFIED="1602838849143" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/my_app/algorithm" />
     <SUITE FILE_PATH="coverage/pri_lcb$run.coverage" NAME="run Coverage Results" MODIFIED="1603685762901" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/winnowing$dup_check_algo.coverage" NAME="dup_check_algo Coverage Results" MODIFIED="1602838849143" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/my_app/algorithm" />
+    <SUITE FILE_PATH="coverage/pri_lcb$test.coverage" NAME="test Coverage Results" MODIFIED="1603678332271" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/my_app/web" />
     <SUITE FILE_PATH="coverage/pri_lcb$duan_winnowing.coverage" NAME="duan_winnowing Coverage Results" MODIFIED="1603643986969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/my_app/algorithm" />
     <SUITE FILE_PATH="coverage/winnowing$run.coverage" NAME="run Coverage Results" MODIFIED="1602840099877" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

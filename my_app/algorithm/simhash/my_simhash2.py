@@ -257,7 +257,8 @@ def sim_main(source,target,tem):
     print('dup计算时间',time.time()-dup_time)
 
     #排序 从0起
-    sorted_list = sorted(no_docu3_list, key=lambda x: x[0], reverse=True)# 选rate就要reverse true是降序 ，选dis就要False
+    # sorted_list = sorted(no_docu3_list, key=lambda x: x[0], reverse=True)# 选rate就要reverse true是降序 ，选dis就要False
+    sorted_list = sorted(no_docu3_list, key=lambda x: x[2], reverse=False)
     # print('剔除之后的list:', sorted_list)
 
     select_final = []

@@ -10,6 +10,16 @@ class paragraph_winnowing():
         x1:[[第一段的str]，[第二段的str]]
         x2:同x1
         '''
+
+        # 如果是完全一样的文本，就直接输出
+        if x1==x2:
+            similarity=1
+            doc1_str=0
+            doc1_wrap=[[(0,0,len(x1))]]
+            doc2_wrap = [[(0, 0, len(x2))]]
+            return similarity,doc1_str,doc1_wrap,doc2_wrap
+
+
         s_time=time.time()
         x1_gram=self.build_gram(x1,n)
         # print('x1_gram:',x1_gram)

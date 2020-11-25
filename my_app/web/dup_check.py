@@ -434,8 +434,10 @@ def dup_check():
     #     print('juzisuozai huanjing_t:', target[posi_exam_t[0] - 50:posi_exam_t[0] + 100])
 
 
-    similarity,result_str,doc1_wrap,doc2_wrap=example.get_sim(source,target,template=template_target,n=13)
 
+
+    similarity,result_str,doc1_wrap,doc2_wrap=example.get_sim(source,target,template=template_target,n=13)
+    # 第二项其实没用到
     # print('未加入br的wrap1:', doc1_wrap) # 下表最大是102  [[(0, 0, 101), (-1, 102, 102)]]
 
     # result_dup_list = list_model(doc1_wrap, doc2_wrap, source, target)

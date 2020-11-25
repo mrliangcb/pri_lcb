@@ -359,7 +359,7 @@ def dup_check():
     template_target=[template_target] # '' 变成[''] #含有换行符
 
 
-    template_target = clear(template_target) # 其实clear没用
+    template_target = clear(template_target) # 其实clear没用  看看需不需要 my_split
     # print('clear之后的template_target:',template_target)
 
     source_length = len(source)

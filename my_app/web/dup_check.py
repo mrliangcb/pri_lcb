@@ -449,7 +449,7 @@ def dup_check():
     # 给source和target加入br
     x_final_wrap,x_join_br = zubao(x_fenduan,source[0],x_duandian,doc1_wrap[0])
     print('组包之后x_final_wrap',x_final_wrap)
-    print('x_join_br:',x_join_br)
+    # print('x_join_br:',x_join_br)
 
     y_final_wrap, y_join_br = zubao(y_fenduan, target[0], y_duandian, doc2_wrap[0])
     x_final_wrap=[x_final_wrap]

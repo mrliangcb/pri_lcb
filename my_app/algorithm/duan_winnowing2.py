@@ -15,8 +15,8 @@ class paragraph_winnowing():
         if x1==x2:
             similarity=1
             doc1_str=0
-            doc1_wrap=[[(0,0,len(x1)-1)]]
-            doc2_wrap = [[(0,0,len(x2)-1)]]
+            doc1_wrap=[[(0,0,len(x1[0])-1)]]
+            doc2_wrap = [[(0,0,len(x2[0])-1)]]
             return similarity,doc1_str,doc1_wrap,doc2_wrap
 
 

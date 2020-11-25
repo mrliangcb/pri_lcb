@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fd0c8e45-0a1a-4d34-a858-791fa0151c6f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_app/algorithm/duan_winnowing2.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_app/algorithm/duan_winnowing2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my_app/web/dup_check.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_app/web/dup_check.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -197,7 +196,7 @@
       <workItem from="1603642793080" duration="9694000" />
       <workItem from="1603683459273" duration="3092000" />
       <workItem from="1606231235354" duration="1941000" />
-      <workItem from="1606265946011" duration="4447000" />
+      <workItem from="1606265946011" duration="4817000" />
     </task>
     <servers />
   </component>

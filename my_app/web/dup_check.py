@@ -256,7 +256,7 @@ def ouput_algo(doc1_wrap):
     #     if new_old_dic.get(a, None) != None:
     #         doc2_wrap[0][i] = tuple([new_old_dic[a], b, c])
     # print('改组后的doc2_wrap:', doc2_wrap)
-    print('doc1_wrap是什么?',doc1_wrap) # [(0, 0, 67), (1, 68, 97), (-1, 98, 127), (2, 128, 157)]
+    # print('doc1_wrap是什么?',doc1_wrap) # [(0, 0, 67), (1, 68, 97), (-1, 98, 127), (2, 128, 157)]
     for duan in range(len(doc1_wrap)):
         for num in range(len(doc1_wrap[duan])):
             # print('doc1_wrap[duan][num]是什么?', doc1_wrap[duan][num])
@@ -326,7 +326,7 @@ def build_label(group_num,content):
 
 
 def zubao2(x,y,maodian,wrap):
-    print('zuboa2:wrap是什么:',wrap)
+    # print('zuboa2:wrap是什么:',wrap)
 
     '''
     x: 是二维的 list

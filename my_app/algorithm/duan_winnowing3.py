@@ -421,9 +421,9 @@ class paragraph_winnowing():
             else:
                 duan2_group=[-1]
             doc2_group_index.append(duan2_group)
-        print('模板doc2_group_index:',doc2_group_index)
-        print('doc1_tuple:',doc1_tuple) # [[(0, 0, 67), (1, 68, 97), (-1, 98, 127), (2, 128, 157)]]
-        print('举办中doc1_2_doc2_index:',doc1_2_doc2_index)
+        # print('模板doc2_group_index:',doc2_group_index)
+        # print('doc1_tuple:',doc1_tuple) # [[(0, 0, 67), (1, 68, 97), (-1, 98, 127), (2, 128, 157)]]
+        # print('举办中doc1_2_doc2_index:',doc1_2_doc2_index)
         # 模板是每个位置都是 -1
 
 
@@ -442,20 +442,20 @@ class paragraph_winnowing():
                         if_1=0
                         for k in range(b, c + 1):# 把13个在doc2的地址找出来
                             d, e, f = doc1_2_doc2_index[i][k]  #第一个重复字下表是tuple，d是在doc2的哪个段  e是doc2 d段的第几个字  f是文字
-                            print('set a 是什么?',set([a]))
+                            # print('set a 是什么?',set([a]))
                             if doc2_group_index[d][e] == -1:# 还没写入组号
                                 doc2_group_index[d][e]=set([a]) # 初始化tuple(组号)
-                                print('doc2_group_index状态:',doc2_group_index)
+                                # print('doc2_group_index状态:',doc2_group_index)
 
                             else:#这个字已经有组号了
                                 doc2_group_index[d][e]=doc2_group_index[d][e]|set([a]) #新加组号，不会重复
 
-        print('doc2_group_index是什么?',doc2_group_index) # [[{0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}
+        # print('doc2_group_index是什么?',doc2_group_index) # [[{0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}
         # index转化为wrap格式
         doc2_wrap=[]
         for i,j in enumerate(doc2_group_index[0]):
             doc2_wrap.append([i,j])# [第几个字，字的组号集合]   字的组号集合:set()
-        print('最后doc2_wrap:',doc2_wrap)
+        # print('最后doc2_wrap:',doc2_wrap)
 
         '''
         doc1_tuple:[(号，s,e)，（）]

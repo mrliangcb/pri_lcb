@@ -410,7 +410,7 @@ class paragraph_winnowing():
                             # print('set a 是什么?',set([a]))
                             if a == 21:
                                 print('a是21组了',d,e,f)
-                                
+
 
 
                             if doc2_group_index[d][e] == -1:# 还没写入组号

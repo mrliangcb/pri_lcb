@@ -360,7 +360,7 @@ def zubao2(x,y,maodian,wrap):
 
     # wrap加入<br>因子
     # 判断连续
-    print('global_zihao:',global_zihao)
+    # print('global_zihao:',global_zihao)
 
     global_y = []
     global_y.append(wrap[0])
@@ -374,7 +374,7 @@ def zubao2(x,y,maodian,wrap):
             global_y.append(wrap[i])
         else:
             print('doc2_wrap重组出错了')
-    print('global_y:',global_y)
+    # print('global_y:',global_y)
     #wrap加入<br>银子
 
 

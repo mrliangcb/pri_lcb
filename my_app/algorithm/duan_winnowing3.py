@@ -11,72 +11,34 @@ class paragraph_winnowing():
         x2:同x1
         '''
 
-        # 如果是完全一样的文本，就直接输出
-        # if x1==x2:
-        #     similarity=1
-        #     doc1_str=0
-        #     doc1_wrap=[[(0,0,len(x1[0])-1)]]
-        #     doc2_wrap = [[(0,0,len(x2[0])-1)]]
-        #     return similarity,doc1_str,doc1_wrap,doc2_wrap
-
 
         s_time=time.time()
         x1_gram=self.build_gram(x1,n)
-        # print('x1_gram:',x1_gram)
         x2_gram=self.build_gram(x2,n)
 
-
         template_gram=self.build_gram(template,n)
-        # print('template_gram是这个:',template_gram)
         template_hash = self.gram_hash(template_gram,n)
-        # print('template_hash:', template_hash)
 
         x1_hash = self.gram_hash(x1_gram,n)
         x2_hash = self.gram_hash(x2_gram,n)
 
-        # print('左边文章1的12466:',x1_gram[0][12466])
-        # print('是否在x2_hash中',x1_gram[0][12466] in x2_hash[0])
-
-
         e_time=time.time()
         print('gram和hash的时间:',e_time-s_time)
-
-        # 上面没问题
         s_time=time.time()
         doc1_str,doc1_posi,doc1_01=self.compare(x1_hash,x2_hash,x1,x2)
 
-
-
-        # 查一下source_2_template
-        # print('template_hash是什么?',template_hash)
-        # print('template:是什么?',template)
         source_tem_str, source_tem_posi, source_tem_01 = self.compare(x1_hash, template_hash, x1, template)
-
-
 
         e_time=time.time()
         print('两次compare的时间:',e_time-s_time)
         s_time=time.time()
 
-        # print('result_str是这个',doc1_str)
-
-        # for i in range(len(doc1_str)):
-        #     print('未去模板result_str:',i,''.join(doc1_str[i]))
 
         doc1_str, doc1_posi, doc1_01=self.clear_template(doc1_str, doc1_posi, doc1_01, source_tem_str, source_tem_posi, source_tem_01)
-        # print('清理模板之后doc1_str:',doc1_str[0][12460:12466+20])
-        # print('清理模板之后doc1_posi:', doc1_posi[0][12460:12466 + 20])
-        # print('清理模板之后doc1_01:', doc1_01[0][12460:12466 + 20])
+
 
         e_time=time.time()
         print('去除模板的时间:',e_time-s_time)
-        # print('去除模板之后的doc1_str:',doc1_str)
-        # print('去除模板之后的doc1_posi:', doc1_posi)
-        # print('去除模板之后的doc1_01:', doc1_01)
-        # print('去除模板后的doc1_str',doc1_str)
-        # print('去除模板后的doc1_01', doc1_01)
-        # for i in range(len(doc1_str)):
-        #     print('result_str:',i,''.join(doc1_str[i]))
         size = 0
         for i in range(len(x1)):
             size += len(x1[i])
@@ -433,6 +395,9 @@ class paragraph_winnowing():
         for i in range(len(doc1_tuple)):  # all_group 是 doc1 tuple
             for j in range(len(doc1_tuple[i])):
                 a, b, c = doc1_tuple[i][j] #取出doc1_wrap 组号，s,e
+                if a==21:
+                    print('a是21组了')
+
                 if (a == -1):
                     pass
                 else:#找到一组!=-1的
@@ -443,6 +408,11 @@ class paragraph_winnowing():
                         for k in range(b, c + 1):# 把13个在doc2的地址找出来
                             d, e, f = doc1_2_doc2_index[i][k]  #第一个重复字下表是tuple，d是在doc2的哪个段  e是doc2 d段的第几个字  f是文字
                             # print('set a 是什么?',set([a]))
+                            if a == 21:
+                                print('a是21组了',d,e,f)
+                                
+
+
                             if doc2_group_index[d][e] == -1:# 还没写入组号
                                 doc2_group_index[d][e]=set([a]) # 初始化tuple(组号)
                                 # print('doc2_group_index状态:',doc2_group_index)

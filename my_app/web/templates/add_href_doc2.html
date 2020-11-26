@@ -1,5 +1,1 @@
-{% for duan in doc2_group_ %}<br>{% for duan_,g_id,s,e in duan %}{% if g_id==-1 %}{{doc2_str[duan_][s:e+1]|safe}}{% else %}<span name="{{g_id}}">{{doc2_str[duan_][s:e+1]|safe}}</span>{% endif %}{% endfor %}{% endfor %}
-
-
-
-
+{{ doc2_str|safe}}

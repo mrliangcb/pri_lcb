@@ -12,12 +12,12 @@ class paragraph_winnowing():
         '''
 
         # 如果是完全一样的文本，就直接输出
-        if x1==x2:
-            similarity=1
-            doc1_str=0
-            doc1_wrap=[[(0,0,len(x1[0])-1)]]
-            doc2_wrap = [[(0,0,len(x2[0])-1)]]
-            return similarity,doc1_str,doc1_wrap,doc2_wrap
+        # if x1==x2:
+        #     similarity=1
+        #     doc1_str=0
+        #     doc1_wrap=[[(0,0,len(x1[0])-1)]]
+        #     doc2_wrap = [[(0,0,len(x2[0])-1)]]
+        #     return similarity,doc1_str,doc1_wrap,doc2_wrap
 
 
         s_time=time.time()
@@ -88,12 +88,9 @@ class paragraph_winnowing():
         similarity=self.compu_dup_rate(doc1_wrap,size)
 
         # 正常
-        doc2_group_index= self.doc2_label_group1(x2,doc1_wrap, doc1_posi) #返回doc2的组编号，改写后的doc1组
+        doc2_wrap= self.doc2_label_group1(x2,doc1_wrap, doc1_posi) #返回doc2的组编号，改写后的doc1组
 
         #给doc1 doc2打标签
-
-
-
 
 
         # 正常
@@ -125,6 +122,7 @@ class paragraph_winnowing():
         #         print('验证不合格的组号:',a)
         # print('验证及格后的doc1_wrap:',doc1_wrap)
         return similarity,doc1_str,doc1_wrap,doc2_wrap
+
 
     def compu_dup_rate(self,doc1_wrap,size):
         count=0
@@ -354,7 +352,7 @@ class paragraph_winnowing():
                 while j < length_duan and doc1_str[0][i] == doc1_str[0][j] == '.':
                     j += 1
                 # 检查是不是收集足够的..
-                print('i和j', i, j)
+                # print('i和j', i, j)
                 if j - i > 2:
                     # 识别为目录...
                     for m in range(i, j):
@@ -423,6 +421,9 @@ class paragraph_winnowing():
             else:
                 duan2_group=[-1]
             doc2_group_index.append(duan2_group)
+        print('模板doc2_group_index:',doc2_group_index)
+        print('doc1_tuple:',doc1_tuple) # [[(0, 0, 67), (1, 68, 97), (-1, 98, 127), (2, 128, 157)]]
+        print('举办中doc1_2_doc2_index:',doc1_2_doc2_index)
         # 模板是每个位置都是 -1
 
 
@@ -441,16 +442,20 @@ class paragraph_winnowing():
                         if_1=0
                         for k in range(b, c + 1):# 把13个在doc2的地址找出来
                             d, e, f = doc1_2_doc2_index[i][k]  #第一个重复字下表是tuple，d是在doc2的哪个段  e是doc2 d段的第几个字  f是文字
+                            print('set a 是什么?',set([a]))
                             if doc2_group_index[d][e] == -1:# 还没写入组号
                                 doc2_group_index[d][e]=set([a]) # 初始化tuple(组号)
+                                print('doc2_group_index状态:',doc2_group_index)
+
                             else:#这个字已经有组号了
                                 doc2_group_index[d][e]=doc2_group_index[d][e]|set([a]) #新加组号，不会重复
 
+        print('doc2_group_index是什么?',doc2_group_index) # [[{0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}
         # index转化为wrap格式
         doc2_wrap=[]
-        for i,j in range(len(doc2_group_index[0])):
+        for i,j in enumerate(doc2_group_index[0]):
             doc2_wrap.append([i,j])# [第几个字，字的组号集合]   字的组号集合:set()
-
+        print('最后doc2_wrap:',doc2_wrap)
 
         '''
         doc1_tuple:[(号，s,e)，（）]

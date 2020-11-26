@@ -2,7 +2,7 @@ from flask import jsonify,Blueprint,request,render_template
 from my_app.forms import check_args_validation,vali_check_match1
 from . import web
 from my_app.algorithm.dup_check_algo import check_str
-from my_app.algorithm.duan_winnowing2 import paragraph_winnowing
+from my_app.algorithm.duan_winnowing3 import paragraph_winnowing
 import logging
 import requests
 import json
@@ -223,7 +223,7 @@ def list_model(doc1_wrap,doc2_wrap,source,target):
             result_dup_list.append({'source':source_,'target':target_,'rate':rate_*100})
     return result_dup_list
 
-def ouput_algo(doc1_wrap,source):
+def ouput_algo(doc1_wrap):
     s_output_time = time.time()
     # doc1_wrap_2 = []
     # new_old_dic = {}
@@ -246,7 +246,7 @@ def ouput_algo(doc1_wrap,source):
     #     else:
     #         doc1_wrap_2.append(doc1_wrap[0][i])  # 直接装list
     #         i += 1
-    # doc1_wrap = [doc1_wrap_2]
+    doc1_wrap = [doc1_wrap]
     # # print('合并组之后的doc1_wrap:', doc1_wrap)
     #
     # # print('需要最后改组的:', new_old_dic)
@@ -256,7 +256,7 @@ def ouput_algo(doc1_wrap,source):
     #     if new_old_dic.get(a, None) != None:
     #         doc2_wrap[0][i] = tuple([new_old_dic[a], b, c])
     # print('改组后的doc2_wrap:', doc2_wrap)
-
+    print('doc1_wrap是什么?',doc1_wrap) # [(0, 0, 67), (1, 68, 97), (-1, 98, 127), (2, 128, 157)]
     for duan in range(len(doc1_wrap)):
         for num in range(len(doc1_wrap[duan])):
             # print('doc1_wrap[duan][num]是什么?', doc1_wrap[duan][num])
@@ -312,6 +312,11 @@ def zubao1(x,y,maodian,wrap):
     #     result = yyy[b:c + 1]
     #     print('编号{}，的内容::{}'.format(a, result))
 
+    '''
+    final_wrap:[(),()]
+    
+    '''
+
     return final_wrap,join_br
 
 
@@ -321,6 +326,8 @@ def build_label(group_num,content):
 
 
 def zubao2(x,y,maodian,wrap):
+    print('zuboa2:wrap是什么:',wrap)
+
     '''
     x: 是二维的 list
     y: 是一维的str
@@ -524,6 +531,9 @@ def dup_check():
 
 
     similarity,result_str,doc1_wrap,doc2_wrap=example.get_sim(source,target,template=template_target,n=13)
+
+    print('getsim的doc2_wrap:',doc2_wrap)
+
     # 第二项其实没用到
     # print('未加入br的wrap1:', doc1_wrap) # 下表最大是102  [[(0, 0, 101), (-1, 102, 102)]]
 
@@ -540,6 +550,7 @@ def dup_check():
 
     # 给target加入br
     doc2_str_label = zubao2(y_fenduan, target[0], y_duandian, doc2_wrap)
+    # 直接输出就行
 
 
     # print('x_final_wrap是什么?',x_final_wrap)
@@ -555,7 +566,14 @@ def dup_check():
     # print('x_join_br:',x_join_br)
     # print('抽出来看:',x_join_br[0][782:800])
 
-    x_final_wrap=ouput_algo(x_final_wrap,x_join_br)  #把wrap中的 <br>一下，正常来说，通过zubao，是不用改的
+    x_final_wrap=ouput_algo(x_final_wrap)  #把wrap中的 <br>一下，正常来说，通过zubao，是不用改的
+
+    # print('output之后的x_final_wrap',x_final_wrap) # [[(0, 0, 0, 67), (0, 1, 68, 97), (0, -1, 98, 127), (0, 2, 128, 157)]]
+    # print('x_join_br:',x_join_br)
+    x_join_br=[x_join_br]
+
+
+
     # print('ouput_algo之后的doc1_wrap:', x_final_wrap[:20])
 
 
@@ -589,20 +607,28 @@ def dup_check():
                                                                                                                similarity))
 
     result1=similarity
+
     result3 = render_template('testHtml2.html', name1='doc1', name2='doc2', time=time_, dup_check=similarity,doc1_str=x_join_br, doc2_str=doc2_str_label,
                     doc1_wrap=x_final_wrap)
-
-    result4 = render_template('add_href_doc1.html', doc1_wrap=x_final_wrap, doc1_str=x_join_br)
     # return result3
-    result5 = render_template('add_href_doc2.html', doc2_group_=y_final_wrap, doc2_str=y_join_br)
-    # result6 = render_template('dup_list_source.html', source_dup=source_target_list_sorted)
-    # result7 = render_template('dup_list_target.html', target_dup=source_target_list_sorted)
 
+    # 左边文本
+    result4 = render_template('add_href_doc1.html', doc1_wrap=x_final_wrap, doc1_str=x_join_br)
+
+
+    # # return result3
+    #右边文本
+    result5 = render_template('add_href_doc2.html',doc2_str=doc2_str_label)
+
+
+    # # result6 = render_template('dup_list_source.html', source_dup=source_target_list_sorted)
+    # # result7 = render_template('dup_list_target.html', target_dup=source_target_list_sorted)
+    #
     result_dic = {'dup_rate': result1,
                   'source_label': result4,
                   'target_label': result5
                   }
-
+    #
     return jsonify(result_dic)
 
 

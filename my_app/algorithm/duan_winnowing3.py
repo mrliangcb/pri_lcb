@@ -383,6 +383,7 @@ class paragraph_winnowing():
             else:
                 duan2_group=[-1]
             doc2_group_index.append(duan2_group)
+        print('找中国水利公司再doc2的样子:',doc2[0][13930:13930+50])
         # print('模板doc2_group_index:',doc2_group_index)
         # print('doc1_tuple:',doc1_tuple) # [[(0, 0, 67), (1, 68, 97), (-1, 98, 127), (2, 128, 157)]]
         # print('举办中doc1_2_doc2_index:',doc1_2_doc2_index)

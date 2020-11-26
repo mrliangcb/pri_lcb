@@ -631,7 +631,7 @@ def dup_check():
                     print('这句话再第几组:',a)
 
 
-    return result3
+    # return result3
     #右边文本
 
     print('doc2_str_label:',doc2_str_label[:10000])

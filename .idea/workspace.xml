@@ -21,10 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fd0c8e45-0a1a-4d34-a858-791fa0151c6f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_app/algorithm/duan_winnowing3.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_app/algorithm/duan_winnowing3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_app/algorithm/test4.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_app/algorithm/test4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_app/web/dup_check.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_app/web/dup_check.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_app/web/templates/testHtml2.html" beforeDir="false" afterPath="$PROJECT_DIR$/my_app/web/templates/testHtml2.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,7 +238,7 @@
       <workItem from="1606231235354" duration="1941000" />
       <workItem from="1606265946011" duration="10841000" />
       <workItem from="1606302499875" duration="653000" />
-      <workItem from="1606304042819" duration="22947000" />
+      <workItem from="1606304042819" duration="23557000" />
     </task>
     <servers />
   </component>

@@ -1,1 +1,89 @@
-基于 NLP 的商务文本数据清洗关键技术研究项目-2019 年 12 月<span name="1"><span name="0">中</span></span><span name="1"><span name="0">国</span></span><span name="1"><span name="0">水</span></span><span name="1"><span name="0">利</span></span><span name="1"><span name="0">电</span></span><span name="1"><span name="0">力</span></span><span name="1"><span name="0">物</span></span><span name="1"><span name="0">资</span></span><span name="1"><span name="0">集</span></span><span name="1"><span name="0">团</span></span><span name="1"><span name="0">有</span></span><span name="1"><span name="0">限</span></span><span name="1"><span name="0">公</span></span><span name="1"><span name="0">司</span></span>项目(二次) 招标文件<br>基于 NLP 的商务文本数据清洗关键技术研
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>查重比对</title>
+</head>
+
+<body>
+<div class="layout-main">
+	<div id="operaArea" class="layout-content content-left">
+		<div>
+
+			<p>投标方在编制工作方案及服务的过程中，应注意达到如下要求：<br>1.在工作方案中，对工作的组织、安排及重点把握，要具有可操作性，既能<br>保证工作核心目标的实现，又能减少不必要的冗余工作，简洁有效。<br>2.按照<a href="#0" name="clickable">中国水利电力物资集团有限公司</a>明确的统一工作成果模本和内容要<br>求编报工作成果，必须在物资集团本部相关管理要求的基础上，开展相关工作。<br>v 应答：我公司完全理解招标人的工作要求，并将按照工作要求开展相关<br>工作。<br>4. 投标技术文件内容要求<br>v 应答：我公司完全理解招标人对投标技术文件内容的要求，并将根据相<br>关要求逐条应答。<br>二.对项目研究技术规范的理解<br>1. 企业概况<br>v 应答：我公司完全理解招标人的概况，详细理解如下：<br><a href="#1" name="clickable">中国水利电力物资集团有限公司</a>(以下简称“物资集团”)是中国大唐集团公<br>司全资子公司，注册本 10.12 亿元。主要经营招标代理、进出口管道及油料供应、<br>工程技术咨询、备品配件、设监理物资管理、碳资产开发、安全性评价、煤化工<br>综合服务、电子商务等业务。
+		</div>
+	</div>
+
+	<div id="resultArea" class="layout-content">
+	基于 NLP 的商务文本数据清洗关键技术研究项目-2019 年 12 月<span name="1"><span name="0">中</span></span><span name="1"><span name="0">国</span></span><span name="1"><span name="0">水</span></span><span name="1"><span name="0">利</span></span><span name="1"><span name="0">电</span></span><span name="1"><span name="0">力</span></span><span name="1"><span name="0">物</span></span><span name="1"><span name="0">资</span></span><span name="1"><span name="0">集</span></span><span name="1"><span name="0">团</span></span><span name="1"><span name="0">有</span></span><span name="1"><span name="0">限</span></span><span name="1"><span name="0">公</span></span><span name="1"><span name="0">司</span></span>项目(二次) 招标文件<br>基于 NLP 的商务文本数据清洗关键技术研
+    </div>
+</div>
+
+<script>
+var mainDom = document.getElementById('operaArea')
+mainDom.addEventListener('click',function (e) {
+	console.log(e)
+	clearLeftStyle();
+	var clickTarget = e.target;
+	var searchTargets = null;
+	var name = "";
+	if (clickTarget.nodeName.toLowerCase() === "a" && clickTarget.name === "clickable"){
+		name = clickTarget.hash.substring(1);
+		searchTargets = document.getElementsByName(name)
+		for (var i = 0; i < searchTargets.length; i++) {
+			searchTargets[i].className="search-p";
+		}
+		document.getElementById('resultArea').scrollTop = searchTargets[0].offsetTop - 20;
+	}
+	handleUnline(clickTarget);
+});
+// 清空右边样式
+function clearLeftStyle() {
+	var searchDoms = document.getElementsByClassName("search-p");
+	var len = searchDoms.length;
+	console.log(len);
+	for (var i = 0; i < len; i++) {
+		searchDoms[0].classList.remove("search-p");
+	}
+}
+// 下划线控制
+function handleUnline(current) {
+	var operaDoms = document.getElementsByName("clickable");
+	for (var i = 0; i < operaDoms.length; i++) {
+		operaDoms[i].classList.remove("active");
+	}
+	current.className="active";
+}
+</script>
+<style>
+.layout-main{
+	width: 1000px;
+	height: 600px;
+}
+.layout-content {
+	width: 490px;
+	height: 600px;
+	border: 1px solid #000;
+	display: inline-block;
+	overflow-y: auto;
+}
+.content-left a{
+	text-decoration: none;
+}
+.content-left a.active{
+	text-decoration: underline;
+}
+.layout-main a{
+	color: red;
+}
+.search-p {
+	color: red;
+}
+</style>
+
+    <p>运行时间: <b> 0.003003835678100586 </b></p>
+    <p>查重率: <b> 0.06682577565632458 </b></p>
+
+</body>
+
+</html>

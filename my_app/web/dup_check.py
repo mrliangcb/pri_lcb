@@ -571,6 +571,8 @@ def dup_check():
 
     x_final_wrap=ouput_algo(x_final_wrap)  #把wrap中的 <br>一下，正常来说，通过zubao，是不用改的
 
+
+
     # print('output之后的x_final_wrap',x_final_wrap) # [[(0, 0, 0, 67), (0, 1, 68, 97), (0, -1, 98, 127), (0, 2, 128, 157)]]
     # print('x_join_br:',x_join_br)
     x_join_br=[x_join_br]
@@ -618,14 +620,24 @@ def dup_check():
     # 左边文本
     result4 = render_template('add_href_doc1.html', doc1_wrap=x_final_wrap, doc1_str=x_join_br)
 
+    for i in range(len(x_join_br)):
+        if x_join_br[i:i+14]=='中国水利电力物资集团有限公司':
+            print('找到了:',i)
+            for j in x_final_wrap[0]:
+                # [(0, 0, 67), (1, 68, 97), (-1, 98, 127), (2, 128, 157)]
+                duan,a,b,c =j
+                if b<=i<=c:
+                    print('这句话再第几组:',a)
 
-    # # return result3
+
+    return result3
     #右边文本
 
     print('doc2_str_label:',doc2_str_label[:10000])
 
     result5 = render_template('add_href_doc2.html',doc2_str=doc2_str_label)
 
+    # for i in
 
     # # result6 = render_template('dup_list_source.html', source_dup=source_target_list_sorted)
     # # result7 = render_template('dup_list_target.html', target_dup=source_target_list_sorted)

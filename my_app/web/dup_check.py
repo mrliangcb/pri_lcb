@@ -532,7 +532,7 @@ def dup_check():
 
     similarity,result_str,doc1_wrap,doc2_wrap=example.get_sim(source,target,template=template_target,n=13)
 
-    print('getsim的doc2_wrap:',doc2_wrap)
+    # print('getsim的doc2_wrap:',doc2_wrap)
 
     # 第二项其实没用到
     # print('未加入br的wrap1:', doc1_wrap) # 下表最大是102  [[(0, 0, 101), (-1, 102, 102)]]
@@ -618,6 +618,9 @@ def dup_check():
 
     # # return result3
     #右边文本
+
+    print('doc2_str_label:',doc2_str_label[0][:5000])
+
     result5 = render_template('add_href_doc2.html',doc2_str=doc2_str_label)
 
 

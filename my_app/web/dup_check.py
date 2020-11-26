@@ -360,6 +360,8 @@ def zubao2(x,y,maodian,wrap):
 
     # wrap加入<br>因子
     # 判断连续
+    print('global_zihao:',global_zihao)
+
     global_y = []
     global_y.append(wrap[0])
     for i in range(1, len(wrap)):
@@ -372,6 +374,7 @@ def zubao2(x,y,maodian,wrap):
             global_y.append(wrap[i])
         else:
             print('doc2_wrap重组出错了')
+    print('global_y:',global_y)
     #wrap加入<br>银子
 
 
@@ -380,8 +383,8 @@ def zubao2(x,y,maodian,wrap):
     x_br='<br>'.join(x)
     result = ''
     tem = ''
-    for i in range(len(wrap)):  #wrap长度应该和y一样
-        res1, res2 = wrap[i]
+    for i in range(len(global_y)):  #wrap长度应该和y一样
+        res1, res2 = global_y[i]
         if res2 == -2:
             result += x_br[i]
         elif res2 == -1:  # -1和-2都是按照原样输入
@@ -619,7 +622,7 @@ def dup_check():
     # # return result3
     #右边文本
 
-    print('doc2_str_label:',doc2_str_label[:100000])
+    # print('doc2_str_label:',doc2_str_label[:100000])
 
     result5 = render_template('add_href_doc2.html',doc2_str=doc2_str_label)
 

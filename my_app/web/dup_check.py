@@ -223,7 +223,7 @@ def list_model(doc1_wrap,doc2_wrap,source,target):
             result_dup_list.append({'source':source_,'target':target_,'rate':rate_*100})
     return result_dup_list
 
-def ouput_algo(doc1_wrap,doc2_wrap,source):
+def ouput_algo(doc1_wrap,source):
     s_output_time = time.time()
     # doc1_wrap_2 = []
     # new_old_dic = {}
@@ -264,17 +264,14 @@ def ouput_algo(doc1_wrap,doc2_wrap,source):
             doc1_wrap[duan][num] = tuple([duan, a, b, c])
     # print('doc1_wrap最后', doc1_wrap[:50])
 
-    for duan in range(len(doc2_wrap)):
-        for num in range(len(doc2_wrap[duan])):
-            a, b, c = doc2_wrap[duan][num]
-            doc2_wrap[duan][num] = tuple([duan, a, b, c])
+
 
     print('make output time:', time.time() - s_output_time)
     logging.info('make output time: {}'.format(time.time() - s_output_time))
-    return doc1_wrap,doc2_wrap
+    return doc1_wrap
 
 
-def zubao(x,y,maodian,wrap):
+def zubao1(x,y,maodian,wrap):
     '''
     x: 是二维的 list
     y: 是一维的str
@@ -315,8 +312,98 @@ def zubao(x,y,maodian,wrap):
     #     result = yyy[b:c + 1]
     #     print('编号{}，的内容::{}'.format(a, result))
 
-
     return final_wrap,join_br
+
+
+def build_label(group_num,content):
+    tem = r'<span name="{}">{}</span>'.format(group_num, content) #content是一个字符
+    return tem
+
+
+def zubao2(x,y,maodian,wrap):
+    '''
+    x: 是二维的 list
+    y: 是一维的str
+    wrap:[] 一维list
+    wrap的长度==y
+
+    '''
+    # print('进入组包的wrap',wrap)
+    #先做一个阶梯
+    yy = [0 for i in range(len(y))]
+    n = 0
+    for i, j in enumerate(yy):
+        # 现在这个位置比n个断点下表要大
+        if i >= maodian[n]:
+            n += 1 # n有可能超出maodian  风险
+        yy[i] = n * len('<br>')
+    # 上面做好阶梯
+
+    #为每个wrap组调整编号
+
+    global_zihao = []
+    for i, j in enumerate(wrap):  # wrap的字号增加
+        a, b = j  # 字号，set
+        a_p = yy[a]
+        a += a_p
+        wrap[i] = tuple([a, b])  # 改写了每个wrap中的字号
+        global_zihao.append(a)
+
+    #改写完wrap [(字号，set()),()]
+
+    # wrap加入<br>因子
+    # 判断连续
+    global_y = []
+    global_y.append(wrap[0])
+    for i in range(1, len(wrap)):
+        a1, b1 = wrap[i - 1]
+        a2, b2 = wrap[i]
+        if a2 - a1 == 5:
+            global_y.extend([(a1 + 1, -2), (a1 + 2, -2), (a1 + 3, -2), (a1 + 4, -2)])
+            global_y.append(wrap[i])
+        elif a2 - a1 == 1:
+            global_y.append(wrap[i])
+        else:
+            print('doc2_wrap重组出错了')
+    #wrap加入<br>银子
+
+
+    # 加入标签
+    # 这时候y是不含<br>的，但wrap是有<br>的
+    x_br='<br>'.join(x)
+    result = ''
+    tem = ''
+    for i in range(len(wrap)):  #wrap长度应该和y一样
+        res1, res2 = wrap[i]
+        if res2 == -2:
+            result += x_br[i]
+        elif res2 == -1:  # -1和-2都是按照原样输入
+            result += x_br[i]
+        else:  # res是小组
+            tem = x_br[i]
+            for i in res2:
+                if i != -1:
+                    tem = build_label(i, tem)
+            result += tem
+    doc2_str_label=result
+    #可以加标签
+
+    # for i, j in enumerate(final_wrap):  # 新的wrap
+    #     a, b, c = j
+    #     result = yyy[b:c + 1]
+    #     print('编号{}，的内容::{}'.format(a, result))
+
+    return doc2_str_label
+
+
+
+
+
+
+
+
+
+
 
 from my_app.propose.pro1 import gehang
 
@@ -447,15 +534,13 @@ def dup_check():
     # [{'source': '我是马大哈我是马大哈我是马大哈我是马大哈我是马大哈我是马大哈我是马大哈我是马大哈。我是梁静怡我是梁静怡我是梁静怡我是梁静怡我是梁静怡我是梁静怡。', 'target': '我是梁静怡我是梁静怡我是梁静怡我是梁静怡我是梁静怡我是梁静怡哈哈哈哈哈。', 'rate': 98.6}]
 
     # 给source和target加入br
-    x_final_wrap,x_join_br = zubao(x_fenduan,source[0],x_duandian,doc1_wrap[0])
+    x_final_wrap,x_join_br = zubao1(x_fenduan,source[0],x_duandian,doc1_wrap[0])
     # print('组包之后x_final_wrap',x_final_wrap)
     # print('x_join_br:',x_join_br)
 
-    y_final_wrap, y_join_br = zubao(y_fenduan, target[0], y_duandian, doc2_wrap[0])
-    x_final_wrap=[x_final_wrap]
-    y_final_wrap=[y_final_wrap]
-    x_join_br=[x_join_br]
-    y_join_br = [y_join_br]
+    # 给target加入br
+    doc2_str_label = zubao2(y_fenduan, target[0], y_duandian, doc2_wrap)
+
 
     # print('x_final_wrap是什么?',x_final_wrap)
     # print('x_join_br是什么?', x_join_br)
@@ -470,7 +555,7 @@ def dup_check():
     # print('x_join_br:',x_join_br)
     # print('抽出来看:',x_join_br[0][782:800])
 
-    x_final_wrap,y_final_wrap=ouput_algo(x_final_wrap, y_final_wrap,x_join_br)  #把wrap中的 <br>一下，正常来说，通过zubao，是不用改的
+    x_final_wrap=ouput_algo(x_final_wrap,x_join_br)  #把wrap中的 <br>一下，正常来说，通过zubao，是不用改的
     # print('ouput_algo之后的doc1_wrap:', x_final_wrap[:20])
 
 
@@ -504,8 +589,8 @@ def dup_check():
                                                                                                                similarity))
 
     result1=similarity
-    result3 = render_template('testHtml2.html', name1='doc1', name2='doc2', time=time_, dup_check=similarity,doc1_str=x_join_br, doc2_str=y_join_br,
-                    doc1_wrap=x_final_wrap, doc2_group_=y_final_wrap)
+    result3 = render_template('testHtml2.html', name1='doc1', name2='doc2', time=time_, dup_check=similarity,doc1_str=x_join_br, doc2_str=doc2_str_label,
+                    doc1_wrap=x_final_wrap)
 
     result4 = render_template('add_href_doc1.html', doc1_wrap=x_final_wrap, doc1_str=x_join_br)
     # return result3

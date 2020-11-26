@@ -13,9 +13,10 @@
 			{% for duan in doc1_wrap %}<p>{% for duan_,g_id,s,e in duan %}{% if g_id==-1 %}{{doc1_str[duan_][s:e+1]|safe}}{% else %}<a href="#{{g_id}}" name="clickable">{{doc1_str[duan_][s:e+1]|safe}}</a>{% endif %}{% endfor %}{% endfor %}
 		</div>
 	</div>
+
 	<div id="resultArea" class="layout-content">
-		{% for duan in doc2_group_ %}<p>{% for duan_,g_id,s,e in duan %}{% if g_id==-1 %}{{doc2_str[duan_][s:e+1]|safe}}{% else %}<span name="{{g_id}}">{{doc2_str[duan_][s:e+1]|safe}}</span>{% endif %}{% endfor %}{% endfor %}
-	</div>
+	{{ doc2_str|safe}}
+    </div>
 </div>
 
 <script>

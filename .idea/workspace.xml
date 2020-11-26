@@ -20,10 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd0c8e45-0a1a-4d34-a858-791fa0151c6f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/my_app/algorithm/test4.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_app/algorithm/duan_winnowing3.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_app/algorithm/duan_winnowing3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_app/algorithm/test4.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_app/algorithm/test4.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my_app/web/dup_check.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_app/web/dup_check.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_app/web/original_tem/testHtml.html" beforeDir="false" afterPath="$PROJECT_DIR$/my_app/web/original_tem/testHtml.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_app/web/templates/testHtml2.html" beforeDir="false" afterPath="$PROJECT_DIR$/my_app/web/templates/testHtml2.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +63,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="Python.test4">
+  <component name="RunManager" selected="Python.run">
     <configuration name="duan_winnowing" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="pri_lcb" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -77,28 +78,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/my_app/algorithm/duan_winnowing.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="dup_check_algo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="winnowing" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/my_app/algorithm" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/my_app/algorithm/dup_check_algo.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -129,6 +108,50 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="qianggou (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pri_lcb" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\ProgramData\Anaconda3\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Desktop/baiduwangpan" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/Desktop/baiduwangpan/qianggou.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="qianggou" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pri_lcb" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\ProgramData\Anaconda3\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Documents/WeChat Files/wxid_hb9hzj97jg9n41/FileStorage/File/2020-11" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/Documents/WeChat Files/wxid_hb9hzj97jg9n41/FileStorage/File/2020-11/qianggou.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pri_lcb" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -136,7 +159,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\software\anaconda\envs\python36_tf1_11\python.exe" />
+      <option name="SDK_HOME" value="C:\ProgramData\Anaconda3\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -173,28 +196,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="pri_lcb" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/my_app/web" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/my_app/web/test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="test4" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pri_lcb" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -219,11 +220,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test4" />
         <item itemvalue="Python.run" />
+        <item itemvalue="Python.qianggou (1)" />
+        <item itemvalue="Python.test4" />
+        <item itemvalue="Python.qianggou" />
         <item itemvalue="Python.test (1)" />
-        <item itemvalue="Python.test" />
-        <item itemvalue="Python.dup_check_algo" />
       </list>
     </recent_temporary>
   </component>
@@ -241,7 +242,7 @@
       <workItem from="1606231235354" duration="1941000" />
       <workItem from="1606265946011" duration="10841000" />
       <workItem from="1606302499875" duration="653000" />
-      <workItem from="1606304042819" duration="6708000" />
+      <workItem from="1606304042819" duration="22947000" />
     </task>
     <servers />
   </component>
@@ -264,30 +265,34 @@
       <screen x="0" y="40" width="2560" height="1400" />
     </state>
     <state x="1060" y="495" key="FileChooserDialogImpl/0.40.2560.1400/2560.388.1920.1040@0.40.2560.1400" timestamp="1603683476868" />
-    <state width="1877" height="215" key="GridCell.Tab.0.bottom" timestamp="1606312560695">
+    <state width="1877" height="278" key="GridCell.Tab.0.bottom" timestamp="1606358170451">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
-    <state width="1877" height="215" key="GridCell.Tab.0.bottom/0.0.1920.1048@0.0.1920.1048" timestamp="1606312560695" />
+    <state width="1877" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1048@0.0.1920.1048" timestamp="1606358170451" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.40.2048.1112/2560.388.1920.1040@2560.388.1920.1040" timestamp="1602840106973" />
     <state width="2517" height="401" key="GridCell.Tab.0.bottom/0.40.2560.1400/2560.388.1920.1040@0.40.2560.1400" timestamp="1603685762907" />
-    <state width="1877" height="215" key="GridCell.Tab.0.center" timestamp="1606312560695">
+    <state width="1877" height="278" key="GridCell.Tab.0.center" timestamp="1606358170451">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
-    <state width="1877" height="215" key="GridCell.Tab.0.center/0.0.1920.1048@0.0.1920.1048" timestamp="1606312560695" />
+    <state width="1877" height="278" key="GridCell.Tab.0.center/0.0.1920.1048@0.0.1920.1048" timestamp="1606358170451" />
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.40.2048.1112/2560.388.1920.1040@2560.388.1920.1040" timestamp="1602840106973" />
     <state width="2517" height="401" key="GridCell.Tab.0.center/0.40.2560.1400/2560.388.1920.1040@0.40.2560.1400" timestamp="1603685762906" />
-    <state width="1877" height="215" key="GridCell.Tab.0.left" timestamp="1606312560695">
+    <state width="1877" height="278" key="GridCell.Tab.0.left" timestamp="1606358170451">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
-    <state width="1877" height="215" key="GridCell.Tab.0.left/0.0.1920.1048@0.0.1920.1048" timestamp="1606312560695" />
+    <state width="1877" height="278" key="GridCell.Tab.0.left/0.0.1920.1048@0.0.1920.1048" timestamp="1606358170451" />
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.40.2048.1112/2560.388.1920.1040@2560.388.1920.1040" timestamp="1602840106973" />
     <state width="2517" height="401" key="GridCell.Tab.0.left/0.40.2560.1400/2560.388.1920.1040@0.40.2560.1400" timestamp="1603685762906" />
-    <state width="1877" height="215" key="GridCell.Tab.0.right" timestamp="1606312560695">
+    <state width="1877" height="278" key="GridCell.Tab.0.right" timestamp="1606358170451">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
-    <state width="1877" height="215" key="GridCell.Tab.0.right/0.0.1920.1048@0.0.1920.1048" timestamp="1606312560695" />
+    <state width="1877" height="278" key="GridCell.Tab.0.right/0.0.1920.1048@0.0.1920.1048" timestamp="1606358170451" />
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.40.2048.1112/2560.388.1920.1040@2560.388.1920.1040" timestamp="1602840106973" />
     <state width="2517" height="401" key="GridCell.Tab.0.right/0.40.2560.1400/2560.388.1920.1040@0.40.2560.1400" timestamp="1603685762907" />
+    <state x="92" y="92" width="1736" height="864" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1606356544435">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state x="92" y="92" width="1736" height="864" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1048@0.0.1920.1048" timestamp="1606356544435" />
     <state x="623" y="227" width="672" height="684" key="search.everywhere.popup" timestamp="1606266562944">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
@@ -308,10 +313,13 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/pri_lcb$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1603685753777" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/lcb_note/code/Program/python_yuyue" />
+    <SUITE FILE_PATH="coverage/testHtml____html$qianggou__1_.coverage" NAME="qianggou (1) Coverage Results" MODIFIED="1606356780174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Desktop/baiduwangpan" />
     <SUITE FILE_PATH="coverage/pri_lcb$run.coverage" NAME="run Coverage Results" MODIFIED="1603685762901" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/testHtml____html$test4.coverage" NAME="test4 Coverage Results" MODIFIED="1606312560684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/my_app/algorithm" />
+    <SUITE FILE_PATH="coverage/testHtml____html$qianggou.coverage" NAME="qianggou Coverage Results" MODIFIED="1606319164103" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Documents/WeChat Files/wxid_hb9hzj97jg9n41/FileStorage/File/2020-11" />
+    <SUITE FILE_PATH="coverage/testHtml____html$test4.coverage" NAME="test4 Coverage Results" MODIFIED="1606355377914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/my_app/algorithm" />
     <SUITE FILE_PATH="coverage/winnowing$dup_check_algo.coverage" NAME="dup_check_algo Coverage Results" MODIFIED="1602838849143" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/my_app/algorithm" />
     <SUITE FILE_PATH="coverage/pri_lcb$test.coverage" NAME="test Coverage Results" MODIFIED="1603678332271" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/my_app/web" />
+    <SUITE FILE_PATH="coverage/testHtml____html$run.coverage" NAME="run Coverage Results" MODIFIED="1606358170441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pri_lcb$duan_winnowing.coverage" NAME="duan_winnowing Coverage Results" MODIFIED="1603643986969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/my_app/algorithm" />
     <SUITE FILE_PATH="coverage/winnowing$run.coverage" NAME="run Coverage Results" MODIFIED="1602840099877" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

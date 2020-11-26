@@ -88,13 +88,17 @@ class paragraph_winnowing():
         similarity=self.compu_dup_rate(doc1_wrap,size)
 
         # 正常
-        doc2_group_index, doc1_wrap = self.doc2_label_group1(x2,doc1_wrap, doc1_posi) #返回doc2的组编号，改写后的doc1组
+        doc2_group_index= self.doc2_label_group1(x2,doc1_wrap, doc1_posi) #返回doc2的组编号，改写后的doc1组
+
+        #给doc1 doc2打标签
+
+
 
 
 
         # 正常
         # print('doc2_group_index在这里',doc2_group_index)
-        doc2_wrap = self.doc2_tuple(doc2_group_index)
+        # doc2_wrap = self.doc2_tuple(doc2_group_index)
         # print('doc2_wrap:',doc2_wrap)  #[[(1, 0, 29),(-1, 30, 38), (0, 39, 68), (-1, 69, 74), (0, 75, 112)]]
 
         #按句号截取，然后计算每部分的重复率，写入字典，并写入top k堆
@@ -419,6 +423,8 @@ class paragraph_winnowing():
             else:
                 duan2_group=[-1]
             doc2_group_index.append(duan2_group)
+        # 模板是每个位置都是 -1
+
 
         #将doc1分好的组号写入doc2
         latest_group = -1
@@ -435,57 +441,29 @@ class paragraph_winnowing():
                         if_1=0
                         for k in range(b, c + 1):# 把13个在doc2的地址找出来
                             d, e, f = doc1_2_doc2_index[i][k]  #第一个重复字下表是tuple，d是在doc2的哪个段  e是doc2 d段的第几个字  f是文字
-                            if doc2_group_index[d][e] == -1:#如果doc2组编号中还没写入东西
-                                test_count+=1 # 这13个字可以写入
+                            if doc2_group_index[d][e] == -1:# 还没写入组号
+                                doc2_group_index[d][e]=set([a]) # 初始化tuple(组号)
+                            else:#这个字已经有组号了
+                                doc2_group_index[d][e]=doc2_group_index[d][e]|set([a]) #新加组号，不会重复
 
-                        if test_count>=13:# 如果doc2那边有13个以上-1   有可能前面出现过短句，现在是长句
-                            for k in range(b, c + 1):  # 找s到e之间，去doc2的信息
-                            # print('k值',i,k)
-                             #doc1中，超过13个字的连续才填入到doc2
-                                d, e, f = doc1_2_doc2_index[i][k]  # d是段号  e是第几个   f是字
-                                #这里要不拆分doc1_tuple
-                                if doc2_group_index[d][e] == -1:
-                                    # print('doc2可以填入',a,d,e,f)
-                                    doc2_group_index[d][e] = a  # 给分组标号
-                                else: #当然doc2中有一些部分是已经填写了的  要不先不处理了
-                                    a, b, c =doc1_tuple[i][j]
-                                    latest_group = doc2_group_index[d][e]  #这个latest_group主要是存后面的不是-1的部分，但这句话没有用的，后面都用不着latest_group
+        # index转化为wrap格式
+        doc2_wrap=[]
+        for i,j in range(len(doc2_group_index[0])):
+            doc2_wrap.append([i,j])# [第几个字，字的组号集合]   字的组号集合:set()
 
-
-                            #填完doc2之后，有可能doc1本来超过13，但doc2有部分满了写不进去
-                              # 单独属于这个句子的太少了，那就整组转换
-                                # 有问题，当没有模板去除的时候，单次填入的字符肯定>=13
-                                # 当有模板去除的时候，连续的字符可能<13
-                                # 当然，<13其实就可以不算重复了 所以换成-1组号
-                        else:#doc2那边小于13个-1  doc1这边有13个
-                            old_group = -1  # 这个 就转化为d
-                            new_group = a
-                            new_group_old[new_group] = old_group  #a转化为-1组了
-                    else:#doc1直接就是<13个字
-                        # 找到一个组长度不够13，直接换组号 换成-1
-                        old_group = -1  #
-                        new_group = a
-                        new_group_old[new_group] = old_group
-
-                    # 短句先出现，长句后出现，
-        print('要改写的组:',new_group_old)
-        #改写doc1_group
-        exis_new_group = set(new_group_old.keys())
-        for i in range(len(doc1_tuple)):
-            for j in range(len(doc1_tuple[i])):
-                a, b, c = doc1_tuple[i][j]
-                if a in exis_new_group:
-                    doc1_tuple[i][j] = tuple([new_group_old[a], b, c])
 
         '''
         doc1_tuple:[(号，s,e)，（）]
         doc2_group_index:[[-1,来自doc1组号]]
         
+        新doc2_wrap:[[组号，set()],[],[],[]]
+        
+        
         '''
         # print('修改后的doc1_tuple：',doc1_tuple)
         # print('doc2_group_index是什么?',doc2_group_index)
         # print('doc1_tuple是什么?', doc1_tuple)
-        return doc2_group_index,doc1_tuple
+        return doc2_wrap
 
     def doc2_tuple(self,doc2_group_index):
         # print('doc2_group_index是什么?',doc2_group_index)

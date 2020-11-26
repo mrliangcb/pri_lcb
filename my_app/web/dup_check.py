@@ -620,8 +620,9 @@ def dup_check():
     # 左边文本
     result4 = render_template('add_href_doc1.html', doc1_wrap=x_final_wrap, doc1_str=x_join_br)
 
-    for i in range(len(x_join_br)):
-        if x_join_br[i:i+14]=='中国水利电力物资集团有限公司':
+    for i in range(len(x_join_br[0])):
+        # print('x_join_br[i:i+4]:',x_join_br[0][i:i+4])
+        if x_join_br[0][i:i+14]=='中国水利电力物资集团有限公司':
             print('找到了:',i)
             for j in x_final_wrap[0]:
                 # [(0, 0, 67), (1, 68, 97), (-1, 98, 127), (2, 128, 157)]

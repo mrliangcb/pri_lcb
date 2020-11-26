@@ -622,7 +622,7 @@ def dup_check():
     # # return result3
     #右边文本
 
-    # print('doc2_str_label:',doc2_str_label[:100000])
+    print('doc2_str_label:',doc2_str_label[:10000])
 
     result5 = render_template('add_href_doc2.html',doc2_str=doc2_str_label)
 

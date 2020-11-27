@@ -72,7 +72,7 @@ class paragraph_winnowing():
         count=0
         for i in range(len(doc1_wrap)):
             for j in range(len(doc1_wrap[i])):
-                group,s,e=[i][j]doc1_wrap
+                group,s,e=doc1_wrap[i][j]
                 if group!=-1:
                     count+=(e-s+1)
         if size==0:

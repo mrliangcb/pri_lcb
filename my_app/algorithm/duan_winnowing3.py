@@ -43,6 +43,9 @@ class paragraph_winnowing():
         print('clear_template之后doc1_posi:', doc1_posi[0][:50])
         print('clear_template之后doc1_01:', doc1_01[0][:50])
 
+        # 这个doc1_str也没问题
+
+
 
         e_time=time.time()
         print('去除模板的时间:',e_time-s_time)
@@ -51,6 +54,8 @@ class paragraph_winnowing():
             size += len(x1[i])
 
         doc1_wrap=self.x1_group(doc1_01,doc1_str,doc1_posi)
+
+        print('x1_group之后的doc1_wrap',doc1_wrap)
 
         # print('doc1_wrap:', doc1_wrap) #是一个二维的
         similarity=self.compu_dup_rate(doc1_wrap,size)

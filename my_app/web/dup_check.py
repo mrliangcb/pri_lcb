@@ -355,7 +355,11 @@ def zubao2(x,y,maodian,wrap):
         a += a_p
         wrap[i] = tuple([a, b])  # 改写了每个wrap中的字号
         global_zihao.append(a)
-
+        try:
+            if 21 in b:
+                print('第i个是21:',i)
+        except:
+            pass
     #改写完wrap [(字号，set()),()]
 
     # wrap加入<br>因子

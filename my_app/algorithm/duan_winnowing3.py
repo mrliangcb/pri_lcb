@@ -325,7 +325,7 @@ class paragraph_winnowing():
                     e = s
                     # print('当前s:',s)
                     while e < length_duan and result_01[i][s] == result_01[i][e] and num_char<1000 :# 同为0或者同为1
-                        num_char+1
+                        num_char+=1
                         try:#获取doc1_posi解包，若解包失败，表明当前是-1组，直接pass就好了   0的话没有解包  1的话有解包
                             if (doc1_posi[i][e][1] - doc1_posi[i][s][1] != e - s): #判断连续性
                                 break

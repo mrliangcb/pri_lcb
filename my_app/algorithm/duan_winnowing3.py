@@ -316,13 +316,16 @@ class paragraph_winnowing():
             true_ele = 0
             dot_ele=0
             length_duan=len(result_01[i])
+            num_char=0
+
             # print('两个长度是否相同:',len(result_01[i])==len(doc1_posi[i]))
             if len(result_01[i])>1: #
                 # for j in range(1, len(result_01[i])): #开始遍历这一段
                 while s < length_duan:
                     e = s
                     # print('当前s:',s)
-                    while e < length_duan and result_01[i][s] == result_01[i][e] :# 同为0或者同为1
+                    while e < length_duan and result_01[i][s] == result_01[i][e] and num_char<1000 :# 同为0或者同为1
+                        num_char+1
                         try:#获取doc1_posi解包，若解包失败，表明当前是-1组，直接pass就好了   0的话没有解包  1的话有解包
                             if (doc1_posi[i][e][1] - doc1_posi[i][s][1] != e - s): #判断连续性
                                 break
@@ -332,6 +335,9 @@ class paragraph_winnowing():
                         if doc1_str[i][e] not in trasbin:
                             true_ele += 1
                         e += 1
+
+
+
                     #遇到跳变
                     if (result_01[i][e - 1] == 1) and (
                             e - s) >= 13 and true_ele >= 13 :  # 上一个是1，表示是重复的 并且长度>13  true_ele就是避免 匹配空格的问题，把空格也算进13就不好 垃圾符号超过13个就不
@@ -341,6 +347,8 @@ class paragraph_winnowing():
                         duan1_group.append(tuple([-1, s, e-1]))
                     true_ele = 0
                     s = e
+                    num_char = 0 #下一个过程的起点
+
                     # if (result_01[i][j] != result_01[i][j - 1]):  # 触发跳变
                 # 如果还有没有tuple包起来的
             else:

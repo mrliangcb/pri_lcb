@@ -55,7 +55,7 @@ class paragraph_winnowing():
 
         doc1_wrap=self.x1_group(doc1_01,doc1_str,doc1_posi)
 
-        print('x1_group之后的doc1_wrap',doc1_wrap)
+        print('x1_group之后的doc1_wrap',doc1_wrap) #也有东西   问题出现在这里
 
         # print('doc1_wrap:', doc1_wrap) #是一个二维的
         similarity=self.compu_dup_rate(doc1_wrap,size)
@@ -72,7 +72,7 @@ class paragraph_winnowing():
         count=0
         for i in range(len(doc1_wrap)):
             for j in range(len(doc1_wrap[i])):
-                group,s,e=doc1_wrap[i][j]
+                group,s,e=[i][j]doc1_wrap
                 if group!=-1:
                     count+=(e-s+1)
         if size==0:
@@ -285,11 +285,8 @@ class paragraph_winnowing():
     def x1_group( #给x1分组
             self,result_01,doc1_str,doc1_posi):
 
-        # 先从result_01中对应的.....目录，置为0
         i=0
-        j=0
-        dot_num=0
-        length_duan = len(result_01[i])
+        length_duan = len(result_01[0])
         if len(result_01[i]) > 1:
             while i < length_duan:
                 j = i
@@ -305,12 +302,14 @@ class paragraph_winnowing():
                         doc1_posi[0][m] = ''
                 i = j + 1
 
+        print('去除..的doc1_str',doc1_str[0][:50])
+
         trasbin=set(['',' ','\t','\r'])
         all_group = [] #x1的全部段分组
         contin_flag = 0
         count = 0
         group_num = 0
-        for i in range(0, len(result_01)): #段
+        for i in range(0, len(result_01)): #  段
             duan1_group = []
             s = 0
             e = 0
@@ -332,18 +331,15 @@ class paragraph_winnowing():
 
                         if doc1_str[i][e] not in trasbin:
                             true_ele += 1
-                        if doc1_str[i][e] == '.':
-                            dot_ele += 1
                         e += 1
                     #遇到跳变
                     if (result_01[i][e - 1] == 1) and (
-                            e - s) >= 13 and true_ele >= 13 and dot_ele < 13:  # 上一个是1，表示是重复的 并且长度>13  true_ele就是避免 匹配空格的问题，把空格也算进13就不好 垃圾符号超过13个就不
+                            e - s) >= 13 and true_ele >= 13 :  # 上一个是1，表示是重复的 并且长度>13  true_ele就是避免 匹配空格的问题，把空格也算进13就不好 垃圾符号超过13个就不
                         duan1_group.append(tuple([group_num, s, e-1]))  # 取的时候 (s:e+1)
                         group_num += 1
                     else:  # 非重复的
                         duan1_group.append(tuple([-1, s, e-1]))
                     true_ele = 0
-                    dot_ele = 0
                     s = e
                     # if (result_01[i][j] != result_01[i][j - 1]):  # 触发跳变
                 # 如果还有没有tuple包起来的

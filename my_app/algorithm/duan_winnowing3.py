@@ -347,6 +347,7 @@ class paragraph_winnowing():
                         duan1_group.append(tuple([-1, s, e-1]))
                     true_ele = 0
                     s = e
+                    print('num_char是多少',num_char)
                     num_char = 0 #下一个过程的起点
 
                     # if (result_01[i][j] != result_01[i][j - 1]):  # 触发跳变

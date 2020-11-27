@@ -39,6 +39,10 @@ class paragraph_winnowing():
 
         doc1_str, doc1_posi, doc1_01=self.clear_template(doc1_str, doc1_posi, doc1_01, source_tem_str, source_tem_posi, source_tem_01)
 
+        print('clear_template之后doc1_str:', doc1_str[0][:50])
+        print('clear_template之后doc1_posi:', doc1_posi[0][:50])
+        print('clear_template之后doc1_01:', doc1_01[0][:50])
+
 
         e_time=time.time()
         print('去除模板的时间:',e_time-s_time)

@@ -537,7 +537,7 @@ def dup_check():
 
 
 
-    similarity,result_str,doc1_wrap,doc2_wrap=example.get_sim(source,target,template=template_target,n=13)
+    similarity,result_str,doc1_wrap,doc2_wrap=example.get_sim(source,target,template=template_target,n=13,x_duandian=x_duandian)
 
     # print('getsim的doc2_wrap:',doc2_wrap)
 

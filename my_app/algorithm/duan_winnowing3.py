@@ -5,7 +5,7 @@ import time
 # import re
 class paragraph_winnowing():
 
-    def get_sim(self,x1,x2,n=13,template=['']):#外部调用
+    def get_sim(self,x1,x2,n=13,template=[''],x_duandian):#外部调用   x_duandian: [1,2,3,4,5]
         '''
         x1:[[第一段的str]，[第二段的str]]
         x2:同x1
@@ -53,7 +53,7 @@ class paragraph_winnowing():
         for i in range(len(x1)):
             size += len(x1[i])
 
-        doc1_wrap=self.x1_group(doc1_01,doc1_str,doc1_posi)
+        doc1_wrap=self.x1_group(doc1_01,doc1_str,doc1_posi,x_duandian)
 
         print('x1_group之后的doc1_wrap',doc1_wrap) #也有东西   问题出现在这里
 
@@ -283,8 +283,8 @@ class paragraph_winnowing():
 
 
     def x1_group( #给x1分组
-            self,result_01,doc1_str,doc1_posi):
-
+            self,result_01,doc1_str,doc1_posi,x_duandian):
+        x_duandian_set=set(x_duandian)
         i=0
         length_duan = len(result_01[0])
         if len(result_01[i]) > 1:
@@ -324,7 +324,13 @@ class paragraph_winnowing():
                 while s < length_duan:
                     e = s
                     # print('当前s:',s)
-                    while e < length_duan and result_01[i][s] == result_01[i][e] and num_char<1000 :# 同为0或者同为1
+                    while e < length_duan and result_01[i][s] == result_01[i][e]  :# 同为0或者同为1
+                        if e in x_duandian_set:#到了断点
+                            #判断一个组内的字是否超过500
+                            if  num_char > 500:
+                                # 若>500 则做分组
+                                break
+
                         num_char+=1
                         try:#获取doc1_posi解包，若解包失败，表明当前是-1组，直接pass就好了   0的话没有解包  1的话有解包
                             if (doc1_posi[i][e][1] - doc1_posi[i][s][1] != e - s): #判断连续性
@@ -335,8 +341,6 @@ class paragraph_winnowing():
                         if doc1_str[i][e] not in trasbin:
                             true_ele += 1
                         e += 1
-
-
 
                     #遇到跳变
                     if (result_01[i][e - 1] == 1) and (
@@ -370,7 +374,7 @@ class paragraph_winnowing():
             else:
                 duan2_group=[-1]
             doc2_group_index.append(duan2_group)
-        print('找中国水利公司再doc2的样子:',doc2[0][13930:13930+50])
+        # print('找中国水利公司再doc2的样子:',doc2[0][13930:13930+50])
         # print('模板doc2_group_index:',doc2_group_index)
         # print('doc1_tuple:',doc1_tuple) # [[(0, 0, 67), (1, 68, 97), (-1, 98, 127), (2, 128, 157)]]
         # print('举办中doc1_2_doc2_index:',doc1_2_doc2_index)

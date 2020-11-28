@@ -5,7 +5,7 @@ import time
 # import re
 class paragraph_winnowing():
 
-    def get_sim(self,x1,x2,n=13,template=[''],x_duandian):#外部调用   x_duandian: [1,2,3,4,5]
+    def get_sim(self,x1,x2,n=13,template=[''],x_duandian=[0]):#外部调用   x_duandian: [1,2,3,4,5]
         '''
         x1:[[第一段的str]，[第二段的str]]
         x2:同x1

@@ -233,31 +233,17 @@ def find_min(x,hash1_obj,hash_list2,one_docu1,docu2):
     '''
     return min_,index
 
-
-
 def comp_dis_mat(hash_list1,hash_list2):
     dis_mat = [[100 for i in range(len(hash_list2))] for i in range(len(hash_list1))]  # hash1是行数
-
-    # print('hash_list1的长度:', len(hash_list1))
-    # print('dis_mat的长度', len(dis_mat))  # 935
-
-
     for i in range(len(hash_list1)):
         for j in range(len(hash_list2)):
             dis = func(hash_list1[i], hash_list2[j])
             dis_mat[i][j] = dis
             if dis==0:break
-
     return dis_mat
-
 
 def get_closest(hash_list1,hash_list2,dis_mat,docu1,docu2):
     close_list = []
-    # print('get_closest里面')
-    # print('hash_list1长度:',len(hash_list1))
-    # print('docu1长度:', len(docu1))
-    # print('docu2长度:', len(docu2))
-
     for i, j in enumerate(hash_list1):
         min_, index = find_min(dis_mat[i],j,hash_list2,docu1[i],docu2)
         # print('min_:',min_,'index_:',index)
@@ -280,7 +266,6 @@ def extract_sen(x):
         while j<len(x[i]):
             k=j
             while k<length and x[i][k]!='。':
-                # print('k为',k,'x[0]长度为:',len(x[i]))
                 k+=1
             sent.append(x[i][j:k+1])
             j=k+1
@@ -368,7 +353,7 @@ def sim_main(source,target,tem):
     sen_count = 0
     print('排序')
     for i, j in enumerate(sorted_list):
-        if sen_count>80 : #取出最接近的n个
+        if sen_count>100 : #取出最接近的n个
             break
         rate, doc1_index, dis, doc2_index, doc1, doc2 = j
         # if rate<50:

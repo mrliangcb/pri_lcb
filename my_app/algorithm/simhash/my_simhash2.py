@@ -82,7 +82,7 @@ class simhash:
         # other的text 我是
         # other的text ['']
 
-        dup_rate=self.compare(other.hash_list)
+        dup_rate=self.compare(other)
         return dup_rate
 
     # 求相似度
@@ -146,7 +146,9 @@ class simhash:
         self.hash_list=hash_list  # 每个gram一个hash值
         return hash_list
 
-    def compare(self,y_hash):#两个hash值list
+    def compare(self,other):#两个hash值list
+        y_hash=other.hash_list
+        y_origin=other.origin_text
         print('y_hash是什么吗?',y_hash)
 
         x_hash=self.hash_list
@@ -163,7 +165,10 @@ class simhash:
                     k += 1
         print('rest01:',rest01)
         try:
-            dup_rate = sum(rest01)/len(rest01)
+            s_res=sum(rest01)
+            dup_rate1 = s_res/len(rest01)
+            dup_rate2=s_res/len(y_origin)
+            dup_rate=0.5*dup_rate1+0.5*dup_rate2
             return dup_rate
         except:
             dup_rate = 0

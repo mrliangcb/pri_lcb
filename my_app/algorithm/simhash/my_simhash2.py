@@ -353,7 +353,7 @@ def sim_main(source,target,tem):
     sen_count = 0
     print('排序')
     for i, j in enumerate(sorted_list):
-        if sen_count>100 : #取出最接近的n个
+        if sen_count>200: #取出最接近的n个
             break
         rate, doc1_index, dis, doc2_index, doc1, doc2 = j
         # if rate<50:

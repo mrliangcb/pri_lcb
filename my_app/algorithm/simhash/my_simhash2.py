@@ -353,8 +353,8 @@ def sim_main(source,target,tem):
     print('dup计算时间',time.time()-dup_time)
 
     #排序 从0起
-    # sorted_list = sorted(no_docu3_list, key=lambda x: x[0], reverse=True)# 选rate就要reverse true是降序 ，选dis就要False
-    sorted_list = sorted(no_docu3_list, key=lambda x: x[2], reverse=False)
+    sorted_list = sorted(no_docu3_list, key=lambda x: x[0], reverse=True)# 选rate就要reverse true是降序 ，选dis就要False
+    # sorted_list = sorted(no_docu3_list, key=lambda x: x[2], reverse=False)
     # print('剔除之后的list:', sorted_list)
 
     print('sorted_list是什么?',sorted_list)
@@ -366,8 +366,8 @@ def sim_main(source,target,tem):
         if sen_count>80 : #取出最接近的n个
             break
         rate, doc1_index, dis, doc2_index, doc1, doc2 = j
-        if rate<50:
-            break
+        # if rate<50:
+        #     break
         if len(doc1) > 8 and len(doc2) > 8:
             select_final.append(j)
             sen_count+=1

@@ -77,8 +77,8 @@ class simhash:
         if other.hash_list==-1: #自己还没构建gram_list
             other.generate_n_gram()
             other.calculate_hashing_set() #有self.hash_list了
-        print('other的text',other.origin_text)
-        print('other的text', other.n_gram)
+        # print('other的text',other.origin_text)
+        # print('other的text', other.n_gram)
         # other的text 我是
         # other的text ['']
 
@@ -119,17 +119,17 @@ class simhash:
         for i in range(len(str) - n + 1):
             n_gram.append(str[i:i + n])
         self.n_gram=n_gram
-        print('生成的n_gram:', self.n_gram)
+        # print('生成的n_gram:', self.n_gram)
 
     def calculate_hashing_set(self, Base=17):#入口不含段
-        print('self.n_gram是什么:',self.n_gram)
+        # print('self.n_gram是什么:',self.n_gram)
         n=self.n
         if self.n_gram==['']:
             self.hash_list=[0]
             return
         hash_list = []
         hash = 0
-        print('标记1',self.origin_text)
+        # print('标记1',self.origin_text)
         first_gram = self.n_gram[0]
         # 单独计算第一个n_gram的哈希值
 
@@ -149,13 +149,13 @@ class simhash:
     def compare(self,other):#两个hash值list
         y_hash=other.hash_list
         y_origin=other.origin_text
-        print('y_hash是什么吗?',y_hash)
+        # print('y_hash是什么吗?',y_hash)
 
         x_hash=self.hash_list
         x=self.origin_text
         n=self.n
         y_set=set(y_hash)
-        print('输入x长度,',len(x))
+        # print('输入x长度,',len(x))
         rest01=[0 for i in range(len(x))]
         for i in range(len(x_hash)):
             if x_hash[i] in y_set:
@@ -163,7 +163,20 @@ class simhash:
                 while k+i<len(rest01) and k <n:
                     rest01[i+k]=1
                     k += 1
-        print('rest01:',rest01)
+        # print('rest01:',rest01)
+
+        # 清除....目录部分
+        i=0
+        while i<len(rest01):
+            j=i
+            while j<len(rest01) and x[i]==x[j]=='.':
+                j+=1
+
+            if j-i>=3:#有目录.号
+                for k in range(i,j):
+                    rest01[k]=0
+            i=j+1
+
         try:
             if len(rest01)<=len(y_origin):
                 s_res=sum(rest01)
@@ -353,11 +366,11 @@ def sim_main(source,target,tem):
     # sorted_list = sorted(no_docu3_list, key=lambda x: x[2], reverse=False)
     # print('剔除之后的list:', sorted_list)
 
-    print('sorted_list是什么?',sorted_list)
+    # print('sorted_list是什么?',sorted_list)
 
     select_final = []
     sen_count = 0
-    print('排序')
+    # print('排序')
     for i, j in enumerate(sorted_list):
         # if sen_count>200: #取出最接近的n个
         #     break

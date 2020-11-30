@@ -54,7 +54,7 @@ class paragraph_winnowing():
 
         doc1_wrap=self.x1_group(doc1_01,doc1_str,doc1_posi,x_duandian)
 
-        print('x1_group之后的doc1_wrap',doc1_wrap) #也有东西   问题出现在这里
+        # print('x1_group之后的doc1_wrap',doc1_wrap) #也有东西   问题出现在这里
 
         # print('doc1_wrap:', doc1_wrap) #是一个二维的
         similarity=self.compu_dup_rate(doc1_wrap,size)
@@ -62,8 +62,8 @@ class paragraph_winnowing():
         # 正常
         doc2_wrap= self.doc2_label_group1(x2,doc1_wrap, doc1_posi) #返回doc2的组编号，改写后的doc1组
 
-        print('doc1_wrap是什么?',doc1_wrap[0][:50])
-        print('doc2_wrap是什么?', doc2_wrap[0][:50])
+        # print('doc1_wrap是什么?',doc1_wrap[0][:50])
+        # print('doc2_wrap是什么?', doc2_wrap[0][:50])
         return similarity,doc1_str,doc1_wrap,doc2_wrap
 
 
@@ -340,7 +340,7 @@ class paragraph_winnowing():
                         duan1_group.append(tuple([-1, s, e-1]))
                     true_ele = 0
                     s = e
-                    print('num_char是多少',num_char)
+                    # print('num_char是多少',num_char)
                     num_char = 0 #下一个过程的起点
 
                     # if (result_01[i][j] != result_01[i][j - 1]):  # 触发跳变
@@ -376,8 +376,8 @@ class paragraph_winnowing():
         for i in range(len(doc1_tuple)):  # all_group 是 doc1 tuple
             for j in range(len(doc1_tuple[i])):
                 a, b, c = doc1_tuple[i][j] #取出doc1_wrap 组号，s,e
-                if a==21:
-                    print('a是21组了')
+                # if a==21:
+                #     print('a是21组了')
 
                 if (a == -1):
                     pass
@@ -389,10 +389,8 @@ class paragraph_winnowing():
                         for k in range(b, c + 1):# 把13个在doc2的地址找出来
                             d, e, f = doc1_2_doc2_index[i][k]  #第一个重复字下表是tuple，d是在doc2的哪个段  e是doc2 d段的第几个字  f是文字
                             # print('set a 是什么?',set([a]))
-                            if a == 21:
-                                print('a是21组了',d,e,f)
-
-
+                            # if a == 21:
+                            #     print('a是21组了',d,e,f)
 
                             if doc2_group_index[d][e] == -1:# 还没写入组号
                                 doc2_group_index[d][e]=set([a]) # 初始化tuple(组号)

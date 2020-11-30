@@ -388,17 +388,20 @@ def zubao2(x,y,maodian,wrap):
     result = ''
     tem = ''
     for i in range(len(global_y)):  #wrap长度应该和y一样
-        res1, res2 = global_y[i]
+        res1, res2 = global_y[i] # [字号，set[]]
         if res2 == -2:
             result += x_br[i]
         elif res2 == -1:  # -1和-2都是按照原样输入
             result += x_br[i]
         else:  # res是小组
-            tem = x_br[i]
-            for i in res2:
-                if i != -1:
-                    tem = build_label(i, tem)
-            result += tem
+            tem = x_br[i] # tem 是字
+            if tem==' ':
+                result += x_br[i]
+            else:
+                for i in res2:
+                    if i != -1:
+                        tem = build_label(i, tem)
+                result += tem
     doc2_str_label=result
     #可以加标签
 
@@ -408,14 +411,6 @@ def zubao2(x,y,maodian,wrap):
     #     print('编号{}，的内容::{}'.format(a, result))
 
     return doc2_str_label
-
-
-
-
-
-
-
-
 
 
 
@@ -459,7 +454,6 @@ def dup_check():
     tem_str=template_target
     template_target=[template_target] # '' 变成[''] #含有换行符
 
-
     template_target = clear(template_target) # 其实clear没用  看看需不需要 my_split
     # print('clear之后的template_target:',template_target)
 
@@ -467,16 +461,10 @@ def dup_check():
     target_length = len(target)
     print('长度：  source: {} | target : {} | template: {}'.format(source_length,target_length,template_length))
 
-    # print('clear后的内容:')
-    # print('source:',source[:100] )
-    # print('target:', target[:100])
-    # print('tem:',template_target[:100])
     print('tem_string:',tem_str[:100])
     print('tem_str是什么?123',repr(tem_str[:100])) # 应该是None
 
     tem_fenduan, tem_split, tem_duandian = my_split(tem_str) # 输入是str  先分段，然后去掉空行 然后返回拼接或者直接返回段信息
-    # x_fenduan 是一维的，每维是一段一个str
-    # print('tem_fenduan是什么?',tem_fenduan[:5]) # ['']
 
     # print('source原文：',repr(source))
     sour_gechang_time=time.time()
@@ -493,79 +481,23 @@ def dup_check():
 
     target = gehang(target)
     y_fenduan,target,y_duandian=my_split(target) # str  <br>连起来
-    # print('字符串target:', repr(target[:1000]))
-    # print('去掉泛函之后的文本target:', target)
-    # source = source.replace('\n', '<br>')
-    # print('replace之后source', source)
-    # target = target.replace('\n', '<br>')
+
+
     source=[source] #
     target=[target]
-    # source=clear(source)#去掉空段之后，至少存在一个['']
-    # target = clear(target)
-    # print('clear之后的source:',source[:1000])
-    # print('clear之后的source:', source[:1000])
 
     print('preprocess time:',time.time()-s_preprocess_time)
     logging.info('preprocess time: {}'.format(time.time()-s_preprocess_time))
     s_time=time.time()
     example = paragraph_winnowing()
-    # print('送入检测的source:',len(source[0]),source)  #103长度
-    # print('送入检测的target:', target)
-
-    # print('连续的source:',source[0][:5000])
-    # print('连续的target:', target[0])
-    # sen_exam=r'我们完全理解并同意放弃对这方面有不明及误解的权利'
-    # my_leng=len(sen_exam)
-    # posi_exam_s=[]
-    # posi_exam_t=[]
-    # for i in range(len(source)):
-    #     if len(source[i:i+my_leng])!=my_leng:
-    #         print('长度不对')
-    #     if source[i:i+my_leng]==sen_exam:
-    #         print('source找到所在位置',i)
-    #         posi_exam_s.append(i)
-    #
-    # for i in range(len(target)):
-    #     if target[i:i+my_leng]==sen_exam:
-    #         print('target找到所在位置',i)
-    #         posi_exam_t.append(i)
-    # if posi_exam_s:
-    #     print('juzisuozai huanjing_s:',source[posi_exam_s[0]-50:posi_exam_s[0]+100])
-    # if posi_exam_t:
-    #     print('juzisuozai huanjing_t:', target[posi_exam_t[0] - 50:posi_exam_t[0] + 100])
-
-
 
 
     similarity,result_str,doc1_wrap,doc2_wrap=example.get_sim(source,target,template=template_target,n=13,x_duandian=x_duandian)
 
-    # print('getsim的doc2_wrap:',doc2_wrap)
-
-    # 第二项其实没用到
-    # print('未加入br的wrap1:', doc1_wrap) # 下表最大是102  [[(0, 0, 101), (-1, 102, 102)]]
-
-    # result_dup_list = list_model(doc1_wrap, doc2_wrap, source, target)
-    # print('result_dup_list:',result_dup_list)
-
-
-    # [{'source': '我是马大哈我是马大哈我是马大哈我是马大哈我是马大哈我是马大哈我是马大哈我是马大哈。我是梁静怡我是梁静怡我是梁静怡我是梁静怡我是梁静怡我是梁静怡。', 'target': '我是梁静怡我是梁静怡我是梁静怡我是梁静怡我是梁静怡我是梁静怡哈哈哈哈哈。', 'rate': 98.6}]
-
-    # 给source和target加入br
     x_final_wrap,x_join_br = zubao1(x_fenduan,source[0],x_duandian,doc1_wrap[0])
-    # print('组包之后x_final_wrap',x_final_wrap)
-    # print('x_join_br:',x_join_br)
 
-    # 给target加入br
     doc2_str_label = zubao2(y_fenduan, target[0], y_duandian, doc2_wrap)
-    # 直接输出就行
 
-
-    # print('x_final_wrap是什么?',x_final_wrap)
-    # print('x_join_br是什么?', x_join_br)
-    # print('y_final_wrap是什么?', y_final_wrap)
-    # print('y_join_br是什么?', y_join_br)
-
-    # source_dup_dict=source_dup_dic(result_str)
     print('get sim run time :',time.time()-s_time)
     print('similarity:', similarity)
 
@@ -624,17 +556,15 @@ def dup_check():
     # 左边文本
     result4 = render_template('add_href_doc1.html', doc1_wrap=x_final_wrap, doc1_str=x_join_br)
 
-    for i in range(len(x_join_br[0])):
-        # print('x_join_br[i:i+4]:',x_join_br[0][i:i+4])
-        if x_join_br[0][i:i+14]=='中国水利电力物资集团有限公司':
-            print('找到了:',i)
-            for j in x_final_wrap[0]:
-                # [(0, 0, 67), (1, 68, 97), (-1, 98, 127), (2, 128, 157)]
-                duan,a,b,c =j
-                if b<=i<=c:
-                    print('这句话再第几组:',a)
-
-
+    # for i in range(len(x_join_br[0])):
+    #     # print('x_join_br[i:i+4]:',x_join_br[0][i:i+4])
+    #     if x_join_br[0][i:i+14]=='中国水利电力物资集团有限公司':
+    #         print('找到了:',i)
+    #         for j in x_final_wrap[0]:
+    #             # [(0, 0, 67), (1, 68, 97), (-1, 98, 127), (2, 128, 157)]
+    #             duan,a,b,c =j
+    #             if b<=i<=c:
+    #                 print('这句话再第几组:',a)
     # return result3
     #右边文本
 

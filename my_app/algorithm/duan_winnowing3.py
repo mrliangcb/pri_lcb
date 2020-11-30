@@ -25,7 +25,6 @@ class paragraph_winnowing():
         print('gram和hash的时间:',e_time-s_time)
         s_time=time.time()
         doc1_str,doc1_posi,doc1_01=self.compare(x1_hash,x2_hash,x1,x2)
-
         source_tem_str, source_tem_posi, source_tem_01 = self.compare(x1_hash, template_hash, x1, template)
 
         e_time=time.time()
@@ -208,16 +207,6 @@ class paragraph_winnowing():
 
             if len(doc1[i])>n and len(hash2posi_dic)>0:#>13的就处理一下，不足的，就保持['']或者[0]作为一段    如果集合中没有元素，则找都不用找了，达到剪枝加速
                 for j in range(len(x1_hash[i])): #段内
-                    # if j==12466:
-                    #     print('hash1的第12466个了')
-                    #     print('根据12466位置，查到什么:', i, j, hash2posi_dic.get(x1_hash[i][j]))
-                    #     print('根据12466位置，查到什么:', i, j, hash2posi_dic.get(x1_hash[0][12466]))
-                    #     print('连续状态:',conti_condi)
-                    #     print('last_doc2_id是什么:',last_doc2_id)
-                    #     duan, num = last_doc2_id
-                    #     print('当前哈希值x1_hash[i][j]:',x1_hash[i][j])
-                    #     print('x2_hash[duan][num+1]:',x2_hash[duan][num+1])
-
                     if conti_condi==1:  # 连续状态 判断长度和下一个
                         duan,num=last_doc2_id # num是上一个num
                         # print('是否进入修改:',duan,num,len(doc2[duan]),x1_hash[i][j],x2_hash[duan][num+1],doc2[duan][num+1])

@@ -11,11 +11,14 @@ def start_jieba():
 
 class simhash:
     # 构造函数
-    def __init__(self, tokens='', hashbits=128):
-
+    def __init__(self, origin_text,tokens='', hashbits=128,n=3,cifang_list=None):
+        self.origin_text=origin_text
         self.hashbits = hashbits
-        self.hash = self.simhash(tokens);
-        # print('self.token_hash_list是什么？:',self.token_hash_list)
+        self.hash = self.simhash(tokens) # tokens就是输入原句
+        self.n=n
+        self.n_gram=-1
+        self.hash_list=-1
+        self.cifang_list=cifang_list
 
     # toString函数
     def __str__(self):
@@ -52,9 +55,6 @@ class simhash:
         #     x &= x - 1
 
         tot=bin(int(self.hash) ^ int(other.hash)).count("1")
-
-
-
         return tot
 
     def dup_rate(self,other):
@@ -68,6 +68,22 @@ class simhash:
         # except:
         #     rate=0
         return rate
+
+    def dup_rate2(self, other): #两个对象之间 字符串级别的重复率  other是另一个对象
+        if self.hash_list==-1: #自己还没构建gram_list
+            self.generate_n_gram()
+            self.calculate_hashing_set() #有self.hash_list了
+        # 对方是否构建了hash_list
+        if other.hash_list==-1: #自己还没构建gram_list
+            other.generate_n_gram()
+            other.calculate_hashing_set() #有self.hash_list了
+        print('other的text',other.origin_text)
+        print('other的text', other.n_gram)
+        # other的text 我是
+        # other的text ['']
+
+        dup_rate=self.compare(other.hash_list)
+        return dup_rate
 
     # 求相似度
     def similarity(self, other):
@@ -93,19 +109,82 @@ class simhash:
         if x == - 1:
             x = - 2
         return x #hash值
+    def generate_n_gram(self): #
+        n=self.n
+        str=self.origin_text
+        if len(str)<n:
+            self.n_gram=['']
+            return
+        n_gram = []
+        for i in range(len(str) - n + 1):
+            n_gram.append(str[i:i + n])
+        self.n_gram=n_gram
+        print('生成的n_gram:', self.n_gram)
 
-def create_hash_obj_list(sen_list):
+    def calculate_hashing_set(self, Base=17):#入口不含段
+        print('self.n_gram是什么:',self.n_gram)
+        n=self.n
+        if self.n_gram==['']:
+            self.hash_list=[0]
+            return
+        hash_list = []
+        hash = 0
+        print('标记1',self.origin_text)
+        first_gram = self.n_gram[0]
+        # 单独计算第一个n_gram的哈希值
+
+        cifang=self.cifang_list
+        for i in range(n):  # 0到4
+            hash += ord(first_gram[i]) * cifang[i]  # 这个才是最标准的hash计算，后面那些都是加进来   (Base ** (n - i - 1))
+        hash_list.append(hash)
+        Base_n_1 = (Base ** (n - 1))  # 不要每次for循环都计算一次次方，降低复杂度
+        for i in range(1, len(self.n_gram)):  # 主要这里耗时  #前一个和后一个只差一个字符
+            pre_gram = self.n_gram[i - 1]
+            this_gram = self.n_gram[i]
+            hash = (hash - ord(pre_gram[0]) * Base_n_1) * Base + ord(this_gram[n - 1])  # 这里重复计算了gram_0
+            hash_list.append(hash)
+        self.hash_list=hash_list  # 每个gram一个hash值
+        return hash_list
+
+    def compare(self,y_hash):#两个hash值list
+        print('y_hash是什么吗?',y_hash)
+
+        x_hash=self.hash_list
+        x=self.origin_text
+        n=self.n
+        y_set=set(y_hash)
+        print('输入x长度,',len(x))
+        rest01=[0 for i in range(len(x))]
+        for i in range(len(x_hash)):
+            if x_hash[i] in y_set:
+                k=0
+                while k+i<len(rest01) and k <n:
+                    rest01[i+k]=1
+                    k += 1
+        print('rest01:',rest01)
+        try:
+            dup_rate = sum(rest01)/len(rest01)
+            return dup_rate
+        except:
+            dup_rate = 0
+            return dup_rate
+
+
+
+def create_hash_obj_list(sen_list,cifang_list,n):
     hash_list = []
     jieba_time=0
     build_hash_time=0
 
     for i, j in enumerate(sen_list):
         s_t=time.time()
+        origin_text=j
         j = list(jieba.cut(j)) #生成tokens
+
         jieba_time+=time.time()-s_t
         # print('jieba时间:',time.time()-s_t)
         s_t2=time.time()
-        hash = simhash(j)
+        hash = simhash(origin_text=origin_text,tokens=j,n=n,cifang_list=cifang_list)
         build_hash_time+=time.time()-s_t2
         # print('simhash时间:',time.time()-s_t2)
         hash_list.append(hash)
@@ -133,10 +212,10 @@ def find_min(x,hash1_obj,hash_list2,one_docu1,docu2):
         if j<min_:
             index=i
             min_=j
-            rate = hash1_obj.dup_rate(hash_list2[i])
+            rate = hash1_obj.dup_rate2(hash_list2[i])
             max_rate=rate
         elif j==min_:
-            rate = hash1_obj.dup_rate(hash_list2[i])
+            rate = hash1_obj.dup_rate2(hash_list2[i])
             if rate>max_rate: #rate 大于最佳的rate
                 index = i
             # print('有多个标题:',one_docu1,docu2[i])
@@ -154,8 +233,9 @@ def find_min(x,hash1_obj,hash_list2,one_docu1,docu2):
 def comp_dis_mat(hash_list1,hash_list2):
     dis_mat = [[100 for i in range(len(hash_list2))] for i in range(len(hash_list1))]  # hash1是行数
 
-    print('hash_list1的长度:', len(hash_list1))
-    print('dis_mat的长度', len(dis_mat))  # 935
+    # print('hash_list1的长度:', len(hash_list1))
+    # print('dis_mat的长度', len(dis_mat))  # 935
+
 
     for i in range(len(hash_list1)):
         for j in range(len(hash_list2)):
@@ -178,6 +258,10 @@ def get_closest(hash_list1,hash_list2,dis_mat,docu1,docu2):
         # print('min_:',min_,'index_:',index)
         close_list.append(tuple([i, min_, index, docu1[i], docu2[index]]))
 
+        '''
+        min_: 最小值
+        index: 下标
+        '''
     return close_list
 
 
@@ -215,9 +299,20 @@ def sim_main(source,target,tem):
 
 
     s2 = time.time()
-    hash_list1,jieba_time1,build_hash_time1 = create_hash_obj_list(source_sen)
-    hash_list2,jieba_time2,build_hash_time2 = create_hash_obj_list(target_sen)
-    hash_list3,jieba_time3,build_hash_time3 = create_hash_obj_list(tem_sen)
+
+    # 先计算次方，减少每次计算开销
+    n=3
+    Base=17
+    cifang_list=[]
+    for i in range(n):
+        cifang_list.append(Base ** (n - i - 1))
+    print('cifang_list:',cifang_list)
+
+    hash_list1,jieba_time1,build_hash_time1 = create_hash_obj_list(source_sen,cifang_list,n)
+    hash_list2,jieba_time2,build_hash_time2 = create_hash_obj_list(target_sen,cifang_list,n)
+    hash_list3,jieba_time3,build_hash_time3 = create_hash_obj_list(tem_sen,cifang_list,n)
+
+
 
     print('cut的所有时间:',jieba_time1+jieba_time2+jieba_time3)
     print('simhash编码的所有时间:', build_hash_time1 + build_hash_time2 + build_hash_time3)
@@ -227,18 +322,19 @@ def sim_main(source,target,tem):
     s3 = time.time()
     dis_mat12=comp_dis_mat(hash_list1,hash_list2)
     dis_mat13 = comp_dis_mat(hash_list1, hash_list3)
+
     print('匹配hash对象时间:', time.time() - s3)  #主要这里耗时
 
 
-
     close_list12 = get_closest(hash_list1,hash_list2,dis_mat12, source_sen, target_sen)  # 一维[] 长度为list1 每个元素是最近的 句子
-
     close_list13 = get_closest(hash_list1,hash_list3,dis_mat13, source_sen, tem_sen)
+
+
 
     tichu_list=[0 for i in range(len(close_list13))]
     for i,j in enumerate(close_list13):
         doc1_index, dis, doc2_index, doc1, doc2 = j #解包
-        if dis<=5:
+        if dis<=3:
             tichu_list[i]=1 #在模板中有，点亮，表明要除去
     # for i,j in enumerate(tichu_list):
     #     if j ==1:
@@ -250,7 +346,7 @@ def sim_main(source,target,tem):
     for i, j in enumerate(close_list12):
         if tichu_list[i] == 0:  # 不剔除的才计算重复率
             doc1_index, dis, doc2_index, doc1, doc2 = j
-            rate = hash_list1[doc1_index].dup_rate(hash_list2[doc2_index])
+            rate = hash_list1[doc1_index].dup_rate2(hash_list2[doc2_index]) # 一个x对象.dup_rate(另一个对象)
             rate*=100
             # sorted_list[i] = tuple([rate, doc1_index, dis, doc2_index, doc1, doc2])
             no_docu3_list.append(tuple([rate, doc1_index, dis, doc2_index, doc1, doc2]))
@@ -261,11 +357,13 @@ def sim_main(source,target,tem):
     sorted_list = sorted(no_docu3_list, key=lambda x: x[2], reverse=False)
     # print('剔除之后的list:', sorted_list)
 
+    print('sorted_list是什么?',sorted_list)
+
     select_final = []
     sen_count = 0
     print('排序')
     for i, j in enumerate(sorted_list):
-        if sen_count>80 : #取出最接近的20个
+        if sen_count>80 : #取出最接近的n个
             break
         rate, doc1_index, dis, doc2_index, doc1, doc2 = j
         if rate<50:

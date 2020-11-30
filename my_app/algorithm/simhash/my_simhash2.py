@@ -165,9 +165,15 @@ class simhash:
                     k += 1
         print('rest01:',rest01)
         try:
-            s_res=sum(rest01)
-            dup_rate1 = s_res/len(rest01)
-            dup_rate2=s_res/len(y_origin)
+            if len(rest01)<=len(y_origin):
+                s_res=sum(rest01)
+                dup_rate1 = s_res/len(rest01)
+                dup_rate2=s_res/len(y_origin)
+            else:
+                s_res = sum(rest01)
+                dup_rate1 = s_res / len(rest01)
+                dup_rate2=1
+
             dup_rate=0.5*dup_rate1+0.5*dup_rate2
             return dup_rate
         except:

@@ -106,3 +106,32 @@ cifang_list = []
 for i in range(n):
     cifang_list.append(Base ** (n - i - 1))
 print('cifang_list:', cifang_list)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

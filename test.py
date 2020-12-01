@@ -31,7 +31,7 @@ data={
     # 'template':'我是梁成波我是梁成波我是梁成波我是梁成波我是梁成波我是梁成波'
     'source':source,
     'target':target,
-    'template':'我是'
+    'template':'我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是'
 }
 
 

@@ -124,21 +124,21 @@ def source_dup_dic(result_str):#
 
 
 
-def search_dot_2dec(x,num1,num2):#根据两个位置寻找前后句号
-    s = 0
-    e = len(x)
-    # print('num1和num2',x[num1],x[num2])
-    for i in range(num1,-1,-1):
-        if x[i]=='。' or (num1-i)>50:
-            s=i+1
-            # print('找到s=句号',i,x[i])
-            break
-
-    for i in range(num2,len(x)):
-        if x[i]=='。'or (i-num2)>100:
-            e=i+1
-            break
-    return x[s:e]
+# def search_dot_2dec(x,num1,num2):#根据两个位置寻找前后句号
+#     s = 0
+#     e = len(x)
+#     # print('num1和num2',x[num1],x[num2])
+#     for i in range(num1,-1,-1):
+#         if x[i]=='。' or (num1-i)>50:
+#             s=i+1
+#             # print('找到s=句号',i,x[i])
+#             break
+#
+#     for i in range(num2,len(x)):
+#         if x[i]=='。'or (i-num2)>100:
+#             e=i+1
+#             break
+#     return x[s:e]
 
 def my_split(x:str)->str:
     # 先查看转义还是非转义
@@ -180,91 +180,48 @@ def get_key_data(request,key,key_ok=0):
         pass
     return key_ok,content,dic
 
-def list_model(doc1_wrap,doc2_wrap,source,target):
-    doc2_wrap_dic = {}
-    for i_ in range(len(doc2_wrap)):
-        for j_ in range(len(doc2_wrap[i_])):
-            g_, s_, e_ = doc2_wrap[i_][j_]
-            if g_ != -1 and not doc2_wrap_dic.get(g_):
-                doc2_wrap_dic[g_] = tuple([i_, s_, e_])
-
-    source_target_list = []  #列表模式
-    for i in range(len(doc1_wrap)):
-        for j in range(len(doc1_wrap[i])):
-
-            group_,s,e=doc1_wrap[i][j]
-            if group_!=-1:
-                tem_group=group_
-                # print('i是什么:',i)
-                # print('group_,s,e:',group_,s,e)
-                # print('source:',source)
-                source_env=search_dot_2dec(source[i],s,e)  # 列表模式
-                try:
-                    sim=(e-s)/len(source_env)
-                except:
-                    sim=0
-                sim=round(sim, 3)
-                i_,s_,e_=doc2_wrap_dic.get(tem_group)
-                target_env = search_dot_2dec(target[i_], s_, e_)
-
-                # for i_ in range(len(doc2_wrap)):
-                #     for j_ in range(len(doc2_wrap[i_])):
-                #         g_,s_,e_=doc2_wrap[i_][j_]
-                #         if g_==tem_group:
-                #             target_env = search_dot_2dec(target[i_], s_, e_)#第i段
-
-                source_target_list.append([sim,source_env,target_env])
-    source_target_list_sorted = sorted(source_target_list, key=lambda x: x[0], reverse=True)
-
-    result_dup_list=[]
-    for i in source_target_list_sorted:
-        rate_,source_,target_=i
-        if rate_>0 and source_!='' and target_!='' and source_!='\n' and target_!='\n':
-            result_dup_list.append({'source':source_,'target':target_,'rate':rate_*100})
-    return result_dup_list
+# def list_model(doc1_wrap,doc2_wrap,source,target):
+#     doc2_wrap_dic = {}
+#     for i_ in range(len(doc2_wrap)):
+#         for j_ in range(len(doc2_wrap[i_])):
+#             g_, s_, e_ = doc2_wrap[i_][j_]
+#             if g_ != -1 and not doc2_wrap_dic.get(g_):
+#                 doc2_wrap_dic[g_] = tuple([i_, s_, e_])
+#
+#     source_target_list = []  #列表模式
+#     for i in range(len(doc1_wrap)):
+#         for j in range(len(doc1_wrap[i])):
+#
+#             group_,s,e=doc1_wrap[i][j]
+#             if group_!=-1:
+#                 tem_group=group_
+#
+#                 source_env=search_dot_2dec(source[i],s,e)  # 列表模式
+#                 try:
+#                     sim=(e-s)/len(source_env)
+#                 except:
+#                     sim=0
+#                 sim=round(sim, 3)
+#                 i_,s_,e_=doc2_wrap_dic.get(tem_group)
+#                 target_env = search_dot_2dec(target[i_], s_, e_)
+#
+#                 source_target_list.append([sim,source_env,target_env])
+#     source_target_list_sorted = sorted(source_target_list, key=lambda x: x[0], reverse=True)
+#
+#     result_dup_list=[]
+#     for i in source_target_list_sorted:
+#         rate_,source_,target_=i
+#         if rate_>0 and source_!='' and target_!='' and source_!='\n' and target_!='\n':
+#             result_dup_list.append({'source':source_,'target':target_,'rate':rate_*100})
+#     return result_dup_list
 
 def ouput_algo(doc1_wrap):
     s_output_time = time.time()
-    # doc1_wrap_2 = []
-    # new_old_dic = {}
-    # #改写doc1_wrap  <br>融入 前后两组
-    # # print('doc1_wrap:', doc1_wrap[0])
-    # i = 0
-    # # for i,j in enumerate(doc1_wrap[0]):
-    # while i < len(doc1_wrap[0]):
-    #     # 如果是到最后一个，那就
-    #     if (i < len(doc1_wrap[0]) - 2):
-    #         a, c, d = doc1_wrap[0][i + 1]  # [(0, 0, 69), (-1, 70, 73), (1, 74, 103)]
-    #
-    #     if (i < len(doc1_wrap[0]) - 2) and (d - c == 3) and source[a][c:d + 1] == '<br>':  # 前面的一个是<bn>
-    #         # #默认中间只有一个分行  如果连续<br>就不好了
-    #         a1, c1, d1 = doc1_wrap[0][i]  # 本次
-    #         a2, c2, d2 = doc1_wrap[0][i + 2]  # 下下个
-    #         doc1_wrap_2.append(tuple([a1, c1, d2]))  # 编号用前面的
-    #         new_old_dic[a2] = a1  # a2需要变成a1
-    #         i += 3
-    #     else:
-    #         doc1_wrap_2.append(doc1_wrap[0][i])  # 直接装list
-    #         i += 1
     doc1_wrap = [doc1_wrap]
-    # # print('合并组之后的doc1_wrap:', doc1_wrap)
-    #
-    # # print('需要最后改组的:', new_old_dic)
-    # # 对wrap2改组号
-    # for i, j in enumerate(doc2_wrap[0]):
-    #     a, b, c = j
-    #     if new_old_dic.get(a, None) != None:
-    #         doc2_wrap[0][i] = tuple([new_old_dic[a], b, c])
-    # print('改组后的doc2_wrap:', doc2_wrap)
-    # print('doc1_wrap是什么?',doc1_wrap) # [(0, 0, 67), (1, 68, 97), (-1, 98, 127), (2, 128, 157)]
     for duan in range(len(doc1_wrap)):
         for num in range(len(doc1_wrap[duan])):
-            # print('doc1_wrap[duan][num]是什么?', doc1_wrap[duan][num])
             a, b, c = doc1_wrap[duan][num]
             doc1_wrap[duan][num] = tuple([duan, a, b, c])
-    # print('doc1_wrap最后', doc1_wrap[:50])
-
-
 
     print('make output time:', time.time() - s_output_time)
     logging.info('make output time: {}'.format(time.time() - s_output_time))
@@ -277,7 +234,6 @@ def zubao1(x,y,maodian,wrap):
     y: 是一维的str
 
     '''
-    # print('进入组包的wrap',wrap)
     #先做一个阶梯
     yy = [0 for i in range(len(y))]
     n = 0
@@ -454,7 +410,7 @@ def dup_check():
     tem_str=template_target
     template_target=[template_target] # '' 变成[''] #含有换行符
 
-    template_target = clear(template_target) # 其实clear没用  看看需不需要 my_split
+    # template_target = clear(template_target) # 其实clear没用  看看需不需要 my_split
     # print('clear之后的template_target:',template_target)
 
     source_length = len(source)
@@ -465,6 +421,7 @@ def dup_check():
     print('tem_str是什么?123',repr(tem_str[:100])) # 应该是None
 
     tem_fenduan, tem_split, tem_duandian = my_split(tem_str) # 输入是str  先分段，然后去掉空行 然后返回拼接或者直接返回段信息
+    template_target=[tem_split]
 
     # print('source原文：',repr(source))
     sour_gechang_time=time.time()
@@ -507,37 +464,8 @@ def dup_check():
 
     x_final_wrap=ouput_algo(x_final_wrap)  #把wrap中的 <br>一下，正常来说，通过zubao，是不用改的
 
-
-
-    # print('output之后的x_final_wrap',x_final_wrap) # [[(0, 0, 0, 67), (0, 1, 68, 97), (0, -1, 98, 127), (0, 2, 128, 157)]]
-    # print('x_join_br:',x_join_br)
     x_join_br=[x_join_br]
 
-
-
-    # print('ouput_algo之后的doc1_wrap:', x_final_wrap[:20])
-
-
-    # for i,j in enumerate(source_target_list_sorted):#加上编号
-    #     source_target_list_sorted[i].insert(0,i)
-    # print('加入编号后的list',source_target_list_sorted)
-    # print('make output time:',time.time()-s_time)
-
-
-    # make source target 字典
-    # source_dic={}
-    # target_dic={}
-    # group__=0
-    # for i in range(len(source_target_list)):
-    #     source_tem,target_tem=source_target_list[i]
-    #     source_dic[group__]=source_tem
-    #     target_dic[group__] = target_tem
-    #     group__+=1
-    #
-    # print('source_dic::::',source_dic)
-    # print('target_dic::::', target_dic)
-
-    # 隔段合并的问题:
 
     time_=time.time()-global_start_time
     print('全局时间:',time_)
@@ -556,26 +484,7 @@ def dup_check():
     # 左边文本
     result4 = render_template('add_href_doc1.html', doc1_wrap=x_final_wrap, doc1_str=x_join_br)
 
-    # for i in range(len(x_join_br[0])):
-    #     # print('x_join_br[i:i+4]:',x_join_br[0][i:i+4])
-    #     if x_join_br[0][i:i+14]=='中国水利电力物资集团有限公司':
-    #         print('找到了:',i)
-    #         for j in x_final_wrap[0]:
-    #             # [(0, 0, 67), (1, 68, 97), (-1, 98, 127), (2, 128, 157)]
-    #             duan,a,b,c =j
-    #             if b<=i<=c:
-    #                 print('这句话再第几组:',a)
-    # return result3
-    #右边文本
-
-    # print('doc2_str_label:',doc2_str_label[:10000])
-
     result5 = render_template('add_href_doc2.html',doc2_str=doc2_str_label)
-
-    # for i in
-
-    # # result6 = render_template('dup_list_source.html', source_dup=source_target_list_sorted)
-    # # result7 = render_template('dup_list_target.html', target_dup=source_target_list_sorted)
     #
     result_dic = {'dup_rate': result1,
                   'source_label': result4,
@@ -584,33 +493,6 @@ def dup_check():
     #
     return jsonify(result_dic)
 
-
-
-    #
-    #
-    # time_, result = check_str(str(doc1), str(doc2), k=13)
-    # similiarize, dup_text, dup_dic, doc1_str, doc2_str, doc1_wrap, doc2_wrap = result
-    #
-    # result1 = str(similiarize)
-    # result2 = dup_dic
-    # result3 = render_template('testHtml.html', name1='doc1', name2='doc2', time=time_, dup_check=similiarize,
-    #                           dup_text=dup_text, dup_dic=dup_dic, doc1_str=doc1_str, doc2_str=doc2_str,
-    #                           doc1_wrap=doc1_wrap, doc2_group_=doc2_wrap)
-    # result4 = render_template('add_href_doc1.html', doc1_wrap=doc1_wrap, doc1_str=doc1_str)
-    # result5 = render_template('add_href_doc2.html', doc2_group_=doc2_wrap, doc2_str=doc2_str)
-    #
-    # print('重复文本字典：',result2)
-    # result6 = time_
-    # result7 = doc1_str
-    # result = doc2_str
-    # # return result4
-    #
-    # return result4
-    #
-    # result_dic = {'dup_rate': result1,
-    #               'doc1_label': result4,
-    #               'doc2_label': result5}
-    # return jsonify(result_dic)
 
 
 def get_doc(request,key,content_ok=0):

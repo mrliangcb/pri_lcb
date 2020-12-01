@@ -32,15 +32,15 @@ class paragraph_winnowing():
         s_time=time.time()
 
 
-        print('clear_template之前doc1_str:',doc1_str[0][:50])
-        print('clear_template之前doc1_posi:', doc1_posi[0][:50])
-        print('clear_template之前doc1_01:', doc1_01[0][:50])
+        # print('clear_template之前doc1_str:',doc1_str[0][:50])
+        # print('clear_template之前doc1_posi:', doc1_posi[0][:50])
+        # print('clear_template之前doc1_01:', doc1_01[0][:50])
 
         doc1_str, doc1_posi, doc1_01=self.clear_template(doc1_str, doc1_posi, doc1_01, source_tem_str, source_tem_posi, source_tem_01)
 
-        print('clear_template之后doc1_str:', doc1_str[0][:50])
-        print('clear_template之后doc1_posi:', doc1_posi[0][:50])
-        print('clear_template之后doc1_01:', doc1_01[0][:50])
+        # print('clear_template之后doc1_str:', doc1_str[0][:50])
+        # print('clear_template之后doc1_posi:', doc1_posi[0][:50])
+        # print('clear_template之后doc1_01:', doc1_01[0][:50])
 
         # 这个doc1_str也没问题
 
@@ -58,12 +58,9 @@ class paragraph_winnowing():
 
         # print('doc1_wrap:', doc1_wrap) #是一个二维的
         similarity=self.compu_dup_rate(doc1_wrap,size)
-
         # 正常
         doc2_wrap= self.doc2_label_group1(x2,doc1_wrap, doc1_posi) #返回doc2的组编号，改写后的doc1组
 
-        # print('doc1_wrap是什么?',doc1_wrap[0][:50])
-        # print('doc2_wrap是什么?', doc2_wrap[0][:50])
         return similarity,doc1_str,doc1_wrap,doc2_wrap
 
 
@@ -291,7 +288,7 @@ class paragraph_winnowing():
                         doc1_posi[0][m] = ''
                 i = j + 1
 
-        print('去除..的doc1_str',doc1_str[0][:50])
+        # print('去除..的doc1_str',doc1_str[0][:50])
 
         trasbin=set(['',' ','\t','\r'])
         all_group = [] #x1的全部段分组

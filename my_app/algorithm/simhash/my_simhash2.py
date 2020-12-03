@@ -235,6 +235,7 @@ class simhash:
             print('resty01:',resty01)
             print('x:',x)
             print('y:',y_origin)
+            print('dup_rate:',dup_rate)
         return dup_rate
 
 

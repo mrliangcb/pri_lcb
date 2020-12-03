@@ -337,10 +337,8 @@ class paragraph_winnowing():
                         duan1_group.append(tuple([-1, s, e-1]))
                     true_ele = 0
                     s = e
-                    # print('num_char是多少',num_char)
                     num_char = 0 #下一个过程的起点
 
-                    # if (result_01[i][j] != result_01[i][j - 1]):  # 触发跳变
                 # 如果还有没有tuple包起来的
             else:
                 #这里会遇到什么情况
@@ -360,12 +358,6 @@ class paragraph_winnowing():
             else:
                 duan2_group=[-1]
             doc2_group_index.append(duan2_group)
-        # print('找中国水利公司再doc2的样子:',doc2[0][13930:13930+50])
-        # print('模板doc2_group_index:',doc2_group_index)
-        # print('doc1_tuple:',doc1_tuple) # [[(0, 0, 67), (1, 68, 97), (-1, 98, 127), (2, 128, 157)]]
-        # print('举办中doc1_2_doc2_index:',doc1_2_doc2_index)
-        # 模板是每个位置都是 -1
-
 
         #将doc1分好的组号写入doc2
         latest_group = -1
@@ -385,14 +377,8 @@ class paragraph_winnowing():
                         if_1=0
                         for k in range(b, c + 1):# 把13个在doc2的地址找出来
                             d, e, f = doc1_2_doc2_index[i][k]  #第一个重复字下表是tuple，d是在doc2的哪个段  e是doc2 d段的第几个字  f是文字
-                            # print('set a 是什么?',set([a]))
-                            # if a == 21:
-                            #     print('a是21组了',d,e,f)
-
                             if doc2_group_index[d][e] == -1:# 还没写入组号
                                 doc2_group_index[d][e]=set([a]) # 初始化tuple(组号)
-                                # print('doc2_group_index状态:',doc2_group_index)
-
                             else:#这个字已经有组号了
                                 doc2_group_index[d][e]=doc2_group_index[d][e]|set([a]) #新加组号，不会重复
 

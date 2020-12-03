@@ -432,13 +432,8 @@ def dup_check():
     x_fenduan,source,x_duandian=my_split(source) # str
     print('sou my split time:',time.time()-sou_ms)
 
-    # print('去掉泛函之后的文本:',source)
-
-    # print('字符串source:',repr(source[:1000]))
-
     target = gehang(target)
     y_fenduan,target,y_duandian=my_split(target) # str  <br>连起来
-
 
     source=[source] #
     target=[target]
@@ -447,7 +442,6 @@ def dup_check():
     logging.info('preprocess time: {}'.format(time.time()-s_preprocess_time))
     s_time=time.time()
     example = paragraph_winnowing()
-
 
     similarity,result_str,doc1_wrap,doc2_wrap=example.get_sim(source,target,template=template_target,n=13,x_duandian=x_duandian)
 
@@ -458,14 +452,9 @@ def dup_check():
     print('get sim run time :',time.time()-s_time)
     print('similarity:', similarity)
 
-    # print('ouput_algo之前的doc1_wrap:',doc1_wrap[:20])
-    # print('x_join_br:',x_join_br)
-    # print('抽出来看:',x_join_br[0][782:800])
-
     x_final_wrap=ouput_algo(x_final_wrap)  #把wrap中的 <br>一下，正常来说，通过zubao，是不用改的
 
     x_join_br=[x_join_br]
-
 
     time_=time.time()-global_start_time
     print('全局时间:',time_)

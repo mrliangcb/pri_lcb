@@ -149,21 +149,42 @@ class simhash:
     def compare(self,other):#两个hash值list
         y_hash=other.hash_list
         y_origin=other.origin_text
+
+        y_origin=y_origin.replace(' ','')
+
         # print('y_hash是什么吗?',y_hash)
 
         x_hash=self.hash_list
         x=self.origin_text
+        x=x.replace(' ','')
         n=self.n
         y_set=set(y_hash)
+
+        y_dict={}
+        for i in range(len(y_hash)):
+            if y_dict.get(y_hash[i],None) ==None:
+                y_dict[y_hash[i]]=i #hash值:i index
+
+
         # print('输入x长度,',len(x))
         rest01=[0 for i in range(len(x))]
+        resty01 = [0 for i in range(len(y_origin))]
+
         for i in range(len(x_hash)):
-            if x_hash[i] in y_set:
+            # if x_hash[i] in y_set:
+            if y_dict.get(x_hash[i],None)!=None:# 找到重复内容
                 k=0
-                while k+i<len(rest01) and k <n:
+                while k+i<len(rest01) and k<n:
                     rest01[i+k]=1
                     k += 1
-        # print('rest01:',rest01)
+                k2=0
+                yi=y_dict.get(x_hash[i]) # resty的下标
+                while k2+yi<len(resty01) and k2<n: # 填写resty01
+                    resty01[yi+k2]=1
+                    k2 += 1
+        print('resty01:',resty01)
+        print('x:',x)
+        print('y:',y_origin)
 
         # 清除....目录部分
         i=0
@@ -177,21 +198,38 @@ class simhash:
                     rest01[k]=0
             i=j+1
 
-        try:
-            if len(rest01)<=len(y_origin):
-                s_res=sum(rest01)
-                dup_rate1 = s_res/len(rest01)
-                dup_rate2=s_res/len(y_origin)
-            else:
-                s_res = sum(rest01)
-                dup_rate1 = s_res / len(rest01)
-                dup_rate2=1
+        i = 0
+        while i < len(resty01):
+            j = i
+            while j < len(resty01) and y_origin[i] == y_origin[j] == '.':
+                j += 1
+            if j - i >= 3:  # 有目录.号
+                for k in range(i, j):
+                    resty01[k] = 0
+            i = j + 1
 
-            dup_rate=0.5*dup_rate1+0.5*dup_rate2
-            return dup_rate
+        try:
+            # 算dup_rate1:
+            up1 = sum(rest01)
+            dup_rate1 = up1 / len(rest01)
         except:
-            dup_rate = 0
-            return dup_rate
+            dup_rate1=0
+
+        try:
+            # 算dup_rate2:
+            up2 = sum(resty01)
+            dup_rate2 = up2 / len(resty01)
+        except:
+            dup_rate2=0
+
+        len1=len(rest01)
+        len2=len(resty01)
+        all_len=len1+len2
+        try:
+            dup_rate=(len1*dup_rate1+len2*dup_rate2)/all_len
+        except:
+            dup_rate=0
+        return dup_rate
 
 
 
@@ -356,10 +394,13 @@ def sim_main(source,target,tem):
         if tichu_list[i] == 0:  # 不剔除的才计算重复率
             doc1_index, dis, doc2_index, doc1, doc2 = j
             rate = hash_list1[doc1_index].dup_rate2(hash_list2[doc2_index]) # 一个x对象.dup_rate(另一个对象)
+
             rate*=100
             # sorted_list[i] = tuple([rate, doc1_index, dis, doc2_index, doc1, doc2])
             no_docu3_list.append(tuple([rate, doc1_index, dis, doc2_index, doc1, doc2]))
     print('dup计算时间',time.time()-dup_time)
+
+
 
     #排序 从0起
     sorted_list = sorted(no_docu3_list, key=lambda x: x[0], reverse=True)# 选rate就要reverse true是降序 ，选dis就要False

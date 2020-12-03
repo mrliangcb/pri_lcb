@@ -109,8 +109,8 @@ print('cifang_list:', cifang_list)
 
 
 
-
-
+x='123123 123123132'
+print(x.replace(' ',''))
 
 
 

@@ -161,6 +161,9 @@ class simhash:
         n=self.n
         y_set=set(y_hash)
 
+        print('x:',x)
+        print('y_origin:', y_origin)
+
         y_dict={}
         for i in range(len(y_hash)):
             if y_dict.get(y_hash[i],None) ==None:
@@ -223,12 +226,13 @@ class simhash:
         len1=len(rest01)
         len2=len(resty01)
         all_len=len1+len2
-        try:
-            dup_rate=(len1*dup_rate1+len2*dup_rate2)/all_len
-        except:
-            dup_rate=0
+        # try:
+
+        dup_rate=(len1*dup_rate1+len2*dup_rate2)/all_len
+        # except:
+        #     dup_rate=0
         if x=='2010.03.22':
-            print('2010.03.22的dup是这个::::::::::::::::::::',dup_rate)
+            print('2010.03.22的dup是这个::::::::::::::::::::',dup_rate,dup_rate1,dup_rate2)
             print('resty01:',resty01)
             print('x:',x)
             print('y:',y_origin)
@@ -288,7 +292,20 @@ def find_min(x,hash1_obj,hash_list2,one_docu1,docu2):
     min_: 最小值
     index: 下标
     '''
-    return min_,index
+    max_ratee = -1
+    index_rate = -1
+
+    if min_>10: #距离值过大，那就不用simhash，用winnowing代替
+        for i, j in enumerate(hash_list2):
+            tem_rate=hash1_obj.dup_rate2(j)
+            if tem_rate>max_ratee:
+                index_rate=i
+                max_ratee=tem_rate
+                min_=x[i]
+        print('返回值:',min_,index_rate)
+        return min_,index_rate
+    else:
+        return min_,index
 
 def comp_dis_mat(hash_list1,hash_list2):
     dis_mat = [[100 for i in range(len(hash_list2))] for i in range(len(hash_list1))]  # hash1是行数
@@ -303,9 +320,9 @@ def get_closest(hash_list1,hash_list2,dis_mat,docu1,docu2):
     close_list = []
     for i, j in enumerate(hash_list1):
         min_, index = find_min(dis_mat[i],j,hash_list2,docu1[i],docu2)
+
         # print('min_:',min_,'index_:',index)
         close_list.append(tuple([i, min_, index, docu1[i], docu2[index]]))
-
         '''
         min_: 最小值
         index: 下标
@@ -337,6 +354,9 @@ def sim_main(source,target,tem):
     source_sen = extract_sen(source)
     target_sen = extract_sen(target)
     tem_sen = extract_sen(tem)
+
+    print('提取句子tar',target_sen)
+
     print('extract时间:',time.time()-s1)
 
     # print('提取后的source_sen:',source_sen[:5])
@@ -357,21 +377,24 @@ def sim_main(source,target,tem):
     hash_list3,jieba_time3,build_hash_time3 = create_hash_obj_list(tem_sen,cifang_list,n)
 
     print('cut的所有时间:',jieba_time1+jieba_time2+jieba_time3)
+
     print('simhash编码的所有时间:', build_hash_time1 + build_hash_time2 + build_hash_time3)
 
     print('建立hash对象时间:', time.time() - s2)  #   1.82768535
 
+
     s3 = time.time()
     dis_mat12=comp_dis_mat(hash_list1,hash_list2)
+    print('12矩阵:',dis_mat12)
+
     dis_mat13 = comp_dis_mat(hash_list1, hash_list3)
 
     print('匹配hash对象时间:', time.time() - s3)  #主要这里耗时
 
-
+    print('get close12之前')
     close_list12 = get_closest(hash_list1,hash_list2,dis_mat12, source_sen, target_sen)  # 一维[] 长度为list1 每个元素是最近的 句子
+    print('get close12之后')
     close_list13 = get_closest(hash_list1,hash_list3,dis_mat13, source_sen, tem_sen)
-
-
 
     tichu_list=[0 for i in range(len(close_list13))]
     for i,j in enumerate(close_list13):
@@ -381,6 +404,8 @@ def sim_main(source,target,tem):
     # for i,j in enumerate(tichu_list):
     #     if j ==1:
             # print('剔除结果:',source_sen[i])
+
+
 
     #计算重复率
     dup_time=time.time()
@@ -403,7 +428,7 @@ def sim_main(source,target,tem):
     # print('剔除之后的list:', sorted_list)
 
     # print('sorted_list是什么?',sorted_list)
-
+    print('sorted_list:',sorted_list)
     select_final = []
     sen_count = 0
     # print('排序')
@@ -413,7 +438,10 @@ def sim_main(source,target,tem):
         rate, doc1_index, dis, doc2_index, doc1, doc2 = j
         if rate<50:
             break
-        if len(doc1) > 8 and len(doc2) > 8:
+        print('doc1:',doc1)
+        print('doc2:', doc2)
+        if len(doc1) > 3 and len(doc2) >3:
+
             select_final.append(j)
             sen_count+=1
     # print('最后筛选结果:',select_final)
@@ -421,7 +449,7 @@ def sim_main(source,target,tem):
 
 if __name__ =="__main__":
     source=['2010.03.22']
-    target = ['3 设备监造']
+    target = ['2010.03','3 设备监造','梁成波']
     tem=['我是']
     res=sim_main(source,target,tem)
     print('最后结果:',res)

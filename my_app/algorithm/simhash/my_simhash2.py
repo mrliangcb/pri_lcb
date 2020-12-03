@@ -161,8 +161,8 @@ class simhash:
         n=self.n
         y_set=set(y_hash)
 
-        print('x:',x)
-        print('y_origin:', y_origin)
+        # print('x:',x)
+        # print('y_origin:', y_origin)
 
         y_dict={}
         for i in range(len(y_hash)):
@@ -226,11 +226,10 @@ class simhash:
         len1=len(rest01)
         len2=len(resty01)
         all_len=len1+len2
-        # try:
-
-        dup_rate=(len1*dup_rate1+len2*dup_rate2)/all_len
-        # except:
-        #     dup_rate=0
+        try:
+            dup_rate=(len1*dup_rate1+len2*dup_rate2)/all_len
+        except:
+            dup_rate=0
         if x=='2010.03.22':
             print('2010.03.22的dup是这个::::::::::::::::::::',dup_rate,dup_rate1,dup_rate2)
             print('resty01:',resty01)
@@ -302,7 +301,7 @@ def find_min(x,hash1_obj,hash_list2,one_docu1,docu2):
                 index_rate=i
                 max_ratee=tem_rate
                 min_=x[i]
-        print('返回值:',min_,index_rate,hash1_obj.origin_text,j.origin_text)
+        # print('返回值:',min_,index_rate,hash1_obj.origin_text,j.origin_text)
         return min_,index_rate
     else:
         return min_,index
@@ -355,7 +354,7 @@ def sim_main(source,target,tem):
     target_sen = extract_sen(target)
     tem_sen = extract_sen(tem)
 
-    print('提取句子tar',target_sen)
+    # print('提取句子tar',target_sen)
 
     print('extract时间:',time.time()-s1)
 
@@ -370,7 +369,7 @@ def sim_main(source,target,tem):
     cifang_list=[]
     for i in range(n):
         cifang_list.append(Base ** (n - i - 1))
-    print('cifang_list:',cifang_list)
+    # print('cifang_list:',cifang_list)
 
     hash_list1,jieba_time1,build_hash_time1 = create_hash_obj_list(source_sen,cifang_list,n)
     hash_list2,jieba_time2,build_hash_time2 = create_hash_obj_list(target_sen,cifang_list,n)
@@ -385,15 +384,15 @@ def sim_main(source,target,tem):
 
     s3 = time.time()
     dis_mat12=comp_dis_mat(hash_list1,hash_list2)
-    print('12矩阵:',dis_mat12)
+    # print('12矩阵:',dis_mat12)
 
     dis_mat13 = comp_dis_mat(hash_list1, hash_list3)
 
     print('匹配hash对象时间:', time.time() - s3)  #主要这里耗时
 
-    print('get close12之前')
+    # print('get close12之前')
     close_list12 = get_closest(hash_list1,hash_list2,dis_mat12, source_sen, target_sen)  # 一维[] 长度为list1 每个元素是最近的 句子
-    print('get close12之后')
+    # print('get close12之后')
     close_list13 = get_closest(hash_list1,hash_list3,dis_mat13, source_sen, tem_sen)
 
     tichu_list=[0 for i in range(len(close_list13))]
@@ -426,7 +425,7 @@ def sim_main(source,target,tem):
     # print('剔除之后的list:', sorted_list)
 
     # print('sorted_list是什么?',sorted_list)
-    print('sorted_list:',sorted_list)
+    # print('sorted_list:',sorted_list)
     select_final = []
     sen_count = 0
     # print('排序')

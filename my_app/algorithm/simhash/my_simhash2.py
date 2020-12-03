@@ -302,7 +302,7 @@ def find_min(x,hash1_obj,hash_list2,one_docu1,docu2):
                 index_rate=i
                 max_ratee=tem_rate
                 min_=x[i]
-        print('返回值:',min_,index_rate)
+        print('返回值:',min_,index_rate,hash1_obj.origin_text,j.origin_text)
         return min_,index_rate
     else:
         return min_,index
@@ -405,8 +405,6 @@ def sim_main(source,target,tem):
     #     if j ==1:
             # print('剔除结果:',source_sen[i])
 
-
-
     #计算重复率
     dup_time=time.time()
     no_docu3_list = []
@@ -414,13 +412,13 @@ def sim_main(source,target,tem):
         if tichu_list[i] == 0:  # 不剔除的才计算重复率
             doc1_index, dis, doc2_index, doc1, doc2 = j
             rate = hash_list1[doc1_index].dup_rate2(hash_list2[doc2_index]) # 一个x对象.dup_rate(另一个对象)
-
             rate*=100
+            # if
+            # print('<=50显示什么')
+
             # sorted_list[i] = tuple([rate, doc1_index, dis, doc2_index, doc1, doc2])
             no_docu3_list.append(tuple([rate, doc1_index, dis, doc2_index, doc1, doc2]))
     print('dup计算时间',time.time()-dup_time)
-
-
 
     #排序 从0起
     sorted_list = sorted(no_docu3_list, key=lambda x: x[0], reverse=True)# 选rate就要reverse true是降序 ，选dis就要False
@@ -436,20 +434,17 @@ def sim_main(source,target,tem):
         # if sen_count>200: #取出最接近的n个
         #     break
         rate, doc1_index, dis, doc2_index, doc1, doc2 = j
-        if rate<50:
-            break
-        print('doc1:',doc1)
-        print('doc2:', doc2)
-        if len(doc1) > 3 and len(doc2) >3:
-
+        # if rate<50:
+        #     break
+        if len(doc1) > 8 and len(doc2) >8:
             select_final.append(j)
             sen_count+=1
     # print('最后筛选结果:',select_final)
     return select_final
 
 if __name__ =="__main__":
-    source=['2010.03.22']
-    target = ['2010.03','3 设备监造','梁成波']
+    source=['2010.03.22','3号机组锅炉空预器接触式密封改造']
+    target = ['3 设备监造123123','梁成波','3号机组锅炉空预器接触式密封改造']
     tem=['我是']
     res=sim_main(source,target,tem)
     print('最后结果:',res)

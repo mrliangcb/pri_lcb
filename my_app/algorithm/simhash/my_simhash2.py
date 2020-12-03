@@ -83,6 +83,7 @@ class simhash:
         # other的text ['']
 
         dup_rate=self.compare(other)
+        print('计算结果:',dup_rate)
         return dup_rate
 
     # 求相似度
@@ -182,9 +183,7 @@ class simhash:
                 while k2+yi<len(resty01) and k2<n: # 填写resty01
                     resty01[yi+k2]=1
                     k2 += 1
-        print('resty01:',resty01)
-        print('x:',x)
-        print('y:',y_origin)
+
 
         # 清除....目录部分
         i=0
@@ -192,7 +191,6 @@ class simhash:
             j=i
             while j<len(rest01) and x[i]==x[j]=='.':
                 j+=1
-
             if j-i>=3:#有目录.号
                 for k in range(i,j):
                     rest01[k]=0
@@ -229,6 +227,11 @@ class simhash:
             dup_rate=(len1*dup_rate1+len2*dup_rate2)/all_len
         except:
             dup_rate=0
+        if x=='2010.03.22':
+            print('2010.03.22的dup是这个::::::::::::::::::::',dup_rate)
+            print('resty01:',resty01)
+            print('x:',x)
+            print('y:',y_origin)
         return dup_rate
 
 
@@ -281,9 +284,6 @@ def find_min(x,hash1_obj,hash_list2,one_docu1,docu2):
             if rate>max_rate: #rate 大于最佳的rate
                 index = i
             # print('有多个标题:',one_docu1,docu2[i])
-    #
-
-
     '''
     min_: 最小值
     index: 下标
@@ -326,7 +326,6 @@ def extract_sen(x):
                 k+=1
             sent.append(x[i][j:k+1])
             j=k+1
-
     return sent
 import time
 def sim_main(source,target,tem):
@@ -343,8 +342,6 @@ def sim_main(source,target,tem):
     # print('提取后的source_sen:',source_sen[:5])
     # print('提取后的tar_sen:', target_sen[:5])
     # print('提取后的tem_sen:', tem_sen[:5])
-
-
     s2 = time.time()
 
     # 先计算次方，减少每次计算开销
@@ -358,8 +355,6 @@ def sim_main(source,target,tem):
     hash_list1,jieba_time1,build_hash_time1 = create_hash_obj_list(source_sen,cifang_list,n)
     hash_list2,jieba_time2,build_hash_time2 = create_hash_obj_list(target_sen,cifang_list,n)
     hash_list3,jieba_time3,build_hash_time3 = create_hash_obj_list(tem_sen,cifang_list,n)
-
-
 
     print('cut的所有时间:',jieba_time1+jieba_time2+jieba_time3)
     print('simhash编码的所有时间:', build_hash_time1 + build_hash_time2 + build_hash_time3)
@@ -424,7 +419,11 @@ def sim_main(source,target,tem):
     # print('最后筛选结果:',select_final)
     return select_final
 
-
-
+if __name__ =="__main__":
+    source=['2010.03.22']
+    target = ['3 设备监造']
+    tem=['我是']
+    res=sim_main(source,target,tem)
+    print('最后结果:',res)
 
 

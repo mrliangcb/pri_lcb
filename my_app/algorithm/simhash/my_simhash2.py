@@ -367,7 +367,7 @@ def sim_main(source,target,tem):
     s2 = time.time()
 
     # 先计算次方，减少每次计算开销
-    n=5
+    n=6
     Base=17
     cifang_list=[]
     for i in range(n):

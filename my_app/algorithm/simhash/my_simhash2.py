@@ -237,8 +237,8 @@ class simhash:
             dup_rate=(len1*dup_rate1+len2*dup_rate2)/all_len
         except:
             dup_rate=0
-        if x=='2001年，第一台脱硫GGH':
-            print('2001年，第一台脱硫GGH::::::::::::::::::::',dup_rate,dup_rate1,dup_rate2)
+        if x=='2010.03.22':
+            print('2010.03.22::::::::::::::::::::',dup_rate,dup_rate1,dup_rate2)
             print('resty01:',resty01)
             print('rest01:', rest01)
             print('x:',x)
@@ -325,10 +325,11 @@ def comp_dis_mat(hash_list1,hash_list2):
     return dis_mat
 
 def get_closest(hash_list1,hash_list2,dis_mat,docu1,docu2):
+
     close_list = []
     for i, j in enumerate(hash_list1):
         min_, index = find_min(dis_mat[i],j,hash_list2,docu1[i],docu2)
-
+        print('例子:',i,j,hash_list2,len(docu1),len(docu2))
         # print('min_:',min_,'index_:',index)
         close_list.append(tuple([i, min_, index, docu1[i], docu2[index]]))
         '''
@@ -352,6 +353,8 @@ def extract_sen(x):
             if k+1-j>=10: #长度>10的才算句子
                 sent.append(x[i][j:k+1])
             j=k+1
+    if sent==[]:
+        sent=['']
     return sent
 import time
 def sim_main(source,target,tem):
@@ -363,9 +366,9 @@ def sim_main(source,target,tem):
     source_sen = extract_sen(source)
     target_sen = extract_sen(target)
     tem_sen = extract_sen(tem)
-
-    # print('提取句子tar',target_sen)
-
+    print('提取句子sou', source_sen)
+    print('提取句子tar',target_sen)
+    print('提取句子tem', tem_sen)
     print('extract时间:',time.time()-s1)
 
     # print('提取后的source_sen:',source_sen[:5])
@@ -385,6 +388,9 @@ def sim_main(source,target,tem):
     hash_list2,jieba_time2,build_hash_time2 = create_hash_obj_list(target_sen,cifang_list,n)
     hash_list3,jieba_time3,build_hash_time3 = create_hash_obj_list(tem_sen,cifang_list,n)
 
+    print('hash1:',hash_list1)
+    print('hash2:', hash_list2)
+    print('hash3:', hash_list3)
     print('cut的所有时间:',jieba_time1+jieba_time2+jieba_time3)
     print('simhash编码的所有时间:', build_hash_time1 + build_hash_time2 + build_hash_time3)
     print('建立hash对象时间:', time.time() - s2)  #   1.82768535
@@ -450,8 +456,8 @@ def sim_main(source,target,tem):
 
 if __name__ =="__main__":
     source=['2010.03.22','3号机组锅炉空预器接触式密封改造']
-    target = ['3 设备监造123123','梁成波','3号机组锅炉空预器接触式密封改造']
-    tem=['我是']
+    target = ['3 设备监造123123','梁成波123123123','3号机组锅炉空预器接触式密封改造']
+    tem=['']
     res=sim_main(source,target,tem)
     print('最后结果:',res)
 

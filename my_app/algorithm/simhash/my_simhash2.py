@@ -392,9 +392,9 @@ def sim_main(source,target,tem):
     hash_list2,jieba_time2,build_hash_time2 = create_hash_obj_list(target_sen,cifang_list,n)
     hash_list3,jieba_time3,build_hash_time3 = create_hash_obj_list(tem_sen,cifang_list,n)
 
-    print('hash1:',hash_list1)
-    print('hash2:', hash_list2)
-    print('hash3:', hash_list3)
+    # print('hash1:',hash_list1)
+    # print('hash2:', hash_list2)
+    # print('hash3:', hash_list3)
     print('cut的所有时间:',jieba_time1+jieba_time2+jieba_time3)
     print('simhash编码的所有时间:', build_hash_time1 + build_hash_time2 + build_hash_time3)
     print('建立hash对象时间:', time.time() - s2)  #   1.82768535

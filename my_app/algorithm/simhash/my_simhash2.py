@@ -230,8 +230,8 @@ class simhash:
             dup_rate=(len1*dup_rate1+len2*dup_rate2)/all_len
         except:
             dup_rate=0
-        if x=='2010.03.22':
-            print('2010.03.22的dup是这个::::::::::::::::::::',dup_rate,dup_rate1,dup_rate2)
+        if x=='2001年，第一台脱硫GGH':
+            print('2001年，第一台脱硫GGH::::::::::::::::::::',dup_rate,dup_rate1,dup_rate2)
             print('resty01:',resty01)
             print('rest01:', rest01)
             print('x:',x)

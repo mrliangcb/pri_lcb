@@ -221,7 +221,8 @@ class simhash:
                 for k in range(i, j):
                     resty01[k] = 0
             i = j + 1
-
+        # 清除 空格 部分
+        # for i,j in enumerate(x):
         try:
             # 算dup_rate1:
             up1 = sum(rest01)
@@ -359,7 +360,9 @@ def extract_sen(x):
             while k<length and x[i][k]!='。':
                 k+=1
             if k+1-j>=10: #长度>10的才算句子
-                sent.append(x[i][j:k+1])
+                tem=x[i][j:k+1]
+                tem=tem.replace(' ','')
+                sent.append(tem) #去掉空格
             j=k+1
     if sent==[]:
         sent=['']

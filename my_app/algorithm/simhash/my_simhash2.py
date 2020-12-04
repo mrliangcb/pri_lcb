@@ -241,8 +241,6 @@ class simhash:
             print('y_hash:', y_hash)
         return dup_rate
 
-
-
 def create_hash_obj_list(sen_list,cifang_list,n):
     hash_list = []
     jieba_time=0
@@ -344,7 +342,8 @@ def extract_sen(x):
             k=j
             while k<length and x[i][k]!='。':
                 k+=1
-            sent.append(x[i][j:k+1])
+            if k+1-j>=10: #长度>10的才算句子
+                sent.append(x[i][j:k+1])
             j=k+1
     return sent
 import time
@@ -368,7 +367,7 @@ def sim_main(source,target,tem):
     s2 = time.time()
 
     # 先计算次方，减少每次计算开销
-    n=4
+    n=5
     Base=17
     cifang_list=[]
     for i in range(n):

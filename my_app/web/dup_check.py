@@ -16,7 +16,7 @@ import json
 from my_app.algorithm.simhash.my_simhash2 import start_jieba,sim_main
 y = start_jieba()
 # -*- coding: utf-8 -*-
-import codecs,sys
+# import codecs,sys
 # sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
 # sys.stdout.write("Your content....")
  #把注册好的蓝图拿来用

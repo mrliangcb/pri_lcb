@@ -245,6 +245,7 @@ class simhash:
             dup_rate=0
         if x=='2010.03.22':
             print(repr(x))
+            print('origin_text:',self.origin_text)
             print('2010.03.22::::::::::::::::::::',dup_rate,dup_rate1,dup_rate2)
             print('resty01:',resty01)
             print('rest01:', rest01)

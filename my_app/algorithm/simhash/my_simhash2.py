@@ -83,7 +83,7 @@ class simhash:
         # other的text ['']
 
         dup_rate=self.compare(other)
-        print('计算结果:',dup_rate)
+        # print('计算结果:',dup_rate)
         return dup_rate
 
     # 求相似度
@@ -233,6 +233,7 @@ class simhash:
         if x=='2010.03.22':
             print('2010.03.22的dup是这个::::::::::::::::::::',dup_rate,dup_rate1,dup_rate2)
             print('resty01:',resty01)
+            print('rest01:', rest01)
             print('x:',x)
             print('y:',y_origin)
             print('dup_rate:',dup_rate)

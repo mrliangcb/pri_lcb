@@ -142,7 +142,7 @@ class simhash:
         # 单独计算第一个n_gram的哈希值
 
         cifang=self.cifang_list
-        for i in range(n):  # 0到4
+        for i in range(n):  # 0到6
             if first_gram=='2010.0':
                 print('first_gram:',first_gram)
                 print('ord(first_gram[i]):',ord(first_gram[i]))
@@ -150,6 +150,8 @@ class simhash:
 
         hash_list.append(hash)
         Base_n_1 = (Base ** (n - 1))  # 不要每次for循环都计算一次次方，降低复杂度
+
+
         for i in range(1, len(self.n_gram)):  # 主要这里耗时  #前一个和后一个只差一个字符
             pre_gram = self.n_gram[i - 1]
             this_gram = self.n_gram[i]
@@ -460,6 +462,18 @@ def sim_main(source,target,tem):
     return select_final
 
 if __name__ =="__main__":
+    hash=0
+    n = 6
+    Base = 17
+    cifang_list = []
+    for i in range(n):
+        cifang_list.append(Base ** (n - i - 1))
+
+    first_gram = '2010.0'
+    for i in range(n):
+        hash += ord(first_gram[i]) * cifang_list[i]  # 这个才是最标准的hash计算，后面那些都是加进来   (Base ** (n - i - 1))
+    print('2010.0编码例子:',hash)
+
     source=['2010.03.22','3号机组锅炉空预器接触式密封改造']
     target = ['3 设备监造123123','梁成波123123123','3号机组锅炉空预器接触式密封改造']
     tem=['']

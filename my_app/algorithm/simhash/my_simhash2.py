@@ -1,6 +1,13 @@
 
 
 # -*- coding: utf-8 -*-
+#-*-coding:utf-8-*-
+#coding=utf-8
+# vim: set fileencoding=<encoding name>
+# !/usr/bin/python
+
+import logging
+
 import jieba
 import time
 def start_jieba():

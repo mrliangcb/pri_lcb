@@ -143,14 +143,13 @@ class simhash:
 
         cifang=self.cifang_list
         for i in range(n):  # 0到6
-            if first_gram=='2010.0':
-                print('first_gram:',first_gram)
-                print('ord(first_gram[i]):',ord(first_gram[i]))
+            # if first_gram=='2010.0':
+            #     print('first_gram:',first_gram)
+            #     print('ord(first_gram[i]):',ord(first_gram[i]))
             hash += ord(first_gram[i]) * cifang[i]  # 这个才是最标准的hash计算，后面那些都是加进来   (Base ** (n - i - 1))
 
         hash_list.append(hash)
         Base_n_1 = (Base ** (n - 1))  # 不要每次for循环都计算一次次方，降低复杂度
-
 
         for i in range(1, len(self.n_gram)):  # 主要这里耗时  #前一个和后一个只差一个字符
             pre_gram = self.n_gram[i - 1]
@@ -181,7 +180,6 @@ class simhash:
         for i in range(len(y_hash)):
             if y_dict.get(y_hash[i],None) ==None:
                 y_dict[y_hash[i]]=i #hash值:i index
-
 
         # print('输入x长度,',len(x))
         rest01=[0 for i in range(len(x))]
@@ -244,17 +242,17 @@ class simhash:
             dup_rate=(len1*dup_rate1+len2*dup_rate2)/all_len
         except:
             dup_rate=0
-        if x=='2010.03.22':
-            print(repr(x))
-            print('origin_text:',self.origin_text)
-            print('2010.03.22::::::::::::::::::::',dup_rate,dup_rate1,dup_rate2)
-            print('resty01:',resty01)
-            print('rest01:', rest01)
-            print('x:',x)
-            print('y:',y_origin)
-            print('dup_rate:',dup_rate)
-            print('x_hash:',x_hash)
-            print('y_hash:', y_hash)
+        # if x=='2010.03.22':
+        #     print(repr(x))
+        #     print('origin_text:',self.origin_text)
+        #     print('2010.03.22::::::::::::::::::::',dup_rate,dup_rate1,dup_rate2)
+        #     print('resty01:',resty01)
+        #     print('rest01:', rest01)
+        #     print('x:',x)
+        #     print('y:',y_origin)
+        #     print('dup_rate:',dup_rate)
+        #     print('x_hash:',x_hash)
+        #     print('y_hash:', y_hash)
         return dup_rate
 
 def create_hash_obj_list(sen_list,cifang_list,n):

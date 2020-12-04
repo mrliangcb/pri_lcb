@@ -16393,3 +16393,43 @@ Fri 04 Dec 2020 11:01:32 _internal.py INFO  * Debugger PIN: 304-402-708
 Fri 04 Dec 2020 11:01:32 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
 Fri 04 Dec 2020 11:01:34 dup_check.py INFO simhash: foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/simhash' [POST]> to dup_check
 Fri 04 Dec 2020 11:01:34 _internal.py INFO 127.0.0.1 - - [04/Dec/2020 11:01:34] "[37mPOST /NLP/Algorithm/base/dup_check/simhash HTTP/1.1[0m" 200 -
+Fri 04 Dec 2020 11:13:55 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\3\\pri_lcb\\my_app\\algorithm\\simhash\\my_simhash2.py', reloading
+Fri 04 Dec 2020 11:13:55 _internal.py INFO  * Restarting with stat
+Fri 04 Dec 2020 11:13:56 dup_check.py WARNING warning
+Fri 04 Dec 2020 11:13:56 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Fri 04 Dec 2020 11:13:56 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Fri 04 Dec 2020 11:13:57 __init__.py DEBUG Loading model cost 0.731 seconds.
+Fri 04 Dec 2020 11:13:57 __init__.py DEBUG Prefix dict has been built successfully.
+Fri 04 Dec 2020 11:13:57 _internal.py WARNING  * Debugger is active!
+Fri 04 Dec 2020 11:13:57 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 04 Dec 2020 11:13:57 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 04 Dec 2020 15:10:30 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\3\\pri_lcb\\my_app\\algorithm\\simhash\\my_simhash2.py', reloading
+Fri 04 Dec 2020 15:10:30 _internal.py INFO  * Restarting with stat
+Fri 04 Dec 2020 15:10:31 dup_check.py WARNING warning
+Fri 04 Dec 2020 15:10:31 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Fri 04 Dec 2020 15:10:31 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Fri 04 Dec 2020 15:10:32 __init__.py DEBUG Loading model cost 0.720 seconds.
+Fri 04 Dec 2020 15:10:32 __init__.py DEBUG Prefix dict has been built successfully.
+Fri 04 Dec 2020 15:10:32 _internal.py WARNING  * Debugger is active!
+Fri 04 Dec 2020 15:10:32 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 04 Dec 2020 15:10:32 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 04 Dec 2020 15:10:39 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\3\\pri_lcb\\my_app\\algorithm\\simhash\\my_simhash2.py', reloading
+Fri 04 Dec 2020 15:10:39 _internal.py INFO  * Restarting with stat
+Fri 04 Dec 2020 15:10:40 dup_check.py WARNING warning
+Fri 04 Dec 2020 15:10:40 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Fri 04 Dec 2020 15:10:40 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Fri 04 Dec 2020 15:10:41 __init__.py DEBUG Loading model cost 0.705 seconds.
+Fri 04 Dec 2020 15:10:41 __init__.py DEBUG Prefix dict has been built successfully.
+Fri 04 Dec 2020 15:10:41 _internal.py WARNING  * Debugger is active!
+Fri 04 Dec 2020 15:10:41 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 04 Dec 2020 15:10:41 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 04 Dec 2020 15:20:08 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\3\\pri_lcb\\my_app\\algorithm\\simhash\\my_simhash2.py', reloading
+Fri 04 Dec 2020 15:20:08 _internal.py INFO  * Restarting with stat
+Fri 04 Dec 2020 15:20:09 dup_check.py WARNING warning
+Fri 04 Dec 2020 15:20:09 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Fri 04 Dec 2020 15:20:09 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Fri 04 Dec 2020 15:20:10 __init__.py DEBUG Loading model cost 0.689 seconds.
+Fri 04 Dec 2020 15:20:10 __init__.py DEBUG Prefix dict has been built successfully.
+Fri 04 Dec 2020 15:20:10 _internal.py WARNING  * Debugger is active!
+Fri 04 Dec 2020 15:20:10 _internal.py INFO  * Debugger PIN: 304-402-708
+Fri 04 Dec 2020 15:20:10 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)

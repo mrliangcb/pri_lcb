@@ -143,7 +143,10 @@ class simhash:
 
         cifang=self.cifang_list
         for i in range(n):  # 0到4
+            print('first_gram:',first_gram)
+            print('ord(first_gram[i]):',ord(first_gram[i]))
             hash += ord(first_gram[i]) * cifang[i]  # 这个才是最标准的hash计算，后面那些都是加进来   (Base ** (n - i - 1))
+
         hash_list.append(hash)
         Base_n_1 = (Base ** (n - 1))  # 不要每次for循环都计算一次次方，降低复杂度
         for i in range(1, len(self.n_gram)):  # 主要这里耗时  #前一个和后一个只差一个字符

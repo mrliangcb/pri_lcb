@@ -4,7 +4,7 @@
 import jieba
 import time
 def start_jieba():
-    x='完成jieba激活分词load model'
+    x=r'123123123123load model'
     y=list(jieba.cut(x))
     return y
 

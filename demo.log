@@ -15850,3 +15850,5 @@ Fri 04 Dec 2020 09:12:56 __init__.py DEBUG Prefix dict has been built successful
 Fri 04 Dec 2020 09:12:56 _internal.py WARNING  * Debugger is active!
 Fri 04 Dec 2020 09:12:56 _internal.py INFO  * Debugger PIN: 304-402-708
 Fri 04 Dec 2020 09:12:56 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Fri 04 Dec 2020 09:17:43 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10月项目\\winnowing1.5_3接口_单核版\\3\\pri_lcb\\my_app\\algorithm\\simhash\\my_simhash2.py', reloading
+Fri 04 Dec 2020 09:17:43 _internal.py INFO  * Restarting with stat

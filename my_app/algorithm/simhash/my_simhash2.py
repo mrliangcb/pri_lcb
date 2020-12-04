@@ -1,6 +1,6 @@
 
 
-
+# -*- coding: utf-8 -*-
 import jieba
 import time
 def start_jieba():
@@ -379,11 +379,8 @@ def sim_main(source,target,tem):
     hash_list3,jieba_time3,build_hash_time3 = create_hash_obj_list(tem_sen,cifang_list,n)
 
     print('cut的所有时间:',jieba_time1+jieba_time2+jieba_time3)
-
     print('simhash编码的所有时间:', build_hash_time1 + build_hash_time2 + build_hash_time3)
-
     print('建立hash对象时间:', time.time() - s2)  #   1.82768535
-
 
     s3 = time.time()
     dis_mat12=comp_dis_mat(hash_list1,hash_list2)
@@ -436,8 +433,8 @@ def sim_main(source,target,tem):
         # if sen_count>200: #取出最接近的n个
         #     break
         rate, doc1_index, dis, doc2_index, doc1, doc2 = j
-        # if rate<50:
-        #     break
+        if rate<40:
+            break
         if len(doc1) > 8 and len(doc2) >8:
             select_final.append(j)
             sen_count+=1

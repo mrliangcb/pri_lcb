@@ -143,8 +143,9 @@ class simhash:
 
         cifang=self.cifang_list
         for i in range(n):  # 0到4
-            print('first_gram:',first_gram)
-            print('ord(first_gram[i]):',ord(first_gram[i]))
+            if first_gram=='2010.0':
+                print('first_gram:',first_gram)
+                print('ord(first_gram[i]):',ord(first_gram[i]))
             hash += ord(first_gram[i]) * cifang[i]  # 这个才是最标准的hash计算，后面那些都是加进来   (Base ** (n - i - 1))
 
         hash_list.append(hash)

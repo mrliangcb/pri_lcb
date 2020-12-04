@@ -333,7 +333,7 @@ def get_closest(hash_list1,hash_list2,dis_mat,docu1,docu2):
     close_list = []
     for i, j in enumerate(hash_list1):
         min_, index = find_min(dis_mat[i],j,hash_list2,docu1[i],docu2)
-        print('例子:',i,j,hash_list2,len(docu1),len(docu2))
+        # print('例子:',i,j,hash_list2,len(docu1),len(docu2))
         # print('min_:',min_,'index_:',index)
         close_list.append(tuple([i, min_, index, docu1[i], docu2[index]]))
         '''
@@ -370,9 +370,9 @@ def sim_main(source,target,tem):
     source_sen = extract_sen(source)
     target_sen = extract_sen(target)
     tem_sen = extract_sen(tem)
-    print('提取句子sou', source_sen)
-    print('提取句子tar',target_sen)
-    print('提取句子tem', tem_sen)
+    # print('提取句子sou', source_sen)
+    # print('提取句子tar',target_sen)
+    # print('提取句子tem', tem_sen)
     print('extract时间:',time.time()-s1)
 
     # print('提取后的source_sen:',source_sen[:5])

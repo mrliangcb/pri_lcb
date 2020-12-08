@@ -16433,3 +16433,17 @@ Fri 04 Dec 2020 15:20:10 __init__.py DEBUG Prefix dict has been built successful
 Fri 04 Dec 2020 15:20:10 _internal.py WARNING  * Debugger is active!
 Fri 04 Dec 2020 15:20:10 _internal.py INFO  * Debugger PIN: 304-402-708
 Fri 04 Dec 2020 15:20:10 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Tue 08 Dec 2020 10:53:05 dup_check.py WARNING warning
+Tue 08 Dec 2020 10:53:05 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Tue 08 Dec 2020 10:53:05 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Tue 08 Dec 2020 10:53:06 __init__.py DEBUG Loading model cost 0.836 seconds.
+Tue 08 Dec 2020 10:53:06 __init__.py DEBUG Prefix dict has been built successfully.
+Tue 08 Dec 2020 10:53:06 _internal.py INFO  * Restarting with stat
+Tue 08 Dec 2020 10:53:07 dup_check.py WARNING warning
+Tue 08 Dec 2020 10:53:07 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Tue 08 Dec 2020 10:53:07 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Tue 08 Dec 2020 10:53:07 __init__.py DEBUG Loading model cost 0.829 seconds.
+Tue 08 Dec 2020 10:53:07 __init__.py DEBUG Prefix dict has been built successfully.
+Tue 08 Dec 2020 10:53:07 _internal.py WARNING  * Debugger is active!
+Tue 08 Dec 2020 10:53:07 _internal.py INFO  * Debugger PIN: 304-402-708
+Tue 08 Dec 2020 10:53:07 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)

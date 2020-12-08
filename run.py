@@ -6,12 +6,12 @@ from flask import Flask
 print('flask版本:',flask.__version__)
 from my_app.web import create_app
 # import logging
-# -*- coding: utf-8 -*-
-# from werkzeug.local import Local
+#-*- coding: utf-8 -*-
+from werkzeug.local import Local
 
-# import codecs,sys
-# sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
-# sys.stdout.write("Your content....")
+import codecs,sys
+sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
+sys.stdout.write("Your content....")
 
 # if sys.stdout.encoding != 'UTF-8':
 #     sys.stdout = codecs.getwriter('utf-8')(sys.stdout, 'strict')

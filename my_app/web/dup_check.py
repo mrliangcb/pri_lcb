@@ -64,6 +64,7 @@ def dup_check3():
     result_dic = {'dup_rate': result1,
                   'source_label': result4,
                   'doc2_label': result5}
+
     return jsonify(result_dic)
     # return jsonify([result1, result2, result3, result4, result5, result6])
 
@@ -479,7 +480,7 @@ def dup_check():
                   'source_label': result4,
                   'target_label': result5
                   }
-    #
+    print('winnowing finishing!!!!')
     return jsonify(result_dic)
 
 

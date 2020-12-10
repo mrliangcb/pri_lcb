@@ -217,15 +217,15 @@ def get_key_data(request,key,key_ok=0):
 #     return result_dup_list
 
 def ouput_algo(doc1_wrap):
-    s_output_time = time.time()
+    # s_output_time = time.time()
     doc1_wrap = [doc1_wrap]
     for duan in range(len(doc1_wrap)):
         for num in range(len(doc1_wrap[duan])):
             a, b, c = doc1_wrap[duan][num]
             doc1_wrap[duan][num] = tuple([duan, a, b, c])
 
-    print('make output time:', time.time() - s_output_time)
-    logging.info('make output time: {}'.format(time.time() - s_output_time))
+    # print('make output time:', time.time() - s_output_time)
+    # logging.info('make output time: {}'.format(time.time() - s_output_time))
     return doc1_wrap
 
 
@@ -372,6 +372,8 @@ def zubao2(x,y,maodian,wrap):
 
 
 from my_app.propose.pro1 import gehang
+# from gevent import monkey
+# monkey.patch_all()
 
 @web.route('/NLP/Algorithm/base/dup_check/winnowing', methods=['POST','GET'])
 def dup_check():
@@ -381,6 +383,10 @@ def dup_check():
     print('now route winnowing')
     s_preprocess_time=time.time()
     args_dic=request.form.to_dict()
+
+    print('request.content_length:',request.content_length)
+    print(request.is_json)
+
     print('接收到request:',request)
     print('now time:',time.localtime(time.time()))
 
@@ -419,7 +425,7 @@ def dup_check():
     print('长度：  source: {} | target : {} | template: {}'.format(source_length,target_length,template_length))
 
     print('tem_string:',tem_str[:100])
-    print('tem_str是什么?123',repr(tem_str[:100])) # 应该是None
+    # print('tem_str是什么?123',repr(tem_str[:100])) # 应该是None
 
     tem_fenduan, tem_split, tem_duandian = my_split(tem_str) # 输入是str  先分段，然后去掉空行 然后返回拼接或者直接返回段信息
     template_target=[tem_split]
@@ -427,11 +433,11 @@ def dup_check():
     # print('source原文：',repr(source))
     sour_gechang_time=time.time()
     source=gehang(source)
-    print('source gehang时间:',time.time()-sour_gechang_time)
+    # print('source gehang时间:',time.time()-sour_gechang_time)
 
     sou_ms=time.time()
     x_fenduan,source,x_duandian=my_split(source) # str
-    print('sou my split time:',time.time()-sou_ms)
+    # print('sou my split time:',time.time()-sou_ms)
 
     target = gehang(target)
     y_fenduan,target,y_duandian=my_split(target) # str  <br>连起来
@@ -450,8 +456,8 @@ def dup_check():
 
     doc2_str_label = zubao2(y_fenduan, target[0], y_duandian, doc2_wrap)
 
-    print('get sim run time :',time.time()-s_time)
-    print('similarity:', similarity)
+    # print('get sim run time :',time.time()-s_time)
+    # print('similarity:', similarity)
 
     x_final_wrap=ouput_algo(x_final_wrap)  #把wrap中的 <br>一下，正常来说，通过zubao，是不用改的
 
@@ -556,8 +562,8 @@ def simhash_route():
     print('########################  now route simhash  ###############################')
     # s_preprocess_time=time.time()
     # args_dic=request.form.to_dict()
-    print('接收到request:',request)
-    print('now time:',time.localtime(time.time()))
+    # print('接收到request:',request)
+    # print('now time:',time.localtime(time.time()))
     logging.info('{} foreign request : {} to {}'.format('simhash:',str(request),'dup_check'))
     key='source'
     sou_key_ok,source,dic=get_key_data(request,key)

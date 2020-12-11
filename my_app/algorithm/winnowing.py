@@ -1,12 +1,5 @@
 
 
-
-
-
-
-
-
-
 class win_check():
     def get_sim(self,str1,str2,n=13,t=9):
         Base = 17

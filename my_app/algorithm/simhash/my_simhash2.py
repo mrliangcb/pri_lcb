@@ -360,8 +360,10 @@ def extract_sen(x):
             if k+1-j>=10: #长度>10的才算句子
                 tem=x[i][j:k+1]
                 tem=tem.replace(' ','')
-                sent.append(tem) #去掉空格
+                if len(tem)>=8:
+                    sent.append(tem) #去掉空
             j=k+1
+    print('分句长度:',len(sent))
     if sent==[]:
         sent=['']
     return sent

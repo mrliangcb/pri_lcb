@@ -25,13 +25,9 @@ url='http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing'
 # url='http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/simhash'
 # url='http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/duojincheng'
 data={
-    # 'source':'我是梁成波我是梁成波我是梁成波我是梁成波我是梁成波我是梁成波。            123我是马大哈我是马大哈我是马大哈我是马大哈我是马大哈我是马大哈我是马大哈我是马大哈。\n我是梁静怡我是梁静怡我是梁静怡我是梁静怡我是梁静怡我是梁静怡。',
-    #
-    # 'target':'我是梁静怡我是梁静怡我是梁静怡我是梁静怡我是梁静怡我是梁静怡哈哈哈哈哈。\n我是梁成波我是梁成波我是梁成波我是梁成波我是梁成波我是梁成波。            12\n我是马大哈我是马大哈我是马大哈我是马大哈我是马大哈我是马大哈我是马大哈我是马大哈。',
-    # 'template':'我是梁成波我是梁成波我是梁成波我是梁成波我是梁成波我是梁成波'
     'source':source,
     'target':target,
-    'template':'我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是'
+    'template':'我是模板我是模板我是模板我是模板我是模板我是模板'
 }
 
 # data=json.dumps(data)

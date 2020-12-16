@@ -26,17 +26,17 @@ url='http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/simhash'
 # url='http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/duojincheng'
 data={
     'source':source,
-    'target':target,
-    'template':'我是模板我是模板我是模板我是模板我是模板我是模板。我是模板我是模板我是模板我是模板我是模板我是模板23409875234876523987465389475。'
+    'target':target #,
+    # 'template':'我是模板我是模板我是模板我是模板我是模板我是模板。我是模板我是模板我是模板我是模板我是模板我是模板23409875234876523987465389475。'
 }
 
 # data=json.dumps(data)
 result=requests.post(url,data=data)
-# res=result.json()
+res=result.json()
 # print(res['target_label'])
 # print(res['source_label'])
-print(result.text)
-
+# print(result.text)
+print(res)
 # import time
 # x=time.strftime("%Y_%m_%d%H_%M_%S", time.localtime())
 # print(x)

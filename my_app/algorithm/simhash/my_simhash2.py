@@ -387,27 +387,27 @@ def get_closest(hash_list1,hash_list2,dis_mat,docu1,docu2):
     docu1: 原文1
     docu2:  原文2
     '''
-
-
     # 求hash_list2每句话的winnowing特征值
     print('hash_list2:',len(hash_list2)) # 15个句子   1 个
     hash2_win_feature=[]
     for i,j in enumerate(hash_list2):
         if j.hash_list == -1:  # 自己还没构建gram_list
             j.generate_n_gram()
-            tem=j.calculate_hashing_set()
-            hash2_win_feature.append(tem)
+            j.calculate_hashing_set()
+            hash2_win_feature.append(j.hash_list)
+
     print('hash2_win_feature:',hash2_win_feature) # 二维list
 
     # 建立 winnowing特征:[位置] 的映射
     win_hash2_posi_dic={}
     for i,j in enumerate(hash2_win_feature):
-        for m in j:# 读取一句话的hash值
+        print('j是什么:',j)
+        for m in j:# 读取一句话的hash值   j有可能为空
             if win_hash2_posi_dic.get(m,None)==None:# 还没有这个值
                 win_hash2_posi_dic[m]=set([i])
             else:#已经有这个值了
                 win_hash2_posi_dic[m].add(i)
-    print('win_hash2_posi_dic:',win_hash2_posi_dic)
+    # print('win_hash2_posi_dic:',win_hash2_posi_dic)
 
     close_list2 = []
     for i,j in enumerate(hash_list1):
@@ -425,7 +425,7 @@ def get_closest(hash_list1,hash_list2,dis_mat,docu1,docu2):
             index=100
             close_list2.append(tuple([i, 100, 0, 0, 0]))
         else: #有找到侯选位置
-            print('candi_posi:',candi_posi)
+            # print('candi_posi:',candi_posi)
             # 然后从候选句子中找出最接近的
             min_, index = find_min2(dis_mat[i], j, hash_list2, docu1[i], docu2,candi_posi)
             close_list2.append(tuple([i, min_, index, docu1[i], docu2[index]]))

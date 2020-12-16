@@ -558,7 +558,6 @@ def propose_docx_doc(source_url,template_url):
 def simhash_route():
     # args_dic = request.args
     global_start_time=time.time()
-
     print('########################  now route simhash  ###############################')
     # s_preprocess_time=time.time()
     # args_dic=request.form.to_dict()
@@ -596,14 +595,18 @@ def simhash_route():
     target_length = len(target)
     print('长度：  source: {} | target : {} | template: {}'.format(source_length, target_length, template_length))
 
+    my_split_time=time.time()
     tem_fenduan, tem_split, tem_duandian = my_split(tem_str)
     x_fenduan, source, x_duandian = my_split(source)
     y_fenduan, target, y_duandian = my_split(target)
+    print('mysplit时间:',time.time()-my_split_time)
 
     # simhash
     simh_time_s = time.time()
     sim_list = sim_main(x_fenduan, y_fenduan, tem_fenduan)
     print('simhash全部时间:', time.time() - simh_time_s)
+
+
     dup_list_simhash = []
     for i, j in enumerate(sim_list):
         rate, doc1_index, dis, doc2_index, doc1, doc2 = j

@@ -332,7 +332,6 @@ def comp_dis_mat(hash_list1,hash_list2):
     return dis_mat
 
 def get_closest(hash_list1,hash_list2,dis_mat,docu1,docu2):
-
     close_list = []
     for i, j in enumerate(hash_list1):
         min_, index = find_min(dis_mat[i],j,hash_list2,docu1[i],docu2)
@@ -377,16 +376,12 @@ def sim_main(source,target,tem):
     source_sen = extract_sen(source)
     target_sen = extract_sen(target)
     tem_sen = extract_sen(tem)
-    # print('提取句子sou', source_sen)
-    # print('提取句子tar',target_sen)
-    # print('提取句子tem', tem_sen)
     print('extract时间:',time.time()-s1)
 
     # print('提取后的source_sen:',source_sen[:5])
     # print('提取后的tar_sen:', target_sen[:5])
     # print('提取后的tem_sen:', tem_sen[:5])
     s2 = time.time()
-
     # 先计算次方，减少每次计算开销
     n=6
     Base=17
@@ -409,15 +404,14 @@ def sim_main(source,target,tem):
     s3 = time.time()
     dis_mat12=comp_dis_mat(hash_list1,hash_list2)
     # print('12矩阵:',dis_mat12)
-
     dis_mat13 = comp_dis_mat(hash_list1, hash_list3)
-
     print('匹配hash对象时间:', time.time() - s3)  #主要这里耗时
 
-    # print('get close12之前')
+    get_close_time=time.time()
     close_list12 = get_closest(hash_list1,hash_list2,dis_mat12, source_sen, target_sen)  # 一维[] 长度为list1 每个元素是最近的 句子
     # print('get close12之后')
     close_list13 = get_closest(hash_list1,hash_list3,dis_mat13, source_sen, tem_sen)
+    print('get_close时间',time.time()-get_close_time)
 
     tichu_list=[0 for i in range(len(close_list13))]
     for i,j in enumerate(close_list13):
@@ -438,13 +432,14 @@ def sim_main(source,target,tem):
             rate*=100
             # if
             # print('<=50显示什么')
-
             # sorted_list[i] = tuple([rate, doc1_index, dis, doc2_index, doc1, doc2])
             no_docu3_list.append(tuple([rate, doc1_index, dis, doc2_index, doc1, doc2]))
     print('dup计算时间',time.time()-dup_time)
 
     #排序 从0起
+
     sorted_list = sorted(no_docu3_list, key=lambda x: x[0], reverse=True)# 选rate就要reverse true是降序 ，选dis就要False
+
     # sorted_list = sorted(no_docu3_list, key=lambda x: x[2], reverse=False)
     # print('剔除之后的list:', sorted_list)
 

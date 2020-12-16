@@ -279,6 +279,54 @@ def func(a,b):
     return dis
 
 
+def find_min2(x,hash1_obj,hash_list2,one_docu1,docu2,candi_posi):
+    '''
+    :param x: 关联矩阵的一行
+    :param hash1_obj: 这一行对应的hash1对象，一个
+    :param hash_list2: 这一行所有的hash2对象，多个
+    one_docu1: 这一行的hash1的内容，一个
+    docu2: 这一行对应hash2的内容,多个
+    :return:
+    '''
+    candi_posi_list=list(candi_posi) # hash2的位置
+
+    min_=1000
+    index=-1
+    max_rate=0
+    for i,j in enumerate(x):
+        if i in candi_posi:
+            if j<min_:
+                index=i
+                min_=j
+                rate = hash1_obj.dup_rate2(hash_list2[i])
+                max_rate=rate
+            elif j==min_:
+                rate = hash1_obj.dup_rate2(hash_list2[i])
+                if rate>max_rate: #rate 大于最佳的rate
+                    index = i
+            # print('有多个标题:',one_docu1,docu2[i])
+
+    '''
+    min_: 最小值
+    index: 下标
+    '''
+    max_ratee = -1
+    index_rate = -1
+    if min_>10: #距离值过大，那就不用simhash，用winnowing代替
+        for i, j in enumerate(hash_list2):
+            if i in candi_posi:
+                tem_rate=hash1_obj.dup_rate2(j)
+                if tem_rate>max_ratee:
+                    index_rate=i
+                    max_ratee=tem_rate
+                    min_=x[i] # 最小的hash值
+        # print('返回值:',min_,index_rate,hash1_obj.origin_text,j.origin_text)
+    # 返回最小hash值  和 位置
+        return min_,index_rate
+    else:
+        return min_,index
+
+
 
 def find_min(x,hash1_obj,hash_list2,one_docu1,docu2):
     '''
@@ -332,17 +380,68 @@ def comp_dis_mat(hash_list1,hash_list2):
     return dis_mat
 
 def get_closest(hash_list1,hash_list2,dis_mat,docu1,docu2):
-    close_list = []
-    for i, j in enumerate(hash_list1):
-        min_, index = find_min(dis_mat[i],j,hash_list2,docu1[i],docu2)
-        # print('例子:',i,j,hash_list2,len(docu1),len(docu2))
-        # print('min_:',min_,'index_:',index)
-        close_list.append(tuple([i, min_, index, docu1[i], docu2[index]]))
+    '''
+    hash_list1: list 元素为每个simhash对象
+    hash_list2:
+    dis_mat: 二维矩阵
+    docu1: 原文1
+    docu2:  原文2
+    '''
+
+
+    # 求hash_list2每句话的winnowing特征值
+    print('hash_list2:',len(hash_list2)) # 15个句子   1 个
+    hash2_win_feature=[]
+    for i,j in enumerate(hash_list2):
+        if j.hash_list == -1:  # 自己还没构建gram_list
+            j.generate_n_gram()
+            tem=j.calculate_hashing_set()
+            hash2_win_feature.append(tem)
+    print('hash2_win_feature:',hash2_win_feature) # 二维list
+
+    # 建立 winnowing特征:[位置] 的映射
+    win_hash2_posi_dic={}
+    for i,j in enumerate(hash2_win_feature):
+        for m in j:# 读取一句话的hash值
+            if win_hash2_posi_dic.get(m,None)==None:# 还没有这个值
+                win_hash2_posi_dic[m]=set([i])
+            else:#已经有这个值了
+                win_hash2_posi_dic[m].add(i)
+    print('win_hash2_posi_dic:',win_hash2_posi_dic)
+
+    close_list2 = []
+    for i,j in enumerate(hash_list1):
+        candi_posi=set()
+        if j.hash_list == -1:  # 自己还没构建gram_list
+            j.generate_n_gram()
+            j.calculate_hashing_set()#计算这句话的hash值list
+        for m in j.hash_list:
+            # 取对应hash2位置
+            tem=win_hash2_posi_dic.get(m,None)
+            if tem !=None: # 有位置
+                candi_posi=candi_posi|tem
+        if len(candi_posi)==0:# 没找到位置，可以认为这个句子没有匹配的
+            min_=100
+            index=100
+            close_list2.append(tuple([i, 100, 0, 0, 0]))
+        else: #有找到侯选位置
+            print('candi_posi:',candi_posi)
+            # 然后从候选句子中找出最接近的
+            min_, index = find_min2(dis_mat[i], j, hash_list2, docu1[i], docu2,candi_posi)
+            close_list2.append(tuple([i, min_, index, docu1[i], docu2[index]]))
+
+
+    # close_list = []
+    # for i, j in enumerate(hash_list1):
+    #     min_, index = find_min(dis_mat[i],j,hash_list2,docu1[i],docu2)
+    #     # print('例子:',i,j,hash_list2,len(docu1),len(docu2))
+    #     # print('min_:',min_,'index_:',index)
+    #     close_list.append(tuple([i, min_, index, docu1[i], docu2[index]]))
         '''
         min_: 最小值
         index: 下标
         '''
-    return close_list
+    return close_list2
 
 
 def extract_sen(x):

@@ -21,13 +21,13 @@ target=r"3 设备监造\n项目目的投标........................方在编制�
 
 
 
-url='http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing'
-# url='http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/simhash'
+# url='http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/winnowing'
+url='http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/simhash'
 # url='http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/duojincheng'
 data={
     'source':source,
     'target':target,
-    'template':'我是模板我是模板我是模板我是模板我是模板我是模板'
+    'template':'我是模板我是模板我是模板我是模板我是模板我是模板。我是模板我是模板我是模板我是模板我是模板我是模板23409875234876523987465389475。'
 }
 
 # data=json.dumps(data)

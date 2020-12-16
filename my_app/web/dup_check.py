@@ -13,7 +13,7 @@ logging.warning("warning")
 from io import BytesIO
 import docx
 import json
-from my_app.algorithm.simhash.my_simhash2 import start_jieba,sim_main
+from my_app.algorithm.simhash.my_simhash3 import start_jieba,sim_main
 y = start_jieba()
 # -*- coding: utf-8 -*-
 # import codecs,sys

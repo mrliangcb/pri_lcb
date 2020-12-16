@@ -19,13 +19,18 @@ def start_jieba():
 class simhash:
     # 构造函数
     def __init__(self, origin_text,tokens='', hashbits=128,n=3,cifang_list=None):
-        self.origin_text=origin_text
+        self.origin_text=origin_text # 原句
+        self.tokens=tokens #分词句
         self.hashbits = hashbits
-        self.hash = self.simhash(tokens) # tokens就是输入原句
         self.n=n
         self.n_gram=-1
-        self.hash_list=-1
+        self.hash_list=None
         self.cifang_list=cifang_list
+        self.hash=None
+
+
+    def build_simhash(self):
+        self.hash = self.simhash(self.tokens)  # tokens就是输入原句
 
     # toString函数
     def __str__(self):
@@ -77,18 +82,17 @@ class simhash:
         return rate
 
     def dup_rate2(self, other): #两个对象之间 字符串级别的重复率  other是另一个对象
-        if self.hash_list==-1: #自己还没构建gram_list
+        if self.hash_list==None: #自己还没构建gram_list
             self.generate_n_gram()
             self.calculate_hashing_set() #有self.hash_list了
         # 对方是否构建了hash_list
-        if other.hash_list==-1: #自己还没构建gram_list
+        if other.hash_list==None: #自己还没构建gram_list
             other.generate_n_gram()
             other.calculate_hashing_set() #有self.hash_list了
         # print('other的text',other.origin_text)
         # print('other的text', other.n_gram)
         # other的text 我是
         # other的text ['']
-
         dup_rate=self.compare(other)
         # print('计算结果:',dup_rate)
         return dup_rate
@@ -162,11 +166,7 @@ class simhash:
     def compare(self,other):#两个hash值list
         y_hash=other.hash_list
         y_origin=other.origin_text
-
         y_origin=y_origin.replace(' ','')
-
-        # print('y_hash是什么吗?',y_hash)
-
         x_hash=self.hash_list
         x=self.origin_text
         x=x.replace(' ','')
@@ -279,32 +279,48 @@ def func(a,b):
     return dis
 
 
-def find_min2(x,hash1_obj,hash_list2,one_docu1,docu2,candi_posi):
+def find_min2(hash1_index,hash_list1,hash_list2,candi_posi):
     '''
-    :param x: 关联矩阵的一行
-    :param hash1_obj: 这一行对应的hash1对象，一个
-    :param hash_list2: 这一行所有的hash2对象，多个
-    one_docu1: 这一行的hash1的内容，一个
-    docu2: 这一行对应hash2的内容,多个
-    :return:
+    hash_list1: 元素为obj
+    candi_posi 是set就是候选hash2的位置
     '''
+
     candi_posi_list=list(candi_posi) # hash2的位置
 
     min_=1000
     index=-1
     max_rate=0
-    for i,j in enumerate(x):
-        if i in candi_posi:
-            if j<min_:
-                index=i
-                min_=j
-                rate = hash1_obj.dup_rate2(hash_list2[i])
-                max_rate=rate
-            elif j==min_:
-                rate = hash1_obj.dup_rate2(hash_list2[i])
-                if rate>max_rate: #rate 大于最佳的rate
-                    index = i
+    winnowing_rate = []
+    hanming_dis_list = []
+
+    for i in candi_posi_list: #遍历候选位置
+        # j是当前obj和候选obj的simhash汉明距离
+        if hash_list1[hash1_index].hash==None: # hash1的这个obj还没计算simhash编码
+            hash_list1[hash1_index].build_simhash()
+        if hash_list2[i].hash==None: # hash1的这个obj还没计算simhash编码
+            hash_list2[i].build_simhash() # 这样计算的话，是基于list进行修改的
+        hanming_dis=hash_list1[hash1_index].hamming_distance(hash_list2[i])
+        hanming_dis_list.append(hanming_dis)
+
+        if hanming_dis<min_:
+            index=i
+            min_=hanming_dis
+            rate = hash_list1[hash1_index].dup_rate2(hash_list2[i]) # 用winnowing计算
+            winnowing_rate.append(rate)
+            max_rate=rate
+        elif hanming_dis==min_:
+            rate = hash_list1[hash1_index].dup_rate2(hash_list2[i])
+            winnowing_rate.append(rate)
+            if rate>max_rate: #rate 大于最佳的rate
+                index = i
+                max_rate = rate
+        else:
+            rate = hash_list1[hash1_index].dup_rate2(hash_list2[i])
+            winnowing_rate.append(rate)
             # print('有多个标题:',one_docu1,docu2[i])
+    # winnowing_rate的长度应该==candi_posi_list
+    if len(winnowing_rate)!=len(candi_posi_list):
+        print('长度不等!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!',len(winnowing_rate),len(candi_posi_list)) # 因为winnowing_rate里面有些是距离比之前大的所以没有进来
 
     '''
     min_: 最小值
@@ -313,18 +329,17 @@ def find_min2(x,hash1_obj,hash_list2,one_docu1,docu2,candi_posi):
     max_ratee = -1
     index_rate = -1
     if min_>10: #距离值过大，那就不用simhash，用winnowing代替
-        for i, j in enumerate(hash_list2):
-            if i in candi_posi:
-                tem_rate=hash1_obj.dup_rate2(j)
-                if tem_rate>max_ratee:
-                    index_rate=i
-                    max_ratee=tem_rate
-                    min_=x[i] # 最小的hash值
+        for i in range(len(candi_posi_list)): # i是候选list的相对位置
+            tem_win_rate=winnowing_rate[i]
+            if tem_win_rate > max_ratee:
+                index_rate = candi_posi_list[i]  # i是相对下标   candi_posi_list[i]是绝对下标
+                max_ratee = tem_win_rate
+                min_ =hanming_dis_list[i]
         # print('返回值:',min_,index_rate,hash1_obj.origin_text,j.origin_text)
     # 返回最小hash值  和 位置
-        return min_,index_rate
+        return min_,index_rate,max_ratee # 按照winnowing的结果          # 最小hash汉明距离，hash2的位置，最大的重复率
     else:
-        return min_,index
+        return min_,index,max_rate # 按照simhash的结果
 
 
 
@@ -391,7 +406,7 @@ def get_closest(hash_list1,hash_list2,dis_mat,docu1,docu2):
     print('hash_list2:',len(hash_list2)) # 15个句子   1 个
     hash2_win_feature=[]
     for i,j in enumerate(hash_list2):
-        if j.hash_list == -1:  # 自己还没构建gram_list
+        if j.hash_list == None:  # 自己还没构建gram_list
             j.generate_n_gram()
             j.calculate_hashing_set()
             hash2_win_feature.append(j.hash_list)
@@ -414,7 +429,7 @@ def get_closest(hash_list1,hash_list2,dis_mat,docu1,docu2):
     close_list2 = []
     for i,j in enumerate(hash_list1):
         candi_posi=set()
-        if j.hash_list == -1:  # 自己还没构建gram_list
+        if j.hash_list == None:  # 自己还没构建gram_list
             j.generate_n_gram()
             j.calculate_hashing_set()#计算这句话的hash值list
         for m in j.hash_list:
@@ -429,7 +444,9 @@ def get_closest(hash_list1,hash_list2,dis_mat,docu1,docu2):
         else: #有找到侯选位置
             # print('candi_posi:',candi_posi)
             # 然后从候选句子中找出最接近的
-            min_, index = find_min2(dis_mat[i], j, hash_list2, docu1[i], docu2,candi_posi)
+            min_, index = find_min2([i], j, hash_list2, docu1[i], docu2,candi_posi)
+
+
             close_list2.append(tuple([i, min_, index, docu1[i], docu2[index]]))
 
 
@@ -467,16 +484,99 @@ def extract_sen(x):
     if sent==[]:
         sent=['']
     return sent
+
+def build_simhash_obj_list(sen_list,cifang_list,n):
+    '''
+    x:list []
+    '''
+    # 建立hash
+    hash_list = []
+    jieba_time=0
+    build_hash_time=0
+
+    for i, j in enumerate(sen_list):
+        s_t=time.time()
+        origin_text=j
+        j = list(jieba.cut(j)) #生成tokens
+
+        jieba_time+=(time.time()-s_t)
+        # print('jieba时间:',time.time()-s_t)
+        s_t2=time.time()
+        hash = simhash(origin_text=origin_text,tokens=j,n=n,cifang_list=cifang_list)
+        build_hash_time+=time.time()-s_t2
+        # print('simhash时间:',time.time()-s_t2)
+        hash_list.append(hash)
+    return hash_list,jieba_time,build_hash_time
+
+
+
+
+
+def get_candi_doc2(hash_list1,hash_list2,source_sen,target_sen):
+    # 求hash_list2每句话的winnowing特征值
+    print('hash_list2:',len(hash_list2)) # 15个句子   1 个
+    hash2_win_feature=[]
+    for i,j in enumerate(hash_list2):
+        if j.hash_list == None:  # 自己还没构建gram_list
+            j.generate_n_gram()
+            j.calculate_hashing_set()
+            hash2_win_feature.append(j.hash_list)
+
+    # print('hash2_win_feature:',hash2_win_feature) # 二维list
+
+    # 建立 winnowing特征:[位置] 的映射
+    win_hash2_posi_dic={}
+    for i,j in enumerate(hash2_win_feature):
+        if j:
+            for m in j:# 读取一句话的hash值   j有可能为空
+                if win_hash2_posi_dic.get(m,None)==None:# 还没有这个值
+                    win_hash2_posi_dic[m]=set([i])
+                else:#已经有这个值了
+                    win_hash2_posi_dic[m].add(i)
+        else:
+            print('j是notype:',j)
+    # print('win_hash2_posi_dic:',win_hash2_posi_dic)
+
+    close_list2 = []
+    for i,j in enumerate(hash_list1):
+        candi_posi=set() # candi是当前hash1的obj的候选位置
+        if j.hash_list == None:  # 自己还没构建gram_list
+            j.generate_n_gram()
+            j.calculate_hashing_set()#计算这句话的hash值list
+        for m in j.hash_list:
+            # 取对应hash2位置
+            tem=win_hash2_posi_dic.get(m,None)
+            if tem !=None: # 有位置
+                candi_posi=candi_posi|tem
+        if len(candi_posi)==0:# 没找到位置，可以认为这个句子没有匹配的
+            min_=100
+            index=100
+            close_list2.append(tuple([i, 100,0, 0, 0, 0]))  # 先给距离为100，重复率0,然后index为0
+        else: #有找到侯选位置
+            # print('candi_posi:',candi_posi)
+            # 然后从候选句子中找出最接近的
+            min_, index,max_rate = find_min2(i,hash_list1,hash_list2,candi_posi) # j是hash1的obj
+            close_list2.append(tuple([i, min_,max_rate, index, source_sen[i], target_sen[index]]))
+
+        '''
+        min_: 最小值
+        index: 下标
+        '''
+    return close_list2
+
+
 import time
 def sim_main(source,target,tem):
     '''
     source：list[str1,str2]
-
     '''
+
+    # 提取句子  长度>=8才提取
     s1=time.time()
     source_sen = extract_sen(source)
     target_sen = extract_sen(target)
     tem_sen = extract_sen(tem)
+    # 返回结果['1','2']
     print('extract时间:',time.time()-s1)
 
     # print('提取后的source_sen:',source_sen[:5])
@@ -491,32 +591,22 @@ def sim_main(source,target,tem):
         cifang_list.append(Base ** (n - i - 1))
     # print('cifang_list:',cifang_list)
 
-    hash_list1,jieba_time1,build_hash_time1 = create_hash_obj_list(source_sen,cifang_list,n)
-    hash_list2,jieba_time2,build_hash_time2 = create_hash_obj_list(target_sen,cifang_list,n)
-    hash_list3,jieba_time3,build_hash_time3 = create_hash_obj_list(tem_sen,cifang_list,n)
+    # 生成simhash对象，只计算分词，不计算任何东西
+    hash_list1,jieba_time1,build_hash_time1=build_simhash_obj_list(source_sen,cifang_list,n)
+    hash_list2, jieba_time2, build_hash_time2 = build_simhash_obj_list(target_sen, cifang_list, n)
+    hash_list3, jieba_time3, build_hash_time3 = build_simhash_obj_list(tem_sen, cifang_list, n)
 
-    # print('hash1:',hash_list1)
-    # print('hash2:', hash_list2)
-    # print('hash3:', hash_list3)
-    print('cut的所有时间:',jieba_time1+jieba_time2+jieba_time3)
-    print('simhash编码的所有时间:', build_hash_time1 + build_hash_time2 + build_hash_time3)
-    print('建立hash对象时间:', time.time() - s2)  #   1.82768535
 
-    s3 = time.time()
-    dis_mat12=comp_dis_mat(hash_list1,hash_list2)
-    # print('12矩阵:',dis_mat12)
-    dis_mat13 = comp_dis_mat(hash_list1, hash_list3)
-    print('匹配hash对象时间:', time.time() - s3)  #主要这里耗时
+    # 先用winnowing选出候选句子
+    close_list12=get_candi_doc2(hash_list1,hash_list2,source_sen,target_sen) # 输入obj list   输出一个list   相当于close
+    # tuple([i, min_, index, docu1[i], docu2[index]])
 
-    get_close_time=time.time()
-    close_list12 = get_closest(hash_list1,hash_list2,dis_mat12, source_sen, target_sen)  # 一维[] 长度为list1 每个元素是最近的 句子
-    # print('get close12之后')
-    close_list13 = get_closest(hash_list1,hash_list3,dis_mat13, source_sen, tem_sen)
-    print('get_close时间',time.time()-get_close_time)
+    close_list13 = get_candi_doc2(hash_list1, hash_list3,source_sen,tem_sen)
 
-    tichu_list=[0 for i in range(len(close_list13))]
+
+    tichu_list=[0 for i in range(len(close_list13))]  # close_list13 长度== close_list12  的
     for i,j in enumerate(close_list13):
-        doc1_index, dis, doc2_index, doc1, doc2 = j #解包
+        doc1_index, dis,max_rate, doc2_index, doc1, doc2 = j #解包
         if dis<=3:
             tichu_list[i]=1 #在模板中有，点亮，表明要除去
     # for i,j in enumerate(tichu_list):
@@ -528,8 +618,8 @@ def sim_main(source,target,tem):
     no_docu3_list = []
     for i, j in enumerate(close_list12):
         if tichu_list[i] == 0:  # 不剔除的才计算重复率
-            doc1_index, dis, doc2_index, doc1, doc2 = j
-            rate = hash_list1[doc1_index].dup_rate2(hash_list2[doc2_index]) # 一个x对象.dup_rate(另一个对象)
+            doc1_index, dis,max_rate, doc2_index, doc1, doc2 = j  # dis有可能=100
+            rate = max_rate# 重复率直接拿
             rate*=100
             # if
             # print('<=50显示什么')

@@ -396,17 +396,18 @@ def get_closest(hash_list1,hash_list2,dis_mat,docu1,docu2):
             j.calculate_hashing_set()
             hash2_win_feature.append(j.hash_list)
 
-    print('hash2_win_feature:',hash2_win_feature) # 二维list
+    # print('hash2_win_feature:',hash2_win_feature) # 二维list
 
     # 建立 winnowing特征:[位置] 的映射
     win_hash2_posi_dic={}
     for i,j in enumerate(hash2_win_feature):
         print('j是什么:',j)
-        for m in j:# 读取一句话的hash值   j有可能为空
-            if win_hash2_posi_dic.get(m,None)==None:# 还没有这个值
-                win_hash2_posi_dic[m]=set([i])
-            else:#已经有这个值了
-                win_hash2_posi_dic[m].add(i)
+        if j:
+            for m in j:# 读取一句话的hash值   j有可能为空
+                if win_hash2_posi_dic.get(m,None)==None:# 还没有这个值
+                    win_hash2_posi_dic[m]=set([i])
+                else:#已经有这个值了
+                    win_hash2_posi_dic[m].add(i)
     # print('win_hash2_posi_dic:',win_hash2_posi_dic)
 
     close_list2 = []

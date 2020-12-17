@@ -564,6 +564,32 @@ def get_candi_doc2(hash_list1,hash_list2,source_sen,target_sen):
         '''
     return close_list2
 
+def pari_check(x,y):
+    i=0
+    while i<len(x) and x[i]==y[i]:
+        i+=1
+    if i==len(x) and i==len(y):
+        return True
+    return False
+
+def check_pair_list(list_x):
+    '''
+    list_x:['tuple1','tuple2']
+    '''
+    flag_list=[0 for i in range(len(list_x))]
+    for i in range(len(list_x)): # 每个都与后面的相比
+        for j in range(i+1,len(list_x)):
+            text_i=list_x[i][4]
+            # print('list_x[i]:',list_x[i])
+            # print('list_x[i][4]:',list_x[i][4])
+            text_j = list_x[j][4]
+            if pari_check(text_i,text_j): # 自相同了
+                flag_list[i]=1
+                continue # i是多余的 退出此次j循环
+            else:
+                pass
+    return flag_list
+
 
 import time
 def sim_main(source,target,tem):
@@ -614,7 +640,6 @@ def sim_main(source,target,tem):
             # print('剔除结果:',source_sen[i])
 
     #计算重复率
-    dup_time=time.time()
     no_docu3_list = []
     for i, j in enumerate(close_list12):
         if tichu_list[i] == 0:  # 不剔除的才计算重复率
@@ -625,17 +650,53 @@ def sim_main(source,target,tem):
             # print('<=50显示什么')
             # sorted_list[i] = tuple([rate, doc1_index, dis, doc2_index, doc1, doc2])
             no_docu3_list.append(tuple([rate, doc1_index, dis, doc2_index, doc1, doc2]))
-    print('dup计算时间',time.time()-dup_time)
 
-    #排序 从0起
 
+    #排序 从0起  sorted_list剔除了模板句子
+    clear_sorted_list=[]
     sorted_list = sorted(no_docu3_list, key=lambda x: x[0], reverse=True)# 选rate就要reverse true是降序 ，选dis就要False
+    sort_i=0
+    tem_list=[]
+    now_rate=0
+    while sort_i <len(sorted_list) and sorted_list[sort_i][0]>40:
+        rate_i = sorted_list[sort_i][0]
+        sort_j=sort_i
+        # example=sorted_list[sort_j]
+        # rate_j=example[0] #解包
+
+        while sort_j<len(sorted_list) and sorted_list[sort_j][0]==rate_i and sorted_list[sort_j][0]>40: # 移动j，i不动
+            # print('sort_i:', sort_i)
+            # print('sort_j:',sort_j)
+            # print(len(sorted_list))
+            sort_j += 1
+        # 开始处理一段   [i~j) 不含j
+        if sort_j-sort_i>0:
+            # [i~j)里面都是重复率相同的 检查他们的 自相同
+            if sort_j-sort_i>1: # 起码有两个句子
+                # print('sorted_list是什么:',sorted_list[0])
+                flag_list=check_pair_list(sorted_list[sort_i:sort_j]) # 传入一段rate连续的 tuple obj
+                for flag_ele in  range(len(flag_list)):
+                    if flag_list[flag_ele]==0: # 不是多余的
+                        clear_sorted_list.append(sorted_list[sort_i+flag_ele])
+            else: #只有一个句子
+                clear_sorted_list.append(sorted_list[sort_i])
+        # i移动到j
+        sort_i=sort_j
+
+        #
+        # if now_rate==rate:
+        #     tem_list.append(example)
+        # else: # 新的rate
+        #     if tem_list==[]: #之前是空的
+        #         pass
+        #     else: # 之前有东西
 
     # sorted_list = sorted(no_docu3_list, key=lambda x: x[2], reverse=False)
     # print('剔除之后的list:', sorted_list)
 
     # print('sorted_list是什么?',sorted_list)
     # print('sorted_list:',sorted_list)
+    sorted_list=clear_sorted_list
     select_final = []
     sen_count = 0
     # print('排序')

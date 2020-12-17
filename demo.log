@@ -18118,3 +18118,496 @@ Thu 17 Dec 2020 00:48:29 _internal.py INFO  * Restarting with stat
 Thu 17 Dec 2020 00:48:30 dup_check.py WARNING warning
 Thu 17 Dec 2020 00:48:30 __init__.py DEBUG Building prefix dict from the default dictionary ...
 Thu 17 Dec 2020 00:48:30 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 00:56:42 dup_check.py WARNING warning
+Thu 17 Dec 2020 00:56:43 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 00:56:43 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 00:56:43 __init__.py DEBUG Loading model cost 0.672 seconds.
+Thu 17 Dec 2020 00:56:43 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 00:56:43 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 00:56:44 dup_check.py WARNING warning
+Thu 17 Dec 2020 00:56:44 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 00:56:44 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 00:56:45 __init__.py DEBUG Loading model cost 0.662 seconds.
+Thu 17 Dec 2020 00:56:45 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 00:56:45 _internal.py WARNING  * Debugger is active!
+Thu 17 Dec 2020 00:56:45 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 17 Dec 2020 00:56:45 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 17 Dec 2020 00:56:45 dup_check.py INFO simhash: foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/simhash' [POST]> to dup_check
+Thu 17 Dec 2020 00:56:45 _internal.py INFO 127.0.0.1 - - [17/Dec/2020 00:56:45] "[37mPOST /NLP/Algorithm/base/dup_check/simhash HTTP/1.1[0m" 200 -
+Thu 17 Dec 2020 08:23:57 dup_check.py WARNING warning
+Thu 17 Dec 2020 08:23:57 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 08:23:57 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 08:23:57 __init__.py DEBUG Loading model cost 0.683 seconds.
+Thu 17 Dec 2020 08:23:57 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 08:23:57 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 08:23:58 dup_check.py WARNING warning
+Thu 17 Dec 2020 08:23:58 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 08:23:58 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 08:23:59 __init__.py DEBUG Loading model cost 0.700 seconds.
+Thu 17 Dec 2020 08:23:59 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 08:23:59 _internal.py WARNING  * Debugger is active!
+Thu 17 Dec 2020 08:23:59 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 17 Dec 2020 08:23:59 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 17 Dec 2020 08:24:00 dup_check.py INFO simhash: foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/simhash' [POST]> to dup_check
+Thu 17 Dec 2020 08:24:00 _internal.py INFO 127.0.0.1 - - [17/Dec/2020 08:24:00] "[37mPOST /NLP/Algorithm/base/dup_check/simhash HTTP/1.1[0m" 200 -
+Thu 17 Dec 2020 08:24:23 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\3\\pri_lcb\\my_app\\algorithm\\simhash\\my_simhash3.py', reloading
+Thu 17 Dec 2020 08:24:23 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 08:24:24 dup_check.py WARNING warning
+Thu 17 Dec 2020 08:24:24 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 08:24:24 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 08:24:24 __init__.py DEBUG Loading model cost 0.655 seconds.
+Thu 17 Dec 2020 08:24:24 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 08:24:24 _internal.py WARNING  * Debugger is active!
+Thu 17 Dec 2020 08:24:24 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 17 Dec 2020 08:24:24 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 17 Dec 2020 08:24:44 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\3\\pri_lcb\\my_app\\algorithm\\simhash\\my_simhash3.py', reloading
+Thu 17 Dec 2020 08:24:44 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 08:24:45 dup_check.py WARNING warning
+Thu 17 Dec 2020 08:24:45 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 08:24:45 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 08:24:46 __init__.py DEBUG Loading model cost 0.675 seconds.
+Thu 17 Dec 2020 08:24:46 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 08:24:46 _internal.py WARNING  * Debugger is active!
+Thu 17 Dec 2020 08:24:46 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 17 Dec 2020 08:24:46 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 17 Dec 2020 08:54:41 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\3\\pri_lcb\\my_app\\algorithm\\simhash\\my_simhash3.py', reloading
+Thu 17 Dec 2020 08:54:41 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 08:54:42 dup_check.py WARNING warning
+Thu 17 Dec 2020 08:54:42 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 08:54:42 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 08:54:43 __init__.py DEBUG Loading model cost 0.653 seconds.
+Thu 17 Dec 2020 08:54:43 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 08:54:43 _internal.py WARNING  * Debugger is active!
+Thu 17 Dec 2020 08:54:43 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 17 Dec 2020 08:54:43 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 17 Dec 2020 08:55:08 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\3\\pri_lcb\\my_app\\algorithm\\simhash\\my_simhash3.py', reloading
+Thu 17 Dec 2020 08:55:08 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 08:55:09 dup_check.py WARNING warning
+Thu 17 Dec 2020 08:55:09 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 08:55:09 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 08:55:10 __init__.py DEBUG Loading model cost 0.688 seconds.
+Thu 17 Dec 2020 08:55:10 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 08:55:10 _internal.py WARNING  * Debugger is active!
+Thu 17 Dec 2020 08:55:10 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 17 Dec 2020 08:55:10 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 17 Dec 2020 08:55:12 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\3\\pri_lcb\\my_app\\algorithm\\simhash\\my_simhash3.py', reloading
+Thu 17 Dec 2020 08:55:12 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 08:55:13 dup_check.py WARNING warning
+Thu 17 Dec 2020 08:55:13 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 08:55:13 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 08:55:14 __init__.py DEBUG Loading model cost 0.642 seconds.
+Thu 17 Dec 2020 08:55:14 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 08:55:14 _internal.py WARNING  * Debugger is active!
+Thu 17 Dec 2020 08:55:14 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 17 Dec 2020 08:55:14 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 17 Dec 2020 08:55:33 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\3\\pri_lcb\\my_app\\algorithm\\simhash\\my_simhash3.py', reloading
+Thu 17 Dec 2020 08:55:33 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 08:55:34 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:21:57 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:21:57 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:21:57 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:21:57 __init__.py DEBUG Loading model cost 0.677 seconds.
+Thu 17 Dec 2020 09:21:57 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:21:57 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 09:21:58 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:21:58 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:21:58 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:21:59 __init__.py DEBUG Loading model cost 0.687 seconds.
+Thu 17 Dec 2020 09:21:59 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:21:59 _internal.py WARNING  * Debugger is active!
+Thu 17 Dec 2020 09:21:59 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 17 Dec 2020 09:21:59 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 17 Dec 2020 09:22:10 dup_check.py INFO simhash: foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/simhash' [POST]> to dup_check
+Thu 17 Dec 2020 09:22:10 _internal.py INFO 127.0.0.1 - - [17/Dec/2020 09:22:10] "[35m[1mPOST /NLP/Algorithm/base/dup_check/simhash HTTP/1.1[0m" 500 -
+Thu 17 Dec 2020 09:22:56 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\3\\pri_lcb\\my_app\\algorithm\\simhash\\my_simhash3.py', reloading
+Thu 17 Dec 2020 09:22:56 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 09:22:57 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:22:57 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:22:57 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:22:58 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:22:58 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:22:58 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:22:59 __init__.py DEBUG Loading model cost 0.801 seconds.
+Thu 17 Dec 2020 09:22:59 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:22:59 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 09:23:00 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:23:00 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:23:00 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:23:01 __init__.py DEBUG Loading model cost 0.663 seconds.
+Thu 17 Dec 2020 09:23:01 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:23:01 _internal.py WARNING  * Debugger is active!
+Thu 17 Dec 2020 09:23:01 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 17 Dec 2020 09:23:01 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 17 Dec 2020 09:23:01 dup_check.py INFO simhash: foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/simhash' [POST]> to dup_check
+Thu 17 Dec 2020 09:23:01 _internal.py INFO 127.0.0.1 - - [17/Dec/2020 09:23:01] "[35m[1mPOST /NLP/Algorithm/base/dup_check/simhash HTTP/1.1[0m" 500 -
+Thu 17 Dec 2020 09:23:27 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\3\\pri_lcb\\my_app\\algorithm\\simhash\\my_simhash3.py', reloading
+Thu 17 Dec 2020 09:23:27 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 09:23:29 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:23:29 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:23:29 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:23:30 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:23:31 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:23:31 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:23:31 __init__.py DEBUG Loading model cost 0.679 seconds.
+Thu 17 Dec 2020 09:23:31 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:23:31 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 09:23:32 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:23:32 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:23:32 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:23:33 __init__.py DEBUG Loading model cost 0.653 seconds.
+Thu 17 Dec 2020 09:23:33 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:23:33 _internal.py WARNING  * Debugger is active!
+Thu 17 Dec 2020 09:23:33 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 17 Dec 2020 09:23:33 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 17 Dec 2020 09:23:36 dup_check.py INFO simhash: foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/simhash' [POST]> to dup_check
+Thu 17 Dec 2020 09:23:36 _internal.py INFO 127.0.0.1 - - [17/Dec/2020 09:23:36] "[35m[1mPOST /NLP/Algorithm/base/dup_check/simhash HTTP/1.1[0m" 500 -
+Thu 17 Dec 2020 09:23:53 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\3\\pri_lcb\\my_app\\algorithm\\simhash\\my_simhash3.py', reloading
+Thu 17 Dec 2020 09:23:53 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 09:23:54 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:23:54 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:23:54 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:23:55 __init__.py DEBUG Loading model cost 0.659 seconds.
+Thu 17 Dec 2020 09:23:55 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:23:55 _internal.py WARNING  * Debugger is active!
+Thu 17 Dec 2020 09:23:55 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 17 Dec 2020 09:23:55 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 17 Dec 2020 09:23:57 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:23:57 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:23:57 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:23:58 __init__.py DEBUG Loading model cost 0.699 seconds.
+Thu 17 Dec 2020 09:23:58 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:23:58 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 09:23:59 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:23:59 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:23:59 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:24:00 __init__.py DEBUG Loading model cost 0.663 seconds.
+Thu 17 Dec 2020 09:24:00 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:24:00 _internal.py WARNING  * Debugger is active!
+Thu 17 Dec 2020 09:24:00 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 17 Dec 2020 09:24:00 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 17 Dec 2020 09:24:00 dup_check.py INFO simhash: foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/simhash' [POST]> to dup_check
+Thu 17 Dec 2020 09:24:00 _internal.py INFO 127.0.0.1 - - [17/Dec/2020 09:24:00] "[35m[1mPOST /NLP/Algorithm/base/dup_check/simhash HTTP/1.1[0m" 500 -
+Thu 17 Dec 2020 09:24:28 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\3\\pri_lcb\\my_app\\algorithm\\simhash\\my_simhash3.py', reloading
+Thu 17 Dec 2020 09:24:28 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 09:24:29 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:24:29 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:24:29 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:24:30 __init__.py DEBUG Loading model cost 1.012 seconds.
+Thu 17 Dec 2020 09:24:30 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:24:30 _internal.py WARNING  * Debugger is active!
+Thu 17 Dec 2020 09:24:30 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 17 Dec 2020 09:24:30 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 17 Dec 2020 09:24:34 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\3\\pri_lcb\\my_app\\algorithm\\simhash\\my_simhash3.py', reloading
+Thu 17 Dec 2020 09:24:34 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 09:24:35 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:24:35 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:24:35 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:24:36 __init__.py DEBUG Loading model cost 0.648 seconds.
+Thu 17 Dec 2020 09:24:36 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:24:36 _internal.py WARNING  * Debugger is active!
+Thu 17 Dec 2020 09:24:36 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 17 Dec 2020 09:24:36 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 17 Dec 2020 09:24:40 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\3\\pri_lcb\\my_app\\algorithm\\simhash\\my_simhash3.py', reloading
+Thu 17 Dec 2020 09:24:41 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 09:24:43 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:24:43 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:24:43 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:24:44 __init__.py DEBUG Loading model cost 0.665 seconds.
+Thu 17 Dec 2020 09:24:44 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:24:44 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 09:24:44 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:24:45 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:24:45 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:24:45 __init__.py DEBUG Loading model cost 0.651 seconds.
+Thu 17 Dec 2020 09:24:45 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:24:45 _internal.py WARNING  * Debugger is active!
+Thu 17 Dec 2020 09:24:45 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 17 Dec 2020 09:24:45 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 17 Dec 2020 09:24:46 dup_check.py INFO simhash: foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/simhash' [POST]> to dup_check
+Thu 17 Dec 2020 09:24:46 _internal.py INFO 127.0.0.1 - - [17/Dec/2020 09:24:46] "[35m[1mPOST /NLP/Algorithm/base/dup_check/simhash HTTP/1.1[0m" 500 -
+Thu 17 Dec 2020 09:26:21 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:26:21 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:26:21 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:26:22 __init__.py DEBUG Loading model cost 0.671 seconds.
+Thu 17 Dec 2020 09:26:22 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:26:22 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 09:26:23 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:26:23 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:26:23 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:26:23 __init__.py DEBUG Loading model cost 0.683 seconds.
+Thu 17 Dec 2020 09:26:23 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:26:23 _internal.py WARNING  * Debugger is active!
+Thu 17 Dec 2020 09:26:23 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 17 Dec 2020 09:26:23 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 17 Dec 2020 09:26:29 dup_check.py INFO simhash: foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/simhash' [POST]> to dup_check
+Thu 17 Dec 2020 09:26:29 _internal.py INFO 127.0.0.1 - - [17/Dec/2020 09:26:29] "[35m[1mPOST /NLP/Algorithm/base/dup_check/simhash HTTP/1.1[0m" 500 -
+Thu 17 Dec 2020 09:26:59 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\3\\pri_lcb\\my_app\\algorithm\\simhash\\my_simhash3.py', reloading
+Thu 17 Dec 2020 09:26:59 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 09:27:01 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:27:01 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:27:01 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:27:02 __init__.py DEBUG Loading model cost 0.774 seconds.
+Thu 17 Dec 2020 09:27:02 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:27:02 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 09:27:03 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:27:03 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:27:03 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:27:03 __init__.py DEBUG Loading model cost 0.729 seconds.
+Thu 17 Dec 2020 09:27:03 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:27:03 _internal.py WARNING  * Debugger is active!
+Thu 17 Dec 2020 09:27:03 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 17 Dec 2020 09:27:04 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 17 Dec 2020 09:27:04 dup_check.py INFO simhash: foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/simhash' [POST]> to dup_check
+Thu 17 Dec 2020 09:27:04 _internal.py INFO 127.0.0.1 - - [17/Dec/2020 09:27:04] "[35m[1mPOST /NLP/Algorithm/base/dup_check/simhash HTTP/1.1[0m" 500 -
+Thu 17 Dec 2020 09:27:43 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\3\\pri_lcb\\my_app\\algorithm\\simhash\\my_simhash3.py', reloading
+Thu 17 Dec 2020 09:27:43 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 09:27:44 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:27:45 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:27:45 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:27:45 __init__.py DEBUG Loading model cost 0.667 seconds.
+Thu 17 Dec 2020 09:27:45 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:27:45 _internal.py WARNING  * Debugger is active!
+Thu 17 Dec 2020 09:27:45 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 17 Dec 2020 09:27:45 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 17 Dec 2020 09:28:02 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\3\\pri_lcb\\my_app\\algorithm\\simhash\\my_simhash3.py', reloading
+Thu 17 Dec 2020 09:28:02 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 09:28:03 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:28:03 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:28:03 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:28:04 __init__.py DEBUG Loading model cost 0.806 seconds.
+Thu 17 Dec 2020 09:28:04 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:28:04 _internal.py WARNING  * Debugger is active!
+Thu 17 Dec 2020 09:28:04 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 17 Dec 2020 09:28:04 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 17 Dec 2020 09:28:17 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\3\\pri_lcb\\my_app\\algorithm\\simhash\\my_simhash3.py', reloading
+Thu 17 Dec 2020 09:28:17 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 09:28:18 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:28:18 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:28:18 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:28:18 __init__.py DEBUG Loading model cost 0.712 seconds.
+Thu 17 Dec 2020 09:28:18 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:28:18 _internal.py WARNING  * Debugger is active!
+Thu 17 Dec 2020 09:28:18 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 17 Dec 2020 09:28:18 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 17 Dec 2020 09:28:37 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\3\\pri_lcb\\my_app\\algorithm\\simhash\\my_simhash3.py', reloading
+Thu 17 Dec 2020 09:28:38 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 09:28:39 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:28:39 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:28:39 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:28:39 __init__.py DEBUG Loading model cost 0.648 seconds.
+Thu 17 Dec 2020 09:28:39 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:28:39 _internal.py WARNING  * Debugger is active!
+Thu 17 Dec 2020 09:28:39 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 17 Dec 2020 09:28:39 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 17 Dec 2020 09:28:44 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\3\\pri_lcb\\my_app\\algorithm\\simhash\\my_simhash3.py', reloading
+Thu 17 Dec 2020 09:28:44 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 09:28:45 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:28:45 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:28:45 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:28:46 __init__.py DEBUG Loading model cost 0.654 seconds.
+Thu 17 Dec 2020 09:28:46 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:28:46 _internal.py WARNING  * Debugger is active!
+Thu 17 Dec 2020 09:28:46 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 17 Dec 2020 09:28:46 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 17 Dec 2020 09:28:55 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:28:55 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:28:55 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:28:56 __init__.py DEBUG Loading model cost 0.857 seconds.
+Thu 17 Dec 2020 09:28:56 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:28:56 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 09:28:57 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:28:57 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:28:57 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:28:57 __init__.py DEBUG Loading model cost 0.650 seconds.
+Thu 17 Dec 2020 09:28:57 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:28:57 _internal.py WARNING  * Debugger is active!
+Thu 17 Dec 2020 09:28:57 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 17 Dec 2020 09:28:57 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 17 Dec 2020 09:28:58 dup_check.py INFO simhash: foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/simhash' [POST]> to dup_check
+Thu 17 Dec 2020 09:28:58 _internal.py INFO 127.0.0.1 - - [17/Dec/2020 09:28:58] "[35m[1mPOST /NLP/Algorithm/base/dup_check/simhash HTTP/1.1[0m" 500 -
+Thu 17 Dec 2020 09:29:30 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\3\\pri_lcb\\my_app\\algorithm\\simhash\\my_simhash3.py', reloading
+Thu 17 Dec 2020 09:29:31 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 09:29:31 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:29:31 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:29:31 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:29:32 __init__.py DEBUG Loading model cost 0.862 seconds.
+Thu 17 Dec 2020 09:29:32 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:29:32 _internal.py WARNING  * Debugger is active!
+Thu 17 Dec 2020 09:29:32 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 17 Dec 2020 09:29:32 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 17 Dec 2020 09:29:39 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\3\\pri_lcb\\my_app\\algorithm\\simhash\\my_simhash3.py', reloading
+Thu 17 Dec 2020 09:29:41 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:29:41 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:29:41 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:29:41 __init__.py DEBUG Loading model cost 0.653 seconds.
+Thu 17 Dec 2020 09:29:41 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:29:41 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 09:29:42 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:29:42 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:29:42 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:29:43 __init__.py DEBUG Loading model cost 0.680 seconds.
+Thu 17 Dec 2020 09:29:43 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:29:43 _internal.py WARNING  * Debugger is active!
+Thu 17 Dec 2020 09:29:43 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 17 Dec 2020 09:29:43 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 17 Dec 2020 09:29:43 dup_check.py INFO simhash: foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/simhash' [POST]> to dup_check
+Thu 17 Dec 2020 09:29:43 _internal.py INFO 127.0.0.1 - - [17/Dec/2020 09:29:43] "[35m[1mPOST /NLP/Algorithm/base/dup_check/simhash HTTP/1.1[0m" 500 -
+Thu 17 Dec 2020 09:29:59 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\3\\pri_lcb\\my_app\\algorithm\\simhash\\my_simhash3.py', reloading
+Thu 17 Dec 2020 09:29:59 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 09:30:00 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:30:00 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:30:00 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:30:01 __init__.py DEBUG Loading model cost 0.656 seconds.
+Thu 17 Dec 2020 09:30:01 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:30:01 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 09:30:02 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:30:02 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:30:02 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:30:02 __init__.py DEBUG Loading model cost 0.643 seconds.
+Thu 17 Dec 2020 09:30:02 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:30:02 _internal.py WARNING  * Debugger is active!
+Thu 17 Dec 2020 09:30:02 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 17 Dec 2020 09:30:02 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 17 Dec 2020 09:30:30 dup_check.py INFO simhash: foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/simhash' [POST]> to dup_check
+Thu 17 Dec 2020 09:30:30 _internal.py INFO 127.0.0.1 - - [17/Dec/2020 09:30:30] "[35m[1mPOST /NLP/Algorithm/base/dup_check/simhash HTTP/1.1[0m" 500 -
+Thu 17 Dec 2020 09:32:27 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\3\\pri_lcb\\my_app\\algorithm\\simhash\\my_simhash3.py', reloading
+Thu 17 Dec 2020 09:32:27 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 09:32:28 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:34:09 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:34:09 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:34:09 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:34:10 __init__.py DEBUG Loading model cost 0.652 seconds.
+Thu 17 Dec 2020 09:34:10 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:34:10 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 09:34:11 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:34:11 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:34:11 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:34:12 __init__.py DEBUG Loading model cost 0.641 seconds.
+Thu 17 Dec 2020 09:34:12 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:34:12 _internal.py WARNING  * Debugger is active!
+Thu 17 Dec 2020 09:34:12 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 17 Dec 2020 09:34:12 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 17 Dec 2020 09:34:23 dup_check.py INFO simhash: foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/simhash' [POST]> to dup_check
+Thu 17 Dec 2020 09:34:39 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:34:39 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:34:39 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:34:40 __init__.py DEBUG Loading model cost 0.709 seconds.
+Thu 17 Dec 2020 09:34:40 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:34:40 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 09:34:41 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:34:41 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:34:41 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:34:41 __init__.py DEBUG Loading model cost 0.646 seconds.
+Thu 17 Dec 2020 09:34:41 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:34:41 _internal.py WARNING  * Debugger is active!
+Thu 17 Dec 2020 09:34:41 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 17 Dec 2020 09:34:41 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 17 Dec 2020 09:34:42 dup_check.py INFO simhash: foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/simhash' [POST]> to dup_check
+Thu 17 Dec 2020 09:34:59 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:34:59 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:34:59 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:35:00 __init__.py DEBUG Loading model cost 0.670 seconds.
+Thu 17 Dec 2020 09:35:00 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:35:00 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 09:35:01 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:35:01 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:35:01 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:35:02 __init__.py DEBUG Loading model cost 0.651 seconds.
+Thu 17 Dec 2020 09:35:02 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:35:02 _internal.py WARNING  * Debugger is active!
+Thu 17 Dec 2020 09:35:02 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 17 Dec 2020 09:35:02 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 17 Dec 2020 09:35:02 dup_check.py INFO simhash: foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/simhash' [POST]> to dup_check
+Thu 17 Dec 2020 09:36:01 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\3\\pri_lcb\\my_app\\algorithm\\simhash\\my_simhash3.py', reloading
+Thu 17 Dec 2020 09:36:01 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 09:36:02 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:36:02 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:36:02 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:36:02 __init__.py DEBUG Loading model cost 0.656 seconds.
+Thu 17 Dec 2020 09:36:02 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:36:02 _internal.py WARNING  * Debugger is active!
+Thu 17 Dec 2020 09:36:03 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 17 Dec 2020 09:36:03 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 17 Dec 2020 09:36:30 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\3\\pri_lcb\\my_app\\algorithm\\simhash\\my_simhash3.py', reloading
+Thu 17 Dec 2020 09:36:30 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 09:36:31 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:36:31 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:36:31 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:36:32 __init__.py DEBUG Loading model cost 0.725 seconds.
+Thu 17 Dec 2020 09:36:32 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:36:32 _internal.py WARNING  * Debugger is active!
+Thu 17 Dec 2020 09:36:32 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 17 Dec 2020 09:36:32 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 17 Dec 2020 09:36:34 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\3\\pri_lcb\\my_app\\algorithm\\simhash\\my_simhash3.py', reloading
+Thu 17 Dec 2020 09:36:34 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 09:36:35 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:36:35 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:36:35 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:36:36 __init__.py DEBUG Loading model cost 0.817 seconds.
+Thu 17 Dec 2020 09:36:36 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:36:36 _internal.py WARNING  * Debugger is active!
+Thu 17 Dec 2020 09:36:36 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 17 Dec 2020 09:36:36 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 17 Dec 2020 09:37:00 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\3\\pri_lcb\\my_app\\algorithm\\simhash\\my_simhash3.py', reloading
+Thu 17 Dec 2020 09:37:00 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 09:37:01 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:37:20 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:37:20 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:37:20 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:37:21 __init__.py DEBUG Loading model cost 0.670 seconds.
+Thu 17 Dec 2020 09:37:21 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:37:21 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 09:37:22 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:37:22 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:37:22 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:37:22 __init__.py DEBUG Loading model cost 0.650 seconds.
+Thu 17 Dec 2020 09:37:22 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:37:22 _internal.py WARNING  * Debugger is active!
+Thu 17 Dec 2020 09:37:22 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 17 Dec 2020 09:37:22 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 17 Dec 2020 09:37:23 dup_check.py INFO simhash: foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/simhash' [POST]> to dup_check
+Thu 17 Dec 2020 09:37:23 _internal.py INFO 127.0.0.1 - - [17/Dec/2020 09:37:23] "[37mPOST /NLP/Algorithm/base/dup_check/simhash HTTP/1.1[0m" 200 -
+Thu 17 Dec 2020 09:40:48 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\3\\pri_lcb\\my_app\\algorithm\\simhash\\my_simhash3.py', reloading
+Thu 17 Dec 2020 09:40:48 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 09:40:49 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:40:49 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:40:49 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:40:50 __init__.py DEBUG Loading model cost 0.677 seconds.
+Thu 17 Dec 2020 09:40:50 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:40:50 _internal.py WARNING  * Debugger is active!
+Thu 17 Dec 2020 09:40:50 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 17 Dec 2020 09:40:50 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 17 Dec 2020 09:41:26 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\3\\pri_lcb\\my_app\\algorithm\\simhash\\my_simhash3.py', reloading
+Thu 17 Dec 2020 09:41:26 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 09:41:27 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:41:27 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:41:27 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:41:27 __init__.py DEBUG Loading model cost 0.643 seconds.
+Thu 17 Dec 2020 09:41:27 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:41:27 _internal.py WARNING  * Debugger is active!
+Thu 17 Dec 2020 09:41:27 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 17 Dec 2020 09:41:27 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 17 Dec 2020 09:41:37 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:41:37 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:41:37 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:41:38 __init__.py DEBUG Loading model cost 0.704 seconds.
+Thu 17 Dec 2020 09:41:38 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:41:38 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 09:41:39 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:41:39 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:41:39 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:41:39 __init__.py DEBUG Loading model cost 0.650 seconds.
+Thu 17 Dec 2020 09:41:39 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:41:39 _internal.py WARNING  * Debugger is active!
+Thu 17 Dec 2020 09:41:39 _internal.py INFO  * Debugger PIN: 304-402-708
+Thu 17 Dec 2020 09:41:39 _internal.py INFO  * Running on http://0.0.0.0:50000/ (Press CTRL+C to quit)
+Thu 17 Dec 2020 09:41:39 dup_check.py INFO simhash: foreign request : <Request 'http://127.0.0.1:50000/NLP/Algorithm/base/dup_check/simhash' [POST]> to dup_check
+Thu 17 Dec 2020 09:41:40 _internal.py INFO 127.0.0.1 - - [17/Dec/2020 09:41:40] "[37mPOST /NLP/Algorithm/base/dup_check/simhash HTTP/1.1[0m" 200 -
+Thu 17 Dec 2020 09:41:49 _internal.py INFO  * Detected change in 'D:\\lcb_note\\code\\Program\\10ÔÂÏîÄ¿\\winnowing1.5_3½Ó¿Ú_µ¥ºË°æ\\3\\pri_lcb\\run.py', reloading
+Thu 17 Dec 2020 09:41:49 _internal.py INFO  * Restarting with stat
+Thu 17 Dec 2020 09:41:50 dup_check.py WARNING warning
+Thu 17 Dec 2020 09:41:50 __init__.py DEBUG Building prefix dict from the default dictionary ...
+Thu 17 Dec 2020 09:41:50 __init__.py DEBUG Loading model from cache C:\Users\liangcb\AppData\Local\Temp\jieba.cache
+Thu 17 Dec 2020 09:41:51 __init__.py DEBUG Loading model cost 0.646 seconds.
+Thu 17 Dec 2020 09:41:51 __init__.py DEBUG Prefix dict has been built successfully.
+Thu 17 Dec 2020 09:41:51 _internal.py INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
